@@ -145,7 +145,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,11,24,.82);backdrop-fi
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
 
 /* plans */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
 .plan{background:var(--card);border:1px solid var(--line2);border-radius:22px;padding:1.8rem;display:flex;flex-direction:column}
 .plan.hot{background:linear-gradient(180deg,#112A44,#0D1B30);border-color:var(--cyan);box-shadow:0 0 50px rgba(34,211,238,.18);position:relative}
 .plan .badge{position:absolute;top:-13px;right:22px;background:var(--cyan);color:#04111F;font-weight:700;font-size:.75rem;padding:.3rem .75rem;border-radius:999px}
@@ -162,7 +162,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,11,24,.82);backdrop-fi
 .plan .ex{margin-top:1.2rem;background:rgba(34,211,238,.07);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;font-size:.85rem;color:#CBD5E1}
 .plan .ex b{color:var(--cyan)}
 .plans-note{text-align:center;color:var(--muted);margin-top:28px;font-size:.92rem}
-@media(max-width:960px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+@media(max-width:1150px){.plans{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
 
 /* faq */
 .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
@@ -263,6 +264,7 @@ footer a{color:var(--cyan);text-decoration:none}
     <div class="tabs" role="tablist">
       <button class="tab on" data-f="todos" role="tab">Todos</button>
       <button class="tab" data-f="portfolio" role="tab">Portfólio e blog</button>
+      <button class="tab" data-f="loja" role="tab">Loja de roupas</button>
       <button class="tab" data-f="academia" role="tab">Academia</button>
       <button class="tab" data-f="barbearia" role="tab">Barbearia</button>
       <button class="tab" data-f="salao" role="tab">Salão de beleza</button>
@@ -304,6 +306,23 @@ footer a{color:var(--cyan);text-decoration:none}
       </article>
 
       <!-- EM DESENVOLVIMENTO -->
+      <article class="site reveal" data-cat="loja">
+        <div class="shot">
+          <img src="img/preview-loja.jpg" alt="Modelo de loja online Lírio Moda Feminina" loading="lazy" width="1280" height="800">
+          <span class="status live"><i></i>Modelo no ar</span>
+        </div>
+        <div class="body">
+          <span class="cat">Loja de roupas</span>
+          <h3>Lírio Moda Feminina</h3>
+          <p>Loja online com carrinho, tamanhos e cores, promoções do dia, vídeos e pedido direto no WhatsApp. Painel no celular para cadastrar produtos.</p>
+          <div class="tags"><span>Carrinho</span><span>Promoções do dia</span><span>Vídeos</span><span>Painel no celular</span></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="loja/" target="_blank" rel="noopener">Ver loja ao vivo</a>
+            <a class="btn btn-ghost" href="loja/admin/" target="_blank" rel="noopener">Ver painel</a>
+          </div>
+        </div>
+      </article>
+
       <article class="site reveal" data-cat="academia">
         <div class="shot">
           <img src="img/preview-academia.jpg" alt="Modelo de site Academia Força Total" loading="lazy" width="1256" height="732">
@@ -455,6 +474,23 @@ footer a{color:var(--cyan);text-decoration:none}
         </ul>
         <div class="ex">Exemplo: <b>site da Gessica Souza</b>, blog + portfólio de maquiagem.</div>
       </div>
+    <div class="plan reveal">
+        <h3>Loja</h3>
+        <p class="desc">Loja online com carrinho e pedido direto no WhatsApp, sem comissão por venda.</p>
+        <span class="from">a partir de</span>
+        <div class="val">R$ 2.800</div>
+        <p class="pay">pagamento único</p>
+        <a class="btn btn-ghost js-whats" href="#" data-msg="Oi! Tenho interesse no plano Loja de site da StayPulse.">Escolher Loja</a>
+        <ul>
+          <li>Tudo do Completo</li>
+          <li>Catálogo com tamanhos, cores e estoque</li>
+          <li>Carrinho com pedido no WhatsApp</li>
+          <li>Pedido mínimo para atacado (opcional)</li>
+          <li>Promoções do dia e vídeos no site</li>
+          <li>Painel para cadastrar e excluir produtos</li>
+        </ul>
+        <div class="ex">Exemplo: <b>Lírio Moda Feminina</b>, loja de roupas.</div>
+      </div>
     </div>
     <p class="plans-note">Manutenção mensal opcional · Domínio .com.br pago pelo cliente no registro.br (cerca de R$ 40/ano)</p>
   </div>
@@ -473,6 +509,7 @@ footer a{color:var(--cyan);text-decoration:none}
       <details><summary>Consigo atualizar sozinho?</summary><p>Sim. Nos planos Profissional e Completo você recebe um painel simples, que funciona no celular como um app, para postar fotos, trabalhos e novidades.</p></details>
       <details><summary>Quanto tempo demora?</summary><p>Em média de 7 a 10 dias depois de recebermos fotos, textos e logo. Você vê tudo antes de publicar.</p></details>
       <details><summary>Os modelos são iguais para todo mundo?</summary><p>Não. Os modelos são o ponto de partida. Cada site recebe as cores, fotos, textos e serviços do seu negócio.</p></details>
+      <details><summary>Vocês fazem loja online com carrinho?</summary><p>Sim. No plano Loja, seu cliente escolhe peças, cores e tamanhos, monta o carrinho e o pedido chega pronto no seu WhatsApp. Você cadastra produtos, promoções do dia e vídeos pelo celular, sem comissão por venda.</p></details>
       <details><summary>Vocês atendem fora de São Paulo?</summary><p>Sim. Atendemos presencialmente na zona sul e leste de São Paulo e em qualquer cidade de forma digital.</p></details>
     </div>
   </div>

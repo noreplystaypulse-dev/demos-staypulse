@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#B83B6B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Painel Lírio Moda</title>
+<link rel="icon" href="../img/logo.svg">
+<link rel="apple-touch-icon" href="../img/logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#B83B6B;--teal-d:#7E2347;--teal-l:#FBEAF1;--pink:#E2558F;--promo:#E8445A;--ink:#1D1D1F;--muted:#6E6E73;--line:#ECECEC;--soft:#F5F5F3}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+body{margin:0;background:var(--soft);color:var(--ink);font-family:Lexend,system-ui,sans-serif;font-size:15px;line-height:1.45}
+button,input,select,textarea{font-family:inherit;font-size:16px}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.app{max-width:560px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:.7rem}
+.top img{width:40px;height:40px;border-radius:50%}
+.top h1{font-size:1.1rem;margin:0;font-weight:600}
+.top small{display:block;color:var(--muted);font-size:.75rem;font-weight:400}
+.top a{margin-left:auto;font-size:.82rem;color:var(--teal-d);text-decoration:none;font-weight:600;border:1px solid #F2C9D9;padding:.45rem .8rem;border-radius:999px}
+.demo{background:#0F172A;color:#CBD5E1;font-size:.75rem;text-align:center;padding:.4rem}
+.demo b{color:#22D3EE}
+.pad{padding:16px}
+.seg{display:flex;background:var(--soft);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+.seg button{flex:1;border:0;background:none;padding:.6rem .3rem;border-radius:10px;font-size:.85rem;font-weight:500;color:var(--muted)}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.seg button i{font-style:normal;font-size:.72rem;background:var(--line);border-radius:999px;padding:.05rem .45rem;margin-left:.25rem}
+.list{display:grid;gap:10px}
+.item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:10px;background:#fff;text-align:left;width:100%}
+.item img{width:62px;height:76px;border-radius:10px;object-fit:cover;background:var(--soft);flex:none}
+.item .t{flex:1;min-width:0}
+.item b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item small{color:var(--muted);font-size:.8rem}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .45rem;border-radius:5px;background:var(--soft);color:var(--muted)}
+.tag.pub{background:var(--teal-l);color:var(--teal-d)}
+.tag.dr{background:#FFF4D6;color:#8A6100}
+.tag.es{background:#EEE;color:#555}
+.tag.pr{background:var(--promo);color:#fff}
+.chev{color:#C7C7CC;font-size:1.2rem}
+.empty{text-align:center;color:var(--muted);padding:40px 16px}
+.fab{position:fixed;right:max(16px,calc(50% - 264px));bottom:calc(96px + env(safe-area-inset-bottom));z-index:25;border:0;background:var(--ink);color:#fff;border-radius:999px;padding:1rem 1.3rem;font-weight:600;box-shadow:0 10px 26px rgba(0,0,0,.25);display:flex;gap:.4rem;align-items:center}
+nav.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;z-index:30;background:#fff;border-top:1px solid var(--line);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+nav.tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:.4rem 0;font-size:.72rem;color:var(--muted);font-weight:500}
+nav.tabs button svg{width:24px;height:24px}
+nav.tabs button.on{color:var(--teal)}
+.view{display:none}.view.on{display:block}
+h2{font-size:1.15rem;margin:0 0 .3rem}
+.hint{color:var(--muted);font-size:.85rem;margin:0 0 14px}
+/* switch */
+.sw{position:relative;width:48px;height:28px;flex:none}
+.sw input{opacity:0;width:0;height:0;position:absolute}
+.sw span{position:absolute;inset:0;background:#D9D9DE;border-radius:999px;transition:.2s}
+.sw span::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}
+.sw input:checked+span{background:var(--promo)}
+.sw input:checked+span::after{transform:translateX(20px)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.row label{font-weight:500}
+.row small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+/* sheet editor */
+.sheet{position:fixed;inset:0;z-index:50;background:#fff;transform:translateY(100%);transition:transform .3s;display:flex;flex-direction:column;max-width:560px;margin:0 auto}
+.sheet.open{transform:none}
+.sh-h{display:flex;align-items:center;gap:.6rem;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;border-bottom:1px solid var(--line)}
+.sh-h button{border:0;background:var(--soft);border-radius:999px;padding:.5rem .9rem;font-weight:500}
+.sh-h h3{flex:1;margin:0;font-size:1.02rem;text-align:center}
+.sh-b{flex:1;overflow:auto;padding:16px 16px 30px}
+.sh-f{border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1.4fr;gap:8px;background:#fff}
+.btn{border:0;border-radius:14px;padding:.95rem;font-weight:600;font-size:.95rem}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-soft{background:var(--soft);color:var(--ink)}
+.btn-red{background:#FDECEE;color:var(--promo)}
+.fld{margin-bottom:16px}
+.fld>label{display:block;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:.8rem .9rem;outline:none}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--teal);background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.money{position:relative}.money span{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted)}.money input{padding-left:2.4rem}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.photos .ph{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--soft)}
+.photos .ph img{width:100%;height:100%;object-fit:cover}
+.photos .ph button{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(255,255,255,.95);font-size:.9rem;line-height:1}
+.photos .ph .cv{position:absolute;left:6px;bottom:6px;font-size:.65rem;font-weight:700;background:var(--ink);color:#fff;padding:.15rem .4rem;border-radius:5px}
+.photos .add{aspect-ratio:4/5;border:2px dashed #D5D5DA;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--muted);font-size:.8rem;background:#fff}
+.photos .add b{font-size:1.6rem;font-weight:400;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.45rem .85rem;font-size:.88rem}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips .plus{border-style:dashed;color:var(--muted)}
+.del{width:100%;margin-top:8px}
+/* confirm */
+.cf{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.4);display:none;align-items:flex-end;justify-content:center}
+.cf.open{display:flex}
+.cf div{background:#fff;width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:22px 18px calc(18px + env(safe-area-inset-bottom))}
+.cf h4{margin:0 0 .4rem;font-size:1.1rem}
+.cf p{margin:0 0 16px;color:var(--muted)}
+.cf .two button{width:100%}
+.toast{position:fixed;left:50%;top:calc(16px + env(safe-area-inset-top));transform:translate(-50%,-140%);visibility:hidden;background:var(--ink);color:#fff;padding:.75rem 1.1rem;border-radius:999px;font-size:.88rem;z-index:90;transition:transform .3s;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+/* login */
+.login{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;background:linear-gradient(160deg,#FFF6F9,#fff 50%,#FDF1F6)}
+.login img{width:110px;height:110px;border-radius:50%;box-shadow:0 14px 40px rgba(184,59,107,.25);margin-bottom:18px}
+.login h1{margin:0 0 .3rem;font-size:1.4rem}
+.login p{color:var(--muted);margin:0 0 22px}
+.login form{width:100%;max-width:340px;display:grid;gap:10px}
+.login input{border:1px solid var(--line);border-radius:14px;padding:.95rem 1rem;background:#fff;outline:none}
+.login input:focus{border-color:var(--teal)}
+.login small{color:var(--muted);margin-top:14px;display:block}
+.vcard{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:10px;width:100%;background:#fff;text-align:left}
+.vcard img{width:56px;height:96px;object-fit:cover;border-radius:10px;flex:none;background:var(--soft)}
+.capa{width:140px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--soft);position:relative}
+.capa img{width:100%;height:100%;object-fit:cover}
+.capa label{position:absolute;inset:auto 8px 8px;background:rgba(255,255,255,.95);border-radius:10px;padding:.4rem;font-size:.78rem;text-align:center;font-weight:600}
+textarea{resize:vertical}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login" id="login">
+  <img src="../img/logo.svg" alt="Lírio Moda">
+  <h1>Painel Lírio Moda</h1>
+  <p>Cadastre peças, promoções e vídeos pelo celular.</p>
+  <form id="fLogin">
+    <input type="email" placeholder="E-mail" value="loja@demo.com" autocomplete="username">
+    <input type="password" id="pw" placeholder="Senha" autocomplete="current-password">
+    <button class="btn btn-teal" type="submit">Entrar</button>
+  </form>
+  <small>Demonstração: senha <b>loja</b></small>
+</section>
+
+<!-- APP -->
+<div class="app" id="app" hidden>
+  <div class="demo">Painel de demonstração <b>StayPulse</b> · os dados ficam salvos neste aparelho</div>
+  <div class="top"><img src="../img/logo.svg" alt=""><h1 id="ttl">Peças<small id="sub"></small></h1><a href="../" target="_blank">Ver site ↗</a></div>
+
+  <!-- PRODUTOS -->
+  <section class="view on pad" id="vProd">
+    <div class="seg" id="segProd">
+      <button data-s="publicado" class="on">Publicadas <i></i></button>
+      <button data-s="rascunho">Rascunhos <i></i></button>
+      <button data-s="esgotado">Esgotadas <i></i></button>
+    </div>
+    <div class="list" id="listProd"></div>
+  </section>
+
+  <!-- PROMOÇÕES -->
+  <section class="view pad" id="vPromo">
+    <h2>Promoções do dia</h2>
+    <p class="hint">Ligue as peças que entram na promoção de hoje. Elas aparecem no topo do site.</p>
+    <div class="fld"><label>Aviso da faixa (topo do site)</label><textarea id="aviso" rows="2"></textarea></div>
+    <button class="btn btn-soft" id="saveAviso" style="width:100%;margin-bottom:10px">Salvar aviso</button>
+    <div id="listPromo"></div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section class="view pad" id="vVid">
+    <h2>Vídeos e destaques</h2>
+    <p class="hint">Os vídeos aparecem em “Vídeos que viralizaram” e nos círculos de destaque, conforme a categoria.</p>
+    <div class="list" id="listVid"></div>
+  </section>
+
+  <!-- LOJA -->
+  <section class="view pad" id="vLoja">
+    <h2>Loja</h2>
+    <p class="hint">Atalhos e configurações da demonstração.</p>
+    <div class="list">
+      <a class="item" href="../" target="_blank" style="text-decoration:none;color:inherit"><span class="t"><b>Abrir o site</b><small>Veja como a cliente enxerga</small></span><span class="chev">›</span></a>
+      <button class="item" id="btnReset"><span class="t"><b>Restaurar demonstração</b><small>Volta as peças e vídeos de exemplo</small></span><span class="chev">›</span></button>
+      <button class="item" id="btnSair"><span class="t"><b>Sair</b><small>Fechar o painel</small></span><span class="chev">›</span></button>
+    </div>
+    <p class="hint" style="margin-top:18px">Na versão oficial, os dados ficam na nuvem: o que você publica aqui aparece para todo mundo na hora, em qualquer aparelho.</p>
+  </section>
+
+  <button class="fab" id="fab">＋ Nova peça</button>
+
+  <nav class="tabs">
+    <button data-v="vProd" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3c0 2-2 3-4 3S8 5 8 3z"/></svg>Peças</button>
+    <button data-v="vPromo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Promoções</button>
+    <button data-v="vVid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="m11 9 3 2-3 2z" fill="currentColor"/></svg>Vídeos</button>
+    <button data-v="vLoja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 4h14l2 5M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM5 13v8h14v-8"/></svg>Loja</button>
+  </nav>
+</div>
+
+<!-- EDITOR DE PEÇA -->
+<div class="sheet" id="shProd">
+  <div class="sh-h"><button data-x>Cancelar</button><h3 id="pTitle">Nova peça</h3><span style="width:80px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><label>Fotos <span style="text-transform:none;font-weight:400">(a primeira é a capa)</span></label>
+      <div class="photos" id="pPhotos"></div>
+      <input type="file" id="pFile" accept="image/*" multiple hidden>
+    </div>
+    <div class="fld"><label>Nome da peça</label><input id="pNome" placeholder="Ex.: Conjunto canelado"></div>
+    <div class="fld"><label>Categoria</label><select id="pCat"></select></div>
+    <div class="two">
+      <div class="fld"><label>Preço atacado</label><div class="money"><span>R$</span><input id="pPreco" inputmode="decimal" placeholder="0,00"></div></div>
+      <div class="fld"><label>Preço antigo</label><div class="money"><span>R$</span><input id="pAntigo" inputmode="decimal" placeholder="opcional"></div></div>
+    </div>
+    <div class="fld"><label>Tamanhos</label><div class="chips" id="pTam"></div></div>
+    <div class="fld"><label>Cores</label><div class="chips" id="pCor"></div></div>
+    <div class="fld"><label>Detalhes</label><textarea id="pDesc" rows="3" placeholder="Tecido, modelagem, dicas..."></textarea></div>
+    <div class="fld"><label>Estoque <span style="text-transform:none;font-weight:400">(opcional)</span></label><input id="pEst" inputmode="numeric" placeholder="Ex.: 10"></div>
+    <div class="row"><label>Promoção do dia<small>Aparece no topo do site</small></label><label class="sw"><input type="checkbox" id="pPromo"><span></span></label></div>
+    <div class="row"><label>Esgotada<small>Continua no site, sem poder pedir</small></label><label class="sw"><input type="checkbox" id="pEsg"><span></span></label></div>
+    <button class="btn btn-red del" id="pDel">Excluir peça</button>
+  </div>
+  <div class="sh-f"><button class="btn btn-soft" id="pDraft">Salvar rascunho</button><button class="btn btn-teal" id="pPub">Publicar</button></div>
+</div>
+
+<!-- EDITOR DE VÍDEO -->
+<div class="sheet" id="shVid">
+  <div class="sh-h"><button data-x>Cancelar</button><h3 id="vTitle">Novo vídeo</h3><span style="width:80px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><label>Capa</label><div class="capa"><img id="vCapaImg" alt=""><label for="vFile">Trocar capa</label></div><input type="file" id="vFile" accept="image/*" hidden></div>
+    <div class="fld"><label>Título</label><input id="vTit" placeholder="Ex.: Embalando pedidos"></div>
+    <div class="fld"><label>Destaque (categoria)</label><select id="vCat"></select></div>
+    <div class="fld"><label>Link do Reels no Instagram</label><input id="vUrl" inputmode="url" placeholder="https://www.instagram.com/reel/..."></div>
+    <div class="fld"><label>Visualizações <span style="text-transform:none;font-weight:400">(opcional)</span></label><input id="vViews" placeholder="Ex.: 2,8 mil"></div>
+    <button class="btn btn-red del" id="vDel">Excluir vídeo</button>
+  </div>
+  <div class="sh-f"><button class="btn btn-soft" id="vHide">Ocultar</button><button class="btn btn-teal" id="vPub">Publicar</button></div>
+</div>
+
+<div class="cf" id="cf"><div><h4 id="cfT"></h4><p id="cfP"></p><div class="two"><button class="btn btn-soft" id="cfNo">Cancelar</button><button class="btn btn-red" id="cfYes" style="background:var(--promo);color:#fff">Excluir</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="../js/store.js"></script>
+<script>
+const S = window.CoralliStore;
+let DB = S.load();
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fix = src => src && !/^(data:|https?:|\.\.\/)/.test(src) ? '../' + src : src;  // caminhos relativos ao site
+let tt; const toast = m => { $('toast').textContent = m; $('toast').classList.add('show'); clearTimeout(tt); tt = setTimeout(() => $('toast').classList.remove('show'), 2200); };
+function persist(msg) { if (S.save(DB)) { msg && toast(msg); return true; } toast('Memória cheia: use menos fotos nesta demonstração'); return false; }
+
+/* login (demonstração) */
+if (sessionStorage.getItem('lirio-ok')) enter();
+$('fLogin').onsubmit = e => { e.preventDefault(); if ($('pw').value.trim().toLowerCase() === 'loja') { sessionStorage.setItem('lirio-ok', '1'); enter(); } else toast('Senha incorreta'); };
+function enter() { $('login').hidden = true; $('app').hidden = false; renderAll(); }
+$('btnSair').onclick = () => { sessionStorage.removeItem('lirio-ok'); location.reload(); };
+
+/* abas */
+const TITLES = { vProd: 'Peças', vPromo: 'Promoções', vVid: 'Vídeos', vLoja: 'Loja' };
+document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('nav.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === b.dataset.v));
+  $('ttl').firstChild.textContent = TITLES[b.dataset.v];
+  $('fab').style.display = (b.dataset.v === 'vProd' || b.dataset.v === 'vVid') ? '' : 'none';
+  $('fab').textContent = b.dataset.v === 'vVid' ? '＋ Novo vídeo' : '＋ Nova peça';
+  scrollTo(0, 0);
+});
+$('fab').onclick = () => $('vVid').classList.contains('on') ? openVid(null) : openProd(null);
+
+/* listas */
+let segS = 'publicado';
+$('segProd').onclick = e => { const b = e.target.closest('button'); if (!b) return; segS = b.dataset.s; $('segProd').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderProd(); };
+function renderAll() { renderProd(); renderPromo(); renderVid(); }
+function renderProd() {
+  const c = s => DB.produtos.filter(p => p.status === s).length;
+  $('segProd').querySelectorAll('button').forEach(b => b.querySelector('i').textContent = c(b.dataset.s));
+  $('sub').textContent = `${c('publicado')} publicadas · ${DB.produtos.filter(p => p.promo && p.status === 'publicado').length} em promoção`;
+  const list = DB.produtos.filter(p => p.status === segS).sort((a, b) => b.criado - a.criado);
+  $('listProd').innerHTML = list.length ? list.map(p => `<button class="item" data-id="${p.id}"><img src="${fix(S.fotosDe(p)[0])}" alt=""><span class="t"><b>${esc(p.nome)}</b><small>${esc(p.categoria)} · ${S.brl(p.preco)}</small><span class="tags">${p.status === 'publicado' ? '<span class="tag pub">Publicada</span>' : p.status === 'rascunho' ? '<span class="tag dr">Rascunho</span>' : '<span class="tag es">Esgotada</span>'}${p.promo ? '<span class="tag pr">Promo</span>' : ''}${p.fotos && p.fotos.length ? '' : '<span class="tag">Sem foto</span>'}</span></span><span class="chev">›</span></button>`).join('')
+    : `<p class="empty">${segS === 'rascunho' ? 'Nenhum rascunho. Salve uma peça como rascunho para terminar depois.' : segS === 'esgotado' ? 'Nenhuma peça esgotada.' : 'Nenhuma peça publicada ainda. Toque em “Nova peça”.'}</p>`;
+}
+$('listProd').onclick = e => { const b = e.target.closest('.item'); if (b) openProd(b.dataset.id); };
+
+function renderPromo() {
+  $('aviso').value = DB.aviso || '';
+  const pub = DB.produtos.filter(p => p.status === 'publicado');
+  $('listPromo').innerHTML = pub.map(p => `<div class="row"><span style="display:flex;gap:10px;align-items:center;min-width:0"><img src="${fix(S.fotosDe(p)[0])}" alt="" style="width:44px;height:54px;border-radius:8px;object-fit:cover;flex:none"><label for="pr-${p.id}" style="min-width:0">${esc(p.nome)}<small>${S.brl(p.preco)}${p.precoAntigo ? ' · antes ' + S.brl(p.precoAntigo) : ''}</small></label></span><label class="sw"><input type="checkbox" id="pr-${p.id}" data-id="${p.id}" ${p.promo ? 'checked' : ''}><span></span></label></div>`).join('') || '<p class="empty">Publique peças para colocar em promoção.</p>';
+}
+$('listPromo').onchange = e => { const p = DB.produtos.find(x => x.id === e.target.dataset.id); if (!p) return; p.promo = e.target.checked; persist(p.promo ? 'Entrou na promoção do dia' : 'Saiu da promoção'); renderProd(); };
+$('saveAviso').onclick = () => { DB.aviso = $('aviso').value.trim(); persist('Aviso salvo'); };
+
+function renderVid() {
+  $('listVid').innerHTML = DB.videos.length ? DB.videos.map(v => `<button class="vcard" data-id="${v.id}"><img src="${fix(v.capa)}" alt=""><span class="t" style="flex:1;min-width:0"><b style="display:block;font-weight:500">${esc(v.titulo)}</b><small style="color:var(--muted)">${esc(v.categoria)}${v.views ? ' · ' + esc(v.views) + ' views' : ''}</small><span class="tags">${v.status === 'oculto' ? '<span class="tag es">Oculto</span>' : '<span class="tag pub">Publicado</span>'}${v.url ? '<span class="tag">Reels</span>' : ''}</span></span><span class="chev">›</span></button>`).join('') : '<p class="empty">Nenhum vídeo ainda.</p>';
+}
+$('listVid').onclick = e => { const b = e.target.closest('.vcard'); if (b) openVid(b.dataset.id); };
+
+/* editor de peça */
+const TAMS = ['PP', 'P', 'M', 'G', 'GG', 'Único', '36', '38', '40', '42', '44'];
+const CORS = ['Preto', 'Branco', 'Off-white', 'Bege', 'Nude', 'Rosa', 'Rosa bebê', 'Lilás', 'Lavanda', 'Cinza', 'Marrom', 'Verde'];
+let ed = null, fotos = [], tams = [], cors = [];
+$('pCat').innerHTML = S.CATEGORIAS.map(c => `<option>${c}</option>`).join('');
+const num = v => { const n = parseFloat(String(v).replace(/\./g, '').replace(',', '.')); return isNaN(n) ? null : n; };
+const fmt = v => v == null ? '' : Number(v).toFixed(2).replace('.', ',');
+function openProd(id) {
+  ed = id ? DB.produtos.find(p => p.id === id) : null;
+  const p = ed || { nome: '', categoria: S.CATEGORIAS[0], preco: null, precoAntigo: null, tamanhos: ['P', 'M', 'G'], cores: [], descricao: '', fotos: [], promo: false, estoque: null, status: 'rascunho' };
+  fotos = (p.fotos || []).slice(); tams = (p.tamanhos || []).slice(); cors = (p.cores || []).slice();
+  $('pTitle').textContent = ed ? 'Editar peça' : 'Nova peça';
+  $('pNome').value = p.nome; $('pCat').value = p.categoria; $('pPreco').value = fmt(p.preco); $('pAntigo').value = fmt(p.precoAntigo);
+  $('pDesc').value = p.descricao || ''; $('pEst').value = p.estoque ?? ''; $('pPromo').checked = !!p.promo; $('pEsg').checked = p.status === 'esgotado';
+  $('pDel').style.display = ed ? '' : 'none';
+  $('pPub').textContent = ed && ed.status !== 'rascunho' ? 'Salvar e publicar' : 'Publicar';
+  renderPhotos(); renderChips(); $('shProd').classList.add('open');
+}
+function renderPhotos() {
+  $('pPhotos').innerHTML = fotos.map((f, i) => `<div class="ph"><img src="${f}" alt="">${i ? '' : '<span class="cv">CAPA</span>'}<button data-i="${i}" aria-label="Remover foto">✕</button></div>`).join('') + `<label class="add" for="pFile"><b>＋</b>Adicionar fotos</label>`;
+}
+$('pPhotos').onclick = e => { const b = e.target.closest('button[data-i]'); if (b) { fotos.splice(+b.dataset.i, 1); renderPhotos(); } };
+$('pFile').onchange = async e => { for (const f of e.target.files) { if (fotos.length >= 6) { toast('Máximo de 6 fotos por peça'); break; } fotos.push(await compress(f, 900)); } e.target.value = ''; renderPhotos(); };
+function renderChips() {
+  const all = [...new Set([...TAMS, ...tams])], allC = [...new Set([...CORS, ...cors])];
+  $('pTam').innerHTML = all.map(t => `<button type="button" class="${tams.includes(t) ? 'on' : ''}" data-v="${esc(t)}">${esc(t)}</button>`).join('') + '<button type="button" class="plus" data-add="t">＋ outro</button>';
+  $('pCor').innerHTML = allC.map(t => `<button type="button" class="${cors.includes(t) ? 'on' : ''}" data-v="${esc(t)}">${esc(t)}</button>`).join('') + '<button type="button" class="plus" data-add="c">＋ outra</button>';
+}
+function chipClick(arr, kind) { return e => { const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.add) { const v = prompt(kind === 't' ? 'Novo tamanho:' : 'Nova cor:'); if (v && v.trim()) arr.push(v.trim()); }
+  else { const v = b.dataset.v, i = arr.indexOf(v); i < 0 ? arr.push(v) : arr.splice(i, 1); }
+  renderChips(); }; }
+$('pTam').onclick = chipClick(tams, 't'); $('pCor').onclick = chipClick(cors, 'c');
+function collect(status) {
+  const nome = $('pNome').value.trim(), preco = num($('pPreco').value);
+  if (!nome) { toast('Coloque o nome da peça'); $('pNome').focus(); return null; }
+  if (status !== 'rascunho' && !preco) { toast('Coloque o preço para publicar'); $('pPreco').focus(); return null; }
+  if (status !== 'rascunho' && !tams.length) { toast('Escolha pelo menos um tamanho'); return null; }
+  const est = parseInt($('pEst').value, 10);
+  return { nome, categoria: $('pCat').value, preco: preco || 0, precoAntigo: num($('pAntigo').value), tamanhos: tams.slice(), cores: cors.slice(), descricao: $('pDesc').value.trim(), fotos: fotos.slice(), promo: $('pPromo').checked, estoque: isNaN(est) ? null : est, status: status === 'publicado' && $('pEsg').checked ? 'esgotado' : status };
+}
+function saveProd(status) {
+  const data = collect(status); if (!data) return;
+  const backup = JSON.stringify(DB);
+  if (ed) Object.assign(ed, data); else DB.produtos.push(Object.assign({ id: S.uid(), criado: Date.now() }, data));
+  if (!persist()) { DB = JSON.parse(backup); return; }
+  closeSheets(); segS = data.status; $('segProd').querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.s === segS));
+  renderAll(); toast(status === 'rascunho' ? '✓ Rascunho salvo' : data.status === 'esgotado' ? '✓ Salva como esgotada' : '✓ Publicada no site');
+}
+$('pDraft').onclick = () => saveProd('rascunho');
+$('pPub').onclick = () => saveProd('publicado');
+$('pDel').onclick = () => confirmDel('Excluir esta peça?', 'Ela sai do site e do painel. Não dá para desfazer.', () => { DB.produtos = DB.produtos.filter(p => p !== ed); persist('Peça excluída'); closeSheets(); renderAll(); });
+
+/* editor de vídeo */
+let ev = null, capa = null;
+$('vCat').innerHTML = S.CONFIG.destaques.map(c => `<option>${c}</option>`).join('');
+function openVid(id) {
+  ev = id ? DB.videos.find(v => v.id === id) : null;
+  const v = ev || { titulo: '', categoria: S.CONFIG.destaques[0], capa: '', url: '', views: '', status: 'publicado' };
+  capa = v.capa; $('vCapaImg').src = fix(capa) || '../img/logo.svg';
+  $('vTitle').textContent = ev ? 'Editar vídeo' : 'Novo vídeo';
+  $('vTit').value = v.titulo; $('vCat').value = v.categoria; $('vUrl').value = v.url; $('vViews').value = v.views;
+  $('vDel').style.display = ev ? '' : 'none';
+  $('shVid').classList.add('open');
+}
+$('vFile').onchange = async e => { const f = e.target.files[0]; if (f) { capa = await compress(f, 720); $('vCapaImg').src = capa; } e.target.value = ''; };
+function saveVid(status) {
+  const titulo = $('vTit').value.trim(); if (!titulo) { toast('Coloque um título'); return; }
+  const url = $('vUrl').value.trim();
+  if (url && !/instagram\.com\/(reel|p|tv)\//.test(url)) { toast('Cole o link de um Reels do Instagram'); return; }
+  if (!capa) { toast('Escolha uma capa'); return; }
+  const data = { titulo, categoria: $('vCat').value, url, views: $('vViews').value.trim(), capa, status };
+  const backup = JSON.stringify(DB);
+  if (ev) Object.assign(ev, data); else DB.videos.unshift(Object.assign({ id: S.uid() }, data));
+  if (!persist()) { DB = JSON.parse(backup); return; }
+  closeSheets(); renderVid(); toast(status === 'oculto' ? 'Vídeo oculto' : '✓ Vídeo publicado');
+}
+$('vPub').onclick = () => saveVid('publicado');
+$('vHide').onclick = () => saveVid('oculto');
+$('vDel').onclick = () => confirmDel('Excluir este vídeo?', 'Ele sai do site e dos destaques.', () => { DB.videos = DB.videos.filter(v => v !== ev); persist('Vídeo excluído'); closeSheets(); renderVid(); });
+
+/* utilidades */
+function closeSheets() { document.querySelectorAll('.sheet').forEach(s => s.classList.remove('open')); }
+document.querySelectorAll('[data-x]').forEach(b => b.onclick = closeSheets);
+let cfFn = null;
+function confirmDel(t, p, fn) { $('cfT').textContent = t; $('cfP').textContent = p; cfFn = fn; $('cf').classList.add('open'); }
+$('cfNo').onclick = () => $('cf').classList.remove('open');
+$('cfYes').onclick = () => { $('cf').classList.remove('open'); cfFn && cfFn(); };
+$('btnReset').onclick = () => confirmDel('Restaurar a demonstração?', 'As peças e vídeos voltam ao exemplo inicial. O que você cadastrou neste aparelho será apagado.', () => { S.reset(); DB = S.load(); renderAll(); toast('Demonstração restaurada'); });
+function compress(file, max) {
+  return new Promise((res, rej) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => { const k = Math.min(1, max / Math.max(img.width, img.height)); const c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url); res(c.toDataURL('image/jpeg', .78)); };
+    img.onerror = rej; img.src = url;
+  });
+}
+</script>
+</body>
+</html>
