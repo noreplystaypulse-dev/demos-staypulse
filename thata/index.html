@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Studio Thata Souza | Cílios, sobrancelhas e depilação</title>
+<meta name="description" content="Studio Thata Souza: cílios volume brasileiro e egípcio, fox eyes, design de sobrancelhas, micropigmentação e depilação. Agende online.">
+<meta name="theme-color" content="#0B140F">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B140F; --bg2:#0F1D15; --card:#13241A; --card2:#182D21; --line:rgba(212,175,106,.22); --line2:rgba(255,255,255,.07);
+  --gold:#D4AF6A; --gold2:#F1D9A0; --gold3:#A9823F; --sage:#7FAE7C; --cream:#F6F1E7; --muted:rgba(246,241,231,.62);
+  --goldg:linear-gradient(135deg,#F3DDA4 0%,#D4AF6A 45%,#A9823F 100%);
+  --cinzel:"Cinzel",Georgia,serif; --script:"Great Vibes",cursive;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:Montserrat,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 600px at 85% -10%,rgba(127,174,124,.12),transparent 60%),radial-gradient(700px 500px at -10% 40%,rgba(212,175,106,.06),transparent 60%)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button,input,select{font-family:inherit}
+h1,h2,h3{margin:0;font-family:var(--cinzel);font-weight:500;letter-spacing:.04em;line-height:1.1}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.script{font-family:var(--script);font-weight:400;letter-spacing:0;text-transform:none;background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font-family:var(--cinzel);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--cream);opacity:.85}
+.tagline i{color:var(--gold);font-style:normal;margin:0 .6rem}
+.sec{padding:110px 0}
+.sec-h{text-align:center;max-width:700px;margin:0 auto 54px}
+.sec-h .script{font-size:clamp(2.6rem,6vw,3.8rem);display:block;line-height:1.1}
+.sec-h h2{font-size:clamp(1.8rem,4vw,2.6rem);text-transform:uppercase}
+.sec-h p{color:var(--muted);margin:1rem auto 0}
+.rule{width:180px;height:1px;margin:1.2rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
+.rule::after{content:"◆";position:absolute;left:50%;top:50%;transform:translate(-50%,-55%);color:var(--gold);font-size:.7rem;background:var(--bg);padding:0 .5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 1.7rem;border-radius:999px;font-weight:600;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent}
+.btn-gold{background:var(--goldg);color:#1B1408;box-shadow:0 10px 30px rgba(212,175,106,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,106,.4)}
+.btn-line{border-color:var(--gold);color:var(--gold2)}
+.btn-line:hover{background:rgba(212,175,106,.1)}
+.btn[disabled]{opacity:.4;pointer-events:none}
+
+.demo-bar{background:#0F172A;color:#CBD5E1;font-size:.78rem;text-align:center;padding:.45rem 1rem}
+.demo-bar b,.demo-bar a{color:#22D3EE}
+
+header{position:sticky;top:0;z-index:60;background:rgba(11,20,15,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.s{border-color:var(--line)}
+.nav{display:flex;align-items:center;gap:1.4rem;height:84px}
+.nav .lg img{height:58px;width:auto}
+.nav ul{display:flex;gap:2rem;list-style:none;margin:0 auto;padding:0}
+.nav ul a{text-decoration:none;font-family:var(--cinzel);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.85)}
+.nav ul a:hover{color:var(--gold2)}
+.nav .btn{padding:.75rem 1.3rem;font-size:.75rem}
+.burger{display:none;margin-left:auto;background:none;border:0;color:var(--gold2);cursor:pointer}
+@media(max-width:940px){.nav ul,.nav>.btn{display:none}.burger{display:block}.nav{height:72px}.nav .lg img{height:48px}}
+.mnav{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.mnav.open{opacity:1;pointer-events:auto}
+.mnav a{font-family:var(--cinzel);font-size:1.4rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.mnav button{position:absolute;top:22px;right:22px;background:none;border:0;font-size:2rem;color:var(--gold2);cursor:pointer}
+
+/* hero */
+.hero{padding:60px 0 100px;position:relative;overflow:hidden}
+.hero-g{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero-g>*{min-width:0}
+.hero .lgbig{width:min(360px,80%);margin:0 0 1rem -6px}
+.hero h1{font-size:clamp(1.6rem,3.2vw,2.3rem);text-transform:uppercase;margin:1.4rem 0 .2rem}
+.hero .script{font-size:clamp(3.4rem,8vw,5.6rem);line-height:1}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:480px;margin:1.3rem 0 2rem}
+.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .facts{display:flex;gap:2rem;margin-top:2.4rem;flex-wrap:wrap}
+.hero .facts b{display:block;font-family:var(--cinzel);font-size:1.5rem;color:var(--gold2);font-weight:500}
+.hero .facts span{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.frame{position:relative;aspect-ratio:1/1;max-width:500px;justify-self:end;width:100%}
+.frame .in{position:absolute;inset:0;border-radius:999px 999px 26px 26px;overflow:hidden;background:var(--card)}
+.frame .in img{width:100%;height:100%;object-fit:cover}
+.frame .lgin{display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1E3A28,#0F1D15 70%)}
+.frame .lgin img{width:78%;margin-top:8%;height:auto;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+.pcard{position:absolute;right:-30px;bottom:-26px;width:58%;margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.pcard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pcard figcaption{position:absolute;left:10px;bottom:8px;font-family:var(--cinzel);font-size:.7rem;letter-spacing:.12em;background:rgba(11,20,15,.85);padding:.25rem .6rem;border-radius:999px}
+@media(max-width:940px){.pcard{right:-6px;width:62%}}
+.frame::before{content:"";position:absolute;inset:-14px;border-radius:999px 999px 36px 36px;border:1px solid var(--gold);opacity:.6}
+.frame .leaf{position:absolute;width:150px;opacity:.9;pointer-events:none}
+.frame .leaf.a{left:-70px;bottom:-30px;transform:rotate(-20deg)}
+.frame .leaf.b{right:-60px;top:-30px;transform:rotate(160deg) scale(.8)}
+.next{position:absolute;left:-40px;top:-2%;background:rgba(15,29,21,.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:20px;padding:1rem 1.3rem;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.next small{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.next b{font-family:var(--cinzel);font-size:2rem;font-weight:500}
+.next span{display:block;font-size:.8rem;color:var(--muted)}
+@media(max-width:940px){.hero-g{grid-template-columns:1fr}.frame{justify-self:center;max-width:380px;margin-top:20px}.next{left:-10px}.frame .leaf{display:none}.hero{text-align:center}.hero .lgbig{margin:0 auto 1rem}.hero p{margin-left:auto;margin-right:auto}.hero .ctas,.hero .facts{justify-content:center}}
+
+/* tabela de preços */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:1000px){.menu{grid-template-columns:1fr;max-width:560px;margin:0 auto}}
+.mcol{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:28px;padding:2rem 1.7rem;position:relative;overflow:hidden}
+.mcol::before{content:"";position:absolute;inset:8px;border:1px solid rgba(212,175,106,.12);border-radius:22px;pointer-events:none}
+.mcol h3{text-align:center;font-size:1.15rem;text-transform:uppercase;color:var(--gold2);letter-spacing:.12em}
+.mcol .sub{text-align:center;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:.3rem 0 0}
+.mcol .rule{width:120px;margin:1rem auto 1.2rem}
+.mcol .rule::after{background:var(--card2)}
+.row{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:center;padding:.85rem .2rem;border-bottom:1px solid var(--line2);cursor:pointer;border-radius:10px;transition:background .2s}
+.row:last-child{border-bottom:0}
+.row:hover{background:rgba(212,175,106,.06)}
+.row b{font-family:var(--cinzel);font-weight:500;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase}
+.row .p{font-family:var(--cinzel);font-weight:600;font-size:1.05rem;background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.row small{font-size:.72rem;color:var(--muted);letter-spacing:.06em}
+.row .go{font-size:.72rem;color:var(--gold);text-align:right;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.row:hover .go{opacity:1}
+
+/* antes e depois */
+.ad{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:860px){.ad{grid-template-columns:1fr}}
+.cmp{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--card)}
+.cmp .vw{position:relative;aspect-ratio:16/9;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize}
+.cmp .vw img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .vw .top{clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--gold2);transform:translateX(-1px);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--goldg);display:grid;place-items:center;color:#1B1408;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.4);pointer-events:none}
+.cmp .lb{position:absolute;top:12px;font-family:var(--cinzel);font-size:.72rem;letter-spacing:.16em;background:rgba(11,20,15,.85);border:1px solid var(--line);padding:.3rem .8rem;border-radius:999px;pointer-events:none}
+.cmp .lb.a{left:12px}.cmp .lb.d{right:12px}
+.cmp p{margin:0;padding:1rem 1.3rem;font-family:var(--cinzel);font-size:.9rem;letter-spacing:.06em;color:var(--gold2);text-align:center}
+
+/* agenda */
+.ag{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+@media(max-width:1000px){.ag{grid-template-columns:1fr}}
+.ag>*{min-width:0}
+.box{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:28px;padding:1.9rem}
+.step{display:flex;align-items:center;gap:.7rem;margin:0 0 1rem;font-family:var(--cinzel);letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--gold2)}
+.step i{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-style:normal;font-size:.75rem}
+.step+*{margin-bottom:1.8rem}
+.sel{width:100%;appearance:none;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF6A' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 1rem center/14px no-repeat;border:1px solid var(--line);color:var(--cream);border-radius:16px;padding:.95rem 2.6rem .95rem 1.1rem;font-size:.92rem;outline:none}
+.sel:focus,.inp:focus{border-color:var(--gold)}
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 6px}
+.days::-webkit-scrollbar{display:none}
+.day{flex:none;width:70px;border:1px solid var(--line);background:var(--bg);border-radius:18px;padding:.7rem .3rem;text-align:center;cursor:pointer;color:var(--cream);transition:all .2s}
+.day small{display:block;font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.day b{display:block;font-family:var(--cinzel);font-size:1.6rem;font-weight:500;line-height:1.2}
+.day em{display:block;font-style:normal;font-size:.66rem;color:var(--gold)}
+.day.closed{opacity:.3;cursor:not-allowed}
+.day.on{background:var(--goldg);border-color:transparent;color:#1B1408}
+.day.on small,.day.on em{color:#3B2C12}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px}
+.slot{border:1px solid var(--line);background:var(--bg);color:var(--cream);border-radius:12px;padding:.65rem 0;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .2s}
+.slot:hover{border-color:var(--gold);color:var(--gold2)}
+.slot.busy{color:rgba(246,241,231,.25);text-decoration:line-through;cursor:not-allowed}
+.slot.on{background:var(--goldg);color:#1B1408;border-color:transparent}
+.none{grid-column:1/-1;color:var(--muted);text-align:center;padding:1rem}
+.inp{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--cream);border-radius:16px;padding:.95rem 1.1rem;font-size:.92rem;outline:none;margin-bottom:.7rem}
+.inp::placeholder{color:rgba(246,241,231,.4)}
+.sum{border:1px dashed var(--line);border-radius:20px;padding:1.1rem 1.2rem;margin:.5rem 0 1.1rem;display:grid;gap:.5rem;font-size:.9rem}
+.sum div{display:flex;justify-content:space-between;gap:1rem}
+.sum span{color:var(--muted)}
+.sum b{text-align:right;font-weight:600}
+.sum .tot{border-top:1px solid var(--line2);padding-top:.6rem}
+.sum .tot b{font-family:var(--cinzel);font-size:1.4rem;color:var(--gold2)}
+.ok{display:none;text-align:center;padding:.6rem 0}
+.ok.show{display:block}
+.ok .c{width:70px;height:70px;border-radius:50%;border:1px solid var(--gold);color:var(--gold2);display:grid;place-items:center;margin:0 auto 1rem;font-size:1.8rem}
+.ok h3{font-family:var(--script);font-size:3rem;font-weight:400;letter-spacing:0;color:var(--gold2)}
+.ok p{color:var(--muted);margin:.3rem 0 1.3rem}
+.note{font-size:.74rem;color:var(--muted);text-align:center;margin:.9rem 0 0}
+
+/* galeria */
+.gfil{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:28px}
+.gfil button{border:1px solid var(--line);background:none;color:var(--cream);border-radius:999px;padding:.5rem 1.1rem;font-family:var(--cinzel);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.gfil button.on{background:var(--goldg);color:#1B1408;border-color:transparent}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal figure{margin:0;border-radius:20px;overflow:hidden;position:relative;aspect-ratio:1;border:1px solid var(--line);cursor:zoom-in;background:var(--card)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:2rem .8rem .7rem;background:linear-gradient(0deg,rgba(11,20,15,.9),transparent);font-size:.75rem}
+.lb-ov{position:fixed;inset:0;z-index:100;background:rgba(5,10,7,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb-ov.open{display:flex}
+.lb-ov img{max-height:86vh;max-width:92vw;border-radius:16px;border:1px solid var(--line)}
+.lb-ov button{position:absolute;top:18px;right:22px;background:none;border:0;color:var(--gold2);font-size:2rem;cursor:pointer}
+
+/* local */
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+@media(max-width:900px){.loc{grid-template-columns:1fr}}
+.loc>*{min-width:0}
+.hours{display:grid;margin:1rem 0 1.4rem}
+.hours div{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--line2);font-size:.92rem}
+.hours div.today{color:var(--gold2);font-weight:600}
+.live{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;padding:.35rem .8rem;border-radius:999px;background:rgba(127,174,124,.15);color:var(--sage)}
+.live i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.live.off{background:rgba(255,255,255,.06);color:var(--muted)}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:360px;background:var(--card)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(80%) invert(90%) hue-rotate(80deg) contrast(85%)}
+
+footer{border-top:1px solid var(--line);padding:60px 0 calc(34px + env(safe-area-inset-bottom));margin-top:40px;text-align:center}
+footer img{height:80px;width:auto;margin:0 auto 1rem}
+footer .soc{display:flex;justify-content:center;gap:1.4rem;margin:1.2rem 0;flex-wrap:wrap}
+footer .soc a{text-decoration:none;color:var(--gold2);font-size:.85rem;letter-spacing:.08em}
+footer small{display:block;color:var(--muted);font-size:.78rem}
+footer small a{color:#22D3EE;text-decoration:none}
+
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:80;display:flex;gap:10px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4);text-decoration:none}
+.fab .w{background:#25D366;color:#fff}
+.fab .c{background:var(--goldg);color:#1B1408;display:none}
+@media(max-width:940px){.fab .c{display:grid}}
+.badge-sp{position:fixed;left:18px;bottom:18px;z-index:60;background:#0F172A;color:#fff;border:1px solid #22D3EE;border-radius:999px;padding:.5rem .9rem;font-size:.75rem;text-decoration:none}
+.badge-sp b{color:#22D3EE}
+@media(max-width:600px){.badge-sp{display:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Proposta de site desenvolvida pela <b>StayPulse</b> para o Studio Thata Souza · versão de demonstração</div>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a class="lg" href="#inicio"><img src="img/logo.png" alt="Studio Thata Souza" width="1100" height="640"></a>
+    <ul>
+      <li><a href="#precos">Preços</a></li>
+      <li><a href="#antes-depois">Antes e depois</a></li>
+      <li><a href="#agenda">Agendar</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-gold" href="#agenda">Agende já</a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<div class="mnav" id="mnav"><button aria-label="Fechar">✕</button><a href="#precos">Preços</a><a href="#antes-depois">Antes e depois</a><a href="#agenda">Agendar</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a></div>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-g">
+    <div class="rv">
+      <div class="tagline">Beleza<i>•</i>Autoestima<i>•</i>Cuidado</div>
+      <h1>Realce ainda mais</h1>
+      <span class="script">a sua beleza</span>
+      <p>Cílios, sobrancelhas, micropigmentação e depilação com técnica, cuidado e atenção a cada detalhe. Escolha o serviço e reserve o seu horário em segundos.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#agenda">Agendar horário</a>
+        <a class="btn btn-line" href="#precos">Tabela de preços</a>
+      </div>
+      <div class="facts">
+        <div><b>Cílios</b><span>brasileiro · egípcio · fox</span></div>
+        <div><b>Micro</b><span>fio a fio · shadow · labial</span></div>
+        <div><b>Depilação</b><span>buço à perna inteira</span></div>
+      </div>
+    </div>
+    <div class="frame rv">
+      <div class="in lgin"><img src="img/logo.png" alt="Studio Thata Souza"></div>
+      <figure class="pcard"><img src="img/fotos/depois-1.jpg" alt="Cílios volume brasileiro feitos no Studio Thata Souza"><figcaption>Volume brasileiro</figcaption></figure>
+      <svg class="leaf a" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 95C20 70 10 40 30 10c10 25 30 40 20 85z" fill="#1E3A28"/><path d="M50 95C70 60 80 35 70 8 55 30 45 55 50 95z" fill="#2B5236"/><path d="M50 95 42 30" stroke="#D4AF6A" stroke-width=".8" opacity=".5"/></svg>
+      <svg class="leaf b" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 95C20 70 10 40 30 10c10 25 30 40 20 85z" fill="#1E3A28"/><path d="M50 95C70 60 80 35 70 8 55 30 45 55 50 95z" fill="#2B5236"/></svg>
+      <div class="next"><small>Próximo horário livre</small><b id="nxT">--:--</b><span id="nxD"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="precos" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="script">Tabela de</span><h2>Preços</h2><div class="rule"></div><p>Toque em um serviço para agendar.</p></div>
+    <div class="menu" id="menu"></div>
+  </div>
+</section>
+
+<section class="sec" id="antes-depois" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="script">Antes e depois</span><h2>Resultados reais</h2><div class="rule"></div><p>Arraste para comparar.</p></div>
+    <div class="ad" id="ad"></div>
+  </div>
+</section>
+
+<section class="sec" id="agenda" style="background:linear-gradient(180deg,transparent,rgba(15,29,21,.8),transparent)">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="script">Agende já</span><h2>Reserve o seu horário</h2><div class="rule"></div></div>
+    <div class="ag">
+      <div class="box rv">
+        <div class="step"><i>1</i>Serviço</div>
+        <select class="sel" id="svc"></select>
+        <div class="step"><i>2</i>Dia e horário</div>
+        <div>
+          <div class="days" id="days"></div>
+          <p style="margin:1rem 0 .7rem;font-weight:600" id="dayT"></p>
+          <div class="slots" id="slots"></div>
+        </div>
+      </div>
+      <div class="box rv" id="formBox">
+        <form id="bk">
+          <div class="step"><i>3</i>Seus dados</div>
+          <div>
+            <input class="inp" id="nome" placeholder="Seu nome" autocomplete="name" required>
+            <input class="inp" id="tel" type="tel" inputmode="tel" placeholder="WhatsApp (11) 99999-9999" autocomplete="tel" required>
+            <div class="sum">
+              <div><span>Serviço</span><b id="sS">—</b></div>
+              <div><span>Profissional</span><b id="sP"></b></div>
+              <div><span>Quando</span><b id="sQ">escolha ao lado</b></div>
+              <div><span>Duração</span><b id="sD">—</b></div>
+              <div class="tot"><span>Total</span><b id="sT">—</b></div>
+            </div>
+            <button class="btn btn-gold" id="bkBtn" style="width:100%" disabled>Confirmar agendamento</button>
+            <p class="note">Demonstração: a reserva fica salva neste aparelho e a confirmação vai pelo WhatsApp.</p>
+          </div>
+        </form>
+        <div class="ok" id="ok">
+          <div class="c">✓</div>
+          <h3>Agendado!</h3>
+          <p id="okT"></p>
+          <a class="btn btn-gold" id="okW" target="_blank" rel="noopener" style="width:100%">Confirmar no WhatsApp</a>
+          <button class="btn btn-line" id="okN" type="button" style="width:100%;margin-top:.6rem">Agendar outro serviço</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="galeria">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="script">Nossa</span><h2>Galeria</h2><div class="rule"></div><p>Trabalhos atualizados direto do celular.</p></div>
+    <div class="gfil" id="gfil"></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<section class="sec" id="contato" style="padding-top:0">
+  <div class="wrap loc">
+    <div class="box rv">
+      <div class="step" style="margin-bottom:.6rem">Onde estamos</div>
+      <p style="margin:0;color:var(--muted)" id="end"></p>
+      <div style="margin-top:1.2rem"><span class="live" id="live"><i></i><b id="liveT"></b></span></div>
+      <div class="hours" id="hours"></div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <a class="btn btn-gold js-wa" data-msg="Olá Thata! Vim pelo site e quero agendar um horário." href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-line" id="mapsB" target="_blank" rel="noopener" href="#">Como chegar</a>
+      </div>
+    </div>
+    <div class="map rv"><iframe id="mapF" title="Mapa do Studio Thata Souza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Studio Thata Souza" width="1100" height="640">
+    <div class="tagline">Beleza<i>•</i>Autoestima<i>•</i>Cuidado</div>
+    <div class="soc"><a class="js-ig" target="_blank" rel="noopener" href="#">Instagram @studiothatasouza</a><a class="js-wa" data-msg="Olá Thata! Vim pelo site." href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+    <small>© <span id="ano"></span> Studio Thata Souza · Site por <a href="https://staypulse.com.br" target="_blank" rel="noopener">StayPulse</a></small>
+  </div>
+</footer>
+
+<div class="fab">
+  <a class="c" href="#agenda" aria-label="Agendar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></a>
+  <a class="w js-wa" data-msg="Olá Thata! Vim pelo site." href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+</div>
+<a class="badge-sp" href="admin/">⚙ Painel do studio <b>demo</b></a>
+<div class="lb-ov" id="lb"><button aria-label="Fechar">✕</button><img alt="" id="lbI"></div>
+
+<script src="js/store.js"></script>
+<script>
+const S = window.ThataStore, C = S.CONFIG, DB = S.load();
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA = C.whatsapp || C.whatsappDemo;
+const wa = m => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(m);
+document.querySelectorAll('.js-wa').forEach(a => a.href = wa(a.dataset.msg));
+document.querySelectorAll('.js-ig').forEach(a => a.href = C.instagram);
+$('ano').textContent = new Date().getFullYear(); $('end').textContent = C.endereco; $('sP').textContent = C.profissional;
+$('mapsB').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(C.endereco);
+$('mapF').src = 'https://www.google.com/maps?q=' + encodeURIComponent(C.endereco) + '&output=embed';
+const dur = m => m >= 60 ? (Math.floor(m / 60) + 'h' + (m % 60 ? m % 60 : '')) : m + ' min';
+const SV = DB.servicos.filter(s => s.ativo);
+
+/* tabela */
+const subs = {'Depilação': 'exceto partes íntimas'};
+$('menu').innerHTML = S.CATS.map(c => { const l = SV.filter(s => s.cat === c); if (!l.length) return ''; return `<div class="mcol rv"><h3>${c}</h3>${subs[c] ? `<p class="sub">(${subs[c]})</p>` : ''}<div class="rule"></div>${l.map(s => `<div class="row" data-svc="${s.id}" role="button" tabindex="0"><b>${esc(s.nome)}</b><span class="p">${S.brl(s.preco)}</span><small>${dur(s.min)}</small><span class="go">Agendar →</span></div>`).join('')}</div>`; }).join('');
+document.addEventListener('click', e => { const r = e.target.closest('[data-svc]'); if (r) { pick(r.dataset.svc); $('agenda').scrollIntoView({behavior: 'smooth'}); } });
+
+/* antes e depois */
+$('ad').innerHTML = DB.antesDepois.map(a => `<div class="cmp rv"><div class="vw"><img src="${esc(a.depois)}" alt="Depois"><img class="top" src="${esc(a.antes)}" alt="Antes"><span class="bar"></span><span class="knob">⇆</span><span class="lb a">ANTES</span><span class="lb d">DEPOIS</span></div><p>${esc(a.titulo)}</p></div>`).join('') || '<p style="text-align:center;color:var(--muted);grid-column:1/-1">Em breve.</p>';
+document.querySelectorAll('.cmp .vw').forEach(v => {
+  const set = x => { const r = v.getBoundingClientRect(); v.style.setProperty('--x', Math.max(0, Math.min(100, (x - r.left) / r.width * 100)) + '%'); };
+  let drag = false;
+  v.addEventListener('pointerdown', e => { drag = true; set(e.clientX); v.setPointerCapture(e.pointerId); });
+  v.addEventListener('pointermove', e => { if (drag) set(e.clientX); });
+  v.addEventListener('pointerup', () => drag = false); v.addEventListener('pointercancel', () => drag = false);
+});
+
+/* galeria */
+let gf = 'Todos';
+const gcats = ['Todos', ...new Set(DB.fotos.map(f => f.cat))];
+function rGal() {
+  $('gfil').innerHTML = gcats.length > 2 ? gcats.map(c => `<button class="${c === gf ? 'on' : ''}" data-c="${c}">${c}</button>`).join('') : '';
+  const l = DB.fotos.filter(f => gf === 'Todos' || f.cat === gf);
+  $('gal').innerHTML = l.map(f => `<figure data-src="${esc(f.src)}"><img src="${esc(f.src)}" alt="${esc(f.legenda || f.cat)}" loading="lazy">${f.legenda ? `<figcaption>${esc(f.legenda)}</figcaption>` : ''}</figure>`).join('');
+}
+$('gfil').onclick = e => { const b = e.target.closest('button'); if (b) { gf = b.dataset.c; rGal(); } };
+$('gal').onclick = e => { const f = e.target.closest('figure'); if (f) { $('lbI').src = f.dataset.src; $('lb').classList.add('open'); } };
+$('lb').onclick = () => $('lb').classList.remove('open');
+rGal();
+
+/* agenda */
+function agora() { const p = new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false}).formatToParts(new Date()); const g = t => +p.find(x => x.type === t).value; return {d: new Date(g('year'), g('month') - 1, g('day')), h: (g('hour') % 24) + g('minute') / 60}; }
+const ymd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const hm = h => String(Math.floor(h)).padStart(2, '0') + ':' + (h % 1 ? '30' : '00');
+const DOW = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'], DOWL = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'], MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+let res = []; try { res = JSON.parse(localStorage.getItem('thata-reservas')) || []; } catch (e) {}
+const hash = s => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); };
+const ocup = (dia, h) => hash('thata' + dia + hm(h)) % 10 < 3 || res.some(r => r.dia === dia && h >= r.h && h < r.h + r.min / 60);
+function slots(d, s) {
+  const [a, f] = C.horarios[d.getDay()] || []; if (a == null) return [];
+  const n = agora(), hoje = ymd(n.d) === ymd(d), out = [];
+  for (let h = a; h + s.min / 60 <= f + 1e-9; h += .5) {
+    if (hoje && h <= n.h + .5) continue;
+    let ok = true; for (let t = h; t < h + s.min / 60 - 1e-9; t += .5) if (ocup(ymd(d), t)) ok = false;
+    out.push({h, ok});
+  }
+  return out;
+}
+let st = {s: SV[0], d: null, h: null};
+$('svc').innerHTML = S.CATS.map(c => { const l = SV.filter(s => s.cat === c); return l.length ? `<optgroup label="${c}">${l.map(s => `<option value="${s.id}">${esc(s.nome)} — ${S.brl(s.preco)} · ${dur(s.min)}</option>`).join('')}</optgroup>` : ''; }).join('');
+$('svc').onchange = () => pick($('svc').value);
+function pick(id) { const s = SV.find(x => x.id === id); if (!s) return; st.s = s; $('svc').value = id; st.h = null; render(); }
+function dias() { const b = agora().d, o = []; for (let i = 0; i < 14; i++) { const d = new Date(b); d.setDate(b.getDate() + i); o.push(d); } return o; }
+function render() {
+  const ds = dias(), cnt = d => slots(d, st.s).filter(x => x.ok).length;
+  if (!st.d || !ds.some(d => ymd(d) === ymd(st.d)) || !cnt(st.d)) st.d = ds.find(d => cnt(d)) || ds[0];
+  $('days').innerHTML = ds.map(d => { const fe = !(C.horarios[d.getDay()] || []).length, n = fe ? 0 : cnt(d); return `<button type="button" class="day ${!n ? 'closed' : ''} ${ymd(d) === ymd(st.d) ? 'on' : ''}" data-d="${ymd(d)}" ${!n ? 'disabled' : ''}><small>${DOW[d.getDay()]}</small><b>${d.getDate()}</b><em>${fe ? 'Fechado' : n ? n + ' livres' : 'Lotado'}</em></button>`; }).join('');
+  const ss = slots(st.d, st.s);
+  $('dayT').textContent = `${DOWL[st.d.getDay()]}, ${st.d.getDate()} de ${MES[st.d.getMonth()]}`.replace(/^./, c => c.toUpperCase());
+  $('slots').innerHTML = ss.length ? ss.map(x => `<button type="button" class="slot ${x.ok ? '' : 'busy'} ${st.h === x.h ? 'on' : ''}" data-h="${x.h}" ${x.ok ? '' : 'disabled'}>${hm(x.h)}</button>`).join('') : '<p class="none">Fechado neste dia.</p>';
+  $('sS').textContent = st.s.nome; $('sT').textContent = S.brl(st.s.preco); $('sD').textContent = dur(st.s.min);
+  $('sQ').textContent = st.h != null ? quando() : 'escolha ao lado'; $('bkBtn').disabled = st.h == null;
+}
+const quando = () => `${DOWL[st.d.getDay()]}, ${st.d.getDate()}/${String(st.d.getMonth() + 1).padStart(2, '0')} às ${hm(st.h)}`;
+$('days').onclick = e => { const b = e.target.closest('.day'); if (!b || b.disabled) return; const [y, m, d] = b.dataset.d.split('-').map(Number); st.d = new Date(y, m - 1, d); st.h = null; render(); };
+$('slots').onclick = e => { const b = e.target.closest('.slot'); if (!b || b.disabled) return; st.h = +b.dataset.h; render(); if (innerWidth < 1000) $('formBox').scrollIntoView({behavior: 'smooth', block: 'start'}); };
+$('bk').onsubmit = e => {
+  e.preventDefault(); if (st.h == null) return;
+  const nome = $('nome').value.trim(), tel = $('tel').value.trim(), q = quando();
+  res.push({dia: ymd(st.d), h: st.h, min: st.s.min}); try { localStorage.setItem('thata-reservas', JSON.stringify(res)); } catch (er) {}
+  $('okT').textContent = `${nome}, seu horário de ${st.s.nome.toLowerCase()} está reservado para ${q}.`;
+  $('okW').href = wa(`Olá Thata! Acabei de agendar pelo site:\n\n✨ ${st.s.nome} (${S.brl(st.s.preco)})\n📅 ${q}\n👤 ${nome} · ${tel}`);
+  $('bk').style.display = 'none'; $('ok').classList.add('show'); st.h = null; render(); prox();
+};
+$('okN').onclick = () => { $('ok').classList.remove('show'); $('bk').style.display = ''; };
+function prox() { const s = SV.find(x => x.min <= 30) || SV[0]; for (const d of dias()) { const x = slots(d, s).find(y => y.ok); if (x) { $('nxT').textContent = hm(x.h); $('nxD').textContent = (ymd(d) === ymd(agora().d) ? 'hoje' : DOWL[d.getDay()] + ', ' + d.getDate() + ' de ' + MES[d.getMonth()]) + ' · com Thata'; return; } } }
+render(); prox();
+
+/* horários */
+const n0 = agora(), dw = n0.d.getDay(), H = C.horarios;
+const grupos = [['Terça a sexta', [2, 3, 4, 5]], ['Sábado', [6]], ['Domingo e segunda', [0, 1]]];
+$('hours').innerHTML = grupos.map(([t, ds]) => { const h = H[ds[0]]; return `<div class="${ds.includes(dw) ? 'today' : ''}"><span>${t}${ds.includes(dw) ? ' · hoje' : ''}</span><span>${h.length ? hm(h[0]) + ' – ' + hm(h[1]) : 'Fechado'}</span></div>`; }).join('');
+const [ab, fe] = H[dw] || []; const aberto = ab != null && n0.h >= ab && n0.h < fe;
+$('liveT').textContent = aberto ? 'ABERTO AGORA' : 'FECHADO AGORA'; if (!aberto) $('live').classList.add('off');
+
+/* header, menu, animação */
+addEventListener('scroll', () => $('hd').classList.toggle('s', scrollY > 20), {passive: true});
+const mn = $('mnav'); $('burger').onclick = () => mn.classList.add('open'); mn.onclick = e => { if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') mn.classList.remove('open'); };
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .1});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
