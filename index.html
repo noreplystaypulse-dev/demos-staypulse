@@ -2,641 +2,534 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
-<title>Barbearia Amaral | Corte, barba e hora marcada em Taquaral - SP</title>
-<meta name="description" content="Barbearia Amaral em Taquaral - SP. Corte, barba e combos com hora marcada. Veja os horários livres e agende online.">
-<meta name="theme-color" content="#0E0E11">
-<link rel="icon" href="img/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sites StayPulse | Sites profissionais para o seu negócio</title>
+<meta name="description" content="Sites, blogs e portfólios com painel simples pelo celular, domínio próprio e presença no Google. Veja modelos prontos por profissão.">
+<meta property="og:title" content="Sites StayPulse">
+<meta property="og:description" content="Veja modelos de sites por profissão e sites já publicados pela StayPulse.">
+<meta property="og:image" content="img/preview-gessica-maquiagem.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0E0E11; --bg2:#131318; --panel:#18181E; --panel2:#1F1F27; --line:rgba(250,248,245,.08); --line2:rgba(200,169,79,.28);
-  --gold:#C8A94F; --gold2:#E2C878; --cream:#FAF8F5; --muted:rgba(250,248,245,.6); --muted2:rgba(250,248,245,.4);
-  --serif:"Playfair Display",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --bg:#050B18; --bg2:#0A1628; --card:#0D1B30; --card2:#112240;
+  --line:rgba(34,211,238,.18); --line2:rgba(148,163,184,.14);
+  --cyan:#22D3EE; --cyan2:#00E5FF; --green:#10B981;
+  --text:#F8FAFC; --muted:#94A3B8; --muted2:#64748B;
+  --radius:18px;
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--cream);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-button,input,select{font-family:inherit}
-h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.02em}
-.wrap{width:min(1240px,92%);margin:0 auto}
-.noise{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:200;opacity:.05;mix-blend-mode:overlay}
-.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
-.it{font-family:var(--serif);font-style:italic;color:var(--gold)}
-.sec{padding:120px 0}
-.sec-h{text-align:center;max-width:760px;margin:0 auto 60px}
-.sec-h h2{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;margin-top:.9rem}
-.sec-h p{color:var(--muted);font-size:1.08rem;margin:1rem auto 0}
-.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:1rem 1.7rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;background:transparent;cursor:pointer;transition:color .3s,border-color .3s,transform .2s;white-space:nowrap;isolation:isolate}
-.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .35s cubic-bezier(.7,0,.2,1)}
-.btn:hover::before{transform:none}
-.btn-gold{background:var(--gold);color:#16130A}
-.btn-gold::before{background:var(--cream)}
-.btn-line{border-color:rgba(200,169,79,.6);color:var(--gold)}
-.btn-line::before{background:var(--gold)}
-.btn-line:hover{color:#16130A}
-.btn[disabled]{opacity:.4;pointer-events:none}
-.btn svg{width:18px;height:18px}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.12;margin:0;letter-spacing:-.02em}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.5rem;border-radius:12px;font-weight:600;text-decoration:none;font-size:.97rem;transition:transform .15s,box-shadow .2s,background .2s;border:1px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(180deg,var(--cyan2),var(--cyan));color:#04111F;box-shadow:0 0 28px rgba(34,211,238,.35)}
+.btn-primary:hover{box-shadow:0 0 40px rgba(34,211,238,.55)}
+.btn-ghost{border-color:rgba(248,250,252,.25);color:var(--text);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.chip{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--cyan);background:rgba(34,211,238,.06)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.eyebrow{display:inline-block;color:var(--cyan);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.8rem}
+.section{padding:96px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.section-head p{color:var(--muted);margin:.9rem 0 0;font-size:1.05rem}
 
-/* faixa demo */
-.demo-bar{background:#0F172A;color:#CBD5E1;font-size:.78rem;text-align:center;padding:.45rem 1rem;position:relative;z-index:70}
-.demo-bar b{color:#22D3EE}
-
-/* nav */
-.nav{position:fixed;left:50%;top:44px;transform:translateX(-50%);z-index:60;width:min(1100px,94%);display:flex;align-items:center;gap:1.4rem;padding:.6rem .7rem .6rem 1rem;border-radius:999px;transition:all .4s}
-.nav.scrolled{top:14px;background:rgba(14,14,17,.78);backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 10px 40px rgba(0,0,0,.4)}
-.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-.logo img{width:40px;height:40px;border-radius:50%;background:#fff;padding:2px}
-.logo span{font-family:var(--serif);font-weight:700;letter-spacing:.14em;color:var(--gold);font-size:1.05rem}
-.nav ul{display:flex;gap:1.8rem;list-style:none;margin:0 auto;padding:0}
-.nav ul a{text-decoration:none;font-size:.88rem;color:rgba(250,248,245,.8);font-weight:500}
-.nav ul a:hover{color:var(--gold)}
-.nav .btn{padding:.7rem 1.2rem;font-size:.85rem}
-.burger{display:none;margin-left:auto;background:none;border:0;color:var(--cream);cursor:pointer;padding:.4rem}
-@media(max-width:900px){.nav ul,.nav>.btn{display:none}.burger{display:block}}
-@media(max-width:600px){.nav{top:60px}}
-.mnav{position:fixed;inset:0;z-index:90;background:rgba(14,14,17,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .3s}
-.mnav.open{opacity:1;pointer-events:auto}
-.mnav a{font-family:var(--serif);font-size:2rem;text-decoration:none}
-.mnav button{position:absolute;top:24px;right:24px;background:none;border:0;color:var(--cream);font-size:2rem;cursor:pointer}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(5,11,24,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;font-family:Sora;font-weight:700;font-size:1.25rem}
+.logo b{color:var(--cyan);font-weight:700}
+.nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:#CBD5E1;font-size:.93rem}
+.nav ul a:hover{color:var(--cyan)}
+.nav .btn{padding:.6rem 1.1rem;font-size:.9rem}
+@media(max-width:860px){.nav ul{display:none}}
 
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:160px 0 90px;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 70% 30%,#2A2418,#0E0E11 70%)}
-.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease;transform:scale(1.06);animation:kb 18s ease-in-out infinite alternate}
-.hero-bg img.on{opacity:1}
-@keyframes kb{to{transform:scale(1.14)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,14,17,.95) 0%,rgba(14,14,17,.7) 45%,rgba(14,14,17,.25)),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
-.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:50px;align-items:end}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;margin:1.2rem 0 .2rem}
-.hero h2{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--gold);font-size:clamp(3.4rem,10vw,8.4rem);line-height:.95;letter-spacing:-.03em}
-.hero p.sub{color:rgba(250,248,245,.72);font-size:1.12rem;max-width:520px;margin:1.6rem 0 2rem}
-.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap}
-.next{background:rgba(24,24,30,.72);backdrop-filter:blur(14px);border:1px solid var(--line2);border-radius:28px;padding:1.8rem}
-.next .t{font-family:var(--serif);font-size:4rem;font-weight:700;line-height:1;margin:.7rem 0 .2rem;color:var(--cream)}
-.next .d{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
-.next .btn{width:100%}
-.kpis{display:flex;gap:2rem;margin-top:2.4rem;flex-wrap:wrap}
-.kpis b{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--cream)}
-.kpis span{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
-.dots{position:absolute;right:4%;bottom:34px;display:flex;gap:8px}
-.dots i{width:28px;height:3px;border-radius:3px;background:rgba(250,248,245,.25)}
-.dots i.on{background:var(--gold)}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:130px}.dots{display:none}}
+.hero{position:relative;overflow:hidden;padding:72px 0 110px;background:radial-gradient(900px 500px at 80% 10%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(16,185,129,.07),transparent 60%)}
+.hero-grid>*,.cta>*{min-width:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:800;margin:1.2rem 0 1.2rem}
+.hero h1 span{color:var(--cyan);text-shadow:0 0 30px rgba(34,211,238,.35)}
+.hero .lead{color:#CBD5E1;font-size:1.1rem;max-width:560px;margin:0 0 1.5rem}
+.checks{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;gap:.55rem}
+.checks li{display:flex;gap:.6rem;align-items:flex-start;color:#E2E8F0}
+.checks li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:rgba(34,211,238,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322D3EE' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat}
+.price-line{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem;color:var(--muted)}
+.price-tag{background:var(--cyan);color:#04111F;font-weight:700;padding:.35rem .8rem;border-radius:8px;font-family:Sora}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-note{margin-top:1rem;color:var(--muted2);font-size:.85rem}
+.pulse-line{position:absolute;left:0;right:0;bottom:40px;z-index:1;opacity:.55;pointer-events:none}
 
-/* a barbearia */
-.brand{position:relative;overflow:hidden;isolation:isolate}
-.brand-bg{position:absolute;inset:0;z-index:-1}
-.brand-bg img{width:100%;height:100%;object-fit:cover;opacity:.16;filter:grayscale(.4) blur(2px)}
-.brand-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),transparent 30%,transparent 70%,var(--bg))}
-.brand-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:center}
-.brand h2{font-size:clamp(2.4rem,5.4vw,4rem);font-weight:800;margin:1rem 0 1.6rem}
-.brand p{color:var(--muted);font-size:1.05rem;margin:0 0 1.2rem;max-width:620px}
-.emblem{position:relative;width:min(420px,80vw);aspect-ratio:1;margin:0 auto}
-.emblem svg{width:100%;height:100%;animation:spin 30s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.emblem .c{position:absolute;inset:0;display:grid;place-items:center}
-.emblem .c img{width:46%;border-radius:50%;background:#fff;padding:6px;box-shadow:0 0 0 1px var(--line2),0 30px 80px rgba(200,169,79,.18)}
-@media(max-width:900px){.brand-grid{grid-template-columns:1fr;gap:40px}}
+/* browser mockup */
+.mock{position:relative}
+.browser{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(34,211,238,.12)}
+.browser-bar{display:flex;align-items:center;gap:.5rem;padding:.7rem .9rem;background:#0B1628;border-bottom:1px solid var(--line2)}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:#334155}
+.url{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-left:.5rem;background:#050B18;border:1px solid var(--line2);border-radius:8px;padding:.3rem .7rem;font-size:.78rem;color:var(--muted)}
+.url b{color:var(--text);font-weight:600}
+.phone{position:absolute;right:-18px;bottom:-40px;width:34%;border-radius:22px;padding:7px;background:#0B1628;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.phone img{border-radius:16px;aspect-ratio:9/16;object-fit:cover;object-position:62% top}
+.float-card{position:absolute;left:-26px;top:58%;background:rgba(13,27,48,.95);border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;display:flex;gap:.7rem;align-items:center;box-shadow:0 18px 40px rgba(0,0,0,.5);font-size:.85rem}
+.float-card .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(16,185,129,.15);color:var(--green)}
+.float-card small{display:block;color:var(--muted);font-size:.75rem}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.mock{margin:10px 18px 40px}.float-card{left:-10px}.phone{right:-8px}}
 
-/* experiências (destaques) */
-.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:center}
-.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:32px;padding:2.4rem 2rem;text-align:center;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
-.card:hover{transform:translateY(-6px);border-color:var(--line2)}
-.card.feat{border-color:var(--gold);padding:3rem 2rem;box-shadow:0 30px 80px rgba(200,169,79,.12);position:relative}
-.card .bdg{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;background:var(--gold);color:#16130A;padding:.35rem .9rem;border-radius:999px}
-.card .tier{font-weight:700;font-size:1.15rem}
-.card .price{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--gold);margin:1rem 0 .2rem;line-height:1}
-.card .price small{font-family:Inter;font-size:.9rem;color:var(--muted2);font-weight:400}
-.card .desc{color:var(--muted);font-size:.92rem;margin-bottom:1.6rem}
-.card ul{list-style:none;padding:0;margin:0 0 2rem;text-align:left;display:grid;gap:.8rem;font-size:.93rem;color:rgba(250,248,245,.85)}
-.card li{display:flex;gap:.6rem}
-.card li::before{content:"✓";color:var(--gold)}
-.card .btn{margin-top:auto}
-@media(max-width:900px){.exp{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+/* sticky sub-nav pill */
+.subnav{position:sticky;top:78px;z-index:40;display:flex;justify-content:center;margin:-26px 0 0;pointer-events:none}
+.subnav nav{pointer-events:auto;display:flex;gap:.25rem;padding:.35rem;border-radius:999px;background:rgba(13,27,48,.9);border:1px solid var(--line);backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.4);overflow-x:auto;max-width:94vw}
+.subnav a{padding:.5rem 1.1rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem;color:#CBD5E1;white-space:nowrap}
+.subnav a.on,.subnav a:hover{background:var(--text);color:#04111F}
 
-/* cardápio */
-.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px}
-.menu-col{background:var(--bg2);border:1px solid var(--line);border-radius:28px;padding:2rem}
-.menu-col h3{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.7rem;margin-bottom:1.2rem}
-.mi{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:.9rem 0;border-bottom:1px dashed var(--line);cursor:pointer}
-.mi:last-child{border-bottom:0}
-.mi b{font-weight:500}
-.mi .p{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:1.1rem}
-.mi small{color:var(--muted2);font-family:var(--mono);font-size:.7rem;letter-spacing:.08em}
-.mi .go{font-size:.78rem;color:var(--gold);text-align:right;opacity:0;transition:opacity .2s}
-.mi:hover .go{opacity:1}
-.mi:hover b{color:var(--gold2)}
-@media(max-width:1000px){.menu{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto}}
+/* models */
+.tabs{display:flex;justify-content:center;gap:.3rem;flex-wrap:wrap;margin:0 auto 40px;border-bottom:1px solid var(--line2);max-width:860px}
+.tab{background:none;border:0;color:var(--muted);font:600 .95rem Inter,sans-serif;padding:.8rem 1rem;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--cyan);border-color:var(--cyan)}
+.tab:hover{color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:26px}
+.site{background:var(--card);border:1px solid var(--line2);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.site:hover{transform:translateY(-4px);border-color:var(--line);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(34,211,238,.08)}
+.site .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0B1628;border-bottom:1px solid var(--line2)}
+.site .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.site:hover .shot img{transform:scale(1.04)}
+.status{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .7rem;border-radius:999px;font-size:.75rem;font-weight:600;backdrop-filter:blur(8px)}
+.status.live{background:rgba(5,11,24,.8);color:#34D399;border:1px solid rgba(16,185,129,.4)}
+.status.live i{width:7px;height:7px;border-radius:50%;background:#34D399;box-shadow:0 0 8px #34D399;animation:blink 1.6s infinite}
+.status.dev{background:rgba(5,11,24,.7);color:#FBBF24;border:1px solid rgba(251,191,36,.35)}
+@keyframes blink{50%{opacity:.35}}
+.site .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.site .cat{font-size:.75rem;color:var(--cyan);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.site h3{font-size:1.2rem;margin:.35rem 0 .45rem}
+.site p{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.2rem}
+.tags span{font-size:.75rem;color:#CBD5E1;padding:.2rem .6rem;border-radius:6px;background:rgba(148,163,184,.08);border:1px solid var(--line2)}
+.site .actions{margin-top:auto;display:flex;gap:.6rem;flex-wrap:wrap}
+.site .actions .btn{padding:.6rem 1rem;font-size:.88rem;border-radius:10px}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+/* placeholder preview for sites em desenvolvimento */
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;padding:16px;gap:10px}
+.ph .bar{height:10px;border-radius:5px;background:rgba(255,255,255,.12)}
+.ph .hero-b{flex:1;border-radius:10px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:8px}
+.ph .hero-b strong{font-family:Sora;font-size:1.5rem;line-height:1.1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.ph .hero-b em{font-style:normal;font-size:.8rem;color:rgba(255,255,255,.8)}
+.ph .row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ph .row i{height:34px;border-radius:8px;background:rgba(255,255,255,.08)}
+.g-academia{background:linear-gradient(135deg,#7F1D1D,#111827 70%),#111}
+.g-barbearia{background:linear-gradient(135deg,#3F2A14,#0B0B0B 75%)}
+.g-salao{background:linear-gradient(135deg,#9D174D,#3B0764 80%)}
+.g-restaurante{background:linear-gradient(135deg,#14532D,#0B1A12 80%)}
+.empty{text-align:center;color:var(--muted);padding:40px 0;display:none}
 
-/* agenda */
-.agenda{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ag{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
-.ag>*,.rev>*,.loc>*,.brand-grid>*,.prod>*,.hero-grid>*{min-width:0}
-@media(max-width:1000px){.ag{grid-template-columns:1fr}}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:1.8rem}
-.panel h3{font-size:1.2rem;margin-bottom:1rem;font-weight:700}
-.lbl{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);display:block;margin:0 0 .6rem}
-.sel{width:100%;appearance:none;background:var(--panel2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8A94F' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 1rem center/14px no-repeat;border:1px solid var(--line);color:var(--cream);border-radius:14px;padding:.9rem 2.6rem .9rem 1rem;font-size:.95rem;outline:none}
-.sel:focus,.inp:focus{border-color:var(--gold)}
-.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;margin:1.4rem 0 1rem}
-.days::-webkit-scrollbar{display:none}
-.day{flex:none;width:72px;border:1px solid var(--line);background:var(--panel2);border-radius:18px;padding:.7rem .3rem;text-align:center;color:var(--cream);cursor:pointer;transition:all .2s}
-.day small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
-.day b{display:block;font-family:var(--serif);font-size:1.6rem;line-height:1.2}
-.day em{display:block;font-style:normal;font-size:.68rem;color:var(--gold)}
-.day.closed{opacity:.35;cursor:not-allowed}
-.day.closed em{color:var(--muted2)}
-.day.on{background:var(--gold);border-color:var(--gold);color:#16130A}
-.day.on small,.day.on em{color:#3A3015}
-.slots-h{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:.6rem 0 .8rem}
-.slots-h b{font-weight:600}
-.slots-h b::first-letter{text-transform:uppercase}
-.slots-h span{font-size:.82rem;color:var(--muted2)}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px}
-.slot{border:1px solid var(--line2);background:transparent;color:var(--cream);border-radius:12px;padding:.7rem 0;font-family:var(--mono);font-size:.92rem;cursor:pointer;transition:all .2s}
-.slot:hover{border-color:var(--gold);color:var(--gold)}
-.slot.busy{border-color:var(--line);color:var(--muted2);text-decoration:line-through;cursor:not-allowed}
-.slot.on{background:var(--gold);color:#16130A;border-color:var(--gold)}
-.break{grid-column:1/-1;display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted2);border:1px dashed var(--line);border-radius:12px;padding:.55rem .9rem;font-family:var(--mono)}
-.none{grid-column:1/-1;color:var(--muted);text-align:center;padding:1.4rem}
-.inp{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--cream);border-radius:14px;padding:.9rem 1rem;font-size:.95rem;outline:none;margin-bottom:.8rem}
-.inp::placeholder{color:var(--muted2)}
-.sum{border:1px solid var(--line);border-radius:18px;padding:1rem 1.1rem;margin:.4rem 0 1rem;display:grid;gap:.5rem;font-size:.92rem}
-.sum div{display:flex;justify-content:space-between;gap:1rem}
-.sum span{color:var(--muted)}
-.sum .tot{border-top:1px solid var(--line);padding-top:.6rem;font-weight:600}
-.sum .tot b{font-family:var(--serif);color:var(--gold);font-size:1.3rem}
-.pay{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
-.pay label{border:1px solid var(--line);border-radius:14px;padding:.8rem;cursor:pointer;font-size:.85rem;display:flex;gap:.5rem;align-items:flex-start}
-.pay label small{display:block;color:var(--muted2);font-size:.75rem}
-.pay input{accent-color:var(--gold);margin-top:3px}
-.pay label:has(input:checked){border-color:var(--gold);background:rgba(200,169,79,.07)}
-.ok{display:none;text-align:center;padding:1rem 0}
-.ok.show{display:block}
-.ok .ic{width:64px;height:64px;border-radius:50%;background:rgba(200,169,79,.15);color:var(--gold);display:grid;place-items:center;margin:0 auto 1rem;font-size:1.8rem}
-.ok h3{font-family:var(--serif);font-size:1.8rem;margin-bottom:.5rem}
-.ok p{color:var(--muted);margin:0 0 1.2rem}
-.note{font-size:.75rem;color:var(--muted2);margin:.8rem 0 0;text-align:center}
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line2);border-radius:var(--radius);padding:1.5rem;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:Sora;font-weight:800;font-size:2rem;color:transparent;-webkit-text-stroke:1px var(--cyan);opacity:.8}
+.step h3{font-size:1.05rem;margin:.6rem 0 .4rem}
+.step p{color:var(--muted);font-size:.92rem;margin:0}
+.features{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;margin-top:22px}
+.feat{border-radius:var(--radius);padding:1.8rem;border:1px solid var(--line2);background:var(--card);min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.feat h3{font-size:1.3rem;margin-bottom:.45rem}
+.feat p{color:var(--muted);margin:0;font-size:.93rem}
+.feat.big{background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(13,27,48,1) 60%);border-color:var(--line)}
+.feat .art{position:absolute;top:22px;right:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:70%}
+.pill{padding:.4rem .8rem;border-radius:999px;background:rgba(34,211,238,.12);border:1px solid var(--line);color:var(--cyan);font-size:.8rem;font-weight:600}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(34,211,238,.1);border:1px solid var(--line);color:var(--cyan);position:absolute;top:22px;left:22px}
+@media(max-width:960px){.steps{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
 
-/* avaliações */
-.rev{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
-@media(max-width:900px){.rev{grid-template-columns:1fr}}
-.gcard{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:28px;padding:2.4rem;display:flex;flex-direction:column;justify-content:center}
-.g{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
-.g i{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:1.6rem;color:#4285F4}
-.g b{font-family:var(--serif);font-size:3.6rem;line-height:1}
-.stars{color:var(--gold);letter-spacing:.15em;font-size:1.3rem}
-.gcard p{color:var(--muted);margin:.4rem 0 1.6rem}
-.gcard .row{display:flex;gap:.6rem;flex-wrap:wrap}
-.why{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.why div{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:1.4rem}
-.why b{display:block;font-size:1rem;margin:.6rem 0 .3rem}
-.why p{margin:0;color:var(--muted);font-size:.88rem}
-.why .n{font-family:var(--mono);color:var(--gold);font-size:.75rem;letter-spacing:.14em}
-@media(max-width:520px){.why{grid-template-columns:1fr}}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line2);border-radius:22px;padding:1.8rem;display:flex;flex-direction:column}
+.plan.hot{background:linear-gradient(180deg,#112A44,#0D1B30);border-color:var(--cyan);box-shadow:0 0 50px rgba(34,211,238,.18);position:relative}
+.plan .badge{position:absolute;top:-13px;right:22px;background:var(--cyan);color:#04111F;font-weight:700;font-size:.75rem;padding:.3rem .75rem;border-radius:999px}
+.plan h3{font-size:1.3rem}
+.plan .desc{color:var(--muted);font-size:.92rem;margin:.4rem 0 1.2rem;min-height:3em}
+.plan .from{color:var(--muted2);font-size:.85rem}
+.plan .val{font-family:Sora;font-weight:800;font-size:2.4rem;margin:.1rem 0 .2rem}
+.plan .val small{font-size:1rem;font-weight:600;color:var(--muted)}
+.plan .pay{color:var(--muted2);font-size:.8rem;margin-bottom:1.3rem}
+.plan .btn{width:100%;margin-bottom:1.4rem}
+.plan ul{list-style:none;padding:1.2rem 0 0;margin:0;border-top:1px solid var(--line2);display:grid;gap:.6rem;font-size:.92rem;color:#E2E8F0}
+.plan li{display:flex;gap:.55rem}
+.plan li::before{content:"✓";color:var(--green);font-weight:700}
+.plan .ex{margin-top:1.2rem;background:rgba(34,211,238,.07);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;font-size:.85rem;color:#CBD5E1}
+.plan .ex b{color:var(--cyan)}
+.plans-note{text-align:center;color:var(--muted);margin-top:28px;font-size:.92rem}
+@media(max-width:960px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
 
-/* espaço */
-.gal{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
-.gal figure{margin:0;border-radius:24px;overflow:hidden;position:relative;background:var(--panel)}
-.gal figure:first-child{grid-row:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.gal figure:hover img{transform:scale(1.05)}
-.gal figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,14,17,.7);backdrop-filter:blur(6px);padding:.35rem .7rem;border-radius:999px}
-@media(max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gal figure{aspect-ratio:3/4}.gal figure:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}}
+/* faq */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:1.1rem 1.3rem}
+.faq details[open]{border-color:var(--line)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::after{content:"+";color:var(--cyan);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin:.7rem 0 0}
 
-/* produtos */
-.prod{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;border-radius:40px;padding:60px;background:linear-gradient(135deg,rgba(200,169,79,.14),rgba(200,169,79,.02)),var(--panel);border:1px solid var(--line2)}
-.prod h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin:1rem 0}
-.prod p{color:var(--muted);margin:0 0 1.6rem;font-size:1.05rem}
-.prod ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.prod li{display:flex;align-items:center;gap:1rem;background:rgba(14,14,17,.5);border:1px solid var(--line);border-radius:18px;padding:1rem 1.2rem}
-.prod li i{width:44px;height:44px;border-radius:12px;background:rgba(200,169,79,.15);display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:1.2rem;flex:none}
-.prod li small{display:block;color:var(--muted2);font-size:.8rem}
-@media(max-width:900px){.prod{grid-template-columns:1fr;padding:34px 24px;border-radius:28px}}
+/* final cta */
+.cta{position:relative;overflow:hidden;border-radius:28px;padding:64px 48px;background:linear-gradient(135deg,#0E7490,#0D1B30 65%);border:1px solid var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.cta h2{font-size:clamp(2rem,4.5vw,3.3rem)}
+.cta p{color:#CBD5E1;margin:1rem 0 1.6rem}
+.cta .browser{transform:rotate(2deg)}
+@media(max-width:860px){.cta{grid-template-columns:1fr;padding:40px 26px}}
 
-/* localização */
-.loc{display:grid;grid-template-columns:1fr 1.3fr;gap:28px}
-@media(max-width:900px){.loc{grid-template-columns:1fr}}
-.hours{display:grid;gap:.2rem;margin:1.4rem 0}
-.hours div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.hours div.today{color:var(--gold)}
-.hours span:last-child{font-family:var(--mono);font-size:.85rem}
-.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--panel)}
-.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(90%) invert(92%) contrast(90%)}
+footer{border-top:1px solid var(--line2);padding:36px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+footer a{color:var(--cyan);text-decoration:none}
 
-footer{border-top:1px solid var(--line);padding:70px 0 calc(40px + env(safe-area-inset-bottom));margin-top:40px}
-.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px}
-@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
-footer h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 1rem;font-weight:500}
-footer p,footer a{color:var(--muted);font-size:.9rem;text-decoration:none;display:block;margin:0 0 .55rem}
-footer a:hover{color:var(--gold)}
-.fbot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:50px;padding-top:24px;font-size:.8rem;color:var(--muted2)}
-.fbot a{color:#22D3EE;display:inline;font-size:.8rem}
-.live{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em}
-.live i{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 10px #4ADE80;animation:pl 1.6s infinite}
-.live.off i{background:#9CA3AF;box-shadow:none;animation:none}
-@keyframes pl{50%{opacity:.35}}
-
-.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:80;display:flex;gap:10px}
-.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);text-decoration:none}
-.fab .wa{background:#25D366;color:#fff}
-.fab .ag{background:var(--gold);color:#16130A;display:none}
-@media(max-width:900px){.fab .ag{display:grid}}
-
-.rv{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<svg class="noise" aria-hidden="true"><filter id="nf"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#nf)"/></svg>
 
-<div class="demo-bar">Proposta de site desenvolvida pela <b>StayPulse</b> para a Barbearia Amaral · versão de demonstração</div>
-
-<nav class="nav" id="nav">
-  <a class="logo" href="#inicio"><img src="img/logo.png" alt="Barbearia Amaral" width="40" height="40"><span>AMARAL</span></a>
-  <ul>
-    <li><a href="#barbearia">A Barbearia</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#agenda">Agenda</a></li>
-    <li><a href="#avaliacoes">Avaliações</a></li>
-    <li><a href="#localizacao">Localização</a></li>
-  </ul>
-  <a class="btn btn-gold" href="#agenda">Agendar agora</a>
-  <button class="burger" id="burger" aria-label="Abrir menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-</nav>
-<div class="mnav" id="mnav"><button aria-label="Fechar menu">✕</button><a href="#barbearia">A Barbearia</a><a href="#servicos">Serviços</a><a href="#agenda">Agenda</a><a href="#avaliacoes">Avaliações</a><a href="#localizacao">Localização</a></div>
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-bg" id="heroBg">
-    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1920&auto=format&fit=crop" alt="" class="on">
-    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1920&auto=format&fit=crop" alt="" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1920&auto=format&fit=crop" alt="" loading="lazy">
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="https://staypulse.com.br" aria-label="StayPulse">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 3.5l9 8" stroke="#fff" stroke-width="2"/><path d="M5.5 9.6V21h4.3v-4.2a2.2 2.2 0 0 1 4.4 0V21h4.3V9.6" stroke="#fff" stroke-width="2"/><path d="M2 14.5h7.6L12 8.6l2 7.4 1.4-1.5H22" stroke="#22D3EE" stroke-width="2"/></svg>
+      <span>Stay<b>Pulse</b> <span style="color:var(--muted);font-weight:600;font-size:.95rem">Sites</span></span>
+    </a>
+    <ul>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-primary js-whats" href="#" data-msg="Oi! Vi os modelos de sites da StayPulse e quero um site para o meu negócio.">Quero meu site</a>
   </div>
+</header>
+
+<section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Corte · Barba · Estilo — Taquaral, SP</span>
-      <h1>Seu estilo,</h1>
-      <h2>na hora certa.</h2>
-      <p class="sub">Corte com acabamento de verdade, barba na navalha e atendimento só com hora marcada. Escolha o horário livre e garanta a sua cadeira em segundos.</p>
-      <div class="ctas">
-        <a class="btn btn-gold" href="#agenda">Agendar agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="btn btn-line" href="#servicos">Ver serviços e preços</a>
-      </div>
-      <div class="kpis">
-        <div><b id="kRating">★★★★★</b><span>no Google</span></div>
-        <div><b>14</b><span>serviços</span></div>
-        <div><b>Ter–Sáb</b><span>com hora marcada</span></div>
-      </div>
-    </div>
-    <aside class="next rv">
-      <span class="eyebrow">Próximo horário livre</span>
-      <div class="t" id="nxT">--:--</div>
-      <div class="d" id="nxD">calculando…</div>
-      <a class="btn btn-gold" href="#agenda" id="nxBtn">Reservar esse horário</a>
-    </aside>
-  </div>
-  <div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
-</section>
-
-<!-- A BARBEARIA -->
-<section class="sec brand" id="barbearia">
-  <div class="brand-bg"><img src="img/espaco-noite-1.jpg" alt=""></div>
-  <div class="wrap brand-grid">
-    <div class="rv">
-      <span class="eyebrow">A Barbearia</span>
-      <h2>Tradição de bairro, <span class="it">acabamento</span> de primeira.</h2>
-      <p>A Barbearia Amaral é aquele lugar onde você chega no horário, senta na cadeira e sai do jeito que pediu. Sem fila, sem espera: cada cliente tem o seu horário reservado.</p>
-      <p>Do degradê bem marcado à barba desenhada na navalha, cada serviço é feito pelo próprio Amaral, com atenção aos detalhes, num ambiente confortável e climatizado, no Centro de Taquaral.</p>
-      <a class="btn btn-line" href="#espaco" style="margin-top:.6rem">Conheça o espaço</a>
-    </div>
-    <div class="emblem rv">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><path id="cp" d="M 50,50 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" fill="none"/><text fill="#FAF8F5" font-size="6.6" letter-spacing="2.1" font-weight="600" font-family="JetBrains Mono, monospace"><textPath href="#cp">• BARBEARIA AMARAL • CORTE • BARBA • TAQUARAL • SP </textPath></text></svg>
-      <div class="c"><img src="img/logo.png" alt="Logo Barbearia Amaral" width="256" height="256"></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVIÇOS -->
-<section class="sec" id="servicos" style="padding-top:60px">
-  <div class="wrap">
-    <div class="sec-h rv">
-      <span class="eyebrow">Serviços</span>
-      <h2>Escolha sua <span class="it">experiência</span></h2>
-      <p>Do acabamento rápido ao combo completo. Toque em qualquer serviço para agendar.</p>
-    </div>
-    <div class="exp" id="exp"></div>
-    <div class="menu" id="menu"></div>
-  </div>
-</section>
-
-<!-- AGENDA -->
-<section class="sec agenda" id="agenda">
-  <div class="wrap">
-    <div class="sec-h rv">
-      <span class="eyebrow">Agenda online</span>
-      <h2>Reserve sua <span class="it">cadeira</span></h2>
-      <p>Escolha o serviço, o dia e um horário livre. Leva menos de um minuto.</p>
-    </div>
-    <div class="ag">
-      <div class="panel rv">
-        <label class="lbl" for="svc">1 · Serviço</label>
-        <select class="sel" id="svc"></select>
-        <div class="days" id="days" role="listbox" aria-label="Dias"></div>
-        <div class="slots-h"><b id="dayTitle"></b><span id="dayInfo"></span></div>
-        <div class="slots" id="slots"></div>
-      </div>
-      <div class="panel rv" id="formPanel">
-        <form id="bk">
-          <h3>2 · Seus dados</h3>
-          <input class="inp" id="nome" placeholder="Seu nome" autocomplete="name" required>
-          <input class="inp" id="tel" placeholder="WhatsApp (17) 99999-9999" type="tel" inputmode="tel" autocomplete="tel" required>
-          <div class="sum">
-            <div><span>Serviço</span><b id="sSvc">—</b></div>
-            <div><span>Dia</span><b id="sDia">—</b></div>
-            <div><span>Horário</span><b id="sHora">escolha ao lado</b></div>
-            <div><span>Barbeiro</span><b>Amaral</b></div>
-            <div class="tot"><span>Total</span><b id="sTot">—</b></div>
-          </div>
-          <div class="pay">
-            <label><input type="radio" name="pg" value="Na barbearia" checked><span>Pagar na barbearia<small>depois do atendimento</small></span></label>
-            <label><input type="radio" name="pg" value="Pix"><span>Pix agora<small>QR Code no site</small></span></label>
-          </div>
-          <button class="btn btn-gold" id="bkBtn" style="width:100%" disabled>Confirmar agendamento</button>
-          <p class="note">Demonstração: o horário fica reservado neste aparelho e a confirmação vai pelo WhatsApp.</p>
-        </form>
-        <div class="ok" id="ok">
-          <div class="ic">✓</div>
-          <h3>Horário reservado!</h3>
-          <p id="okTxt"></p>
-          <a class="btn btn-gold" id="okWa" target="_blank" rel="noopener" style="width:100%">Enviar confirmação no WhatsApp</a>
-          <button class="btn btn-line" id="okNew" type="button" style="width:100%;margin-top:.6rem">Fazer outro agendamento</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AVALIAÇÕES -->
-<section class="sec" id="avaliacoes">
-  <div class="wrap">
-    <div class="sec-h rv">
-      <span class="eyebrow">Avaliações do Google</span>
-      <h2>Quem senta na cadeira, <span class="it">volta</span></h2>
-    </div>
-    <div class="rev">
-      <div class="gcard rv">
-        <div class="g"><i>G</i><div><b id="gNota" style="font-size:2.4rem">Google</b><div class="stars">★★★★★</div></div></div>
-        <span id="gTotal" class="eyebrow" style="color:var(--muted)"></span>
-        <p>Avaliações reais de clientes no perfil oficial da Barbearia Amaral no Google.</p>
-        <div class="row">
-          <a class="btn btn-line" id="gVer" target="_blank" rel="noopener">Ver avaliações</a>
-          <a class="btn btn-gold" id="gAval" target="_blank" rel="noopener">Avaliar a barbearia ★</a>
-        </div>
-      </div>
-      <div class="why">
-        <div class="rv"><span class="n">01</span><b>Hora marcada de verdade</b><p>Você chega e é atendido. Sem fila e sem perder a tarde.</p></div>
-        <div class="rv"><span class="n">02</span><b>Acabamento caprichado</b><p>Degradê, pezinho com risco e barba na navalha, do jeito que você pediu.</p></div>
-        <div class="rv"><span class="n">03</span><b>Ambiente confortável</b><p>Espaço climatizado, organizado e com atendimento atencioso.</p></div>
-        <div class="rv"><span class="n">04</span><b>Para toda a família</b><p>Corte infantil, feminino e masculino no mesmo lugar.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ESPAÇO -->
-<section class="sec" id="espaco" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-h rv"><span class="eyebrow">O espaço</span><h2>Feito para você <span class="it">relaxar</span></h2></div>
-    <div class="gal rv">
-      <figure><img src="img/espaco-noite-1.jpg" alt="Interior da Barbearia Amaral à noite" loading="lazy"><figcaption>Interior</figcaption></figure>
-      <figure><img src="img/fachada-1.jpg" alt="Fachada da Barbearia Amaral" loading="lazy"><figcaption>Fachada</figcaption></figure>
-      <figure><img src="img/espaco-noite-2.jpg" alt="Cadeiras da Barbearia Amaral" loading="lazy"><figcaption>As cadeiras</figcaption></figure>
-      <figure><img src="img/fachada-2.jpg" alt="Entrada da Barbearia Amaral" loading="lazy"><figcaption>Entrada</figcaption></figure>
-      <figure><img src="img/fachada-3.jpg" alt="Letreiro da Barbearia Amaral" loading="lazy"><figcaption>Rua do Cafezal, 89</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUTOS -->
-<section class="sec" id="produtos" style="padding-top:0">
-  <div class="wrap">
-    <div class="prod rv">
-      <div>
-        <span class="eyebrow">Cuidados & estilo</span>
-        <h2>Leve o <span class="it">acabamento</span> para casa</h2>
-        <p>Produtos selecionados pelo Amaral para cabelo, barba e pele. Consulte preços e disponibilidade direto pelo WhatsApp.</p>
-        <a class="btn btn-gold js-wa" data-msg="Olá Amaral! Quero saber dos produtos para cabelo e barba." target="_blank" rel="noopener" href="#">Consultar produtos</a>
-      </div>
-      <ul>
-        <li><i>✂</i><span><b>Cabelo</b><small>Finalização e cuidados diários</small></span></li>
-        <li><i>◐</i><span><b>Barba</b><small>Hidratação e alinhamento</small></span></li>
-        <li><i>◆</i><span><b>Máscara Peel-Off Black</b><small>Limpeza facial</small></span></li>
+      <span class="chip"><i></i>Sites, blogs e portfólios</span>
+      <h1>O site que o seu negócio <span>merece</span>, pronto para ser encontrado</h1>
+      <p class="lead">A StayPulse cria sites profissionais para academias, barbearias, salões, profissionais autônomos e pequenos negócios. Você atualiza tudo pelo celular, sem depender de ninguém.</p>
+      <ul class="checks">
+        <li>Design feito para o seu negócio, não um modelo genérico</li>
+        <li>Painel simples no celular para postar fotos, trabalhos e novidades</li>
+        <li>Botão de WhatsApp, Google Maps e otimização para aparecer no Google</li>
+        <li>Hospedagem sem mensalidade e domínio próprio (.com.br)</li>
       </ul>
+      <div class="price-line">A partir de <span class="price-tag">R$ 600</span> pagamento único</div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#modelos">Ver modelos de sites</a>
+        <a class="btn btn-ghost js-whats" href="#" data-msg="Oi! Quero um orçamento de site com a StayPulse.">Pedir orçamento</a>
+      </div>
+      <p class="hero-note">Entrega em 7 a 10 dias · 2 rodadas de ajustes inclusas</p>
+    </div>
+
+    <div class="mock">
+      <div class="browser">
+        <div class="browser-bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">https://<b>gessicasouza</b>.pages.dev/maquiagem</div></div>
+        <img src="img/preview-gessica-maquiagem.jpg" alt="Site de portfólio de maquiagem da Gessica Souza criado pela StayPulse" width="1280" height="800">
+      </div>
+      <div class="phone"><img src="img/preview-gessica-blog.jpg" alt="" width="1280" height="800"></div>
+      <div class="float-card">
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div><strong>Novo trabalho publicado</strong><small>direto do celular · agora</small></div>
+      </div>
+    </div>
+  </div>
+  <svg class="pulse-line" viewBox="0 0 1440 80" preserveAspectRatio="none" height="80" aria-hidden="true"><path d="M0 50 H560 L600 50 L625 8 L655 72 L680 30 L700 50 H1150 L1170 50 L1185 30 L1200 62 L1215 50 H1440" fill="none" stroke="#22D3EE" stroke-width="1.5"/></svg>
+</section>
+
+<div class="subnav">
+  <nav aria-label="Seções">
+    <a href="#modelos" class="on">Modelos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</div>
+
+<!-- MODELOS -->
+<section class="section" id="modelos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Modelos e sites publicados</span>
+      <h2>Escolha um modelo para o seu negócio</h2>
+      <p>Sites reais que já estão no ar e modelos por profissão. Abra no celular e veja como o seu cliente vai ver.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-f="todos" role="tab">Todos</button>
+      <button class="tab" data-f="portfolio" role="tab">Portfólio e blog</button>
+      <button class="tab" data-f="academia" role="tab">Academia</button>
+      <button class="tab" data-f="barbearia" role="tab">Barbearia</button>
+      <button class="tab" data-f="salao" role="tab">Salão de beleza</button>
+      <button class="tab" data-f="restaurante" role="tab">Restaurante</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- PUBLICADO -->
+      <article class="site reveal" data-cat="portfolio">
+        <div class="shot">
+          <img src="img/preview-gessica-maquiagem.jpg" alt="Portfólio de maquiagem Gessica Souza" loading="lazy" width="1280" height="800">
+          <span class="status live"><i></i>No ar</span>
+        </div>
+        <div class="body">
+          <span class="cat">Portfólio · Maquiadora</span>
+          <h3>Gessica Souza Maquiagem</h3>
+          <p>Portfólio com trabalhos por tipo (noivas, formaturas, ensaios), agendamento pelo WhatsApp e galeria atualizada pelo celular.</p>
+          <div class="tags"><span>Portfólio</span><span>Galeria</span><span>WhatsApp</span><span>Painel no celular</span></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://gessicasouza.pages.dev/maquiagem.html" target="_blank" rel="noopener">Ver site ao vivo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="site reveal" data-cat="portfolio">
+        <div class="shot">
+          <img src="img/preview-gessica-blog.jpg" alt="Blog Gessica Souza" loading="lazy" width="1280" height="800">
+          <span class="status live"><i></i>No ar</span>
+        </div>
+        <div class="body">
+          <span class="cat">Blog pessoal</span>
+          <h3>Blog Gessica Souza</h3>
+          <p>Blog com histórias, fotos e categorias. Ela escreve, salva rascunho ou agenda a publicação direto do celular.</p>
+          <div class="tags"><span>Blog</span><span>Agendamento de posts</span><span>Compartilhar no WhatsApp</span></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://gessicasouza.pages.dev/" target="_blank" rel="noopener">Ver site ao vivo</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- EM DESENVOLVIMENTO -->
+      <article class="site reveal" data-cat="academia">
+        <div class="shot">
+          <div class="ph"><div class="bar" style="width:40%"></div><div class="hero-b g-academia"><em>Musculação · Funcional · Lutas</em><strong>Academia<br>Força Total</strong></div><div class="row"><i></i><i></i><i></i></div></div>
+          <span class="status live"><i></i>Modelo no ar</span>
+        </div>
+        <div class="body">
+          <span class="cat">Academia</span>
+          <h3>Academia Força Total</h3>
+          <p>Busca de unidades com “aberta agora”, aulas, planos, convênios e matrícula direto pelo WhatsApp.</p>
+          <div class="tags"><span>Unidades</span><span>Aberta agora</span><span>Planos</span><span>Matrícula no WhatsApp</span></div>
+          <div class="actions"><a class="btn btn-primary" href="academia/" target="_blank" rel="noopener">Ver modelo ao vivo</a></div>
+        </div>
+      </article>
+
+      <article class="site reveal" data-cat="barbearia">
+        <div class="shot">
+          <div class="ph"><div class="bar" style="width:35%"></div><div class="hero-b g-barbearia"><em>Corte · Barba · Sobrancelha</em><strong>Barbearia<br>Navalha</strong></div><div class="row"><i></i><i></i><i></i></div></div>
+          <span class="status dev">Em desenvolvimento</span>
+        </div>
+        <div class="body">
+          <span class="cat">Barbearia</span>
+          <h3>Barbearia Navalha</h3>
+          <p>Serviços com preços, galeria de cortes, equipe de barbeiros e agendamento rápido pelo WhatsApp.</p>
+          <div class="tags"><span>Serviços</span><span>Galeria de cortes</span><span>Agendamento</span></div>
+          <div class="actions"><a class="btn btn-ghost" aria-disabled="true">Em breve</a></div>
+        </div>
+      </article>
+
+      <article class="site reveal" data-cat="salao">
+        <div class="shot">
+          <div class="ph"><div class="bar" style="width:30%"></div><div class="hero-b g-salao"><em>Cabelo · Unhas · Estética</em><strong>Studio<br>Bella</strong></div><div class="row"><i></i><i></i><i></i></div></div>
+          <span class="status dev">Em desenvolvimento</span>
+        </div>
+        <div class="body">
+          <span class="cat">Salão de beleza</span>
+          <h3>Studio Bella</h3>
+          <p>Serviços por categoria, portfólio de antes e depois, profissionais e agendamento pelo WhatsApp.</p>
+          <div class="tags"><span>Antes e depois</span><span>Equipe</span><span>Agendamento</span></div>
+          <div class="actions"><a class="btn btn-ghost" aria-disabled="true">Em breve</a></div>
+        </div>
+      </article>
+
+      <article class="site reveal" data-cat="restaurante">
+        <div class="shot">
+          <div class="ph"><div class="bar" style="width:38%"></div><div class="hero-b g-restaurante"><em>Cardápio · Delivery · Reservas</em><strong>Cantina<br>da Vila</strong></div><div class="row"><i></i><i></i><i></i></div></div>
+          <span class="status dev">Em desenvolvimento</span>
+        </div>
+        <div class="body">
+          <span class="cat">Restaurante</span>
+          <h3>Cantina da Vila</h3>
+          <p>Cardápio digital com fotos, horários, localização no mapa e pedidos ou reservas pelo WhatsApp.</p>
+          <div class="tags"><span>Cardápio</span><span>Mapa</span><span>Reservas</span></div>
+          <div class="actions"><a class="btn btn-ghost" aria-disabled="true">Em breve</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="empty">Ainda não temos este modelo publicado. <a href="#" class="js-whats" data-msg="Oi! Quero um site para o meu negócio, vocês fazem?" style="color:var(--cyan)">Peça o seu</a>.</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section" id="como-funciona" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do primeiro oi ao site no ar</h2>
+      <p>Você cuida do seu negócio. A gente cuida do resto.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Conversa</h3><p>Pelo WhatsApp ou pessoalmente, entendemos o seu negócio, seus clientes e o que o site precisa ter.</p></div>
+      <div class="step reveal"><h3>Modelo</h3><p>Partimos de um modelo da sua área e personalizamos com suas cores, logo, fotos e textos.</p></div>
+      <div class="step reveal"><h3>Ajustes</h3><p>Você vê o site no celular antes de publicar e pede até 2 rodadas de ajustes.</p></div>
+      <div class="step reveal"><h3>No ar</h3><p>Publicamos com seu domínio, configuramos o Google e te ensinamos a usar o painel.</p></div>
+    </div>
+
+    <div class="features">
+      <div class="feat big reveal">
+        <div class="art"><span class="pill">domínio .com.br</span><span class="pill">hospedagem</span><span class="pill">Google</span><span class="pill">WhatsApp</span><span class="pill">HTTPS</span></div>
+        <h3>Tudo para ser encontrado</h3>
+        <p>Site rápido, seguro e preparado para aparecer no Google e no Google Maps quando alguém procura pelo seu serviço no bairro.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+        <h3>Painel no celular</h3>
+        <p>Poste fotos, trabalhos e novidades em segundos, como num app.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Sem mensalidade</h3>
+        <p>Você paga o site uma vez. Hospedagem gratuita, só o domínio é anual.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- LOCALIZAÇÃO -->
-<section class="sec" id="localizacao" style="padding-top:0">
-  <div class="wrap loc">
-    <div class="rv">
-      <span class="eyebrow">Como chegar</span>
-      <h2 style="font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;margin:1rem 0 .6rem">Encontre a <span class="it">barbearia</span></h2>
-      <p style="color:var(--muted);margin:0" id="end"></p>
-      <div class="hours" id="hours"></div>
-      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-        <a class="btn btn-gold" id="mapsBtn" target="_blank" rel="noopener">Abrir no Maps</a>
-        <a class="btn btn-line js-wa" data-msg="Olá! Gostaria de falar com a Barbearia Amaral." target="_blank" rel="noopener" href="#">WhatsApp</a>
+<!-- PLANOS -->
+<section class="section" id="planos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Planos</span>
+      <h2>Um site para cada momento do seu negócio</h2>
+      <p>Pagamento único, 50% no início e 50% na entrega.</p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>Essencial</h3>
+        <p class="desc">Uma página completa para apresentar o seu negócio e receber contatos.</p>
+        <span class="from">a partir de</span>
+        <div class="val">R$ 600</div>
+        <p class="pay">pagamento único</p>
+        <a class="btn btn-ghost js-whats" href="#" data-msg="Oi! Tenho interesse no plano Essencial de site da StayPulse.">Escolher Essencial</a>
+        <ul>
+          <li>Site de 1 página (landing page)</li>
+          <li>Botão de WhatsApp e Instagram</li>
+          <li>Mapa e horários de atendimento</li>
+          <li>Adaptado para celular</li>
+          <li>Hospedagem gratuita</li>
+        </ul>
+      </div>
+      <div class="plan hot reveal">
+        <span class="badge">Mais escolhido</span>
+        <h3>Profissional</h3>
+        <p class="desc">Para quem quer mostrar serviços, preços e trabalhos e atualizar sozinho.</p>
+        <span class="from">a partir de</span>
+        <div class="val">R$ 1.200</div>
+        <p class="pay">pagamento único</p>
+        <a class="btn btn-primary js-whats" href="#" data-msg="Oi! Tenho interesse no plano Profissional de site da StayPulse.">Escolher Profissional</a>
+        <ul>
+          <li>Tudo do Essencial</li>
+          <li>Até 4 páginas (serviços, galeria, equipe…)</li>
+          <li>Painel no celular para galeria ou novidades</li>
+          <li>Configuração no Google (SEO local)</li>
+          <li>Ajuda com o domínio próprio</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h3>Completo</h3>
+        <p class="desc">Site, portfólio e blog integrados, com painel instalável como app.</p>
+        <span class="from">a partir de</span>
+        <div class="val">R$ 2.000</div>
+        <p class="pay">pagamento único</p>
+        <a class="btn btn-ghost js-whats" href="#" data-msg="Oi! Tenho interesse no plano Completo de site da StayPulse.">Escolher Completo</a>
+        <ul>
+          <li>Tudo do Profissional</li>
+          <li>Blog com rascunhos e posts agendados</li>
+          <li>Portfólio com filtros e galeria de fotos</li>
+          <li>Painel como app no celular</li>
+          <li>Treinamento de uso</li>
+        </ul>
+        <div class="ex">Exemplo: <b>site da Gessica Souza</b>, blog + portfólio de maquiagem.</div>
       </div>
     </div>
-    <div class="map rv"><iframe title="Mapa da Barbearia Amaral" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapF"></iframe></div>
+    <p class="plans-note">Manutenção mensal opcional · Domínio .com.br pago pelo cliente no registro.br (cerca de R$ 40/ano)</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Preciso pagar mensalidade?</summary><p>Não. O site é pago uma vez. A hospedagem é gratuita e o único custo anual é o domínio (.com.br), registrado no seu nome. Se quiser, oferecemos manutenção mensal opcional.</p></details>
+      <details><summary>O site fica no meu nome?</summary><p>Sim. O domínio é registrado no seu CPF ou CNPJ e as contas de hospedagem ficam no seu nome. O site é seu.</p></details>
+      <details><summary>Consigo atualizar sozinho?</summary><p>Sim. Nos planos Profissional e Completo você recebe um painel simples, que funciona no celular como um app, para postar fotos, trabalhos e novidades.</p></details>
+      <details><summary>Quanto tempo demora?</summary><p>Em média de 7 a 10 dias depois de recebermos fotos, textos e logo. Você vê tudo antes de publicar.</p></details>
+      <details><summary>Os modelos são iguais para todo mundo?</summary><p>Não. Os modelos são o ponto de partida. Cada site recebe as cores, fotos, textos e serviços do seu negócio.</p></details>
+      <details><summary>Vocês atendem fora de São Paulo?</summary><p>Sim. Atendemos presencialmente na zona sul e leste de São Paulo e em qualquer cidade de forma digital.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <h2>Pronto para colocar o seu negócio online?</h2>
+        <p>Mande uma mensagem e receba uma prévia de como ficaria o site do seu negócio.</p>
+        <a class="btn btn-primary js-whats" href="#" data-msg="Oi! Quero ver como ficaria o site do meu negócio.">Falar no WhatsApp</a>
+      </div>
+      <div class="browser">
+        <div class="browser-bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">https://<b>seunegocio</b>.com.br</div></div>
+        <img src="img/preview-gessica-blog.jpg" alt="" loading="lazy" width="1280" height="800">
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <a class="logo" href="#inicio" style="margin-bottom:1rem;display:flex"><img src="img/logo.png" alt="" width="40" height="40"><span>AMARAL</span></a>
-        <p>Corte, barba e estilo com hora marcada no Centro de Taquaral, SP.</p>
-        <span class="live" id="live"><i></i><b id="liveTxt"></b></span>
-      </div>
-      <div><h4>Navegação</h4><a href="#servicos">Serviços</a><a href="#agenda">Agendar</a><a href="#avaliacoes">Avaliações</a><a href="#localizacao">Localização</a></div>
-      <div><h4>Contato</h4><a class="js-wa" data-msg="Olá! Gostaria de falar com a Barbearia Amaral." target="_blank" rel="noopener" href="#">WhatsApp (17) 99102-9502</a><a id="fGoogle" target="_blank" rel="noopener">Perfil no Google</a></div>
-      <div><h4>Endereço</h4><p id="fEnd"></p></div>
-    </div>
-    <div class="fbot"><span>© <span id="ano"></span> Barbearia Amaral. Todos os direitos reservados.</span><span>Site por <a href="https://staypulse.com.br" target="_blank" rel="noopener">StayPulse</a></span></div>
+    <span>© <span id="ano"></span> StayPulse · Sites, SEO local e automação para negócios</span>
+    <span><a href="https://staypulse.com.br">staypulse.com.br</a> · <a href="https://instagram.com/staypulse.oficial" target="_blank" rel="noopener">@staypulse.oficial</a></span>
   </div>
 </footer>
 
-<div class="fab">
-  <a class="ag" href="#agenda" aria-label="Agendar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></a>
-  <a class="wa js-wa" data-msg="Olá! Gostaria de falar com a Barbearia Amaral." target="_blank" rel="noopener" href="#" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
-</div>
-
 <script>
-/* ================= DADOS DA BARBEARIA (edite aqui) ================= */
-const CFG = {
-  whatsapp: '',                        // ← número do Amaral (5517991029502). Vazio = número da StayPulse (demo)
-  whatsappDemo: '5511975387719',
-  endereco: 'R. do Cafezal, 89 - Centro, Taquaral - SP, 14765-000',
-  google: 'https://share.google/KiT7VCfFYVavBSfy9',
-  avaliar: 'https://search.google.com/local/writereview?placeid=ChIJ4Ysf5d1fuZQRO2j3iL2bDUM',
-  notaGoogle: null,                    // ← ex.: 4.9  (null = esconde o número)
-  totalAvaliacoes: null,               // ← ex.: 32
-  // dia da semana (0=dom) → blocos de atendimento [início, fim] em horas
-  horarios: {0: [], 1: [], 2: [[9, 11], [13.5, 18.5]], 3: [[9, 11], [13.5, 18.5]], 4: [[9, 11], [13.5, 18.5]], 5: [[8, 11], [13, 18]], 6: [[8, 11], [13, 18]]}
-};
-const SERVICOS = [
-  {id: 'tradicional', g: 'Cortes', nome: 'Corte tradicional', preco: 40, min: 20, desc: 'Corte clássico com acabamento limpo e finalização.'},
-  {id: 'degrade', g: 'Cortes', nome: 'Corte degradê', preco: 45, min: 20, desc: 'Degradê preciso, bem marcado e com acabamento profissional.'},
-  {id: 'infantil', g: 'Cortes', nome: 'Corte infantil', preco: 40, min: 20, desc: 'Feito com cuidado, conforto e precisão.'},
-  {id: 'feminino', g: 'Cortes', nome: 'Corte feminino', preco: 45, min: 20, desc: 'Acabamento alinhado ao estilo escolhido.'},
-  {id: 'acabamento', g: 'Cortes', nome: 'Acabamento (pezinho)', preco: 15, min: 20, desc: 'Contorno para manter o corte alinhado.'},
-  {id: 'acabamento_risco', g: 'Cortes', nome: 'Pezinho com risco', preco: 20, min: 20, desc: 'Acabamento do contorno com detalhe de risco.'},
-  {id: 'barba_maquina', g: 'Barba', nome: 'Barba (máquina)', preco: 30, min: 20, desc: 'Barba aparada e alinhada com máquina.'},
-  {id: 'barba_navalha', g: 'Barba', nome: 'Barba (navalha)', preco: 40, min: 20, desc: 'Barba desenhada na navalha com acabamento detalhado.'},
-  {id: 'sobrancelha', g: 'Barba', nome: 'Sobrancelhas', preco: 10, min: 20, desc: 'Limpeza e alinhamento das sobrancelhas.'},
-  {id: 'corte_sobrancelha', g: 'Combos', nome: 'Corte + sobrancelha', preco: 50, min: 30, desc: 'Corte tradicional com alinhamento das sobrancelhas.'},
-  {id: 'cavanhaque_tradicional', g: 'Combos', nome: 'Cavanhaque + corte tradicional', preco: 60, min: 40, desc: 'Corte tradicional com cavanhaque modelado na navalha.'},
-  {id: 'cavanhaque_degrade', g: 'Combos', nome: 'Cavanhaque + corte degradê', preco: 65, min: 40, desc: 'Degradê com cavanhaque modelado na navalha.'},
-  {id: 'combo_corte_barba', g: 'Combos', nome: 'Barba + cabelo', preco: 75, min: 60, desc: 'Corte completo com barba alinhada e finalização.'},
-  {id: 'combo_completo', g: 'Combos', nome: 'Combo barba + cabelo + sobrancelha', preco: 80, min: 60, desc: 'Corte, barba, sobrancelhas e finalização.'}
-];
-/* =================================================================== */
+const WHATSAPP = '5511975387719';
+document.querySelectorAll('.js-whats').forEach(a=>{
+  a.href = 'https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(a.dataset.msg||'Oi! Vim pelo site da StayPulse.');
+  a.target = '_blank'; a.rel = 'noopener';
+});
+document.getElementById('ano').textContent = new Date().getFullYear();
 
-const $ = id => document.getElementById(id);
-const brl = v => 'R$ ' + v.toFixed(2).replace('.', ',');
-const WA = CFG.whatsapp || CFG.whatsappDemo;
-const wa = m => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(m);
-document.querySelectorAll('.js-wa').forEach(a => a.href = wa(a.dataset.msg));
-$('end').textContent = CFG.endereco; $('fEnd').textContent = CFG.endereco;
-const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Barbearia Amaral ' + CFG.endereco);
-$('mapsBtn').href = mapsUrl; $('fGoogle').href = CFG.google; $('gVer').href = CFG.google; $('gAval').href = CFG.avaliar;
-$('mapF').src = 'https://www.google.com/maps?q=' + encodeURIComponent(CFG.endereco) + '&output=embed';
-$('ano').textContent = new Date().getFullYear();
-if (CFG.notaGoogle) { const n = CFG.notaGoogle.toFixed(1).replace('.', ','); $('gNota').textContent = n; $('kRating').textContent = n + '★'; }
-if (CFG.totalAvaliacoes) $('gTotal').textContent = CFG.totalAvaliacoes + ' avaliações';
+// filtros
+const tabs = document.querySelectorAll('.tab'), cards = document.querySelectorAll('.site'), empty = document.getElementById('empty');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.toggle('on',x===t));
+  let n=0;
+  cards.forEach(c=>{const ok=t.dataset.f==='todos'||c.dataset.cat===t.dataset.f;c.style.display=ok?'':'none';if(ok){n++;c.classList.add('in')}});
+  empty.style.display=n?'none':'block';
+}));
 
-/* hora de São Paulo */
-function agoraSP() {
-  const p = new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false}).formatToParts(new Date());
-  const g = t => +p.find(x => x.type === t).value;
-  return {data: new Date(g('year'), g('month') - 1, g('day')), h: (g('hour') % 24) + g('minute') / 60};
-}
-const ymd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-const hhmm = h => String(Math.floor(h)).padStart(2, '0') + ':' + (h % 1 ? '30' : '00');
-const DOW = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const DOWL = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
-const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+// sub-nav ativo
+const links=[...document.querySelectorAll('.subnav a')];
+const secs=links.map(l=>document.querySelector(l.getAttribute('href')));
+addEventListener('scroll',()=>{
+  let cur=0; secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<200)cur=i});
+  links.forEach((l,i)=>l.classList.toggle('on',i===cur));
+},{passive:true});
 
-/* horários ocupados de exemplo (determinísticos) + reservas feitas neste aparelho */
-let minhas = []; try { minhas = JSON.parse(localStorage.getItem('amaral-reservas')) || []; } catch (e) {}
-function hash(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); }
-function ocupado(dia, h) { return hash(dia + hhmm(h)) % 10 < 4 || minhas.some(r => r.dia === dia && h >= r.h && h < r.h + r.min / 60); }
-function slotsDo(d, svc) {
-  const now = agoraSP(), hoje = ymd(now.data) === ymd(d), dur = svc.min / 60, out = [];
-  (CFG.horarios[d.getDay()] || []).forEach(([a, b], bi) => {
-    if (bi) out.push({brk: [CFG.horarios[d.getDay()][bi - 1][1], a]});
-    for (let h = a; h + dur <= b + 1e-9; h += .5) {
-      if (hoje && h <= now.h + .25) continue;
-      let livre = true; for (let t = h; t < h + dur - 1e-9; t += .5) if (ocupado(ymd(d), t)) livre = false;
-      out.push({h, livre});
-    }
-  });
-  return out;
-}
-
-/* serviços: destaques + cardápio */
-const DEST = [
-  {id: 'degrade', un: 'corte', tier: 'Essencial', desc: 'O corte que nunca sai de moda.', itens: ['Degradê bem marcado', 'Acabamento na navalha', 'Finalização com pomada', 'Cerca de 20 minutos']},
-  {id: 'combo_completo', un: 'combo', tier: 'Completo', feat: true, desc: 'A experiência completa Amaral.', itens: ['Corte do seu estilo', 'Barba alinhada e finalizada', 'Design de sobrancelhas', 'Finalização premium', 'Cerca de 1 hora']},
-  {id: 'cavanhaque_degrade', un: 'combo', tier: 'Estilo', desc: 'Para quem gosta de detalhe.', itens: ['Corte degradê', 'Cavanhaque modelado na navalha', 'Contorno caprichado', 'Cerca de 40 minutos']}
-];
-const S = id => SERVICOS.find(s => s.id === id);
-$('exp').innerHTML = DEST.map(d => { const s = S(d.id); return `<div class="card rv ${d.feat ? 'feat' : ''}">${d.feat ? '<span class="bdg">Experiência completa</span>' : ''}<div class="tier">${d.tier}</div><div class="price">R$${s.preco} <small>/${d.un}</small></div><div class="desc">${d.desc}</div><ul>${d.itens.map(i => `<li>${i}</li>`).join('')}</ul><a class="btn ${d.feat ? 'btn-gold' : 'btn-line'}" href="#agenda" data-svc="${s.id}">Agendar ${d.tier.toLowerCase()}</a></div>`; }).join('');
-$('menu').innerHTML = ['Cortes', 'Barba', 'Combos'].map(g => `<div class="menu-col rv"><h3>${g}</h3>${SERVICOS.filter(s => s.g === g).map(s => `<div class="mi" data-svc="${s.id}" role="button" tabindex="0"><b>${s.nome}</b><span class="p">${brl(s.preco)}</span><small>${s.min} MIN</small><span class="go">Agendar →</span></div>`).join('')}</div>`).join('');
-document.addEventListener('click', e => { const t = e.target.closest('[data-svc]'); if (!t) return; if (t.classList.contains('mi')) { e.preventDefault(); } escolherServico(t.dataset.svc); $('agenda').scrollIntoView({behavior: 'smooth'}); });
-
-/* agenda */
-let st = {svc: SERVICOS[0], dia: null, h: null};
-$('svc').innerHTML = SERVICOS.map(s => `<option value="${s.id}">${s.nome} — ${brl(s.preco)} · ${s.min} min</option>`).join('');
-$('svc').onchange = () => escolherServico($('svc').value);
-function escolherServico(id) { st.svc = S(id); $('svc').value = id; st.h = null; renderDias(); renderSlots(); resumo(); }
-function proximosDias(n) { const base = agoraSP().data, out = []; for (let i = 0; i < n; i++) { const d = new Date(base); d.setDate(base.getDate() + i); out.push(d); } return out; }
-function renderDias() {
-  const dias = proximosDias(14);
-  if (!st.dia || !dias.some(d => ymd(d) === ymd(st.dia)) || !slotsDo(st.dia, st.svc).some(x => x.livre)) st.dia = dias.find(d => slotsDo(d, st.svc).some(x => x.livre)) || dias[0];
-  $('days').innerHTML = dias.map(d => { const ss = slotsDo(d, st.svc), liv = ss.filter(x => x.livre).length, fech = !(CFG.horarios[d.getDay()] || []).length;
-    return `<button type="button" class="day ${fech || !liv ? 'closed' : ''} ${ymd(d) === ymd(st.dia) ? 'on' : ''}" data-d="${ymd(d)}" ${fech || !liv ? 'disabled' : ''}><small>${DOW[d.getDay()]}</small><b>${d.getDate()}</b><em>${fech ? 'Fechado' : liv ? liv + ' livres' : 'Lotado'}</em></button>`; }).join('');
-}
-$('days').onclick = e => { const b = e.target.closest('.day'); if (!b || b.disabled) return; const [y, m, d] = b.dataset.d.split('-').map(Number); st.dia = new Date(y, m - 1, d); st.h = null; renderDias(); renderSlots(); resumo(); };
-function renderSlots() {
-  const ss = slotsDo(st.dia, st.svc), liv = ss.filter(x => x.livre).length;
-  $('dayTitle').textContent = `${DOWL[st.dia.getDay()]}, ${st.dia.getDate()} de ${MES[st.dia.getMonth()]}`;
-  $('dayInfo').textContent = liv ? liv + ' horários livres' : '';
-  $('slots').innerHTML = ss.length ? ss.map(x => x.brk ? `<div class="break"><span>Intervalo</span><span>${hhmm(x.brk[0])} – ${hhmm(x.brk[1])}</span></div>` : `<button type="button" class="slot ${x.livre ? '' : 'busy'} ${st.h === x.h ? 'on' : ''}" data-h="${x.h}" ${x.livre ? '' : 'disabled'}>${hhmm(x.h)}</button>`).join('') : '<p class="none">Fechado neste dia.</p>';
-}
-$('slots').onclick = e => { const b = e.target.closest('.slot'); if (!b || b.disabled) return; st.h = +b.dataset.h; renderSlots(); resumo(); if (innerWidth < 1000) $('formPanel').scrollIntoView({behavior: 'smooth', block: 'start'}); };
-function resumo() {
-  $('sSvc').textContent = st.svc.nome; $('sTot').textContent = brl(st.svc.preco);
-  $('sDia').textContent = st.dia ? `${DOW[st.dia.getDay()]}, ${st.dia.getDate()}/${String(st.dia.getMonth() + 1).padStart(2, '0')}` : '—';
-  $('sHora').textContent = st.h != null ? hhmm(st.h) : 'escolha ao lado';
-  $('bkBtn').disabled = st.h == null;
-}
-$('bk').onsubmit = e => {
-  e.preventDefault(); if (st.h == null) return;
-  const nome = $('nome').value.trim(), tel = $('tel').value.trim(), pg = document.querySelector('[name=pg]:checked').value;
-  const dia = ymd(st.dia); minhas.push({dia, h: st.h, min: st.svc.min}); try { localStorage.setItem('amaral-reservas', JSON.stringify(minhas)); } catch (er) {}
-  const quando = `${DOWL[st.dia.getDay()]}, ${st.dia.getDate()}/${String(st.dia.getMonth() + 1).padStart(2, '0')} às ${hhmm(st.h)}`;
-  $('okTxt').textContent = `${nome}, seu ${st.svc.nome.toLowerCase()} está reservado para ${quando}.` + (pg === 'Pix' ? ' Na versão oficial, o QR Code do Pix aparece aqui.' : '');
-  $('okWa').href = wa(`Olá Amaral! Acabei de agendar pelo site:\n\n✂️ ${st.svc.nome} (${brl(st.svc.preco)})\n📅 ${quando}\n👤 ${nome} · ${tel}\n💳 Pagamento: ${pg}`);
-  $('bk').style.display = 'none'; $('ok').classList.add('show');
-  st.h = null; renderDias(); renderSlots(); proximo();
-};
-$('okNew').onclick = () => { $('ok').classList.remove('show'); $('bk').style.display = ''; resumo(); };
-
-/* próximo horário livre */
-function proximo() {
-  for (const d of proximosDias(14)) { const x = slotsDo(d, S('tradicional')).find(s => s.livre); if (x) {
-    const hoje = ymd(d) === ymd(agoraSP().data);
-    $('nxT').textContent = hhmm(x.h); $('nxD').textContent = (hoje ? 'Hoje' : `${DOWL[d.getDay()]}, ${d.getDate()} de ${MES[d.getMonth()]}`) + ' · com Amaral';
-    $('nxBtn').onclick = ev => { ev.preventDefault(); escolherServico('tradicional'); st.dia = d; st.h = x.h; renderDias(); renderSlots(); resumo(); $('agenda').scrollIntoView({behavior: 'smooth'}); };
-    return; } }
-}
-
-/* horários + aberto agora */
-const blocos = h => h.map(([a, b]) => hhmm(a) + '–' + hhmm(b)).join(' · ');
-const grupos = [['Terça a quinta', [2, 3, 4]], ['Sexta e sábado', [5, 6]], ['Domingo e segunda', [0, 1]]];
-const now = agoraSP(), dow = now.data.getDay();
-$('hours').innerHTML = grupos.map(([n, ds]) => `<div class="${ds.includes(dow) ? 'today' : ''}"><span>${n}${ds.includes(dow) ? ' · hoje' : ''}</span><span>${(CFG.horarios[ds[0]] || []).length ? blocos(CFG.horarios[ds[0]]) : 'Fechado'}</span></div>`).join('');
-const aberto = (CFG.horarios[dow] || []).some(([a, b]) => now.h >= a && now.h < b);
-$('liveTxt').textContent = aberto ? 'ABERTO AGORA' : 'FECHADO AGORA';
-if (!aberto) $('live').classList.add('off');
-
-renderDias(); renderSlots(); resumo(); proximo();
-
-/* hero slideshow */
-const imgs = [...document.querySelectorAll('#heroBg img')], dots = [...document.querySelectorAll('#dots i')]; let hi = 0;
-setInterval(() => { imgs[hi].classList.remove('on'); dots[hi].classList.remove('on'); hi = (hi + 1) % imgs.length; imgs[hi].classList.add('on'); dots[hi].classList.add('on'); }, 6000);
-
-/* nav */
-const nav = $('nav'); addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive: true});
-const mn = $('mnav'); $('burger').onclick = () => mn.classList.add('open'); mn.onclick = e => { if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') mn.classList.remove('open'); };
-
-/* animação */
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .1});
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+// animação ao rolar
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
