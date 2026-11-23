@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cia Mega Fitness | Academias na Zona Leste de São Paulo</title>
+<meta name="description" content="Rede de academias Cia Mega Fitness: musculação, dança, lutas e aulas coletivas em 9 unidades na Zona Leste de São Paulo.">
+<meta name="theme-color" content="#050807">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050807; --bg2:#0B0F0E; --card:#111615; --line:rgba(255,255,255,.08);
+  --teal:#14A38B; --lime:#6BE33B; --grad:linear-gradient(90deg,#14A38B,#6BE33B);
+  --text:#F5F7F6; --muted:#9AA4A1; --light:#F2F4F3; --ink:#0E1412;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1;letter-spacing:-.01em}
+.wrap{width:min(1240px,92%);margin:0 auto}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{display:block;font-size:.8rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:1rem 1.6rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s,color .2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-g{background:var(--grad);color:#04140E;box-shadow:0 10px 30px rgba(107,227,59,.25)}
+.btn-g:hover{box-shadow:0 14px 40px rgba(107,227,59,.4)}
+.btn-o{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-o:hover{border-color:var(--lime);color:var(--lime)}
+.btn svg{width:18px;height:18px}
+
+/* faixa demo */
+.demo-bar{background:#0F172A;color:#CBD5E1;font-size:.82rem;text-align:center;padding:.5rem 1rem;border-bottom:1px solid rgba(34,211,238,.3)}
+.demo-bar b{color:#22D3EE}
+
+/* header */
+header{position:sticky;top:0;z-index:60;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.solid{background:rgba(5,8,7,.9);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand .mark{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.brand b{font-weight:900;font-size:1.35rem;letter-spacing:.02em;white-space:nowrap}
+.btn{white-space:nowrap}
+@media(max-width:480px){.brand .mark{width:36px;height:36px}.brand b{font-size:1.15rem}.nav-cta .btn-g{padding:.55rem .9rem;font-size:.85rem}}
+.nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:600;font-size:.95rem;color:#D6DDDA}
+.nav ul a:hover{color:var(--lime)}
+.nav-cta{display:flex;gap:.6rem}
+.nav-cta .btn{padding:.65rem 1.2rem;font-size:.9rem}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:.4rem}
+@media(max-width:940px){.nav ul,.nav-cta .btn-o{display:none}.burger{display:block}}
+.mobile-menu{display:none;position:fixed;inset:76px 0 auto;background:rgba(5,8,7,.97);border-bottom:1px solid var(--line);padding:1rem 4% 1.6rem;z-index:59}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.9rem 0;font-weight:700;font-size:1.1rem;text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;margin-top:-76px;padding:140px 0 70px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:#06100C}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) blur(1.5px);transform:scale(1.04)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,8,7,.95) 0%,rgba(5,8,7,.75) 45%,rgba(5,8,7,.25) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 40%)}
+.neon{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.55;background:
+  linear-gradient(90deg,transparent 0 58%,rgba(107,227,59,.0) 58%),
+  repeating-linear-gradient(100deg,transparent 0 120px,rgba(107,227,59,.10) 120px 122px,transparent 122px 240px)}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+.hero>.wrap{width:min(1240px,92%)}
+.promo-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(107,227,59,.12);border:1px solid rgba(107,227,59,.45);color:var(--lime);padding:.4rem .9rem;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:1.3rem}
+.promo-tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime);animation:p 1.4s infinite}
+@keyframes p{50%{opacity:.3}}
+.hero h1{font-size:clamp(3rem,8vw,6.4rem);font-weight:900;text-transform:uppercase;line-height:.92}
+.price{display:flex;align-items:flex-end;gap:.6rem;margin:1.6rem 0 .4rem}
+.price small{font-weight:800;font-size:1.3rem;line-height:1.1;text-transform:uppercase}
+.price strong{font-size:clamp(4rem,10vw,7rem);font-weight:900;line-height:.8;letter-spacing:-.04em;text-shadow:4px 4px 0 var(--teal),8px 8px 0 rgba(107,227,59,.35)}
+.price-note{color:var(--muted);font-size:.85rem;margin:0 0 1.8rem}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-side{justify-self:end;text-align:right}
+.hero-side p{font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:900;text-transform:uppercase;line-height:1.02;margin:0}
+.hero-stats{display:flex;gap:2rem;justify-content:flex-end;margin-top:2rem;padding-right:70px}
+.hero-stats div{text-align:right}
+.hero-stats b{display:block;font-size:2.2rem;font-weight:900;line-height:1}
+.hero-stats span{color:var(--muted);font-size:.85rem}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-side{justify-self:start;text-align:left}.hero-stats{justify-content:flex-start}.hero-stats div{text-align:left}}
+
+/* faixa marquee */
+.marquee{background:var(--grad);color:#04140E;overflow:hidden;white-space:nowrap;padding:.9rem 0;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.marquee div{display:inline-block;animation:m 28s linear infinite}
+.marquee span{margin:0 1.6rem}
+@keyframes m{to{transform:translateX(-50%)}}
+
+/* seções claras */
+.light{background:var(--light);color:var(--ink)}
+.sec{padding:100px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:900;text-transform:uppercase}
+.sec-head .sub{font-size:1.5rem;font-weight:500;display:block;text-transform:none;margin-bottom:.3rem;color:inherit;opacity:.75;letter-spacing:0}
+.light .kicker{color:var(--teal)}
+
+/* unidades */
+.filters{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.field{position:relative}
+.field input,.field select{font:600 .95rem Outfit,sans-serif;padding:.85rem 1rem .85rem 2.6rem;border-radius:999px;border:1.5px solid #D5DBD8;background:#fff;color:var(--ink);min-width:220px;appearance:none}
+.field select{padding-right:2.4rem;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E1412' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 1rem center/14px no-repeat}
+.field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(20,163,139,.15)}
+.field svg{position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--teal);pointer-events:none}
+.toggle{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.92rem;cursor:pointer;user-select:none;padding:.6rem 1rem;border-radius:999px;border:1.5px solid #D5DBD8;background:#fff}
+.toggle input{display:none}
+.toggle .sw{width:38px;height:22px;border-radius:999px;background:#D5DBD8;position:relative;transition:background .2s}
+.toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle input:checked+.sw{background:var(--teal)}
+.toggle input:checked+.sw::after{transform:translateX(16px)}
+.count{color:#5B6662;font-weight:600;margin:0 0 18px}
+
+.units{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:1000px){.units{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.units{grid-template-columns:1fr}.field input,.field select{min-width:0;width:100%}.field,.filters>*{flex:1 1 100%}}
+.unit{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(0,0,0,.04),0 12px 30px rgba(14,20,18,.06);transition:transform .2s,box-shadow .2s}
+.unit:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(14,20,18,.14)}
+.unit .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
+.unit .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.unit:hover .ph img{transform:scale(1.05)}
+.badge{position:absolute;top:14px;padding:.35rem .75rem;border-radius:999px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.badge.promo{right:14px;background:var(--lime);color:#04140E}
+.badge.soon{right:14px;background:#111;color:#fff}
+.badge.open{left:14px;background:rgba(5,8,7,.75);color:#fff;backdrop-filter:blur(6px);display:flex;align-items:center;gap:.4rem}
+.badge.open i{width:7px;height:7px;border-radius:50%;background:#9AA4A1}
+.badge.open.on i{background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.unit .bd{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.unit h3{font-size:1.55rem;font-weight:800}
+.unit .mods{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0 1rem}
+.unit .mods span{font-size:.75rem;font-weight:700;color:var(--teal);background:rgba(20,163,139,.09);padding:.25rem .6rem;border-radius:999px}
+.info{display:grid;gap:.6rem;margin-bottom:1.3rem;font-size:.93rem;color:#33403B}
+.info div{display:flex;gap:.6rem}
+.info svg{flex:none;width:18px;height:18px;color:var(--teal);margin-top:2px}
+.info small{display:block;color:#6B7672}
+.unit .acts{margin-top:auto;display:grid;gap:.55rem}
+.unit .acts .btn{padding:.8rem 1rem;font-size:.93rem}
+.btn-wa{border-color:#1BA34E;color:#1BA34E;background:#fff}
+.btn-wa:hover{background:#1BA34E;color:#fff}
+.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.unit .links{display:flex;justify-content:center;gap:1.2rem;font-size:.85rem;font-weight:600;color:#5B6662}
+.unit .links a{text-decoration:none;display:flex;gap:.35rem;align-items:center}
+.unit .links a:hover{color:var(--teal)}
+.unit .links svg{width:15px;height:15px}
+.no-res{display:none;text-align:center;padding:40px;color:#5B6662;font-weight:600}
+
+/* fallback de foto */
+.fallback{background:radial-gradient(circle at 70% 20%,rgba(107,227,59,.35),transparent 50%),linear-gradient(160deg,#0D1F18,#050807);position:relative}
+.fallback::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 46px,rgba(107,227,59,.25) 46px 48px,transparent 48px 96px);mask:linear-gradient(180deg,#000 0%,transparent 70%)}
+.fallback:has(img)::before,.fallback:has(img)::after{display:none}
+.fallback::after{content:attr(data-label);position:absolute;left:18px;bottom:14px;color:#fff;font-weight:900;font-size:1.4rem;text-transform:uppercase;letter-spacing:.02em}
+
+/* aulas */
+.classes{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.classes::-webkit-scrollbar{display:none}
+.class{position:relative;min-height:520px;scroll-snap-align:start;display:flex;align-items:flex-end;padding:2rem;overflow:hidden;isolation:isolate}
+.class .bgimg{position:absolute;inset:0;z-index:-2}
+.class .bgimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.class:hover .bgimg img{transform:scale(1.06)}
+.class::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(5,8,7,.95) 10%,rgba(5,8,7,.1) 65%)}
+.class h3{font-size:1.9rem;font-weight:800;margin-bottom:.6rem}
+.class p{margin:0 0 1rem;color:#C9D2CF;font-size:.95rem}
+.class .tag{display:inline-block;font-size:.75rem;font-weight:800;color:var(--lime);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.7rem}
+.class .units-in{font-size:.8rem;color:#9AA4A1}
+.c1{background:linear-gradient(160deg,#103E33,#050807)}
+.c2{background:linear-gradient(160deg,#3A1840,#050807)}
+.c3{background:linear-gradient(160deg,#3D1414,#050807)}
+.c4{background:linear-gradient(160deg,#173A10,#050807)}
+.c5{background:linear-gradient(160deg,#0F2C3D,#050807)}
+.arrows{display:flex;gap:.6rem}
+.arrows button{width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer;display:grid;place-items:center;transition:all .2s}
+.arrows button:hover{border-color:var(--lime);color:var(--lime)}
+
+/* diferenciais */
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1000px){.feats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.feats{grid-template-columns:1fr}}
+.feat{background:linear-gradient(180deg,#121A17,#0B0F0E);border:1px solid var(--line);border-radius:24px;padding:2rem;transition:border-color .2s,transform .2s}
+.feat:hover{border-color:rgba(107,227,59,.4);transform:translateY(-3px)}
+.feat .ic{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;background:var(--grad);color:#04140E;margin-bottom:1.6rem}
+.feat h3{font-size:1.35rem;font-weight:800;text-transform:uppercase;margin-bottom:.7rem;line-height:1.1}
+.feat p{color:var(--muted);margin:0;font-size:.95rem}
+
+/* plano */
+.plan-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:900px){.plan-wrap{grid-template-columns:1fr}}
+.plan{background:#0B0F0E;color:#fff;border-radius:30px;padding:2.6rem;position:relative;overflow:hidden;border:2px solid transparent;background-image:linear-gradient(#0B0F0E,#0B0F0E),var(--grad);background-origin:border-box;background-clip:padding-box,border-box}
+.plan .ribbon{display:inline-block;background:#E11D48;color:#fff;font-weight:900;font-size:.8rem;padding:.35rem .8rem;border-radius:8px;text-transform:uppercase;letter-spacing:.05em}
+.plan h3{font-size:2.6rem;font-weight:900;text-transform:uppercase;margin:1rem 0 .3rem}
+.plan .val{display:flex;align-items:flex-end;gap:.5rem;margin:1.2rem 0 1.6rem}
+.plan .val small{font-weight:800;font-size:1.1rem;line-height:1.2}
+.plan .val strong{font-size:5.4rem;font-weight:900;line-height:.8;letter-spacing:-.04em}
+.plan ul{list-style:none;padding:0;margin:0 0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.plan li{display:flex;gap:.5rem;font-weight:600;font-size:.95rem}
+.plan li::before{content:"";flex:none;width:20px;height:20px;border-radius:50%;background:var(--grad) ;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E")}
+.plan-copy h2{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;text-transform:uppercase}
+.plan-copy p{font-size:1.1rem;color:#3E4A46;margin:1.2rem 0 1.6rem}
+.convs{display:flex;gap:1rem;flex-wrap:wrap}
+.conv{flex:1;min-width:160px;background:#fff;border-radius:18px;padding:1.2rem 1.4rem;box-shadow:0 10px 30px rgba(14,20,18,.07);display:flex;flex-direction:column;gap:.2rem}
+.conv b{font-size:1.3rem;font-weight:900}
+.conv span{font-size:.85rem;color:#5B6662}
+.conv.wh b{color:#E2484A}
+.conv.tp b{color:#0E1412}
+
+/* comece hoje */
+.start{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.start .pic{position:relative}
+.start .pic img{width:100%;height:100%;object-fit:cover}
+.start .form{background:#fff;color:var(--ink);padding:70px 8%;display:flex;flex-direction:column;justify-content:center}
+.start h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;text-transform:uppercase}
+.start h2 .sub{display:block;font-size:1.5rem;font-weight:500;text-transform:none;opacity:.75;margin-bottom:.3rem}
+.start form{display:grid;gap:1rem;margin-top:2rem}
+.start label{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#5B6662}
+.start input,.start select{width:100%;font:600 1rem Outfit,sans-serif;padding:.9rem 0;border:0;border-bottom:2px solid #D5DBD8;background:transparent;color:var(--ink);border-radius:0;appearance:none}
+.start select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E1412' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right .2rem center/14px no-repeat}
+.start input:focus,.start select:focus{outline:none;border-color:var(--teal)}
+.start .btn{justify-self:start;margin-top:.8rem}
+@media(max-width:900px){.start{grid-template-columns:1fr}.start .pic{min-height:300px}}
+
+/* footer */
+footer{background:#000;padding:80px 0 30px;color:#C9D2CF}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+@media(max-width:900px){.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr}}
+footer h4{margin:0 0 1.2rem;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lime)}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.7rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--lime)}
+footer p{color:#8A9490;font-size:.92rem}
+.socials{display:flex;gap:.6rem;margin-top:1rem}
+.socials a{width:42px;height:42px;border-radius:12px;background:#141A18;display:grid;place-items:center}
+.socials svg{width:19px;height:19px}
+.f-bottom{border-top:1px solid #1A201E;margin-top:50px;padding-top:24px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:#6B7672;letter-spacing:.05em}
+.f-bottom a{color:#22D3EE}
+
+/* whatsapp flutuante */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Proposta de site desenvolvida pela <b>StayPulse</b> para Cia Mega Fitness · versão de demonstração</div>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Cia Mega Fitness">
+      <span class="mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="13" cy="5" r="2.6" fill="#14A38B"/><path d="M5 13c2-4 6-5.5 10-4.5M8 21c-1-4 1-8.5 6-10 3-1 5 1 4 4-1 2.5-3.5 3.5-6 3" stroke="url(#gm)" stroke-width="2.6" stroke-linecap="round"/><defs><linearGradient id="gm" x1="0" x2="1"><stop stop-color="#14A38B"/><stop offset="1" stop-color="#6BE33B"/></linearGradient></defs></svg></span>
+      <b>CIA <span class="g">MEGA</span></b>
+    </a>
+    <ul>
+      <li><a href="#unidades">Unidades</a></li>
+      <li><a href="#aulas">Aulas</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#convenios">Convênios</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-o" href="#unidades">Encontrar unidade</a>
+      <a class="btn btn-g" href="#comece">Matricule-se</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mmenu">
+  <a href="#unidades">Unidades</a><a href="#aulas">Aulas</a><a href="#diferenciais">Diferenciais</a><a href="#planos">Planos</a><a href="#convenios">Convênios</a><a href="#comece">Matricule-se</a>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="" onerror="this.remove()"></div>
+  <div class="neon"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="promo-tag"><i></i>Mês da Mega Black · última chance do ano</span>
+      <h1>Treine na<br><span class="g">melhor academia</span><br>da região</h1>
+      <div class="price"><small>Plano anual<br>12x de R$</small><strong>77,99</strong></div>
+      <p class="price-note">*Plano Anual Mega. Consulte condições e unidades participantes.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-g" href="#comece">Quero me matricular <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-o" href="#unidades">Ver unidades</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <p>Seu treino.<br>Seu ritmo.<br><span class="g">Seu nível.</span></p>
+      <div class="hero-stats">
+        <div><b>9</b><span>unidades</span></div>
+        <div><b>06h</b><span>às 23h</span></div>
+        <div><b>7</b><span>dias por semana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Musculação</span>✦<span>Dança</span>✦<span>Zumba</span>✦<span>Lutas</span>✦<span>Aulas coletivas</span>✦<span>Bioimpedância</span>✦<span>Cadeira de massagem</span>✦<span>Wellhub</span>✦<span>TotalPass</span>✦
+  <span>Musculação</span>✦<span>Dança</span>✦<span>Zumba</span>✦<span>Lutas</span>✦<span>Aulas coletivas</span>✦<span>Bioimpedância</span>✦<span>Cadeira de massagem</span>✦<span>Wellhub</span>✦<span>TotalPass</span>✦
+</div></div>
+
+<!-- UNIDADES -->
+<section class="light sec" id="unidades">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><span class="sub">uma Cia Mega</span><span class="g">perto de você</span></h2>
+      <div class="filters">
+        <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Bairro ou endereço" aria-label="Buscar unidade"></div>
+        <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          <select id="mod" aria-label="Modalidade"><option value="">Todas as modalidades</option><option>Musculação</option><option>Dança</option><option>Zumba</option><option>Lutas</option><option>Aulas coletivas</option></select></div>
+        <label class="toggle"><input type="checkbox" id="openNow"><span class="sw"></span>Aberta agora</label>
+      </div>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="units" id="units"></div>
+    <p class="no-res" id="nores">Nenhuma unidade encontrada. Tente outro bairro ou limpe os filtros.</p>
+  </div>
+</section>
+
+<!-- AULAS -->
+<section class="sec" id="aulas" style="padding-bottom:0">
+  <div class="wrap sec-head rv">
+    <h2><span class="sub">confira nossas</span><span class="g">aulas</span></h2>
+    <div class="arrows"><button aria-label="Anterior" data-dir="-1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button aria-label="Próxima" data-dir="1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></div>
+  </div>
+  <div class="classes" id="classes">
+    <article class="class c1"><div class="bgimg"><img src="img/aulas/musculacao.jpg" alt="" onerror="this.remove()"></div><div><span class="tag">Força</span><h3>Musculação</h3><p>Equipamentos premium e acompanhamento para você evoluir com segurança, do primeiro treino ao avançado.</p><span class="units-in">Todas as unidades</span></div></article>
+    <article class="class c2"><div class="bgimg"><img src="img/aulas/danca.jpg" alt="" onerror="this.remove()"></div><div><span class="tag">Ritmo</span><h3>Dança e Zumba</h3><p>Aulas animadas que queimam calorias sem parecer treino. Ideal para quem quer se divertir e se movimentar.</p><span class="units-in">Nacionalistas e outras unidades</span></div></article>
+    <article class="class c3"><div class="bgimg"><img src="img/aulas/lutas.jpg" alt="" onerror="this.remove()"></div><div><span class="tag">Foco</span><h3>Lutas</h3><p>Condicionamento, disciplina e autoconfiança. Treinos para todos os níveis com professores qualificados.</p><span class="units-in">Vila Formosa</span></div></article>
+    <article class="class c4"><div class="bgimg"><img src="img/aulas/coletivas.jpg" alt="" onerror="this.remove()"></div><div><span class="tag">Energia</span><h3>Aulas coletivas</h3><p>Treine em grupo, com motivação de sobra. Grade variada ao longo da semana.</p><span class="units-in">Sapopemba, Tatuapé e outras</span></div></article>
+    <article class="class c5"><div class="bgimg"><img src="img/aulas/aerobicos.jpg" alt="" onerror="this.remove()"></div><div><span class="tag">Cardio</span><h3>Aeróbicos</h3><p>Esteiras, bikes e elípticos para cuidar do coração, ganhar fôlego e acelerar o emagrecimento.</p><span class="units-in">Todas as unidades</span></div></article>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="sec" id="diferenciais">
+  <div class="wrap">
+    <div class="sec-head rv" style="justify-content:center;text-align:center">
+      <div><span class="kicker">Diferenciais</span><h2>Sua <span class="g">experiência</span><br>em outro nível</h2></div>
+    </div>
+    <div class="feats">
+      <div class="feat rv"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zm14 0-3 7a4 4 0 0 0 6 0l-3-7z"/></svg></div><h3>Bioimpedância</h3><p>Monitore sua evolução com balanças de última geração e analise sua composição corporal com precisão.</p></div>
+      <div class="feat rv"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Cadeira de massagem</h3><p>Recuperação muscular é fundamental. Relaxe nas cadeiras de massagem profissionais depois do treino.</p></div>
+      <div class="feat rv"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div><h3>Equipamentos premium</h3><p>Máquinas ergonômicas, modernas e seguras para todos os níveis, do iniciante ao atleta.</p></div>
+      <div class="feat rv"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/><path d="M3 12h4l2-3 3 6 2-3h7"/></svg></div><h3>Vestiários modernos</h3><p>Ambiente climatizado, duchas quentes e armários seguros para o seu conforto no dia a dia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS + CONVÊNIOS -->
+<section class="light sec" id="planos">
+  <div class="wrap plan-wrap">
+    <div class="plan rv">
+      <span class="ribbon">Mega Black</span>
+      <h3>Plano Anual <span class="g">Mega</span></h3>
+      <p style="color:var(--muted);margin:0">O melhor custo-benefício para treinar o ano todo.</p>
+      <div class="val"><small>12x de<br>R$</small><strong>77,99</strong></div>
+      <ul>
+        <li>Musculação e aeróbicos</li>
+        <li>Aulas coletivas</li>
+        <li>Bioimpedância</li>
+        <li>Cadeira de massagem</li>
+        <li>Vestiários climatizados</li>
+        <li>Horário livre</li>
+      </ul>
+      <a class="btn btn-g" href="#comece" style="width:100%">Garantir minha vaga</a>
+    </div>
+    <div class="plan-copy rv" id="convenios">
+      <span class="kicker">Benefícios corporativos</span>
+      <h2>Treine com<br><span class="g">seu convênio</span></h2>
+      <p>Use o seu benefício corporativo em qualquer uma das nossas unidades. Aceitamos os principais parceiros de bem-estar do mercado.</p>
+      <div class="convs">
+        <div class="conv wh"><b>Wellhub</b><span>antigo Gympass</span></div>
+        <div class="conv tp"><b>TotalPass</b><span>todas as unidades</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMECE -->
+<section class="start" id="comece">
+  <div class="pic fallback" data-label=""><img src="img/comece.jpg" alt="" onerror="this.remove()"></div>
+  <div class="form">
+    <h2><span class="sub">Comece a treinar</span><span class="g">hoje mesmo</span></h2>
+    <form id="fStart">
+      <div><label for="nome">Seu nome</label><input id="nome" required placeholder="Como podemos te chamar?"></div>
+      <div><label for="un">Unidade</label><select id="un" required><option value="">Escolha a unidade</option></select></div>
+      <div><label for="obj">Objetivo</label><select id="obj"><option>Quero conhecer a academia</option><option>Emagrecer</option><option>Ganhar massa muscular</option><option>Condicionamento</option><option>Dança e aulas coletivas</option><option>Usar Wellhub ou TotalPass</option></select></div>
+      <button class="btn btn-g" type="submit">Matricule-se pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="#inicio"><span class="mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="13" cy="5" r="2.6" fill="#14A38B"/><path d="M5 13c2-4 6-5.5 10-4.5M8 21c-1-4 1-8.5 6-10 3-1 5 1 4 4-1 2.5-3.5 3.5-6 3" stroke="#14A38B" stroke-width="2.6" stroke-linecap="round"/></svg></span><b>CIA <span class="g">MEGA</span></b></a>
+        <p>A rede de academias que mais cresce na Zona Leste. Evolua com a gente em um ambiente moderno e motivador.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/ciamegafitness_nacionalistas/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Navegação</h4><ul><li><a href="#unidades">Unidades</a></li><li><a href="#aulas">Aulas</a></li><li><a href="#planos">Planos</a></li><li><a href="#convenios">Convênios</a></li></ul></div>
+      <div><h4>Unidades</h4><ul id="fUnits"></ul></div>
+      <div><h4>Contato</h4><ul>
+        <li><a href="mailto:contato@ciamegafitness.com.br">contato@ciamegafitness.com.br</a></li>
+        <li><a href="#" class="js-wa-geral">Fale no WhatsApp</a></li>
+        <li>Zona Leste · São Paulo - SP</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span class="ano"></span> Cia Mega Fitness · BF9 Fitness Ltda · CNPJ 27.965.339/0001-89</span>
+      <span>Site por <a href="https://staypulse.com.br" target="_blank" rel="noopener">StayPulse</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa-geral" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+
+<script>
+/* ========= DADOS DAS UNIDADES (edite aqui) =========
+   whatsapp: só números com DDI+DDD (ex.: 5511999999999). Vazio = usa o WhatsApp geral.
+   assinar: link do sistema de matrícula. Vazio = abre o WhatsApp.                       */
+const WHATSAPP_GERAL = '';            // ← número geral da rede
+const HORARIO_PADRAO = {1:[6,23],2:[6,23],3:[6,23],4:[6,23],5:[6,22],6:[9,15],0:[10,13]};
+const UNIDADES = [
+  {id:'nacionalistas', nome:'Nacionalistas', end:'Av. dos Nacionalistas, 330 - 1º andar', bairro:'Nacionalistas', mods:['Musculação','Dança','Zumba'], promo:true, instagram:'https://www.instagram.com/ciamegafitness_nacionalistas/', whatsapp:'', assinar:''},
+  {id:'tatuape', nome:'Tatuapé', end:'Av. Celso Garcia, 5639', bairro:'Tatuapé', mods:['Musculação','Aeróbicos','Aulas coletivas','Cadeira de massagem'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'vila-formosa', nome:'Vila Formosa', end:'Praça São Círiaco, 309', bairro:'Vila Formosa', mods:['Musculação','Lutas'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'sapopemba', nome:'Sapopemba', end:'Av. Sapopemba, 5905', bairro:'Sapopemba', mods:['Musculação','Aulas coletivas'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'oratorio', nome:'Oratório', end:'Av. do Oratório, 4000', bairro:'Oratório', mods:['Musculação'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'barreira-grande', nome:'Barreira Grande', end:'Av. da Barreira Grande, 2903', bairro:'Barreira Grande', mods:['Musculação'], promo:false, instagram:'', whatsapp:'', assinar:''},
+  {id:'vila-ema', nome:'Vila Ema', end:'Av. Vila Ema, 5767', bairro:'Vila Virgínia', mods:['Musculação'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'sao-mateus', nome:'São Mateus', end:'Av. Mateo Bei, 1221', bairro:'São Mateus', mods:['Musculação'], promo:true, instagram:'', whatsapp:'', assinar:''},
+  {id:'vila-diva', nome:'Vila Diva', end:'Av. Sapopemba, 3791', bairro:'Vila Diva', mods:['Musculação'], promo:false, embreve:true, instagram:'', whatsapp:'', assinar:''},
+];
+/* =================================================== */
+
+const STAYPULSE_WA = '5511975387719'; // usado só enquanto for demonstração
+const waNum = u => (u && u.whatsapp) || WHATSAPP_GERAL || STAYPULSE_WA;
+const waLink = (num,msg) => 'https://wa.me/'+num+'?text='+encodeURIComponent(msg);
+const ico = {
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  wa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6L3 21z"/></svg>',
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>',
+  map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>'
+};
+
+function agoraSP(){
+  const p = new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+  const g = t => p.find(x=>x.type===t).value;
+  const dias = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {dia:dias[g('weekday')], h:(+g('hour')%24)+(+g('minute'))/60};
+}
+function aberta(u){
+  if(u.embreve) return false;
+  const {dia,h} = agoraSP(); const [a,f] = (u.horario||HORARIO_PADRAO)[dia]||[0,0];
+  return h>=a && h<f;
+}
+
+const grid = document.getElementById('units');
+function card(u){
+  const on = aberta(u);
+  const msg = `Oi! Quero saber mais sobre a Cia Mega unidade ${u.nome}.`;
+  const assinar = u.embreve ? '<a class="btn btn-g" aria-disabled="true">Inauguração em breve</a>'
+    : `<a class="btn btn-g" href="${u.assinar || waLink(waNum(u),'Oi! Quero me matricular na Cia Mega unidade '+u.nome+'.')}" target="_blank" rel="noopener">Assine agora</a>`;
+  const maps = 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Cia Mega Fitness '+u.end+', São Paulo');
+  return `<article class="unit rv in">
+    <div class="ph fallback" data-label="${u.nome}">
+      <img src="img/unidades/${u.id}.jpg" alt="Unidade ${u.nome}" loading="lazy" onerror="this.remove()">
+      ${u.embreve?'<span class="badge soon">Em breve</span>':(u.promo?'<span class="badge promo">Promoção</span>':'')}
+      ${u.embreve?'':`<span class="badge open ${on?'on':''}"><i></i>${on?'Aberta agora':'Fechada agora'}</span>`}
+    </div>
+    <div class="bd">
+      <h3>${u.nome}</h3>
+      <div class="mods">${u.mods.map(m=>`<span>${m}</span>`).join('')}</div>
+      <div class="info">
+        <div>${ico.pin}<span>${u.end}<small>${u.bairro} · São Paulo</small></span></div>
+        <div>${ico.clock}<span>${u.embreve?'Horários em breve':'Seg a Qui 06h às 23h · Sex 06h às 22h<small>Sáb 09h às 15h · Dom 10h às 13h</small>'}</span></div>
+      </div>
+      <div class="acts">
+        ${assinar}
+        <a class="btn btn-wa" href="${waLink(waNum(u),msg)}" target="_blank" rel="noopener">${ico.wa} Fale no WhatsApp</a>
+        <div class="links">
+          <a href="${maps}" target="_blank" rel="noopener">${ico.map} Como chegar</a>
+          ${u.instagram?`<a href="${u.instagram}" target="_blank" rel="noopener">${ico.ig} Instagram</a>`:''}
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+function render(){
+  const q = norm(document.getElementById('q').value.trim());
+  const mod = document.getElementById('mod').value;
+  const only = document.getElementById('openNow').checked;
+  const list = UNIDADES.filter(u =>
+    (!q || norm(u.nome+' '+u.end+' '+u.bairro).includes(q)) &&
+    (!mod || u.mods.includes(mod)) &&
+    (!only || aberta(u)));
+  grid.innerHTML = list.map(card).join('');
+  document.getElementById('nores').style.display = list.length?'none':'block';
+  document.getElementById('count').textContent = list.length===UNIDADES.length ? `${UNIDADES.length} unidades na Zona Leste de São Paulo` : `${list.length} de ${UNIDADES.length} unidades`;
+}
+['q','mod','openNow'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+render();
+
+// selects e rodapé
+const sel = document.getElementById('un'), fu = document.getElementById('fUnits');
+UNIDADES.forEach(u=>{
+  if(!u.embreve) sel.insertAdjacentHTML('beforeend',`<option value="${u.id}">${u.nome}</option>`);
+  fu.insertAdjacentHTML('beforeend',`<li><a href="#unidades">${u.nome}${u.embreve?' (em breve)':''}</a></li>`);
+});
+document.getElementById('fStart').addEventListener('submit',e=>{
+  e.preventDefault();
+  const u = UNIDADES.find(x=>x.id===sel.value);
+  const msg = `Oi! Meu nome é ${document.getElementById('nome').value.trim()}. Quero me matricular na Cia Mega unidade ${u.nome}. Objetivo: ${document.getElementById('obj').value}.`;
+  window.open(waLink(waNum(u),msg),'_blank','noopener');
+});
+document.querySelectorAll('.js-wa-geral').forEach(a=>{a.href=waLink(waNum(),'Oi! Vim pelo site da Cia Mega Fitness.');a.target='_blank';a.rel='noopener'});
+document.querySelectorAll('.ano').forEach(e=>e.textContent=new Date().getFullYear());
+
+// carrossel de aulas
+const cl = document.getElementById('classes');
+document.querySelectorAll('.arrows button').forEach(b=>b.addEventListener('click',()=>cl.scrollBy({left:+b.dataset.dir*cl.clientWidth*.6,behavior:'smooth'})));
+
+// header e menu
+const hd = document.getElementById('top');
+addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>40),{passive:true});
+const bg = document.getElementById('burger'), mm = document.getElementById('mmenu');
+bg.addEventListener('click',()=>{const o=mm.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+// animação
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
