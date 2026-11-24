@@ -14,9 +14,9 @@
     instadelivery: 'https://instadelivery.com.br/confeitariaencantada1',
     regiao: 'São Mateus · São Paulo - SP',
     antecedencia: 2,                 // dias mínimos para encomendas
-    temporada: 'Natal 2025',         // categoria em destaque no topo (troque por Páscoa, Dia das Mães...)
+    temporada: 'Natal 2026',         // categoria em destaque no topo (troque por Páscoa, Dia das Mães...)
     destaques: [
-      { nome: 'Natal 2025', capa: 'img/b/hl-natal25.jpg', cat: 'Natal 2025' },
+      { nome: 'Natal 2026', capa: 'img/b/hl-natal25.jpg', cat: 'Natal 2026' },
       { nome: 'Bolos', capa: 'img/b/hl-bolos.jpg', cat: 'Bolos' },
       { nome: 'Docinhos', capa: 'img/b/hl-docinhos.jpg', cat: 'Docinhos' },
       { nome: 'Presentear', capa: 'img/b/hl-presentear.jpg', cat: 'Para presentear' },
@@ -25,17 +25,17 @@
     ]
   };
 
-  const CATEGORIAS = ['Natal 2025', 'Novidades', 'Bolos', 'Brownies', 'Docinhos', 'Sobremesas', 'Salgados', 'Empadas', 'Para presentear', 'Bebidas'];
+  const CATEGORIAS = ['Natal 2026', 'Novidades', 'Bolos', 'Brownies', 'Docinhos', 'Sobremesas', 'Salgados', 'Empadas', 'Para presentear', 'Bebidas'];
 
   const P = (id, nome, cat, preco, desc, foto, extra) => Object.assign({ id, nome, cat, preco, desc, foto, status: 'publicado', destaque: false, apartir: false, criado: Date.now() }, extra || {});
   const SEED = {
     produtos: [
-      P('n1', 'Mini Panetone Trufado', 'Natal 2025', 29.90, 'Chocotone ou frutas, aprox. 200 g. Doce de leite, Dois Amores, Brigadeiro, Ninho c/ Nutella, Ninho c/ geleia de morango, Kinder Bueno, Ferrero ou Rafaello.', 'img/p/panetone-mini.jpg', { destaque: true, apartir: true }),
-      P('n2', 'Panetone Trufado Grande', 'Natal 2025', 89.90, 'Chocotone ou frutas, aprox. 800 g. Mesmos sabores do mini, com muito mais recheio.', 'img/p/panetone-grande.jpg', { destaque: true, apartir: true }),
-      P('n3', 'Caixa Natal 6 Doces', 'Natal 2025', 19.90, '6 brigadeiros gourmet, escolha até 2 sabores. Embalagem natalina, laço e tag.', ''),
-      P('n4', 'Bombontone', 'Natal 2025', 13.90, 'Árvore de chocolate com massa de chocotone e recheio de doce de leite ou brigadeiro.', ''),
-      P('n5', 'Duo Bombomtone', 'Natal 2025', 24.90, 'Caixa dourada com 2 árvores de chocolate recheadas.', ''),
-      P('n6', 'Chocotone Bites', 'Natal 2025', 18.90, 'Pedaços de panetone ou chocotone cobertos com chocolate, aprox. 200 g.', ''),
+      P('n1', 'Mini Panetone Trufado', 'Natal 2026', 29.90, 'Chocotone ou frutas, aprox. 200 g. Doce de leite, Dois Amores, Brigadeiro, Ninho c/ Nutella, Ninho c/ geleia de morango, Kinder Bueno, Ferrero ou Rafaello.', 'img/p/panetone-mini.jpg', { destaque: true, apartir: true }),
+      P('n2', 'Panetone Trufado Grande', 'Natal 2026', 89.90, 'Chocotone ou frutas, aprox. 800 g. Mesmos sabores do mini, com muito mais recheio.', 'img/p/panetone-grande.jpg', { destaque: true, apartir: true }),
+      P('n3', 'Caixa Natal 6 Doces', 'Natal 2026', 19.90, '6 brigadeiros gourmet, escolha até 2 sabores. Embalagem natalina, laço e tag.', ''),
+      P('n4', 'Bombontone', 'Natal 2026', 13.90, 'Árvore de chocolate com massa de chocotone e recheio de doce de leite ou brigadeiro.', ''),
+      P('n5', 'Duo Bombomtone', 'Natal 2026', 24.90, 'Caixa dourada com 2 árvores de chocolate recheadas.', ''),
+      P('n6', 'Chocotone Bites', 'Natal 2026', 18.90, 'Pedaços de panetone ou chocotone cobertos com chocolate, aprox. 200 g.', ''),
       P('b1', 'Bolo de Chocolate', 'Bolos', 0, 'Massa de chocolate, recheio cremoso e raspas de chocolate. Tamanhos sob encomenda.', 'img/p/bolo-chocolate.jpg', { destaque: true }),
       P('b2', 'Bolo de Morango', 'Bolos', 0, 'Massa branca, recheio com morangos frescos e cobertura rosa.', 'img/p/bolo-morango.jpg'),
       P('b3', 'Bolo Ninho', 'Bolos', 0, 'Massa fofinha com creme de Ninho e cobertura chantininho.', 'img/p/bolo-ninho.jpg', { destaque: true }),
