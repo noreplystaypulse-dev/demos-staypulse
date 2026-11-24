@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Buteco da Vila · Bar & Restaurante na Vila Maria, SP</title>
+<meta name="description" content="Sabor, experiência e presença. Bar e restaurante na Vila Maria, São Paulo: petiscos, chapas, pratos do dia, chopp e drinks.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buteco da Vila · Bar & Restaurante">
+<meta property="og:description" content="Sabor, experiência e presença. O lugar para onde você vai querer voltar.">
+<meta property="og:image" content="https://demos-staypulse.pages.dev/buteco/img/share.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1C2838">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C2838;--navy2:#142030;--peach:#DD9B67;--peach2:#C9824E;--cream:#F4EDE2;--cream2:#EAE0D0;--brown:#45281F;--ink:#22252B;--muted:#6E6A64;--line:#DED3C2;--disp:"Fraunces",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;font-family:Jost,system-ui,sans-serif;font-weight:300;color:var(--ink);background:var(--cream);line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1200px,92vw);margin:0 auto}
+.demo{background:#0F172A;color:#CBD5E1;font-size:.76rem;text-align:center;padding:.45rem 1rem;font-weight:400}
+.demo b{color:#22D3EE}
+/* header */
+header{position:absolute;left:0;right:0;z-index:40;transition:background .3s}
+header.fix{position:fixed;top:0;background:rgba(28,40,56,.96);backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.hd{display:flex;align-items:center;gap:2rem;height:86px}
+.brand img{height:64px;width:64px;border-radius:10px}
+header.fix .brand img{height:52px;width:52px}
+nav.mn{display:flex;gap:2rem;margin-left:auto}
+nav.mn a{text-decoration:none;color:#fff;font-weight:400;font-size:.95rem}
+nav.mn a:hover{color:var(--peach)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;border:0;border-radius:999px;padding:.75rem 1.5rem;font-weight:500;font-size:.92rem;transition:.25s;font-family:Jost}
+.btn.pc{background:var(--peach);color:var(--navy)}
+.btn.pc:hover{background:#E8AD7E}
+.btn.ol{border:1.5px solid #fff;color:#fff;background:transparent}
+.btn.ol:hover{background:#fff;color:var(--navy)}
+.btn.nv{background:var(--navy);color:#fff}
+.btn.nv:hover{background:var(--navy2)}
+.btn.on{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.btn.on:hover{background:var(--navy);color:#fff}
+.burger{display:none;border:0;background:none;color:#fff;padding:.3rem;margin-left:auto}
+/* hero */
+.hero{position:relative;min-height:clamp(560px,92vh,820px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
+.hero .bg{position:absolute;inset:0;background:url(img/f/fachada-noite.jpg) center 40%/cover;transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,32,48,.92) 0%,rgba(20,32,48,.7) 45%,rgba(20,32,48,.25) 100%),linear-gradient(0deg,rgba(20,32,48,.6),transparent 40%)}
+.hero .wrap{position:relative;z-index:2;padding:120px 0 60px}
+.kick{display:inline-flex;align-items:center;gap:.7rem;color:var(--peach);font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+.kick::before{content:"";width:34px;height:2px;background:currentColor}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.02;margin:.8rem 0 1rem;letter-spacing:-.01em;max-width:12ch}
+.hero h1 span{color:var(--peach)}
+.hero p{font-size:1.15rem;max-width:40ch;color:#DCE3EC;margin:0 0 2rem}
+.hero .bt{display:flex;gap:.8rem;flex-wrap:wrap}
+.today{position:absolute;right:4vw;bottom:40px;z-index:3;background:rgba(244,237,226,.97);color:var(--ink);border-radius:18px;padding:.9rem;display:flex;gap:.9rem;align-items:center;max-width:360px;box-shadow:0 20px 50px rgba(0,0,0,.35);text-decoration:none}
+.today img{width:84px;height:84px;border-radius:12px;object-fit:cover;flex:none}
+.today small{color:var(--peach2);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+.today b{display:block;font-family:var(--disp);font-weight:800;font-size:1.15rem;line-height:1.15;color:var(--navy)}
+.today span{font-size:.88rem;color:var(--muted)}
+/* ticker */
+.tick{background:var(--peach);color:var(--navy);overflow:hidden;white-space:nowrap;font-weight:500}
+.tick div{display:inline-block;padding:.85rem 0;animation:tk 30s linear infinite}
+.tick span{margin:0 2rem}
+.tick span::before{content:"✦";margin-right:2rem;opacity:.6}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* sections */
+section{scroll-margin-top:80px}
+.sec{padding:100px 0}
+.sm{color:var(--peach2);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
+h2.t{font-family:var(--disp);font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.08;margin:.4rem 0 1rem;color:var(--navy)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about>*{min-width:0}
+.pics{position:relative;height:560px}
+.pics img{position:absolute;object-fit:cover;border-radius:6px;box-shadow:0 24px 50px rgba(28,40,56,.25)}
+.pics .a{left:0;top:0;width:62%;height:82%}
+.pics .b{right:0;bottom:0;width:52%;height:52%;border:8px solid var(--cream)}
+.about p{margin:0 0 1rem}
+.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.4rem 0 2rem}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.85rem;font-weight:400;background:#fff}
+/* pratos do dia */
+.dia{background:var(--navy);color:#fff}
+.dia h2.t{color:#fff}
+.dia .sm{color:var(--peach)}
+.week{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-top:2.6rem}
+.week>*{min-width:0}
+.dd{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;transition:.3s;position:relative}
+.dd img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.dd .bd{padding:.9rem 1rem 1.1rem}
+.dd small{color:var(--peach);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+.dd b{display:block;font-family:var(--disp);font-weight:600;font-size:1.05rem;line-height:1.2;margin:.2rem 0 .4rem}
+.dd span{font-size:.95rem;color:#C9D3DF}
+.dd.on{background:var(--peach);color:var(--navy);border-color:var(--peach);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.dd.on small,.dd.on span{color:var(--navy)}
+.dd.on::after{content:"HOJE";position:absolute;top:10px;right:10px;background:var(--navy);color:var(--peach);font-size:.66rem;font-weight:700;letter-spacing:.1em;padding:.25rem .55rem;border-radius:999px}
+/* experiência tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:2.4rem}
+.tile{position:relative;height:280px;border-radius:6px;overflow:hidden;border:0;padding:0;cursor:pointer;background:var(--navy)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,32,48,.75),rgba(20,32,48,.15))}
+.tile b{position:absolute;inset:0;display:grid;place-items:center;z-index:2;color:#fff;font-family:var(--disp);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem)}
+/* cardápio */
+.menu-h{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding:1.4rem 0 1rem;scrollbar-width:none;position:sticky;top:70px;z-index:10;background:var(--cream)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.55rem 1.1rem;font-size:.9rem;font-weight:400;color:var(--ink)}
+.tabs button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1rem}
+.mg>*{min-width:0}
+.it{background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(28,40,56,.07);cursor:pointer;border:0;padding:0;text-align:left;color:inherit;font-family:inherit}
+.it .im{aspect-ratio:3/2;overflow:hidden;background:var(--cream2);position:relative}
+.it .im img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.it:hover .im img{transform:scale(1.05)}
+.it .im.dk{background:#000}
+.it .im.dk img,.it .im.wt img{object-fit:contain}
+.it .im.wt{background:#fff}
+.it .im.wt img{padding:6px}
+.it .im em{position:absolute;left:10px;top:10px;background:var(--peach);color:var(--navy);font-style:normal;font-size:.68rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;letter-spacing:.04em}
+.it .bd{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
+.it h3{font-family:var(--disp);font-weight:600;font-size:1.15rem;line-height:1.2;margin:0;color:var(--navy)}
+.it p{margin:0;font-size:.86rem;color:var(--muted);flex:1}
+.it .op{font-size:.8rem;color:var(--brown);font-weight:400}
+.it .pr{font-family:var(--disp);font-weight:800;color:var(--peach2);font-size:1.25rem}
+.it .pr small{font-family:Jost;font-weight:400;font-size:.75rem;color:var(--muted)}
+.list{background:#fff;border-radius:14px;padding:.4rem 1.4rem;grid-column:1/-1}
+.li{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px dashed var(--line)}
+.li:last-child{border:0}
+.li b{font-weight:500}
+.li small{display:block;color:var(--muted);font-size:.82rem}
+.li .pr{font-family:var(--disp);font-weight:800;color:var(--peach2);white-space:nowrap}
+.pdf{display:flex;gap:.7rem;flex-wrap:wrap}
+/* momentos */
+.mom{position:relative;min-height:460px;display:flex;align-items:center;color:#fff;overflow:hidden}
+.mom{background:#45281F}
+.mom .bg{position:absolute;top:0;bottom:0;right:0;width:55%;background:url(img/f/vinho-taca.jpg) center/cover}
+@media(max-width:860px){.mom .bg{width:100%;opacity:.45}}
+.mom::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#45281F 45%,rgba(69,40,31,.2) 75%)}
+.mom .wrap{position:relative;z-index:2}
+.mom h2{font-family:var(--disp);font-weight:900;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.95;margin:.4rem 0 1rem;color:var(--peach)}
+.mom p{max-width:42ch;color:#F2E5D8;margin:0 0 1.8rem}
+/* contato */
+.ct{display:grid;grid-template-columns:1fr 1.1fr 1fr}
+.ct>*{min-width:0}
+.ct img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.ct .box{background:var(--navy);color:#fff;padding:3.2rem 2.4rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;text-align:center}
+.ct .box h2{font-family:var(--disp);font-weight:800;font-size:2.2rem;margin:0;color:var(--peach)}
+.ct .box p{margin:0;color:#D5DDE7}
+.ct .box b{color:#fff;font-weight:500}
+.ct .box .btn{align-self:center}
+/* instagram */
+.ig-g{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:2rem}
+.ig-g a{aspect-ratio:1;overflow:hidden;display:block;border-radius:4px}
+.ig-g img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ig-g a:hover img{transform:scale(1.08)}
+/* footer */
+footer{background:var(--navy2);color:#C9D2DD;text-align:center;padding:60px 0 0}
+footer img{width:110px;height:110px;margin:0 auto 1.2rem;border-radius:14px}
+footer h3{font-family:var(--disp);font-weight:600;color:#fff;font-size:1.35rem;margin:0 0 1.6rem;line-height:1.4}
+footer nav{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+footer nav a{text-decoration:none;color:#fff;font-weight:400}
+footer nav a:hover{color:var(--peach)}
+footer .bt2{margin-top:40px;border-top:1px solid rgba(255,255,255,.08);padding:18px 0;font-size:.8rem;color:#8D99A8}
+footer .bt2 a{color:#22D3EE}
+/* modal */
+.ov{position:fixed;inset:0;z-index:80;background:rgba(15,22,32,.75);display:none;align-items:center;justify-content:center;padding:18px}
+.ov.open{display:flex}
+.md{background:#fff;border-radius:18px;width:min(520px,100%);max-height:92vh;overflow:auto;position:relative}
+.md img{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--cream2)}
+.md .bd{padding:1.4rem 1.6rem 1.8rem}
+.md small{color:var(--peach2);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
+.md h3{font-family:var(--disp);font-weight:800;font-size:1.7rem;margin:.2rem 0 .5rem;color:var(--navy)}
+.md .x{position:absolute;right:10px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:1.2rem;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.res label{display:block;font-size:.78rem;font-weight:500;color:var(--muted);margin:.9rem 0 .3rem;text-transform:uppercase;letter-spacing:.06em}
+.res input,.res select{width:100%;border:1px solid var(--line);border-radius:10px;padding:.75rem .9rem;font:inherit;font-weight:400;background:var(--cream);outline:none}
+.res .two{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.adm{position:fixed;left:16px;bottom:16px;z-index:60;background:#0F172A;color:#fff;text-decoration:none;font-size:.76rem;padding:.55rem .9rem;border-radius:999px;border:1px solid #22D3EE}
+.adm b{color:#22D3EE}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1000px){.week{grid-template-columns:repeat(3,1fr)}.mg{grid-template-columns:repeat(2,1fr)}.ig-g{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){
+  nav.mn{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;margin:0}
+  nav.mn.open{display:flex}nav.mn a{padding:1rem 4vw;border-top:1px solid rgba(255,255,255,.08)}
+  .burger{display:block}.hd .btn{display:none}
+  header{background:rgba(28,40,56,.6)}
+  .about{grid-template-columns:1fr;gap:2.4rem}.pics{height:420px}
+  .ct{grid-template-columns:1fr}.ct img{min-height:260px;max-height:300px}
+  .today{position:relative;right:auto;bottom:auto;margin:2rem 0 0;max-width:none}
+  .hero .wrap{padding-bottom:40px}
+  .sec{padding:72px 0}
+  .tiles{grid-template-columns:1fr}.tile{height:200px}
+}
+@media(max-width:560px){
+  .week{grid-template-columns:repeat(2,1fr)}.mg{grid-template-columns:1fr}
+  .tabs{top:66px}.hd{height:72px}.brand img{height:52px;width:52px}
+  .res .two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="demo">Proposta de site desenvolvida pela <b>StayPulse</b> para o Buteco da Vila · versão de demonstração</div>
+<header id="hdr">
+  <div class="wrap hd">
+    <a class="brand" href="#inicio"><img src="img/logo.png" alt="Buteco da Vila"></a>
+    <nav class="mn" id="mn"><a href="#inicio">Home</a><a href="#sobre">Sobre</a><a href="#cardapio">Cardápio</a><a href="#contato">Contato</a><a id="trab1" target="_blank" rel="noopener">Trabalhe conosco</a></nav>
+    <button class="btn pc" data-res>Reservar mesa</button>
+    <button class="burger" id="burger" aria-label="Menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="bg"></div>
+  <div class="wrap">
+    <span class="kick">Bar & Restaurante · Vila Maria</span>
+    <h1>Sabor, experiência e <span>presença.</span></h1>
+    <p>O lugar para onde você vai querer voltar. Petiscos, chapas para dividir, pratos do dia, chopp gelado e drinks autorais.</p>
+    <div class="bt"><a class="btn pc" href="#cardapio">Ver cardápio</a><a class="btn ol" id="loc1" target="_blank" rel="noopener">Localização</a><button class="btn ol" data-res>Reservar mesa</button></div>
+    <a class="today" id="today" href="#dia"></a>
+  </div>
+</section>
+<div class="tick" id="tick"></div>
+
+<section class="sec" id="sobre">
+  <div class="wrap about">
+    <div class="pics rv"><img class="a" src="img/f/entrada-arco.jpg" alt="Fachada do Buteco da Vila"><img class="b" src="img/f/pastel.jpg" alt="Pastéis"></div>
+    <div class="rv">
+      <span class="sm">Buteco da Vila</span>
+      <h2 class="t">Uma esquina para comer bem, brindar e ficar mais um pouco.</h2>
+      <p>Na Rua Curuçá, na Vila Maria, o Buteco da Vila junta o melhor do boteco paulistano com cozinha caprichada: entradas crocantes, chapas para compartilhar, pratos do dia no almoço e drinks que viram assunto.</p>
+      <p>Ambiente aconchegante, mesas na calçada, chopp Brahma no ponto e aquele atendimento que faz você se sentir em casa.</p>
+      <div class="chips"><span>🍺 Chopp Brahma</span><span>🍳 Pratos do dia</span><span>🥩 Chapas para dividir</span><span>🍹 Drinks da casa</span><span>📺 Jogos</span></div>
+      <div class="bt" style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn nv" href="#cardapio">Cardápio</a><button class="btn on" data-res>Reservar mesa</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dia" id="dia">
+  <div class="wrap">
+    <span class="sm">Almoço</span>
+    <h2 class="t">Pratos do dia</h2>
+    <p style="margin:0;color:#C9D3DF;max-width:52ch">Comida caseira de segunda a sábado. O prato de hoje aparece em destaque.</p>
+    <div class="week" id="week"></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-bottom:40px">
+  <div class="wrap" style="text-align:center">
+    <span class="sm">Experiência</span>
+    <h2 class="t">Experimente as nossas delícias</h2>
+    <div class="tiles">
+      <button class="tile rv" data-go="Entradas"><img src="img/p/torresmo.jpg" alt=""><b>Entradas e porções</b></button>
+      <button class="tile rv" data-go="Chapas e petiscos"><img src="img/p/mignon-da-vila.jpg" alt=""><b>Chapas e petiscos</b></button>
+      <button class="tile rv" data-go="Pratos a compartilhar"><img src="img/p/picanha-aligot.jpg" alt=""><b>Pratos a compartilhar</b></button>
+      <button class="tile rv" data-go="Drinks"><img src="img/f/drink.jpg" alt="" style="object-position:50% 30%"><b>Drinks e chopp</b></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cardapio" style="padding-top:60px">
+  <div class="wrap">
+    <div class="menu-h">
+      <div><span class="sm">Cardápio</span><h2 class="t" style="margin-bottom:0">Nosso cardápio</h2></div>
+      <div class="pdf"><a class="btn on" id="pdfB" target="_blank" rel="noopener">⬇ Cardápio em PDF</a><a class="btn on" href="tela/" target="_blank" rel="noopener">📺 Menu na TV</a></div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="mg" id="mg"></div>
+  </div>
+</section>
+
+<section class="mom">
+  <div class="bg"></div>
+  <div class="wrap rv">
+    <span class="kick">Venha viver</span>
+    <h2>bons momentos</h2>
+    <p>Aniversário, happy hour ou aquele almoço de domingo em família: reserve a sua mesa e deixe o resto com a gente.</p>
+    <button class="btn pc" data-res>Reservar mesa</button>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="ct">
+    <img src="img/f/chapa.jpg" alt="">
+    <div class="box">
+      <h2>Contato</h2>
+      <p id="cEnd"></p>
+      <p id="cHor" style="white-space:pre-line"></p>
+      <p id="cTel"></p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem"><button class="btn pc" data-res>Reservar mesa</button><a class="btn ol" id="loc2" target="_blank" rel="noopener">Como chegar</a></div>
+    </div>
+    <img src="img/f/drink.jpg" alt="" style="object-position:50% 30%">
+  </div>
+</section>
+
+<section class="sec" style="text-align:center">
+  <div class="wrap">
+    <span class="sm">Acompanhe o Buteco da Vila</span>
+    <h2 class="t">no Instagram</h2>
+    <a class="btn nv" id="igB" target="_blank" rel="noopener"></a>
+    <div class="ig-g" id="igG"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Buteco da Vila">
+    <h3>Sabor, experiência e presença.<br>O lugar para onde você vai querer voltar.</h3>
+    <nav><a href="#inicio">Home</a><a href="#sobre">Sobre</a><a href="#cardapio">Cardápio</a><a href="#contato">Contato</a><a id="trab2" target="_blank" rel="noopener">Trabalhe conosco</a></nav>
+    <a class="btn pc" data-res style="cursor:pointer">Reservar mesa</a>
+  </div>
+  <div class="bt2">© <span id="ano"></span> Buteco da Vila · Rua Curuçá, 852 · Vila Maria · Site por <a href="https://demos-staypulse.pages.dev/" target="_blank" rel="noopener">StayPulse</a></div>
+</footer>
+
+<div class="ov" id="ov"><div class="md" id="md"></div></div>
+<a class="wa" data-wa aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
+<a class="adm" href="admin/">⚙ Painel do bar <b>demo</b></a>
+
+<script src="js/store.js"></script>
+<script>
+const S = window.ButecoStore, DB = S.load(), C = S.cfg(DB);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA = (C.whatsapp || C.whatsappDemo).replace(/\D/g, '');
+const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const END = C.endereco + ', ' + C.bairro.replace(/ · /g, ', ');
+const MAP = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Buteco da Vila, ' + END);
+const IT = DB.itens.filter(i => i.ativo);
+const DK = /gin-|manhattan|dry-martini/;
+const WT = /caipirinha-da-vila|caipirinha-ballena|aperol|mojito|cuba-libre|pina-colada|espanhola|lagoa-azul|sex-on|margarita|negroni|old-fashioned/;
+const kl = f => DK.test(f) ? 'dk' : WT.test(f) ? 'wt' : '';
+
+document.querySelectorAll('[data-wa]').forEach(a => { a.href = wa('Olá! Vim pelo site do Buteco da Vila.'); a.target = '_blank'; a.rel = 'noopener'; });
+['trab1', 'trab2'].forEach(i => $(i).href = C.trabalhe);
+['loc1', 'loc2'].forEach(i => $(i).href = MAP);
+$('pdfB').href = C.pdf;
+if (C.ifood) { const d = document.createElement('a'); d.href = C.ifood; d.target = '_blank'; d.rel = 'noopener'; d.textContent = 'Delivery'; $('mn').appendChild(d); } $('igB').href = 'https://instagram.com/' + C.instagram; $('igB').textContent = '@' + C.instagram;
+$('cEnd').innerHTML = `<b>${esc(C.endereco)}</b><br>${esc(C.bairro)}`;
+$('cHor').textContent = C.horarios;
+$('cTel').innerHTML = C.telefone ? `Telefone: <b>${esc(C.telefone)}</b>` : `Instagram: <b>@${esc(C.instagram)}</b>`;
+$('ano').textContent = new Date().getFullYear();
+
+/* avisos */
+const AV = DB.avisos.filter(a => a.ativo).map(a => a.texto).concat(['Rua Curuçá, 852 · Vila Maria', 'Chopp Brahma R$ 14,90']);
+$('tick').innerHTML = `<div>${(AV.map(t => `<span>${esc(t)}</span>`).join('')).repeat(4)}</div>`;
+
+/* pratos do dia */
+const hj = S.hoje();
+const PD = IT.filter(i => i.cat === 'Pratos do dia');
+const week = [1, 2, 3, 4, 5, 6].map(d => ({ d, i: PD.find(p => (p.dias || []).includes(d)) })).filter(x => x.i);
+$('week').innerHTML = week.map(({ d, i }) => `<div class="dd ${d === hj ? 'on' : ''}" data-id="${i.id}"><img src="${esc(i.foto || 'img/logo.png')}" alt=""><div class="bd"><small>${S.DIAS[d]}</small><b>${esc(i.nome)}</b><span>${esc(S.preco(i))}</span></div></div>`).join('');
+$('week').onclick = e => { const b = e.target.closest('.dd'); if (b) openIt(b.dataset.id); };
+const td = PD.find(p => (p.dias || []).includes(hj));
+if (td) $('today').innerHTML = `<img src="${esc(td.foto)}" alt=""><div><small>Prato do dia · ${S.DIAS[hj]}</small><b>${esc(td.nome)}</b><span>${esc(S.preco(td))}</span></div>`;
+else $('today').remove();
+
+/* cardápio */
+const cats = S.CATS.filter(c => IT.some(i => i.cat === c));
+let cat = 'Destaques';
+const tabs = ['Destaques'].concat(cats);
+function rTabs() { $('tabs').innerHTML = tabs.map(c => `<button data-c="${esc(c)}" class="${c === cat ? 'on' : ''}">${c === 'Destaques' ? '★ ' : ''}${esc(c)}</button>`).join(''); }
+const card = i => `<button class="it" data-id="${i.id}"><div class="im ${kl(i.foto)}"><img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">${i.destaque ? '<em>★ Destaque</em>' : ''}</div><div class="bd"><h3>${esc(i.nome)}</h3><p>${esc(i.desc)}</p>${i.opcoes ? `<span class="op">${esc(i.opcoes)}</span>` : ''}<span class="pr">${esc(S.preco(i))}</span></div></button>`;
+function rMg() {
+  const l = cat === 'Destaques' ? IT.filter(i => i.destaque) : IT.filter(i => i.cat === cat);
+  const ph = l.filter(i => i.foto), np = l.filter(i => !i.foto);
+  $('mg').innerHTML = ph.map(card).join('') + (np.length ? `<div class="list">${np.map(i => `<div class="li"><div><b>${esc(i.nome)}</b>${i.desc || i.opcoes ? `<small>${esc(i.opcoes || i.desc)}</small>` : ''}</div><span class="pr">${esc(S.preco(i))}</span></div>`).join('')}</div>` : '');
+}
+rTabs(); rMg();
+$('tabs').onclick = e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; rTabs(); rMg(); b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' }); };
+$('mg').onclick = e => { const b = e.target.closest('.it'); if (b) openIt(b.dataset.id); };
+document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { cat = b.dataset.go; rTabs(); rMg(); $('cardapio').scrollIntoView(); });
+
+/* modais */
+const ov = $('ov'), md = $('md');
+const openM = h => { md.innerHTML = '<button class="x" id="mx" aria-label="Fechar">×</button>' + h; ov.classList.add('open'); document.body.style.overflow = 'hidden'; $('mx').onclick = closeM; };
+const closeM = () => { ov.classList.remove('open'); document.body.style.overflow = ''; };
+ov.onclick = e => { if (e.target === ov) closeM(); }; addEventListener('keydown', e => e.key === 'Escape' && closeM());
+function openIt(id) {
+  const i = IT.find(x => x.id === id); if (!i) return;
+  openM(`${i.foto ? `<img src="${esc(i.foto)}" alt="" style="${DK.test(i.foto) ? 'object-fit:contain;background:#000' : WT.test(i.foto) ? 'object-fit:contain;background:#fff' : ''}">` : ''}<div class="bd"><small>${esc(i.cat)}${i.dias && i.dias.length ? ' · ' + i.dias.map(d => S.DIAS[d]).join(' e ') : ''}</small><h3>${esc(i.nome)}</h3><p style="margin:0 0 .6rem;color:var(--muted)">${esc(i.desc)}</p>${i.opcoes ? `<p style="margin:0 0 .6rem;color:var(--brown)">${esc(i.opcoes)}</p>` : ''}<p style="font-family:var(--disp);font-weight:800;color:var(--peach2);font-size:1.6rem;margin:0 0 1rem">${esc(S.preco(i))}</p><button class="btn nv" data-res>Reservar mesa</button></div>`);
+  md.querySelector('[data-res]').onclick = openRes;
+}
+function openRes() {
+  const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); const min = d.toISOString().slice(0, 10);
+  openM(`<img src="img/f/fachada-noite.jpg" alt=""><div class="bd res"><small>Buteco da Vila</small><h3>Reservar mesa</h3><p style="margin:0;color:var(--muted);font-size:.92rem">A confirmação é feita pelo WhatsApp.</p>
+  <label>Seu nome</label><input id="rN" placeholder="Nome para a reserva">
+  <div class="two"><div><label>Data</label><input type="date" id="rD" min="${min}" value="${min}"></div><div><label>Horário</label><input type="time" id="rH" value="20:00"></div></div>
+  <div class="two"><div><label>Pessoas</label><select id="rP">${[2,3,4,5,6,8,10,12,15,20].map(n => `<option>${n}</option>`).join('')}</select></div><div><label>Ocasião</label><select id="rO"><option>Sem ocasião</option><option>Aniversário</option><option>Happy hour</option><option>Confraternização</option><option>Jogo</option></select></div></div>
+  <button class="btn nv" id="rGo" style="width:100%;margin-top:1.2rem">Enviar pelo WhatsApp</button></div>`);
+  $('rGo').onclick = () => { const dt = $('rD').value.split('-').reverse().join('/'); window.open(wa(`Olá! Quero reservar uma mesa no Buteco da Vila:\n\n👤 Nome: ${$('rN').value.trim() || '-'}\n📅 Data: ${dt}\n🕗 Horário: ${$('rH').value}\n👥 Pessoas: ${$('rP').value}\n🎉 Ocasião: ${$('rO').value}`), '_blank'); closeM(); };
+}
+document.querySelectorAll('[data-res]').forEach(b => b.onclick = openRes);
+
+/* instagram */
+$('igG').innerHTML = ['drink', 'pastel', 'chapa', 'vinho-taca', 'cardapio-livro', 'fachada-noite'].map(f => `<a href="https://instagram.com/${C.instagram}" target="_blank" rel="noopener"><img src="img/f/${f}.jpg" alt="" loading="lazy"></a>`).join('');
+
+/* header e animações */
+const hdr = $('hdr'); const onS = () => hdr.classList.toggle('fix', scrollY > 120); addEventListener('scroll', onS, { passive: true }); onS();
+$('burger').onclick = () => $('mn').classList.toggle('open'); $('mn').onclick = e => e.target.tagName === 'A' && $('mn').classList.remove('open');
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

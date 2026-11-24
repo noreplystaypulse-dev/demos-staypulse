@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Menu na TV · Buteco da Vila</title>
+<link rel="icon" href="../img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C2838;--navy2:#142030;--peach:#DD9B67;--cream:#F4EDE2;--disp:"Fraunces",Georgia,serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--navy2);color:#fff;font-family:Jost,system-ui,sans-serif}
+.tv{height:100vh;display:grid;grid-template-rows:auto 1fr auto;background:radial-gradient(circle at 85% 0%,rgba(221,155,103,.18),transparent 45%),var(--navy)}
+.top{display:flex;align-items:center;gap:2vw;padding:2.2vh 3vw;border-bottom:2px solid rgba(221,155,103,.35)}
+.top img{height:9vh;width:9vh;border-radius:1vh}
+.top h1{font-family:var(--disp);font-weight:900;font-size:5.4vh;margin:0;color:var(--peach);line-height:1}
+.top small{display:block;font-size:2vh;letter-spacing:.3em;text-transform:uppercase;color:#C9D3DF;margin-top:.6vh}
+.dots{margin-left:auto;display:flex;gap:.8vw;align-items:center}
+.dots i{width:1.4vh;height:1.4vh;border-radius:50%;background:rgba(255,255,255,.25)}
+.dots i.on{background:var(--peach);width:4vh;border-radius:1vh}
+.clock{font-family:var(--disp);font-weight:800;font-size:4.4vh;margin-left:2vw}
+.body{padding:2.6vh 3vw;overflow:hidden;position:relative}
+.grid{display:grid;gap:2.2vh 1.6vw;height:100%;transition:opacity .6s,transform .6s}
+.grid.out{opacity:0;transform:translateY(2vh)}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:1.6vh;overflow:hidden;display:flex;flex-direction:column;min-height:0;position:relative}
+.card .im{flex:1;min-height:0;background:#0f1824}
+.card .im img{width:100%;height:100%;object-fit:cover}
+.card .im.dk{background:#000}.card .im.dk img{object-fit:contain}.card .im.wt{background:#fff}.card .im.wt img{object-fit:contain;padding:1vh}
+.card .bd{padding:1.4vh 1.2vw 1.6vh;display:flex;justify-content:space-between;align-items:flex-end;gap:1vw}
+.card b{font-family:var(--disp);font-weight:600;font-size:2.6vh;line-height:1.15}
+.card small{display:block;color:#AFBccb;font-size:1.6vh;margin-top:.4vh}
+.card .p{font-family:var(--disp);font-weight:900;color:var(--peach);font-size:3.2vh;white-space:nowrap}
+.card.hj{border-color:var(--peach);box-shadow:0 0 0 .4vh var(--peach)}
+.card.hj::after{content:"HOJE";position:absolute;top:1.2vh;left:1.2vh;background:var(--peach);color:var(--navy);font-weight:700;font-size:1.6vh;letter-spacing:.15em;padding:.5vh 1vh;border-radius:99px}
+.list{columns:2;column-gap:4vw;height:100%}
+.row{break-inside:avoid;display:flex;justify-content:space-between;gap:2vw;padding:1.5vh 0;border-bottom:1px dashed rgba(255,255,255,.15)}
+.row b{font-family:var(--disp);font-weight:600;font-size:3vh}
+.row small{display:block;color:#AFBccb;font-size:1.7vh}
+.row .p{font-family:var(--disp);font-weight:900;color:var(--peach);font-size:3vh;white-space:nowrap}
+.bar{background:var(--peach);color:var(--navy);font-weight:600;font-size:2.4vh;white-space:nowrap;overflow:hidden}
+.bar div{display:inline-block;padding:1.3vh 0;animation:tk 40s linear infinite}
+.bar span{margin:0 2.5vw}.bar span::before{content:"✦";margin-right:2.5vw;opacity:.6}
+@keyframes tk{to{transform:translateX(-50%)}}
+.hint{position:fixed;right:1.2vw;top:1.2vh;background:rgba(0,0,0,.55);color:#fff;font-size:13px;padding:.5rem .8rem;border-radius:8px;transition:opacity .6s}
+.hint button{margin-left:.6rem;border:0;border-radius:6px;padding:.3rem .6rem;background:var(--peach);color:var(--navy);font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="tv">
+  <div class="top"><img src="../img/logo.png" alt=""><div><h1 id="cat">Cardápio</h1><small>Buteco da Vila · Sabor, experiência e presença</small></div><div class="dots" id="dots"></div><div class="clock" id="clock"></div></div>
+  <div class="body"><div class="grid" id="grid"></div></div>
+  <div class="bar" id="bar"></div>
+</div>
+<div class="hint" id="hint">Modo TV · <button id="fs">Tela cheia</button></div>
+<script src="../js/store.js"></script>
+<script>
+const S = window.ButecoStore; let DB, IT, CATS, k = 0, timer;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fix = s => s && !/^(data:|https?:|\.\.\/)/.test(s) ? '../' + s : s;
+const DK = /gin-|manhattan|dry-martini/;
+const WT = /caipirinha-da-vila|caipirinha-ballena|aperol|mojito|cuba-libre|pina-colada|espanhola|lagoa-azul|sex-on|margarita|negroni|old-fashioned/;
+function boot() {
+  DB = S.load(); IT = DB.itens.filter(i => i.ativo);
+  CATS = (DB.tela.cats || []).filter(c => IT.some(i => i.cat === c)); if (!CATS.length) CATS = S.CATS.filter(c => IT.some(i => i.cat === c));
+  const av = DB.avisos.filter(a => a.ativo).map(a => a.texto).concat(['Reservas pelo WhatsApp', '@' + S.cfg(DB).instagram]);
+  $('bar').innerHTML = `<div>${av.map(t => `<span>${esc(t)}</span>`).join('').repeat(4)}</div>`;
+  $('dots').innerHTML = CATS.map(() => '<i></i>').join('');
+}
+function show() {
+  const g = $('grid'), c = CATS[k % CATS.length], hj = S.hoje();
+  let l = IT.filter(i => i.cat === c);
+  if (c === 'Pratos do dia') l = l.slice().sort((a, b) => ((b.dias || []).includes(hj)) - ((a.dias || []).includes(hj)));
+  const withPh = DB.tela.fotos !== false && l.filter(i => i.foto).length >= Math.min(3, l.length);
+  g.classList.add('out');
+  setTimeout(() => {
+    $('cat').textContent = c;
+    [...$('dots').children].forEach((d, j) => d.classList.toggle('on', j === k % CATS.length));
+    if (withPh) {
+      const L = l.filter(i => i.foto).slice(0, 8), n = L.length, cols = n <= 3 ? n : n <= 4 ? 4 : n <= 6 ? 3 : 4, rows = Math.ceil(n / cols);
+      g.style.gridTemplateColumns = `repeat(${cols},1fr)`; g.style.gridTemplateRows = `repeat(${rows},1fr)`; g.className = 'grid out';
+      g.innerHTML = L.map(i => `<div class="card ${(i.dias || []).includes(hj) ? 'hj' : ''}"><div class="im ${DK.test(i.foto) ? 'dk' : WT.test(i.foto) ? 'wt' : ''}"><img src="${esc(fix(i.foto))}" alt=""></div><div class="bd"><div><b>${esc(i.nome)}</b>${i.dias && i.dias.length ? `<small>${i.dias.map(d => S.DIAS[d]).join(' e ')}</small>` : i.opcoes ? `<small>${esc(i.opcoes)}</small>` : ''}</div><span class="p">${esc(S.preco(i))}</span></div></div>`).join('');
+    } else {
+      g.style.gridTemplateColumns = '1fr'; g.style.gridTemplateRows = '1fr';
+      g.innerHTML = `<div class="list">${l.map(i => `<div class="row"><div><b>${esc(i.nome)}</b>${i.opcoes || i.desc ? `<small>${esc(i.opcoes || i.desc)}</small>` : ''}</div><span class="p">${esc(S.preco(i))}</span></div>`).join('')}</div>`;
+    }
+    requestAnimationFrame(() => g.classList.remove('out'));
+  }, 600);
+  k++;
+  clearTimeout(timer); timer = setTimeout(() => { if (k % CATS.length === 0) boot(); show(); }, Math.max(5, +DB.tela.seg || 12) * 1000);
+}
+const clk = () => $('clock').textContent = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
+boot(); show(); clk(); setInterval(clk, 10000);
+$('fs').onclick = () => document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+setTimeout(() => $('hint').style.opacity = 0, 6000);
+addEventListener('mousemove', () => { $('hint').style.opacity = 1; clearTimeout(window._h); window._h = setTimeout(() => $('hint').style.opacity = 0, 3000); });
+addEventListener('storage', e => { if (e.key === S.KEY) boot(); });
+</script>
+</body>
+</html>
