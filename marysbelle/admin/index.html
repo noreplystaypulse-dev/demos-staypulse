@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#D63A75">
+<title>Painel · Mary's Belle</title>
+<link rel="icon" href="../img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#D63A75;--navy2:#B82560;--acc:#D63A75;--ink:#3A2A30;--muted:#8C7179;--line:#F1D6DF;--soft:#FDF1F5}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+body{margin:0;background:var(--soft);color:var(--ink);font-family:Montserrat,system-ui,sans-serif;font-size:15px}
+button,input,select,textarea{font-family:inherit;font-size:16px}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.app{max-width:560px;margin:0 auto;min-height:100vh;padding-bottom:calc(86px + env(safe-area-inset-bottom));background:#fff}
+.demo{background:#0F172A;color:#CBD5E1;font-size:.74rem;text-align:center;padding:.4rem}
+.demo b{color:#22D3EE}
+.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 14px 12px;display:flex;align-items:center;gap:.7rem}
+.top img{height:36px;width:auto}
+.top h1{font-family:"Cormorant Garamond";font-weight:600;font-size:1.35rem;margin:0}
+.top small{display:block;font-family:Montserrat;font-size:.72rem;opacity:.75}
+.top a{margin-left:auto;background:#fff;color:var(--navy);text-decoration:none;font-weight:700;font-size:.8rem;padding:.5rem .75rem;border-radius:6px}
+.pad{padding:16px}
+.view{display:none}.view.on{display:block}
+h2{font-family:"Cormorant Garamond";font-weight:400;font-size:1.3rem;margin:0 0 .2rem}
+.hint{color:var(--muted);font-size:.86rem;margin:0 0 14px}
+.seg{display:flex;gap:6px;margin-bottom:14px}
+.seg button{flex:1;border:1px solid var(--line);background:#fff;border-radius:8px;padding:.55rem .6rem;font-weight:500;font-size:.85rem;color:var(--ink)}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.list{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px;background:#fff;width:100%;text-align:left;color:inherit;text-decoration:none}
+.item:active{background:var(--soft)}
+.item img,.item .ic{width:64px;height:64px;border-radius:6px;object-fit:cover;flex:none;background:var(--soft)}
+.item .ic{display:grid;place-items:center;color:var(--navy)}
+.item .ic svg{width:30px;height:30px}
+.item .t{flex:1;min-width:0}
+.item b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item small{color:var(--muted);font-size:.8rem}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:.64rem;font-weight:700;text-transform:uppercase;padding:.14rem .42rem;border-radius:4px;background:#EEF0F3;color:var(--muted)}
+.tag.ok{background:#DDF3E3;color:#17663A}.tag.dr{background:#FFF1D6;color:#8A5A00}.tag.top{background:var(--acc);color:#fff}
+.chev{color:#B0B6BD;font-size:1.3rem}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+.gh{margin:14px 0 4px;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--acc);font-weight:700}
+.fab{position:fixed;right:max(16px,calc(50% - 264px));bottom:calc(92px + env(safe-area-inset-bottom));z-index:25;border:0;background:var(--acc);color:#fff;border-radius:999px!important;border-radius:10px;padding:.95rem 1.2rem;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+nav.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;z-index:30;background:#fff;border-top:1px solid var(--line);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+nav.tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:.35rem 0;font-size:.72rem;color:var(--muted);font-weight:500}
+nav.tabs svg{width:24px;height:24px}
+nav.tabs button.on{color:var(--navy)}
+nav.tabs button.on svg{color:var(--acc)}
+.sheet{position:fixed;inset:0;z-index:50;background:#fff;transform:translateY(100%);transition:transform .3s;display:flex;flex-direction:column;max-width:560px;margin:0 auto}
+.sheet.open{transform:none}
+.sh-h{display:flex;align-items:center;gap:.6rem;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;background:var(--navy);color:#fff}
+.sh-h button{border:0;background:rgba(255,255,255,.15);color:#fff;border-radius:6px;padding:.45rem .8rem;font-weight:500}
+.sh-h h3{flex:1;margin:0;text-align:center;font-family:"Cormorant Garamond";font-weight:400;font-size:1.05rem}
+.sh-b{flex:1;overflow:auto;padding:16px}
+.sh-f{border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1.3fr;gap:8px}
+.btn{border:0;border-radius:8px;padding:.9rem;font-weight:700;font-size:.92rem}
+.b-n{background:var(--navy);color:#fff}.b-a{background:var(--acc);color:#fff}.b-w{background:#fff;color:var(--ink);border:1px solid var(--line)}.b-r{background:#fff;color:#B42318;border:1px solid #F3C1BC;width:100%;margin-top:8px}
+.fld{margin-bottom:14px}
+.fld>label{display:block;font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid #CDD3DA;border-radius:8px;padding:.75rem .85rem;background:#fff;outline:none;color:var(--ink)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,58,95,.12)}
+.pics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pics .ph{position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:var(--soft)}
+.pics .ph img{width:100%;height:100%;object-fit:cover}
+.pics .ph b{position:absolute;left:4px;top:4px;background:var(--acc);font-size:.6rem;padding:.1rem .35rem;border-radius:3px;text-transform:uppercase}
+.pics .ph button{position:absolute;right:4px;top:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:.9rem;line-height:1}
+.pics .ph .mv{right:auto;left:4px;top:auto;bottom:4px}
+.pics label.add{aspect-ratio:1;border:2px dashed #CDD3DA;border-radius:8px;display:grid;place-items:center;text-align:center;color:var(--muted);font-weight:500;font-size:.82rem;cursor:pointer}
+.pic1{position:relative;aspect-ratio:16/10;border:2px dashed #CDD3DA;border-radius:8px;overflow:hidden;display:grid;place-items:center;color:var(--muted);cursor:pointer}
+.pic1 img{width:100%;height:100%;object-fit:cover}
+.pic1 span{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:#fff;border-radius:6px;padding:.25rem .6rem;font-size:.8rem;box-shadow:0 1px 6px rgba(0,0,0,.2)}
+.icons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.icons button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:.6rem .2rem;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.7rem;color:var(--muted)}
+.icons button svg{width:26px;height:26px;color:var(--navy)}
+.icons button.on{border-color:var(--navy);background:#EEF3F9;color:var(--navy);font-weight:700}
+.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.row label{font-weight:500}
+.row small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+.sw{position:relative;width:48px;height:28px;flex:none;display:inline-block}
+.sw input{opacity:0;width:0;height:0;position:absolute}
+.sw span{position:absolute;inset:0;background:#CDD3DA;border-radius:999px;transition:.2s}
+.sw span::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}
+.sw input:checked+span{background:var(--navy)}
+.sw input:checked+span::after{transform:translateX(20px)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cf{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center}
+.cf.open{display:flex}
+.cf>div{background:#fff;width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:20px 16px calc(16px + env(safe-area-inset-bottom))}
+.cf h4{margin:0 0 .4rem;font-size:1.1rem}
+.cf p{margin:0 0 14px;color:var(--muted)}
+.toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translate(-50%,-160%);visibility:hidden;background:var(--ink);color:#fff;font-weight:500;padding:.65rem 1.1rem;border-radius:8px;z-index:90;transition:transform .3s;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+.login{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;background:linear-gradient(135deg,#FCE3EC,#F7B6CB);color:var(--ink)}
+.login img{width:200px;margin-bottom:18px}
+.login h1{font-family:"Cormorant Garamond";font-weight:400;font-size:1.6rem;margin:0 0 .3rem}
+.login form{width:100%;max-width:340px;display:grid;gap:10px;margin-top:18px}
+.login input{border:0;border-radius:8px;padding:.9rem 1rem;outline:none}
+.login small{margin-top:14px;opacity:.8}
+</style>
+<style>
+.prc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sv-row{border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;background:#fff;width:100%}
+.sv-row .h>span:first-child{min-width:0;flex:1}
+.sv-row .h b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sv-row.off{opacity:.55}
+.sv-row .h{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.sv-row .h b{font-weight:600}
+.sv-row .h small{display:block;color:var(--muted);font-size:.78rem;font-weight:400}
+.sv-row .p{font-family:"Cormorant Garamond";font-size:1.25rem;color:var(--pk2,#B82560);font-weight:700;white-space:nowrap}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gal .ph{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--soft)}
+.gal .ph img{width:100%;height:100%;object-fit:cover}
+.gal .ph span{position:absolute;left:4px;bottom:4px;background:rgba(255,255,255,.92);color:#B82560;font-size:.6rem;font-weight:700;padding:.1rem .4rem;border-radius:999px}
+.gal .ph button{position:absolute;inset:0;border:0;background:none}
+.gal label.add{aspect-ratio:1;border:2px dashed #E9B9CA;border-radius:10px;display:grid;place-items:center;text-align:center;color:#B82560;font-weight:600;font-size:.8rem;cursor:pointer}
+.pic1{aspect-ratio:1}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <img src="../img/logo.png" alt="Mary's Belle" style="width:230px">
+  <h1 style="color:#3B2030">Painel do studio</h1>
+  <span style="opacity:.8">Promoções, preços e fotos do site</span>
+  <form id="fLogin">
+    <input type="email" value="marysbelle@demo.com" aria-label="E-mail" autocomplete="username">
+    <input type="password" id="pw" placeholder="Senha" autocomplete="current-password">
+    <button class="btn b-a" type="submit">Entrar</button>
+  </form>
+  <small>Demonstração: senha <b>marysbelle</b></small>
+</section>
+
+<div class="app" id="app" hidden>
+  <div class="demo">Painel de demonstração <b>StayPulse</b> · os dados ficam salvos neste aparelho</div>
+  <div class="top"><img src="../img/monograma-branco.png" alt=""><h1 id="ttl">Promoções<small id="sub"></small></h1><a href="../" target="_blank">Ver site ↗</a></div>
+
+  <section class="view on pad" id="vPr">
+    <p class="hint">As promoções ativas aparecem em “Promoções do mês”. Suba a mesma arte que você posta no Instagram.</p>
+    <div class="list" id="lPr"></div>
+  </section>
+
+  <section class="view pad" id="vSv">
+    <h2>Serviços e preços</h2>
+    <p class="hint">Deixe o preço vazio para mostrar “Sob consulta”. Coloque o valor antigo em “De” para aparecer o desconto.</p>
+    <div id="lSv"></div>
+  </section>
+
+  <section class="view pad" id="vGl">
+    <h2>Galeria</h2>
+    <p class="hint">Pode escolher várias fotos de uma vez. Toque em uma foto para mudar a categoria ou excluir.</p>
+    <div class="gal" id="gl"></div>
+    <input type="file" id="gF" accept="image/*" multiple hidden>
+  </section>
+
+  <section class="view pad" id="vMais">
+    <h2>Dados do studio</h2>
+    <p class="hint">O que aparece no contato, no rodapé e nos botões de agendamento.</p>
+    <div class="fld"><label>WhatsApp de agendamento (com DDD)</label><input id="cW" inputmode="tel" placeholder="11932339811"></div>
+    <div class="fld"><label>Telefone exibido</label><input id="cT"></div>
+    <div class="two"><div class="fld"><label>Instagram</label><input id="cI"></div><div class="fld"><label>E-mail</label><input id="cE" inputmode="email"></div></div>
+    <div class="fld"><label>Endereço</label><input id="cA"></div>
+    <div class="fld"><label>Bairro e cidade</label><input id="cB"></div>
+    <div class="fld"><label>Horário de atendimento</label><input id="cH" placeholder="Ter a Sáb, 9h às 19h"></div>
+    <button class="btn b-n" id="cSave" style="width:100%">Salvar dados</button>
+    <div class="list" style="margin-top:22px">
+      <a class="item" href="../" target="_blank"><span class="t"><b>Abrir o site</b><small>Veja como a cliente enxerga</small></span><span class="chev">›</span></a>
+      <button class="item" id="bReset"><span class="t"><b>Restaurar demonstração</b><small>Volta promoções, preços e fotos de exemplo</small></span><span class="chev">›</span></button>
+      <button class="item" id="bSair"><span class="t"><b>Sair</b><small>Fechar o painel</small></span><span class="chev">›</span></button>
+    </div>
+    <p class="hint" style="margin-top:16px">Na versão oficial tudo fica na nuvem: o que for publicado aqui aparece na hora para todas as clientes.</p>
+  </section>
+
+  <button class="fab" id="fab">＋ Nova promoção</button>
+  <nav class="tabs" id="tabs">
+    <button data-v="vPr" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Promoções</button>
+    <button data-v="vSv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Preços</button>
+    <button data-v="vGl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Galeria</button>
+    <button data-v="vMais"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a7 7 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/></svg>Mais</button>
+  </nav>
+</div>
+
+<!-- promoção -->
+<div class="sheet" id="shP">
+  <div class="sh-h"><button data-x>Cancelar</button><h3 id="pT">Nova promoção</h3><span style="width:70px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><label>Arte da promoção</label><label class="pic1" for="pF"><img id="pImg" alt="" hidden><b id="pPh">Toque para escolher a arte</b><span>Trocar arte</span></label><input type="file" id="pF" accept="image/*" hidden></div>
+    <div class="fld"><label>Título</label><input id="pN" placeholder="Ex.: Combo Natal: limpeza + spa dos lábios"></div>
+    <div class="fld"><label>Descrição</label><textarea id="pX" rows="3" placeholder="O que está incluso, validade..."></textarea></div>
+    <div class="two"><div class="fld"><label>De (R$)</label><input id="pDe" inputmode="decimal" placeholder="opcional"></div><div class="fld"><label>Por (R$)</label><input id="pPor" inputmode="decimal" placeholder="0,00"></div></div>
+    <div class="row"><label for="pAp">“A partir de”<small>Para promoções com vários serviços</small></label><label class="sw"><input type="checkbox" id="pAp"><span></span></label></div>
+    <div class="row"><label for="pOn">Ativa no site</label><label class="sw"><input type="checkbox" id="pOn" checked><span></span></label></div>
+    <button class="btn b-r" id="pDel">Excluir promoção</button>
+  </div>
+  <div class="sh-f" style="grid-template-columns:1fr"><button class="btn b-a" id="pSave">Salvar</button></div>
+</div>
+
+<!-- serviço -->
+<div class="sheet" id="shS">
+  <div class="sh-h"><button data-x>Cancelar</button><h3 id="sT">Novo serviço</h3><span style="width:70px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><label>Nome</label><input id="sN" placeholder="Ex.: Lash lifting"></div>
+    <div class="fld"><label>Categoria</label><select id="sC"></select></div>
+    <div class="fld"><label>Descrição curta</label><input id="sD" placeholder="Opcional"></div>
+    <div class="two"><div class="fld"><label>Preço (R$)</label><input id="sP" inputmode="decimal" placeholder="vazio = sob consulta"></div><div class="fld"><label>De (R$)</label><input id="sDe" inputmode="decimal" placeholder="preço antigo"></div></div>
+    <div class="row"><label for="sAp">“A partir de”</label><label class="sw"><input type="checkbox" id="sAp"><span></span></label></div>
+    <div class="row"><label for="sOn">Visível no site</label><label class="sw"><input type="checkbox" id="sOn" checked><span></span></label></div>
+    <button class="btn b-r" id="sDel">Excluir serviço</button>
+  </div>
+  <div class="sh-f" style="grid-template-columns:1fr"><button class="btn b-a" id="sSave">Salvar</button></div>
+</div>
+
+<!-- foto -->
+<div class="sheet" id="shG">
+  <div class="sh-h"><button data-x>Cancelar</button><h3>Editar foto</h3><span style="width:70px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><img id="gImg" alt="" style="width:100%;border-radius:12px"></div>
+    <div class="fld"><label>Categoria</label><select id="gC"></select></div>
+    <div class="fld"><label>Legenda</label><input id="gL" placeholder="Ex.: Limpeza de pele"></div>
+    <button class="btn b-r" id="gDel">Excluir foto</button>
+  </div>
+  <div class="sh-f" style="grid-template-columns:1fr"><button class="btn b-a" id="gSave">Salvar</button></div>
+</div>
+
+<div class="cf" id="cf"><div><h4 id="cfT"></h4><p id="cfP"></p><div class="two"><button class="btn b-w" id="cfNo">Cancelar</button><button class="btn" style="background:#B42318;color:#fff" id="cfYes">Excluir</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="../js/store.js"></script>
+<script>
+const S = window.MarysStore; let DB = S.load();
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fix = s => s && !/^(data:|https?:|\.\.\/)/.test(s) ? '../' + s : s;
+const num = v => { const n = parseFloat(String(v || '').replace(/\./g, '').replace(',', '.')); return isNaN(n) ? 0 : n; };
+const fmt = n => n ? String(n.toFixed(2)).replace('.', ',') : '';
+let tt; const toast = m => { $('toast').textContent = m; $('toast').classList.add('show'); clearTimeout(tt); tt = setTimeout(() => $('toast').classList.remove('show'), 2200); };
+function persist(m) { if (S.save(DB)) { m && toast(m); return true; } toast('Memória cheia nesta demonstração'); return false; }
+function compress(f, max) { return new Promise((res, rej) => { const i = new Image(), u = URL.createObjectURL(f); i.onload = () => { const k = Math.min(1, max / Math.max(i.width, i.height)), c = document.createElement('canvas'); c.width = Math.round(i.width * k); c.height = Math.round(i.height * k); c.getContext('2d').drawImage(i, 0, 0, c.width, c.height); URL.revokeObjectURL(u); res(c.toDataURL('image/jpeg', .78)); }; i.onerror = rej; i.src = u; }); }
+
+if (sessionStorage.getItem('marys-ok')) enter();
+$('fLogin').onsubmit = e => { e.preventDefault(); if ($('pw').value.trim().toLowerCase() === 'marysbelle') { sessionStorage.setItem('marys-ok', '1'); enter(); } else toast('Senha incorreta'); };
+function enter() { $('login').hidden = true; $('app').hidden = false; all(); }
+$('bSair').onclick = () => { sessionStorage.removeItem('marys-ok'); location.reload(); };
+
+const T = {vPr: 'Promoções', vSv: 'Preços', vGl: 'Galeria', vMais: 'Mais'}, F = {vPr: '＋ Nova promoção', vSv: '＋ Novo serviço', vGl: '＋ Fotos'};
+let tab = 'vPr';
+$('tabs').onclick = e => { const b = e.target.closest('button'); if (!b) return; tab = b.dataset.v;
+  $('tabs').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === tab));
+  $('ttl').firstChild.textContent = T[tab]; $('fab').hidden = !F[tab]; $('fab').textContent = F[tab] || ''; scrollTo(0, 0); };
+$('fab').onclick = () => tab === 'vPr' ? openP(null) : tab === 'vSv' ? openS(null) : $('gF').click();
+function all() { rP(); rS(); rG(); fillC(); $('sub').textContent = `${DB.promos.filter(p => p.ativa).length} promoções · ${DB.servicos.filter(s => s.ativo).length} serviços · ${DB.fotos.length} fotos`; }
+
+/* promoções */
+function rP() { $('lPr').innerHTML = DB.promos.map(p => `<button class="item" data-id="${p.id}"><img src="${esc(fix(p.img) || '../img/favicon.png')}" alt=""><span class="t"><b>${esc(p.titulo)}</b><small>${p.de ? 'De ' + S.brl(p.de) + ' · ' : ''}${p.por ? (p.apartir ? 'a partir de ' : 'por ') + S.brl(p.por) : 'sem valor'}</small><span class="tags">${p.ativa ? '<span class="tag ok">No ar</span>' : '<span class="tag">Desligada</span>'}</span></span><span class="chev">›</span></button>`).join('') || '<p class="empty">Nenhuma promoção. Toque em “＋ Nova promoção”.</p>'; }
+$('lPr').onclick = e => { const b = e.target.closest('.item'); if (b) openP(b.dataset.id); };
+let ep = null, pimg = '';
+const setPI = () => { $('pImg').hidden = !pimg; $('pPh').hidden = !!pimg; if (pimg) $('pImg').src = fix(pimg); };
+function openP(id) { ep = id ? DB.promos.find(p => p.id === id) : null; const p = ep || {titulo: '', texto: '', img: '', de: 0, por: 0, apartir: false, ativa: true}; pimg = p.img; setPI(); $('pT').textContent = ep ? 'Editar promoção' : 'Nova promoção'; $('pN').value = p.titulo; $('pX').value = p.texto; $('pDe').value = fmt(p.de); $('pPor').value = fmt(p.por); $('pAp').checked = !!p.apartir; $('pOn').checked = !!p.ativa; $('pDel').hidden = !ep; $('shP').classList.add('open'); }
+$('pF').onchange = async e => { if (e.target.files[0]) { toast('Preparando arte...'); pimg = await compress(e.target.files[0], 1080); setPI(); } e.target.value = ''; };
+$('pSave').onclick = () => { const t = $('pN').value.trim(); if (!t) return toast('Coloque o título'); if (!pimg) return toast('Escolha a arte da promoção'); const d = {titulo: t, texto: $('pX').value.trim(), img: pimg, de: num($('pDe').value), por: num($('pPor').value), apartir: $('pAp').checked, ativa: $('pOn').checked}; const bk = JSON.stringify(DB); if (ep) Object.assign(ep, d); else DB.promos.unshift(Object.assign({id: S.uid()}, d)); if (!persist(d.ativa ? '✓ Promoção no ar!' : 'Promoção salva')) { DB = JSON.parse(bk); return; } close_(); all(); };
+$('pDel').onclick = () => conf('Excluir esta promoção?', 'Ela sai do site na hora.', () => { DB.promos = DB.promos.filter(p => p !== ep); persist('Promoção excluída'); close_(); all(); });
+
+/* serviços */
+$('sC').innerHTML = S.CATS.map(c => `<option>${c}</option>`).join('');
+function rS() { $('lSv').innerHTML = S.CATS.map(c => { const g = DB.servicos.filter(s => s.cat === c); return g.length ? `<p class="gh">${esc(c)}</p>` + g.map(s => `<button class="sv-row item ${s.ativo ? '' : 'off'}" data-id="${s.id}" style="display:block"><span class="h"><span><b>${esc(s.nome)}</b><small>${s.ativo ? (s.de && s.preco ? 'De ' + S.brl(s.de) + ' · promoção' : 'Toque para editar') : 'Oculto no site'}</small></span><span class="p">${esc(S.preco(s))}</span></span></button>`).join('') : ''; }).join(''); }
+$('lSv').onclick = e => { const b = e.target.closest('.sv-row'); if (b) openS(b.dataset.id); };
+let es = null;
+function openS(id) { es = id ? DB.servicos.find(s => s.id === id) : null; const s = es || {nome: '', cat: S.CATS[0], desc: '', preco: 0, de: 0, apartir: false, ativo: true}; $('sT').textContent = es ? 'Editar serviço' : 'Novo serviço'; $('sN').value = s.nome; $('sC').value = s.cat; $('sD').value = s.desc; $('sP').value = fmt(s.preco); $('sDe').value = fmt(s.de); $('sAp').checked = !!s.apartir; $('sOn').checked = !!s.ativo; $('sDel').hidden = !es; $('shS').classList.add('open'); }
+$('sSave').onclick = () => { const n = $('sN').value.trim(); if (!n) return toast('Coloque o nome do serviço'); const d = {nome: n, cat: $('sC').value, desc: $('sD').value.trim(), preco: num($('sP').value), de: num($('sDe').value), apartir: $('sAp').checked, ativo: $('sOn').checked}; const bk = JSON.stringify(DB); if (es) Object.assign(es, d); else DB.servicos.push(Object.assign({id: S.uid()}, d)); if (!persist('✓ Preço salvo')) { DB = JSON.parse(bk); return; } close_(); all(); };
+$('sDel').onclick = () => conf('Excluir este serviço?', 'Ele sai da tabela do site.', () => { DB.servicos = DB.servicos.filter(s => s !== es); persist('Serviço excluído'); close_(); all(); });
+
+/* galeria */
+$('gC').innerHTML = S.FOTO_CATS.map(c => `<option>${c}</option>`).join('');
+function rG() { $('gl').innerHTML = '<label class="add" for="gF">＋<br>Adicionar</label>' + DB.fotos.map(f => `<div class="ph"><img src="${esc(fix(f.src))}" alt=""><span>${esc(f.cat)}</span><button data-id="${f.id}" aria-label="Editar"></button></div>`).join(''); }
+$('gF').onchange = async e => { const fs = [...e.target.files]; if (!fs.length) return; toast(`Enviando ${fs.length} foto(s)...`); const bk = JSON.stringify(DB); for (const f of fs) DB.fotos.unshift({id: S.uid(), src: await compress(f, 1000), cat: S.FOTO_CATS[0], legenda: ''}); e.target.value = ''; if (!persist(`✓ ${fs.length} foto(s) no site`)) DB = JSON.parse(bk); all(); };
+let eg = null;
+$('gl').onclick = e => { const b = e.target.closest('button[data-id]'); if (!b) return; eg = DB.fotos.find(f => f.id === b.dataset.id); $('gImg').src = fix(eg.src); $('gC').value = eg.cat; $('gL').value = eg.legenda || ''; $('shG').classList.add('open'); };
+$('gSave').onclick = () => { eg.cat = $('gC').value; eg.legenda = $('gL').value.trim(); persist('✓ Foto atualizada'); close_(); all(); };
+$('gDel').onclick = () => conf('Excluir esta foto?', 'Ela sai da galeria do site.', () => { DB.fotos = DB.fotos.filter(f => f !== eg); persist('Foto excluída'); close_(); all(); });
+
+/* dados */
+function fillC() { const c = S.cfg(DB); $('cW').value = c.whatsapp; $('cT').value = c.telefone; $('cI').value = c.instagram; $('cE').value = c.email; $('cA').value = c.endereco; $('cB').value = c.bairro; $('cH').value = c.horario; }
+$('cSave').onclick = () => { const w = $('cW').value.replace(/\D/g, ''); DB.config = {whatsapp: w ? '55' + w.replace(/^55/, '') : '', telefone: $('cT').value.trim(), instagram: $('cI').value.trim().replace(/^@/, ''), email: $('cE').value.trim(), endereco: $('cA').value.trim(), bairro: $('cB').value.trim(), horario: $('cH').value.trim()}; persist('✓ Dados salvos'); fillC(); };
+
+function close_() { document.querySelectorAll('.sheet').forEach(s => s.classList.remove('open')); }
+document.querySelectorAll('[data-x]').forEach(b => b.onclick = close_);
+let cfFn; function conf(t, p, fn) { $('cfT').textContent = t; $('cfP').textContent = p; cfFn = fn; $('cf').classList.add('open'); }
+$('cfNo').onclick = () => $('cf').classList.remove('open'); $('cfYes').onclick = () => { $('cf').classList.remove('open'); cfFn && cfFn(); };
+$('bReset').onclick = () => conf('Restaurar a demonstração?', 'Promoções, preços, fotos e dados voltam ao exemplo neste aparelho.', () => { S.reset(); DB = S.load(); all(); toast('Demonstração restaurada'); });
+</script>
+</body>
+</html>
