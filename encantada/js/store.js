@@ -3,7 +3,7 @@
    no painel /admin aparece no site do mesmo aparelho. Na versão oficial,
    isso vai para a nuvem e aparece para todo mundo na hora. */
 (function () {
-  const KEY = 'encantada-demo-v1';
+  const KEY = 'encantada-demo-v2';
 
   const CONFIG = {
     whatsapp: '',                    // ← WhatsApp da confeitaria (5511930114974). Vazio = StayPulse (demo)
@@ -25,7 +25,7 @@
     ]
   };
 
-  const CATEGORIAS = ['Natal 2025', 'Bolos', 'Docinhos', 'Sobremesas', 'Salgados', 'Para presentear'];
+  const CATEGORIAS = ['Natal 2025', 'Novidades', 'Bolos', 'Brownies', 'Docinhos', 'Sobremesas', 'Salgados', 'Empadas', 'Para presentear', 'Bebidas'];
 
   const P = (id, nome, cat, preco, desc, foto, extra) => Object.assign({ id, nome, cat, preco, desc, foto, status: 'publicado', destaque: false, apartir: false, criado: Date.now() }, extra || {});
   const SEED = {
@@ -47,10 +47,32 @@
       P('g1', 'Bolo Salgado', 'Salgados', 135, 'Pão de forma, salpicão de frango cremoso, maionese e batata palha.', 'img/p/bolo-salgado.jpg', { destaque: true }),
       P('g2', 'Empadão', 'Salgados', 145, 'Massa artesanal com frango cremoso e requeijão. Serve de 8 a 12 fatias.', 'img/p/torta-frango.jpg'),
       P('g3', 'Quiche de Brócolis', 'Salgados', 135, 'Massa leve e crocante com brócolis, bacon e queijo. Serve de 8 a 12 fatias.', 'img/p/quiche.jpg'),
-      P('g4', 'Coxinha', 'Salgados', 0, 'Coxinha cremosa de frango. Cento para festas sob encomenda.', 'img/p/coxinha-recheio.jpg'),
+      P('v1', 'Bolo Vulcão Ninho', 'Novidades', 15.90, 'Bolo no pote com calda de Ninho escorrendo.', ''),
+      P('v2', 'Bolo Vulcão Brigadeiro', 'Novidades', 15.90, 'Bolo de chocolate com calda de brigadeiro cremoso.', ''),
+      P('v3', 'Bolo Vulcão Dois Amores', 'Novidades', 15.90, 'Brigadeiro preto e branco no mesmo bolo.', ''),
+      P('v4', 'Bolo Nuvem Brigadeiro', 'Novidades', 18.90, 'Bolo fofinho coberto com brigadeiro aerado.', ''),
+      P('v5', 'Bolo Nuvem Ninho', 'Novidades', 18.90, 'Bolo fofinho com creme de Ninho.', ''),
+      P('v6', 'Bolo Nuvem Ninho com Nutella', 'Novidades', 24.90, 'Creme de Ninho com Nutella.', ''),
+      P('v7', 'Bolo Nuvem Ninho com Geleia de Morango', 'Novidades', 24.90, 'Creme de Ninho com geleia artesanal de morango.', ''),
+      P('v8', 'Mini Bolo Vulcão Ninho com Nutella', 'Novidades', 20.90, 'Versão mini, com Ninho e Nutella.', ''),
+      P('v9', 'Mini Bolo Vulcão Ninho com Geleia de Morango', 'Novidades', 20.90, 'Versão mini, com Ninho e geleia artesanal de morango.', ''),
+      P('w1', 'Quadradinho de Brownie Chocolatudo', 'Brownies', 9.00, 'Brownie de chocolate nobre: crocante por fora, macio e molhadinho por dentro.', 'img/p/brownie-choco.jpg'),
+      P('w2', 'Brownie Recheado', 'Brownies', 14.90, 'Doce de leite, brigadeiro, prestígio, Ninho com Nutella ou Ferrero.', 'img/p/brownie-recheado.jpg', { destaque: true }),
+      P('w3', 'Afogadinho de Brownie', 'Brownies', 16.49, 'Brownie no copo com creme e cobertura de chocolate.', 'img/p/brownie-afogadinho.jpg', { destaque: true }),
+      P('w4', 'Quadradinho de Brownie Supreme', 'Brownies', 0, 'Seleção de quadradinhos com coberturas variadas.', 'img/p/brownie-supreme.jpg'),
+      P('c1', 'Coxinha de Frango com Catupiry', 'Salgados', 16.90, 'Massa de batata levinha e a crocância da farinha panko.', 'img/p/coxinha-recheio.jpg'),
+      P('c2', 'Coxinha de Costela com Catupiry', 'Salgados', 19.90, 'Recheio de costela desfiada com Catupiry, empanada na panko.', ''),
+      P('c3', 'Coxinha de Frango com Cream Cheese', 'Salgados', 13.90, 'Massa de batata, frango e cream cheese, crocante na panko.', 'img/p/coxinha-cream.jpg', { destaque: true }),
+      P('c4', 'Coxinha de Costela', 'Salgados', 16.90, 'Costela desfiada temperada, empanada na panko.', ''),
+      P('e1', 'Empada de Palmito', 'Empadas', 8.00, 'Massa amanteigada com recheio cremoso de palmito.', ''),
+      P('e2', 'Empadão de Palmito · Marmitinha 220 g', 'Empadas', 15.99, 'Porção individual de empadão de palmito.', ''),
+      P('k1', 'Coca-Cola 200 ml', 'Bebidas', 4.49, '', 'img/p/coca.jpg'),
+      P('k2', 'Guaraná 200 ml', 'Bebidas', 4.49, '', 'img/p/guarana.jpg'),
+      P('k3', 'Fanta Laranja 200 ml', 'Bebidas', 4.49, '', ''),
+      P('k4', 'Sprite 200 ml', 'Bebidas', 4.49, '', 'img/p/sprite.jpg'),
+      P('k5', 'Água Mineral 500 ml', 'Bebidas', 3.00, '', 'img/p/agua.jpg'),
       P('r1', 'Caixa Mini Trufas', 'Para presentear', 21.90, 'Caixa com 6 mini trufas, escolha até 2 sabores.', ''),
-      P('r2', 'Brownie Recheado', 'Para presentear', 14.90, 'Doce de leite, brigadeiro, prestígio, Ninho com Nutella ou Ferrero.', ''),
-      P('r3', 'Caixa Gaveta 4 Doces', 'Para presentear', 14.90, '4 brigadeiros gourmet em caixa gaveta.', '')
+      P('r3', 'Caixa Gaveta 4 Doces', 'Para presentear', 14.90, '4 brigadeiros gourmet em caixa gaveta.', ''),
     ],
     promos: [
       { id: 'pr1', titulo: 'Menu Natalino', texto: 'Panetones trufados, caixas e mimos para presentear. Estoque limitado.', img: 'img/b/natal.jpg', ativa: true },

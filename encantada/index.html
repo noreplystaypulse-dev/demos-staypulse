@@ -129,7 +129,8 @@ nav.menu a:hover{color:var(--rose-d)}
 .card.out{opacity:.6}
 
 /* categorias */
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+@media(max-width:1050px){.cats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.cats{grid-template-columns:1fr 1fr;gap:14px}}
 .cat{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;background:var(--blush)}
 .cat img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -256,6 +257,7 @@ footer img{width:90px;border-radius:50%;margin-bottom:.8rem}
         <a class="app wa js-wa" data-msg="Oi! Vim pelo site e quero fazer uma encomenda 🧁" target="_blank" rel="noopener"><span>WhatsApp<small>encomendas</small></span></a>
       </div>
       <p class="note">Doces do dia pelo app · Bolos, travessas e kits de festa por encomenda no WhatsApp</p>
+      <p class="note" style="font-size:.85rem;opacity:.85;margin-top:.4rem">Pedido mínimo R$ 20,00 · Pix ou cartão por link de pagamento · Entrega via Uber Flash ou retirada · 5% de cashback no InstaDelivery</p>
     </div>
   </div>
 </section>
@@ -370,7 +372,7 @@ $('aInsta').href = C.instadelivery; $('fInsta').href = C.instadelivery;
 let tt; const toast = m => { $('toast').textContent = m; $('toast').classList.add('show'); clearTimeout(tt); tt = setTimeout(() => $('toast').classList.remove('show'), 2200); };
 
 const PUB = DB.produtos.filter(p => p.status !== 'rascunho');
-const ICON = {'Natal 2025': '🎁', 'Para presentear': '🎀', 'Bolos': '🎂', 'Docinhos': '🍬', 'Sobremesas': '🍮', 'Salgados': '🥧'};
+const ICON = {'Natal 2025': '🎁', 'Para presentear': '🎀', 'Bolos': '🎂', 'Docinhos': '🍬', 'Sobremesas': '🍮', 'Salgados': '🥟', 'Empadas': '🥧', 'Novidades': '✨', 'Brownies': '🍫', 'Bebidas': '🥤'};
 const foto = p => p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nome)}" loading="lazy">` : `<div class="noimg"><i>${ICON[p.cat] || '🧁'}</i><b>${esc(p.nome)}</b></div>`;
 const card = p => `<article class="card ${p.status === 'esgotado' ? 'out' : ''}" data-id="${p.id}"><div class="ph">${foto(p)}${p.status === 'esgotado' ? '<span class="tag esg">Esgotado</span>' : p.destaque ? '<span class="tag">Favorito</span>' : ''}</div><div class="bd"><h3>${esc(p.nome)}</h3><span class="pr">${S.preco(p)}</span></div></article>`;
 
