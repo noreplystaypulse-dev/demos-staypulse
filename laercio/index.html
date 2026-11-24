@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Laercio Eng Civil · Engenharia Civil e Segurança do Trabalho</title>
+<meta name="description" content="Execução de obras, projetos, consultorias, laudos e fiscalização. Engenharia civil e segurança do trabalho em Minas Gerais.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Laercio Eng Civil · Engenharia Civil">
+<meta property="og:description" content="Execução de obras, projetos, consultorias, laudos e fiscalização.">
+<meta property="og:image" content="https://demos-staypulse.pages.dev/laercio/img/share.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1E3A5F">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1E3A5F;--navy2:#142A47;--acc:#F39A1E;--ink:#2A2F35;--muted:#6B7480;--line:#E3E6EA;--soft:#F3F4F6;--dark:#33383D;--dark2:#2A2E32;--slab:"Roboto Slab",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;font-family:Roboto,system-ui,sans-serif;font-weight:300;color:var(--ink);background:#fff;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+.demo{background:#0F172A;color:#CBD5E1;font-size:.78rem;text-align:center;padding:.45rem 1rem;font-weight:400}
+.demo b{color:#22D3EE}.demo a{color:#22D3EE;font-weight:500}
+.bar{height:8px;background:var(--acc)}
+/* header */
+header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:2.4rem;height:84px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:none}
+.brand img{height:54px;width:auto}
+.brand b{font-family:var(--slab);font-weight:500;font-size:1.25rem;color:var(--navy);line-height:1.05;display:block}
+.brand small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:400}
+nav.mn{display:flex;gap:2rem}
+nav.mn a{text-decoration:none;font-weight:400;font-size:1rem;color:var(--ink);padding:.3rem 0;border-bottom:2px solid transparent}
+nav.mn a:hover{border-color:var(--acc)}
+.hd .rt{margin-left:auto;display:flex;align-items:center;gap:1rem}
+.ig{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;color:var(--navy)}
+.ig:hover{background:var(--soft)}
+.cta{background:var(--navy);color:#fff;text-decoration:none;font-weight:500;padding:.7rem 1.2rem;font-size:.92rem;display:inline-flex;align-items:center;gap:.5rem;border:0}
+.cta:hover{background:var(--navy2)}
+.cta.acc{background:var(--acc);color:#1b1b1b}
+.cta.acc:hover{background:#E08A10}
+.burger{display:none;border:0;background:none;padding:.4rem;color:var(--navy)}
+/* hero */
+.hero{position:relative;height:clamp(460px,72vh,640px);overflow:hidden;background:var(--navy2)}
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:3px;background:var(--navy2)}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:opacity .8s,transform 6s}
+.mosaic img.on{transform:scale(1.06)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,42,71,.97) 0%,rgba(20,42,71,.9) 34%,rgba(20,42,71,.55) 60%,rgba(20,42,71,.15) 100%)}
+.hero .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.hero h1{font-family:var(--slab);font-weight:300;font-size:clamp(2.4rem,5vw,4.3rem);line-height:1.12;margin:0 0 1.2rem;max-width:13ch}
+.hero h1 b{font-weight:400;color:#fff;box-shadow:inset 0 -.18em 0 var(--acc)}
+.hero p{max-width:44ch;font-size:1.12rem;color:#D5DEEA;margin:0 0 2rem}
+.hero .bt{display:flex;gap:.8rem;flex-wrap:wrap}
+.cta.ghost{background:transparent;border:1px solid rgba(255,255,255,.6)}
+.cta.ghost:hover{background:rgba(255,255,255,.1)}
+.cap{background:var(--dark);color:#fff}
+.cap .wrap{display:flex;align-items:center;gap:1rem;height:56px}
+.cap span{color:#fff;font-weight:400}
+.cap em{font-style:normal;color:#AEB4BA}
+.cap em::before{content:"/";margin:0 .6rem;color:#7C838A}
+.cap .ar{margin-left:auto;display:flex;gap:.5rem}
+.cap .ar button,.plus{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:none;color:#fff;font-size:1rem;display:grid;place-items:center}
+.plus{border:0;color:var(--acc);font-size:1.7rem;font-weight:300;width:auto;height:auto;border-radius:0}
+/* sections */
+section{scroll-margin-top:90px}
+.sec{padding:96px 0}
+.split{display:grid;grid-template-columns:270px 1fr;gap:3rem;position:relative}
+.split>*{min-width:0}
+.ttl{position:relative;font-family:var(--slab);font-weight:400;font-size:clamp(2.1rem,3.6vw,3rem);line-height:1.1;margin:0;color:var(--ink)}
+.ttl::before{content:"";position:absolute;z-index:-1;left:-40px;top:-60px;width:200px;height:170px;pointer-events:none;background:linear-gradient(var(--soft),var(--soft)) center/62px 100% no-repeat,linear-gradient(var(--soft),var(--soft)) center/100% 62px no-repeat;opacity:.9}
+.lead{font-family:var(--slab);font-weight:300;font-size:clamp(1.35rem,2.2vw,1.85rem);line-height:1.35;margin:0 0 1.4rem;color:#3A4048}
+.more{display:flex;align-items:center;gap:1rem;margin-top:2rem}
+.more a{text-transform:uppercase;font-weight:400;font-size:.92rem;letter-spacing:.02em;text-decoration:none;border-bottom:2px solid var(--navy);padding-bottom:2px;white-space:nowrap}
+.more a::after{content:" +"}
+.more i{flex:1;height:1px;background:var(--line);position:relative}
+.more i::after{content:"";position:absolute;right:-6px;top:-24px;width:2px;height:50px;background:var(--acc);transform:rotate(28deg)}
+.about-g{display:grid;grid-template-columns:1.2fr .9fr;gap:3rem;align-items:start}
+.about-g>*{min-width:0}
+.about-g p{margin:0 0 1rem}
+.cred{display:grid;gap:.9rem;margin-top:1.6rem}
+.cred div{display:flex;gap:.9rem;align-items:flex-start}
+.cred i{flex:none;width:40px;height:40px;background:var(--navy);color:#fff;display:grid;place-items:center}
+.cred b{display:block;font-weight:500}
+.cred small{color:var(--muted);font-size:.9rem}
+.about-ph{position:relative}
+.about-ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about-ph figcaption{position:absolute;left:0;right:0;bottom:0;background:var(--dark);color:#fff;padding:.8rem 1rem;font-size:.92rem;display:flex;justify-content:space-between}
+/* services */
+.svc{background:var(--soft)}
+.sv-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);margin-top:3rem;border:2px solid var(--line)}
+.sv{background:#fff;padding:2rem 1.6rem;position:relative;transition:background .25s}
+.sv:hover{background:#FBFCFD}
+.sv::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--acc);transition:width .35s}
+.sv:hover::before{width:100%}
+.sv svg{width:38px;height:38px;color:var(--navy);margin-bottom:1rem}
+.sv h3{font-family:var(--slab);font-weight:400;font-size:1.2rem;margin:0 0 .5rem}
+.sv p{margin:0;color:var(--muted);font-size:.95rem}
+/* projects */
+.chips{position:relative;z-index:2;display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 2rem}
+.chips button{border:1px solid var(--line);background:#fff;padding:.5rem 1rem;font-size:.88rem;color:var(--ink)}
+.chips button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.pj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pj{position:relative;cursor:pointer;background:var(--dark);overflow:hidden;border:0;padding:0;text-align:left;color:#fff;display:block;width:100%}
+.pj .im{aspect-ratio:4/3;overflow:hidden}
+.pj img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .3s}
+.pj:hover img{transform:scale(1.05);filter:brightness(.85)}
+.pj .cb{display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--dark)}
+.pj .cb b{font-weight:400;font-size:1rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pj .cb small{color:#AEB4BA;font-size:.8rem;white-space:nowrap}
+.pj .n{position:absolute;top:14px;left:14px;background:rgba(20,42,71,.85);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .6rem}
+/* news */
+.nw-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.nw{cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit}
+.nw .im{border-top:6px solid var(--acc);aspect-ratio:16/10;overflow:hidden}
+.nw img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.nw:hover img{transform:scale(1.05)}
+.nw .bd{display:grid;grid-template-columns:1fr auto;gap:1rem;padding-top:1.1rem}
+.nw h3{font-family:var(--slab);font-weight:300;font-size:1.25rem;line-height:1.3;margin:0 0 .5rem}
+.nw .ct{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.nw .dt{border-left:4px solid var(--dark);padding-left:1rem;text-align:center;min-width:74px}
+.nw .dt b{display:block;font-family:Roboto;font-weight:400;font-size:2.4rem;line-height:1}
+.nw .dt small{font-size:.68rem;font-weight:500;letter-spacing:.06em}
+/* cta band */
+.band{background:var(--navy);color:#fff;padding:72px 0;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;background:url(img/logo-icone-branco.png) center/contain no-repeat;opacity:.07}
+.band .wrap{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;justify-content:space-between;position:relative;z-index:1}
+.band h2{font-family:var(--slab);font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);margin:0;line-height:1.2;max-width:22ch}
+.band p{margin:.6rem 0 0;color:#C9D4E2}
+.band .bt{display:flex;gap:.8rem;flex-wrap:wrap}
+/* contact */
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.ct-g>*{min-width:0}
+.ct-l{display:grid;gap:1.2rem;margin-top:1rem}
+.ct-l a,.ct-l div{display:flex;gap:1rem;align-items:center;text-decoration:none}
+.ct-l i{width:46px;height:46px;flex:none;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy)}
+.ct-l b{display:block;font-weight:500}
+.ct-l small{color:var(--muted)}
+form.orc{display:grid;gap:.8rem;background:var(--soft);padding:2rem}
+form.orc h3{font-family:var(--slab);font-weight:400;margin:0 0 .4rem;font-size:1.4rem}
+form.orc input,form.orc select,form.orc textarea{width:100%;border:1px solid #D3D8DE;background:#fff;padding:.85rem 1rem;font:inherit;font-weight:400;outline:none}
+form.orc input:focus,form.orc select:focus,form.orc textarea:focus{border-color:var(--navy)}
+form.orc .two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+/* footer */
+footer{background:var(--dark);color:#E6E8EA;font-size:.92rem}
+footer .top{display:grid;grid-template-columns:270px 1fr 1fr auto;gap:2rem;padding:48px 0 36px;border-top:10px solid #4A5056}
+footer .top>*{min-width:0}
+footer .top img{height:70px;width:auto}
+footer a{text-decoration:none}
+footer .gr{color:var(--acc);font-size:1.15rem}
+footer .bt2{background:var(--dark2);padding:18px 0;font-size:.8rem;color:#A0A6AC}
+footer .bt2 .wrap{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:space-between}
+footer .bt2 a{color:#22D3EE}
+.circ{width:44px;height:44px;border:1.5px solid #E6E8EA;border-radius:50%;display:grid;place-items:center}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(10,18,30,.75);z-index:80;display:none;align-items:center;justify-content:center;padding:20px}
+.ov.open{display:flex}
+.md{background:#fff;width:min(1000px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.35fr 1fr;position:relative}
+.md>*{min-width:0}
+.md .gal{background:var(--dark);position:relative}
+.md .gal img{width:100%;height:100%;max-height:92vh;object-fit:cover;aspect-ratio:4/5}
+.md .th{position:absolute;bottom:10px;left:10px;right:10px;display:flex;gap:6px;overflow-x:auto}
+.md .th img{width:58px;height:58px;aspect-ratio:1;object-fit:cover;border:2px solid transparent;cursor:pointer;flex:none;opacity:.75}
+.md .th img.on{border-color:var(--acc);opacity:1}
+.md .tx{padding:2.2rem 2rem}
+.md .tx small{text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--acc);font-weight:500}
+.md .tx h3{font-family:var(--slab);font-weight:400;font-size:1.7rem;line-height:1.2;margin:.4rem 0 1rem}
+.md .tx dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;margin:1rem 0 1.6rem;font-size:.92rem}
+.md .tx dt{color:var(--muted)}.md .tx dd{margin:0;font-weight:400}
+.md .x{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;border-radius:50%;border:0;background:#fff;font-size:1.3rem;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+/* floats */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.adm{position:fixed;left:16px;bottom:16px;z-index:60;background:#0F172A;color:#fff;text-decoration:none;font-size:.78rem;padding:.55rem .9rem;border-radius:999px;border:1px solid #22D3EE;font-weight:400}
+.adm b{color:#22D3EE;font-weight:500}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.empty{color:var(--muted);padding:2rem 0}
+@media(max-width:1080px){nav.mn{gap:1.2rem}.pj-g{grid-template-columns:repeat(2,1fr)}.sv-g{grid-template-columns:repeat(2,1fr)}footer .top{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  nav.mn{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+  nav.mn.open{display:flex}nav.mn a{padding:1rem 4vw;border-bottom:1px solid var(--line)}
+  .burger{display:block}.hd .rt .cta{display:none}
+  .split,.about-g,.ct-g{grid-template-columns:1fr;gap:1.6rem}
+  .ttl::before{left:-20px;top:-40px;width:160px;height:160px;background-size:40px 100%,100% 40px}
+  .mosaic{grid-template-columns:repeat(3,1fr)}.mosaic img:nth-child(n+7){display:none}
+  .hero::after{background:linear-gradient(180deg,rgba(20,42,71,.6),rgba(20,42,71,.93) 55%)}
+  .hero .in{justify-content:flex-end;padding-bottom:2.4rem}
+  .nw-g{grid-template-columns:1fr}
+  .md{grid-template-columns:1fr}.md .gal img{aspect-ratio:4/3;max-height:none}
+  .sec{padding:68px 0}
+}
+@media(max-width:600px){
+  .hd{height:70px;gap:1rem}.brand img{height:44px}.brand b{font-size:1.05rem}.brand small{font-size:.62rem}
+  .sv-g{grid-template-columns:1fr}
+  .pj-g{grid-template-columns:1fr}
+  form.orc .two{grid-template-columns:1fr}form.orc{padding:1.4rem}
+  footer .top{grid-template-columns:1fr}
+  .cap>.wrap>span{display:none}.cap em{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cap em::before{display:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Proposta de site desenvolvida pela <b>StayPulse</b> para a Laercio Eng Civil · versão de demonstração</div>
+<div class="bar"></div>
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="#inicio"><img src="img/logo-icone.png" alt="" width="120" height="56"><span><b>Laercio Eng Civil</b><small>Engenharia Civil</small></span></a>
+    <nav class="mn" id="mn"><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#novidades">Novidades</a><a href="#contato">Contato</a></nav>
+    <div class="rt">
+      <a class="ig" id="igTop" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a class="cta" data-wa="Olá! Vim pelo site e gostaria de um orçamento.">Pedir orçamento</a>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="mosaic" id="mosaic"></div>
+  <div class="wrap in">
+    <h1>Engenharia que tira a obra do <b>papel</b></h1>
+    <p>Execução de obras, projetos, consultorias, laudos e fiscalização, com engenharia civil e segurança do trabalho do começo ao fim.</p>
+    <div class="bt"><a class="cta acc" data-wa="Olá! Vim pelo site e gostaria de um orçamento.">Pedir orçamento</a><a class="cta ghost" href="#projetos">Ver projetos</a></div>
+  </div>
+</section>
+<div class="cap"><div class="wrap"><span>Projeto</span><em id="capT"></em><div class="ar"><button id="cPrev" aria-label="Anterior">‹</button><button id="cNext" aria-label="Próximo">›</button></div><button class="plus" id="cOpen" aria-label="Ver projeto">+</button></div></div>
+
+<section class="sec" id="sobre">
+  <div class="wrap split">
+    <h2 class="ttl rv">Sobre</h2>
+    <div class="rv">
+      <div class="about-g">
+        <div>
+          <p class="lead">Um escritório de engenharia que acompanha a sua obra do projeto à entrega, com responsabilidade técnica em cada etapa.</p>
+          <p>A Laercio Eng Civil atua em execução de obras, projetos, consultorias, laudos e fiscalização. De residências a conjuntos habitacionais, o trabalho une cálculo, orçamento e presença no canteiro, para que o cliente saiba o que está sendo feito, quanto custa e quando fica pronto.</p>
+          <div class="cred">
+            <div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8V5h4v3"/></svg></i><span><b>Engenharia Civil</b><small>Projetos, cálculo estrutural e execução de obras</small></span></div>
+            <div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><span><b>Engenharia de Segurança do Trabalho</b><small>Canteiro seguro e dentro das normas</small></span></div>
+            <div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2h6v2M9 10h6M9 14h6M9 18h3"/></svg></i><span><b>Orçamento claro</b><small>Quantitativos e custos separados por etapa</small></span></div>
+          </div>
+          <div class="more"><a data-wa="Olá! Vim pelo site e gostaria de falar com o engenheiro.">Fale com o engenheiro</a><i></i></div>
+        </div>
+        <figure class="about-ph" style="margin:0"><img src="img/f/equipe.jpg" alt="Equipe em obra"><figcaption><span>Equipe em campo</span><span class="plus" style="font-size:1.3rem;line-height:1">+</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec svc" id="servicos">
+  <div class="wrap split">
+    <h2 class="ttl rv">Serviços</h2>
+    <p class="lead rv" style="margin:0">Tudo o que a sua obra precisa, com um único responsável técnico: do primeiro cálculo à fiscalização final.</p>
+  </div>
+  <div class="wrap"><div class="sv-g rv" id="svG"></div></div>
+</section>
+
+<section class="sec" id="projetos">
+  <div class="wrap split">
+    <h2 class="ttl rv">Projetos</h2>
+    <p class="lead rv" style="margin:0">Algumas obras e projetos realizados. Toque em um projeto para ver as fotos e os detalhes.</p>
+  </div>
+  <div class="wrap">
+    <div class="chips" id="chips"></div>
+    <div class="pj-g" id="pjG"></div>
+  </div>
+</section>
+
+<section class="sec" id="novidades" style="padding-top:20px">
+  <div class="wrap split">
+    <h2 class="ttl rv">Novidades</h2>
+    <p class="lead rv" style="margin:0">Atualizações das obras e dicas técnicas. Acompanhe também no Instagram: <a id="igLead" target="_blank" rel="noopener" style="color:var(--acc);text-decoration:none"></a></p>
+  </div>
+  <div class="wrap">
+    <div class="split"><span></span><div><div class="nw-g" id="nwG"></div><div class="more"><a id="igMore" target="_blank" rel="noopener">Mais no Instagram</a><i></i></div></div></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div><h2>Tem uma obra, reforma ou projeto em mente?</h2><p>Conte o que você precisa e receba uma orientação técnica sem compromisso.</p></div>
+    <div class="bt"><a class="cta acc" data-wa="Olá! Vim pelo site e gostaria de um orçamento.">Chamar no WhatsApp</a><a class="cta ghost" href="#contato">Enviar mensagem</a></div>
+  </div>
+</section>
+
+<section class="sec" id="contato">
+  <div class="wrap split">
+    <h2 class="ttl rv">Contato</h2>
+    <div class="ct-g rv">
+      <div>
+        <p class="lead">Atendimento em <span id="regTxt"></span>.</p>
+        <div class="ct-l" id="ctL"></div>
+      </div>
+      <form class="orc" id="orc">
+        <h3>Solicite um orçamento</h3>
+        <div class="two"><input id="oN" placeholder="Seu nome" required><input id="oC" placeholder="Cidade"></div>
+        <select id="oS"></select>
+        <textarea id="oM" rows="4" placeholder="Conte um pouco sobre a obra ou o serviço"></textarea>
+        <button class="cta acc" style="justify-content:center;padding:.95rem">Enviar pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap top">
+    <img src="img/logo-branco.png" alt="Laercio Eng Civil" width="100" height="70">
+    <div><b style="font-weight:500">Laercio Eng Civil</b><br><span id="fTit"></span><br><span id="fReg"></span><br><span id="fCrea"></span></div>
+    <div><a class="gr" id="fTel"></a><br><a class="gr" id="fMail" style="font-size:1rem"></a></div>
+    <a class="circ" id="fIg" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+  </div>
+  <div class="bt2"><div class="wrap"><span>© <span id="ano"></span> Laercio Eng Civil. Todos os direitos reservados.</span><span>Site por <a href="https://demos-staypulse.pages.dev/" target="_blank" rel="noopener">StayPulse</a></span></div></div>
+</footer>
+
+<div class="ov" id="ov"><div class="md" id="md"><button class="x" id="mx" aria-label="Fechar">×</button><div class="gal"><img id="mImg" alt=""><div class="th" id="mTh"></div></div><div class="tx"><small id="mCat"></small><h3 id="mT"></h3><p id="mR"></p><dl id="mDl"></dl><a class="cta acc" id="mWa">Quero um projeto assim</a></div></div></div>
+<a class="wa" data-wa="Olá! Vim pelo site e gostaria de um orçamento." aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
+<a class="adm" href="admin/">⚙ Painel do engenheiro <b>demo</b></a>
+
+<script src="js/store.js"></script>
+<script>
+const S = window.EngStore, DB = S.load(), C = S.cfg(DB);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA = (C.whatsapp || C.whatsappDemo).replace(/\D/g, '');
+const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const IG = `https://instagram.com/${C.instagram}`;
+const ICO = {
+  obra: '<path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/>',
+  projeto: '<path d="M4 20V4l16 16z"/><path d="M8 16v-4l4 4z"/>',
+  eletrica: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  consultoria: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+  laudo: '<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2h6v2M9 13l2 2 4-4"/>',
+  fiscal: '<circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/>',
+  seguranca: '<path d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8V5h4v3"/>',
+  orcamento: '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 18h2M12 18h4"/>'
+};
+const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">${ICO[k] || ICO.obra}</svg>`;
+const MES = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+
+document.querySelectorAll('[data-wa]').forEach(a => { a.href = wa(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
+['igTop', 'igMore', 'fIg', 'igLead'].forEach(i => $(i).href = IG); $('igLead').textContent = '@' + C.instagram;
+$('regTxt').textContent = C.regiao + ' e região'; $('fTit').textContent = C.titulo; $('fReg').textContent = C.regiao; $('fCrea').textContent = C.crea;
+$('fTel').textContent = C.telefone; $('fTel').href = wa('Olá! Vim pelo site.'); $('fTel').target = '_blank'; $('fMail').textContent = C.email; $('fMail').href = 'mailto:' + C.email; $('ano').textContent = new Date().getFullYear();
+$('ctL').innerHTML = `
+  <a href="${wa('Olá! Vim pelo site.')}" target="_blank" rel="noopener"><i>${svg('consultoria')}</i><span><b>${esc(C.telefone)}</b><small>WhatsApp</small></span></a>
+  <a href="mailto:${esc(C.email)}"><i><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></i><span><b>${esc(C.email)}</b><small>E-mail</small></span></a>
+  <a href="${IG}" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></i><span><b>@${esc(C.instagram)}</b><small>Instagram</small></span></a>
+  <div><i>${svg('obra')}</i><span><b>${esc(C.regiao)}</b><small>Atendimento presencial e visitas técnicas</small></span></div>`;
+$('ctL').querySelectorAll('i svg').forEach(s => s.setAttribute('width', 22));
+
+/* serviços */
+const SV = DB.servicos.filter(s => s.status === 'publicado');
+$('svG').innerHTML = SV.map(s => `<article class="sv">${svg(s.icone)}<h3>${esc(s.nome)}</h3><p>${esc(s.desc)}</p></article>`).join('');
+$('oS').innerHTML = '<option value="">Qual serviço?</option>' + SV.map(s => `<option>${esc(s.nome)}</option>`).join('');
+
+/* projetos */
+const PJ = DB.projetos.filter(p => p.status === 'publicado' && p.fotos && p.fotos.length);
+const FE = PJ.filter(p => p.destaque).length ? PJ.filter(p => p.destaque) : PJ.slice(0, 4);
+const tiles = []; FE.concat(PJ).forEach(p => p.fotos.forEach(f => { if (!tiles.includes(f)) tiles.push(f); }));
+$('mosaic').innerHTML = tiles.slice(0, 10).map(f => `<img src="${esc(f)}" alt="">`).join('');
+let ci = 0; const capSet = i => { ci = (i + FE.length) % FE.length; $('capT').textContent = FE[ci] ? FE[ci].titulo : ''; const im = $('mosaic').children; [...im].forEach((x, j) => x.classList.toggle('on', FE[ci] && x.getAttribute('src') === FE[ci].fotos[0])); };
+capSet(0); $('cPrev').onclick = () => capSet(ci - 1); $('cNext').onclick = () => capSet(ci + 1); $('cOpen').onclick = () => FE[ci] && openPj(FE[ci].id);
+setInterval(() => capSet(ci + 1), 5000);
+
+const cats = S.CAT_PROJ.filter(c => PJ.some(p => p.cat === c)); let cat = '';
+$('chips').innerHTML = ['Todos'].concat(cats).map((c, i) => `<button data-c="${i ? esc(c) : ''}" class="${i ? '' : 'on'}">${esc(c)}</button>`).join('');
+$('chips').onclick = e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; $('chips').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); rPj(); };
+function rPj() {
+  const l = PJ.filter(p => !cat || p.cat === cat);
+  $('pjG').innerHTML = l.length ? l.map(p => `<button class="pj" data-id="${p.id}"><span class="n">${esc(p.cat)}</span><div class="im"><img src="${esc(p.fotos[0])}" alt="${esc(p.titulo)}"></div><div class="cb"><b>${esc(p.titulo)}</b><small>${esc([p.local, p.ano].filter(Boolean).join(' · '))}</small><span class="plus">+</span></div></button>`).join('') : '<p class="empty">Nenhum projeto nesta categoria ainda.</p>';
+}
+rPj();
+$('pjG').onclick = e => { const b = e.target.closest('.pj'); if (b) openPj(b.dataset.id); };
+function openPj(id) {
+  const p = PJ.find(x => x.id === id); if (!p) return;
+  $('mCat').textContent = p.cat; $('mT').textContent = p.titulo; $('mR').textContent = p.resumo;
+  $('mDl').innerHTML = [['Local', p.local], ['Ano', p.ano], ['Serviço', p.cat], ['Fotos', p.fotos.length]].filter(r => r[1]).map(r => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('');
+  const show = i => { $('mImg').src = p.fotos[i]; $('mTh').querySelectorAll('img').forEach((t, j) => t.classList.toggle('on', i === j)); };
+  $('mTh').innerHTML = p.fotos.length > 1 ? p.fotos.map(f => `<img src="${esc(f)}" alt="">`).join('') : '';
+  $('mTh').onclick = e => { const t = e.target.closest('img'); if (t) show([...$('mTh').children].indexOf(t)); };
+  show(0); $('mWa').href = wa(`Olá! Vi o projeto "${p.titulo}" no site e gostaria de um orçamento parecido.`); $('mWa').target = '_blank';
+  $('ov').classList.add('open'); document.body.style.overflow = 'hidden';
+}
+const closeM = () => { $('ov').classList.remove('open'); document.body.style.overflow = ''; };
+$('mx').onclick = closeM; $('ov').onclick = e => { if (e.target === $('ov')) closeM(); }; addEventListener('keydown', e => e.key === 'Escape' && closeM());
+
+/* novidades */
+const NW = DB.novidades.filter(n => n.status === 'publicado').sort((a, b) => (b.data || '').localeCompare(a.data || ''));
+$('nwG').innerHTML = NW.slice(0, 3).map(n => { const d = new Date((n.data || '2026-01-01') + 'T12:00'); return `<article class="nw" data-id="${n.id}"><div class="im"><img src="${esc(n.foto)}" alt=""></div><div class="bd"><div><h3>${esc(n.titulo)}</h3><span class="ct">${esc(n.cat)}</span></div><div class="dt"><b>${d.getDate()}</b><small>${MES[d.getMonth()]} '${String(d.getFullYear()).slice(2)}</small></div></div></article>`; }).join('') || '<p class="empty">Em breve.</p>';
+$('nwG').onclick = e => { const b = e.target.closest('.nw'); if (!b) return; const n = NW.find(x => x.id === b.dataset.id);
+  $('mCat').textContent = n.cat; $('mT').textContent = n.titulo; $('mR').textContent = n.texto; $('mDl').innerHTML = ''; $('mTh').innerHTML = ''; $('mImg').src = n.foto;
+  $('mWa').href = wa('Olá! Vi a novidade "' + n.titulo + '" no site.'); $('mWa').target = '_blank'; $('ov').classList.add('open'); document.body.style.overflow = 'hidden'; };
+
+/* orçamento */
+$('orc').onsubmit = e => { e.preventDefault();
+  const t = `Olá! Meu nome é ${$('oN').value.trim()}${$('oC').value.trim() ? ', de ' + $('oC').value.trim() : ''}.\n${$('oS').value ? 'Serviço: ' + $('oS').value + '\n' : ''}${$('oM').value.trim()}`;
+  window.open(wa(t), '_blank'); };
+
+/* menu e animações */
+$('burger').onclick = () => $('mn').classList.toggle('open'); $('mn').onclick = e => e.target.tagName === 'A' && $('mn').classList.remove('open');
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), {threshold: .12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
