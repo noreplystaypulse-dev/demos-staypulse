@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --teal:#1E8C86; --teal-d:#0F5E5A; --teal-l:#E6F4F2; --pink:#E2558F; --pink-l:#FCE8F0;
+  --teal:#2AA79D; --teal-d:#17786F; --teal-l:#E2F6F3; --pink:#EC5C93; --pink-l:#FDE7EF; --tif:#7FD8CF; --sal:#E8857A; --blush:#FFF4F7;
   --ink:#1D1D1F; --muted:#6E6E73; --line:#ECECEC; --soft:#F7F7F5; --promo:#E8445A;
 }
 *{box-sizing:border-box}
@@ -268,6 +268,62 @@ footer .sp a{color:#0891B2}
 .badge-sp{position:fixed;left:18px;bottom:18px;z-index:60;background:#0F172A;color:#fff;border:1px solid #22D3EE;border-radius:999px;padding:.5rem .9rem;font-size:.75rem;text-decoration:none;display:flex;gap:.4rem;align-items:center}
 .badge-sp b{color:#22D3EE}
 @media(max-width:600px){.badge-sp{display:none}}
+
+/* ===== estilo Coralli: rosa + tiffany, com carinho ===== */
+body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260' fill='none' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%23F4A3C0' opacity='.55'%3E%3Cpath d='M40 52a9 9 0 1 1 9 9v6l-30 18h60l-30-18'/%3E%3Cpath d='M182 150c-6-7-18-3-18 6 0 8 18 18 18 18s18-10 18-18c0-9-12-13-18-6z'/%3E%3C/g%3E%3Cg stroke='%2390D9D0' opacity='.6'%3E%3Cpath d='M170 30h20l-3 14 13 44h-40l13-44z'/%3E%3Cpath d='M44 170l14-8h14l14 8 8 16-10 4-6-8v38H58v-38l-6 8-10-4z'/%3E%3C/g%3E%3Cg fill='%23F7B9CF' stroke='none' opacity='.5'%3E%3Ccircle cx='120' cy='110' r='3'/%3E%3Ccircle cx='230' cy='220' r='2.5'/%3E%3Ccircle cx='20' cy='240' r='2'/%3E%3C/g%3E%3C/svg%3E") 0 0/260px 260px,radial-gradient(1200px 600px at 100% 0,#E7F8F5 0,transparent 60%),radial-gradient(1000px 700px at 0 30%,#FFEAF2 0,transparent 60%),#FFFBFC;background-attachment:fixed,scroll,scroll,scroll}
+header{background:rgba(255,251,252,.94);border-bottom:0;box-shadow:0 1px 0 #F7D9E4}
+header::after{content:"";display:block;height:4px;background:linear-gradient(90deg,#F48FB1 0 50%,#7FD8CF 50% 100%)}
+.marquee{background:linear-gradient(90deg,#EC5C93,#F48FB1 45%,#7FD8CF 55%,#2AA79D)}
+.marquee span::before{content:"♥ ";opacity:.85}
+.brand img{box-shadow:0 0 0 3px #fff,0 0 0 5px #F48FB1}
+.brand b{color:var(--pink)}
+.hero-box{background:linear-gradient(120deg,#FFE3EE 0%,#FFF6F9 45%,#E4F7F4 100%);border:0;box-shadow:0 30px 70px rgba(236,92,147,.14)}
+.hero-box::before,.hero-box::after{content:"♥";position:absolute;color:#F48FB1;opacity:.35;font-size:120px;line-height:1;pointer-events:none}
+.hero-box::before{right:-14px;bottom:-40px;transform:rotate(-16deg)}
+.hero-box::after{right:44%;top:22px;font-size:44px;color:#7FD8CF;transform:rotate(14deg)}
+.hero .tag{color:var(--pink);border-color:#F8C6D8}
+.hero h1 .serif{color:var(--pink)}
+.chip.on{background:linear-gradient(135deg,#EC5C93,#F48FB1);border-color:transparent}
+.card .ph{border-radius:22px;box-shadow:0 10px 28px rgba(236,92,147,.12)}
+.card .ph::after{content:"";position:absolute;inset:0;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6);pointer-events:none}
+.how{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border:1px solid #F7D9E4}
+.step i{background:linear-gradient(135deg,#FDE7EF,#E2F6F3);color:var(--pink)}
+.btn-dark{background:linear-gradient(135deg,#EC5C93,#D9467F)}
+.btn-dark:hover{background:linear-gradient(135deg,#D9467F,#C23A6F)}
+.btn-line:hover{background:var(--pink);border-color:var(--pink)}
+.sec-h h2 .serif{color:var(--pink)!important}
+footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
+/* checkout em formato de talão */
+.ck{position:fixed;inset:0;z-index:95;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(60,30,40,.45);backdrop-filter:blur(4px)}
+.ck.open{display:flex}
+.ck .pap{width:min(620px,100%);max-height:94vh;overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.25);position:relative}
+.ck .pap::before{content:"";display:block;height:10px;background:linear-gradient(90deg,#F48FB1 0 50%,#7FD8CF 50% 100%)}
+.ck .in{padding:22px 24px 26px}
+.ck .ttl{text-align:center;color:var(--sal);font-weight:800;font-size:2.2rem;letter-spacing:.04em;margin:4px 0 2px}
+.ck .ttl span{color:#F48FB1}
+.ck .sub{text-align:center;color:var(--muted);font-size:.85rem;margin:0 0 16px}
+.ck .bx{border:2px solid var(--sal);border-radius:18px;padding:14px 16px 6px}
+.ck label{display:block;margin-bottom:10px}
+.ck label b{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--sal);margin-bottom:3px}
+.ck input,.ck textarea{width:100%;border:0;border-bottom:2px solid #F6D3CD;padding:.45rem .1rem;font:500 1rem Lexend,sans-serif;outline:none;background:transparent;color:var(--ink)}
+.ck input:focus,.ck textarea:focus{border-color:var(--pink)}
+.ck .g2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.ck .g3{display:grid;grid-template-columns:2fr 1fr;gap:0 16px}
+.ck .formas{display:flex;flex-wrap:wrap;gap:8px;background:var(--sal);border-radius:18px;padding:12px;margin:14px 0}
+.ck .formas button{border:2px solid rgba(255,255,255,.7);background:transparent;color:#fff;border-radius:999px;padding:.45rem .8rem;font-weight:700;font-size:.78rem;letter-spacing:.04em}
+.ck .formas button::before{content:"♡ "}
+.ck .formas button.on{background:#fff;color:var(--sal);border-color:#fff}
+.ck .formas button.on::before{content:"♥ "}
+.ck .res{border-radius:16px;background:var(--blush);padding:12px 14px;font-size:.88rem;margin-bottom:14px}
+.ck .res div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.ck .res b{color:var(--pink)}
+.ck .x{position:absolute;right:12px;top:18px;width:38px;height:38px;border-radius:50%;border:0;background:var(--blush);font-size:1.1rem}
+.ck .send{width:100%;margin-top:6px}
+.ck canvas{width:100%;max-width:340px;display:block;margin:0 auto 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.ck .ok{text-align:center}
+.ck .ok h3{font-size:1.4rem;color:var(--pink);margin:6px 0}
+.ck .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+@media(max-width:520px){.ck .g2,.ck .g3{grid-template-columns:1fr}.ck .in{padding:18px 16px 22px}.ck .ttl{font-size:1.8rem}}
 </style>
 </head>
 <body>
@@ -299,7 +355,7 @@ footer .sp a{color:#0891B2}
       <div>
         <span class="tag">● Só atacado · Feira da Madrugada</span>
         <h1>Moda <span class="serif">gringa</span><br>para a sua loja</h1>
-        <p>Peças novas todos os dias, direto do nosso box para você revender. Monte seu pedido aqui e finalize pelo WhatsApp.</p>
+        <p>Peças novas todos os dias, direto do nosso box para você revender. Monte seu pedido aqui, preencha seus dados e finalize pelo WhatsApp.</p>
         <div class="ctas">
           <a class="btn btn-dark" href="#promocoes">Promoções do dia</a>
           <a class="btn btn-line" href="#como-comprar">Como comprar</a>
@@ -408,13 +464,7 @@ footer .sp a{color:#0891B2}
   <div class="dr-f" id="cartFoot">
     <div class="tot"><span id="fPcs">0 peças</span><b id="fTot">R$ 0,00</b></div>
     <div class="min" id="fMin"></div>
-    <div class="form">
-      <input id="cNome" placeholder="Seu nome ou nome da loja" autocomplete="name">
-      <input id="cCidade" placeholder="Cidade / Estado">
-      <select id="cRec"><option value="">Como quer receber?</option><option>Retirar no box</option><option>Excursão</option><option>Transportadora / Correios</option><option>Motoboy</option></select>
-      <textarea id="cObs" rows="2" placeholder="Observações (opcional)"></textarea>
-    </div>
-    <button class="btn btn-wa" id="send">Enviar pedido pelo WhatsApp</button>
+    <button class="btn btn-dark" id="send" style="width:100%">Continuar: preencher meus dados ♥</button>
   </div>
 </aside>
 
@@ -429,9 +479,37 @@ footer .sp a{color:#0891B2}
   </div>
 </div>
 
+<!-- checkout em formato de talão -->
+<div class="ck" id="ck" role="dialog" aria-modal="true" aria-label="Dados do pedido">
+  <div class="pap"><button class="x" id="ckX" aria-label="Fechar">✕</button>
+    <div class="in" id="ckForm">
+      <p class="ttl"><span>♥</span> PEDIDO <span>♥</span></p>
+      <p class="sub">Preencha seus dados. O pedido chega pronto no WhatsApp da Coralli.</p>
+      <div class="res" id="ckRes"></div>
+      <div class="bx">
+        <label><b>NOME / LOJA *</b><input id="kNome" autocomplete="name"></label>
+        <div class="g2"><label><b>CPF / CNPJ</b><input id="kCpf" inputmode="numeric"></label><label><b>TELEFONE (WHATSAPP) *</b><input id="kTel" inputmode="tel" autocomplete="tel"></label></div>
+        <div class="g2"><label><b>CEP</b><input id="kCep" inputmode="numeric" placeholder="preenche o endereço"></label><label><b>DATA DA ENTREGA</b><input id="kData" type="date"></label></div>
+        <div class="g3"><label><b>ENDEREÇO</b><input id="kEnd" autocomplete="street-address"></label><label><b>Nº</b><input id="kNum"></label></div>
+        <div class="g2"><label><b>BAIRRO</b><input id="kBairro"></label><label><b>CIDADE / UF</b><input id="kCidade"></label></div>
+      </div>
+      <div class="formas" id="kForma"><button type="button" data-f="Entrega (motoboy)">ENTREGA</button><button type="button" data-f="Retirada no box" class="on">RETIRADA</button><button type="button" data-f="Correios PAC">CORREIOS PAC</button><button type="button" data-f="Sedex">SEDEX</button><button type="button" data-f="Transportadora / excursão">TRANSPORTADORA</button></div>
+      <label style="display:block"><b style="font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--sal)">OBSERVAÇÕES</b><textarea id="kObs" rows="2" style="width:100%;border:0;border-bottom:2px solid #F6D3CD;font:500 1rem Lexend,sans-serif;outline:none;padding:.45rem .1rem"></textarea></label>
+      <button class="btn btn-wa send" id="kSend">Enviar pedido pelo WhatsApp</button>
+    </div>
+    <div class="in ok" id="ckOk" hidden>
+      <p class="ttl"><span>♥</span> OBRIGADA! <span>♥</span></p>
+      <h3 id="okNum"></h3>
+      <p class="sub">Seu pedido foi enviado. Guarde a sua ficha:</p>
+      <canvas id="okCv"></canvas>
+      <div class="acts"><button class="btn btn-dark" id="okPng">Baixar meu pedido</button><button class="btn btn-line" id="okClose">Voltar à loja</button></div>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script src="js/store.js"></script>
+<script src="js/etiqueta.js"></script>
 <script>
 const S = window.CoralliStore, C = S.CONFIG;
 const DB = S.load();
@@ -535,7 +613,7 @@ $('svPrev').onclick = () => { sv.i = Math.max(0, sv.i - 1); showStory(); };
 
 /* produto */
 let cur = null, grade = {}, cor = null;
-const CORES_HEX = { 'Rosa': '#F6B7C9', 'Rosa bebê': '#F9CFDB', 'Lilás': '#CDB7E9', 'Lavanda': '#D9CCF2', 'Preto': '#2B2B2E', 'Cinza': '#B9BCC2', 'Off-white': '#F1ECE2', 'Branco': '#FFFFFF', 'Bege': '#E4D3B9', 'Marrom': '#8A5A44', 'Verde': '#7FA68E', 'Nude': '#E8C4AE' };
+const CORES_HEX = { 'Rosa': '#F6B7C9', 'Rosa bebê': '#F9CFDB', 'Lilás': '#CDB7E9', 'Lavanda': '#D9CCF2', 'Preto': '#2B2B2E', 'Cinza': '#B9BCC2', 'Off-white': '#F1ECE2', 'Branco': '#FFFFFF', 'Bege': '#E4D3B9', 'Marrom': '#8A5A44', 'Verde': '#7FA68E', 'Nude': '#E8C4AE', 'Vermelho': '#D7263D', 'Amarelo': '#F2C94C', 'Azul': '#4A7FD6', 'Sortido': 'conic-gradient(#F48FB1,#7FD8CF,#F2C94C,#F48FB1)' };
 function openProduct(id) {
   cur = DB.produtos.find(p => p.id === id); if (!cur) return;
   grade = {}; cor = (cur.cores || [])[0] || null;
@@ -571,8 +649,8 @@ $('mAdd').onclick = () => {
 };
 
 /* carrinho */
-let cart = []; try { cart = JSON.parse(localStorage.getItem('coralli-cart')) || []; } catch (e) {}
-function saveCart() { try { localStorage.setItem('coralli-cart', JSON.stringify(cart)); } catch (e) {} renderCart(); }
+let cart = []; try { cart = JSON.parse(localStorage.getItem('coralli-cart2')) || []; } catch (e) {}
+function saveCart() { try { localStorage.setItem('coralli-cart2', JSON.stringify(cart)); } catch (e) {} renderCart(); }
 function totals() { return { pcs: cart.reduce((a, l) => a + l.qtd, 0), val: cart.reduce((a, l) => a + l.qtd * l.preco, 0) }; }
 function renderCart() {
   const t = totals();
@@ -593,13 +671,39 @@ $('lines').addEventListener('click', e => {
   saveCart();
 });
 $('send').onclick = () => {
-  const nome = $('cNome').value.trim(); if (!nome) { $('cNome').focus(); toast('Coloque seu nome ou da sua loja'); return; }
+  const t = totals();
+  $('ckRes').innerHTML = cart.map(l => `<div><span>${l.qtd}x ${esc(l.nome)}${l.cor ? ' · ' + esc(l.cor) : ''} · ${esc(l.tam)}</span><span>${S.brl(l.qtd * l.preco)}</span></div>`).join('') + `<div style="border-top:1px dashed #F2B8CB;margin-top:4px;padding-top:6px"><b>${t.pcs} peças</b><b>${S.brl(t.val)}</b></div>`;
+  try { const sv = JSON.parse(localStorage.getItem('coralli-cliente')) || {}; ['Nome', 'Cpf', 'Tel', 'Cep', 'End', 'Num', 'Bairro', 'Cidade'].forEach(k => { if (sv[k] && !$('k' + k).value) $('k' + k).value = sv[k]; }); } catch (e) {}
+  $('ckForm').hidden = false; $('ckOk').hidden = true; $('ck').classList.add('open'); closeLayers(); document.body.style.overflow = 'hidden';
+};
+let forma = 'Retirada no box';
+$('kForma').onclick = e => { const b = e.target.closest('button'); if (!b) return; forma = b.dataset.f; $('kForma').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
+$('kCep').addEventListener('blur', async () => { const c = $('kCep').value.replace(/\D/g, ''); if (c.length !== 8) return;
+  try { const r = await (await fetch('https://viacep.com.br/ws/' + c + '/json/')).json(); if (!r.erro) { $('kEnd').value = $('kEnd').value || r.logradouro; $('kBairro').value = $('kBairro').value || r.bairro; $('kCidade').value = $('kCidade').value || (r.localidade + ' - ' + r.uf); $('kNum').focus(); } } catch (e) {} });
+const closeCk = () => { $('ck').classList.remove('open'); document.body.style.overflow = ''; };
+$('ckX').onclick = closeCk; $('okClose').onclick = closeCk;
+$('ck').addEventListener('click', e => { if (e.target === $('ck')) closeCk(); });
+let ultimo = null; const logoImg = new Image(); logoImg.src = 'img/logo.png';
+$('kSend').onclick = () => {
+  const v = k => $('k' + k).value.trim();
+  if (!v('Nome')) { $('kNome').focus(); return toast('Coloque seu nome ou da sua loja'); }
+  if (v('Tel').replace(/\D/g, '').length < 10) { $('kTel').focus(); return toast('Coloque seu WhatsApp com DDD'); }
+  if (!/Retirada/.test(forma) && (!v('End') || !v('Cidade'))) { $('kEnd').focus(); return toast('Preencha o endereço para a entrega'); }
+  const D = S.load(); D.seq = (D.seq || 1000) + 1;
+  const ped = { id: S.uid(), num: D.seq, data: Date.now(), entrega: v('Data'), nome: v('Nome'), cpf: v('Cpf'), tel: v('Tel'), cep: v('Cep'), end: v('End'), numero: v('Num'), bairro: v('Bairro'), cidade: v('Cidade'), forma, obs: v('Obs'), status: 'novo', itens: cart.map(l => ({ nome: l.nome, cor: l.cor || '', tam: l.tam, qtd: l.qtd, preco: l.preco })) };
+  D.pedidos = [ped].concat(D.pedidos || []); S.save(D);
+  try { localStorage.setItem('coralli-cliente', JSON.stringify({ Nome: ped.nome, Cpf: ped.cpf, Tel: ped.tel, Cep: ped.cep, End: ped.end, Num: ped.numero, Bairro: ped.bairro, Cidade: ped.cidade })); } catch (e) {}
   const t = totals();
   const linhas = cart.map(l => `• ${l.qtd}x ${l.nome}${l.cor ? ' (' + l.cor + ')' : ''}, tam. ${l.tam}: ${S.brl(l.qtd * l.preco)}`).join('\n');
-  const msg = `*Novo pedido pelo site Coralli*\n\n${linhas}\n\n*Total: ${t.pcs} peças · ${S.brl(t.val)}*\n\nNome: ${nome}` +
-    ($('cCidade').value.trim() ? `\nCidade: ${$('cCidade').value.trim()}` : '') + ($('cRec').value ? `\nRecebimento: ${$('cRec').value}` : '') + ($('cObs').value.trim() ? `\nObs.: ${$('cObs').value.trim()}` : '');
+  const msg = `*♥ PEDIDO Nº ${ped.num} · Coralli ♥*\n\n${linhas}\n\n*Total: ${t.pcs} peças · ${S.brl(t.val)}*\n\n👤 ${ped.nome}${ped.cpf ? '\nCPF/CNPJ: ' + ped.cpf : ''}\n📞 ${ped.tel}\n🚚 ${forma}` +
+    (ped.end ? `\n📍 ${ped.end}, ${ped.numero} · ${ped.bairro} · ${ped.cidade}${ped.cep ? ' · CEP ' + ped.cep : ''}` : '') + (ped.entrega ? `\n📅 Entrega: ${ped.entrega.split('-').reverse().join('/')}` : '') + (ped.obs ? `\n📝 ${ped.obs}` : '');
   window.open(waLink(msg), '_blank', 'noopener');
+  ultimo = ped; $('okNum').textContent = 'Pedido nº ' + ped.num;
+  const go = () => Etiqueta.draw($('okCv'), ped, { logo: logoImg }); if (logoImg.complete) go(); else logoImg.onload = go;
+  $('ckForm').hidden = true; $('ckOk').hidden = false; $('ck').querySelector('.pap').scrollTop = 0;
+  cart = []; saveCart();
 };
+$('okPng').onclick = () => Etiqueta.png($('okCv'), 'pedido-coralli-' + (ultimo ? ultimo.num : ''));
 $('openCart').onclick = () => openLayer('drawer');
 renderCart();
 
@@ -608,7 +712,7 @@ function openLayer(id) { $('ov').classList.add('open'); $(id).classList.add('ope
 function closeLayers() { ['ov', 'modal', 'drawer'].forEach(i => $(i).classList.remove('open')); document.body.style.overflow = ''; }
 $('ov').onclick = closeLayers;
 document.querySelectorAll('[data-close]').forEach(b => b.onclick = closeLayers);
-addEventListener('keydown', e => { if (e.key === 'Escape') { closeLayers(); closeStories(); } if ($('sv').classList.contains('open')) { if (e.key === 'ArrowRight') $('svNext').click(); if (e.key === 'ArrowLeft') $('svPrev').click(); } });
+addEventListener('keydown', e => { if (e.key === 'Escape') { closeLayers(); closeStories(); closeCk(); } if ($('sv').classList.contains('open')) { if (e.key === 'ArrowRight') $('svNext').click(); if (e.key === 'ArrowLeft') $('svPrev').click(); } });
 let tt; function toast(m) { $('toast').textContent = m; $('toast').classList.add('show'); clearTimeout(tt); tt = setTimeout(() => $('toast').classList.remove('show'), 2200); }
 </script>
 </body>

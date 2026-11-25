@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../img/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#1E8C86;--teal-d:#0F5E5A;--teal-l:#E6F4F2;--pink:#E2558F;--promo:#E8445A;--ink:#1D1D1F;--muted:#6E6E73;--line:#ECECEC;--soft:#F5F5F3}
+:root{--teal:#2AA79D;--teal-d:#17786F;--teal-l:#E2F6F3;--pink:#EC5C93;--promo:#E8445A;--ink:#1D1D1F;--muted:#6E6E73;--line:#ECECEC;--soft:#F5F5F3}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none!important}
 body{margin:0;background:var(--soft);color:var(--ink);font-family:Lexend,system-ui,sans-serif;font-size:15px;line-height:1.45}
@@ -50,6 +50,8 @@ nav.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;
 nav.tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:.4rem 0;font-size:.72rem;color:var(--muted);font-weight:500}
 nav.tabs button svg{width:24px;height:24px}
 nav.tabs button.on{color:var(--teal)}
+nav.tabs button{position:relative}nav.tabs .bd{position:absolute;top:0;left:calc(50% + 6px);min-width:18px;height:18px;border-radius:9px;background:#EC5C93;color:#fff;font-size:.65rem;font-weight:700;display:grid;place-items:center;padding:0 4px}nav.tabs .bd:empty{display:none}
+.ped-n{flex:none;width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,#FDE7EF,#E2F6F3);color:#EC5C93;font-weight:800;display:grid;place-items:center;font-size:.95rem}
 .view{display:none}.view.on{display:block}
 h2{font-size:1.15rem;margin:0 0 .3rem}
 .hint{color:var(--muted);font-size:.85rem;margin:0 0 14px}
@@ -150,6 +152,14 @@ textarea{resize:vertical}
     <div class="list" id="listProd"></div>
   </section>
 
+  <!-- PEDIDOS -->
+  <section class="view pad" id="vPed">
+    <h2>Pedidos do site</h2>
+    <p class="hint">Cada pedido feito no carrinho chega aqui com os dados da cliente. Toque para ver a ficha/etiqueta 10×15, baixar ou imprimir.</p>
+    <div class="seg" id="segPed"><button data-s="novo" class="on">Novos <i></i></button><button data-s="separado">Separados <i></i></button><button data-s="enviado">Enviados <i></i></button></div>
+    <div class="list" id="listPed"></div>
+  </section>
+
   <!-- PROMOÇÕES -->
   <section class="view pad" id="vPromo">
     <h2>Promoções do dia</h2>
@@ -172,7 +182,7 @@ textarea{resize:vertical}
     <p class="hint">Atalhos e configurações da demonstração.</p>
     <div class="list">
       <a class="item" href="../" target="_blank" style="text-decoration:none;color:inherit"><span class="t"><b>Abrir o site</b><small>Veja como a cliente enxerga</small></span><span class="chev">›</span></a>
-      <button class="item" id="btnReset"><span class="t"><b>Restaurar demonstração</b><small>Volta as peças e vídeos de exemplo</small></span><span class="chev">›</span></button>
+      <button class="item" id="btnReset"><span class="t"><b>Restaurar demonstração</b><small>Volta as peças, vídeos e o pedido de exemplo</small></span><span class="chev">›</span></button>
       <button class="item" id="btnSair"><span class="t"><b>Sair</b><small>Fechar o painel</small></span><span class="chev">›</span></button>
     </div>
     <p class="hint" style="margin-top:18px">Na versão oficial, os dados ficam na nuvem: o que você publica aqui aparece para todo mundo na hora, em qualquer aparelho.</p>
@@ -182,6 +192,7 @@ textarea{resize:vertical}
 
   <nav class="tabs">
     <button data-v="vProd" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3c0 2-2 3-4 3S8 5 8 3z"/></svg>Peças</button>
+    <button data-v="vPed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>Pedidos<span class="bd" id="pedN"></span></button>
     <button data-v="vPromo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Promoções</button>
     <button data-v="vVid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="m11 9 3 2-3 2z" fill="currentColor"/></svg>Vídeos</button>
     <button data-v="vLoja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 4h14l2 5M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM5 13v8h14v-8"/></svg>Loja</button>
@@ -227,10 +238,24 @@ textarea{resize:vertical}
   <div class="sh-f"><button class="btn btn-soft" id="vHide">Ocultar</button><button class="btn btn-teal" id="vPub">Publicar</button></div>
 </div>
 
+<!-- PEDIDO / ETIQUETA -->
+<div class="sheet" id="shPed">
+  <div class="sh-h"><button data-x>Fechar</button><h3 id="oTitle">Pedido</h3><span style="width:80px"></span></div>
+  <div class="sh-b">
+    <canvas id="oCv" style="width:100%;max-width:360px;display:block;margin:0 auto 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)"></canvas>
+    <div class="two"><button class="btn btn-teal" id="oPng">⬇ Baixar etiqueta</button><button class="btn btn-soft" id="oPrint">🖨 Imprimir 10×15</button></div>
+    <a class="btn btn-soft" id="oWa" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:10px">💬 Falar com a cliente no WhatsApp</a>
+    <div class="fld" style="margin-top:16px"><label>Status do pedido</label><div class="chips" id="oSt"><button type="button" data-v="novo">Novo</button><button type="button" data-v="separado">Separado</button><button type="button" data-v="enviado">Enviado</button></div></div>
+    <p class="hint">A etiqueta sai no tamanho 10×15 cm, o mesmo das etiquetas da Shopee e do Mercado Livre. No celular: Baixar → Compartilhar → app da impressora.</p>
+    <button class="btn btn-red del" id="oDel">Excluir pedido</button>
+  </div>
+</div>
+
 <div class="cf" id="cf"><div><h4 id="cfT"></h4><p id="cfP"></p><div class="two"><button class="btn btn-soft" id="cfNo">Cancelar</button><button class="btn btn-red" id="cfYes" style="background:var(--promo);color:#fff">Excluir</button></div></div></div>
 <div class="toast" id="toast"></div>
 
 <script src="../js/store.js"></script>
+<script src="../js/etiqueta.js"></script>
 <script>
 const S = window.CoralliStore;
 let DB = S.load();
@@ -241,13 +266,13 @@ let tt; const toast = m => { $('toast').textContent = m; $('toast').classList.ad
 function persist(msg) { if (S.save(DB)) { msg && toast(msg); return true; } toast('Memória cheia: use menos fotos nesta demonstração'); return false; }
 
 /* login (demonstração) */
-if (sessionStorage.getItem('coralli-ok')) enter();
+if (sessionStorage.getItem('coralli-ok')) setTimeout(enter);
 $('fLogin').onsubmit = e => { e.preventDefault(); if ($('pw').value.trim().toLowerCase() === 'coralli') { sessionStorage.setItem('coralli-ok', '1'); enter(); } else toast('Senha incorreta'); };
 function enter() { $('login').hidden = true; $('app').hidden = false; renderAll(); }
 $('btnSair').onclick = () => { sessionStorage.removeItem('coralli-ok'); location.reload(); };
 
 /* abas */
-const TITLES = { vProd: 'Peças', vPromo: 'Promoções', vVid: 'Vídeos', vLoja: 'Loja' };
+const TITLES = { vPed: 'Pedidos', vProd: 'Peças', vPromo: 'Promoções', vVid: 'Vídeos', vLoja: 'Loja' };
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
   document.querySelectorAll('nav.tabs button').forEach(x => x.classList.toggle('on', x === b));
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === b.dataset.v));
@@ -261,7 +286,32 @@ $('fab').onclick = () => $('vVid').classList.contains('on') ? openVid(null) : op
 /* listas */
 let segS = 'publicado';
 $('segProd').onclick = e => { const b = e.target.closest('button'); if (!b) return; segS = b.dataset.s; $('segProd').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderProd(); };
-function renderAll() { renderProd(); renderPromo(); renderVid(); }
+function renderAll() { renderProd(); renderPromo(); renderVid(); renderPed(); }
+/* pedidos */
+let segP = 'novo', curPed = null; const logoImg = new Image(); logoImg.src = '../img/logo.png';
+$('segPed').onclick = e => { const b = e.target.closest('button'); if (!b) return; segP = b.dataset.s; $('segPed').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderPed(); };
+function renderPed() {
+  const P = DB.pedidos || [], c = s => P.filter(p => (p.status || 'novo') === s).length;
+  $('segPed').querySelectorAll('button').forEach(b => b.querySelector('i').textContent = c(b.dataset.s));
+  $('pedN').textContent = c('novo') || '';
+  const l = P.filter(p => (p.status || 'novo') === segP).sort((a, b) => b.num - a.num);
+  $('listPed').innerHTML = l.length ? l.map(p => { const pcs = p.itens.reduce((a, i) => a + i.qtd, 0), tot = p.itens.reduce((a, i) => a + i.qtd * i.preco, 0);
+    return `<button class="item" data-id="${p.id}"><span class="ped-n">#${p.num}</span><span class="t"><b>${esc(p.nome)}</b><small>${new Date(p.data).toLocaleDateString('pt-BR')} · ${pcs} peças · ${S.brl(tot)}</small><span class="tags"><span class="tag pr">${esc(p.forma || '')}</span>${p.id === 'o1' ? '<span class="tag">Exemplo</span>' : ''}</span></span><span class="chev">›</span></button>`; }).join('')
+    : '<p class="empty">Nenhum pedido aqui. Os pedidos feitos no carrinho do site aparecem nesta lista.</p>';
+}
+$('listPed').onclick = e => { const b = e.target.closest('.item'); if (b) openPed(b.dataset.id); };
+function openPed(id) {
+  curPed = DB.pedidos.find(p => p.id === id); if (!curPed) return;
+  $('oTitle').textContent = 'Pedido #' + curPed.num;
+  const go = () => Etiqueta.draw($('oCv'), curPed, { logo: logoImg }); if (logoImg.complete) go(); else logoImg.onload = go; go();
+  $('oWa').href = 'https://wa.me/55' + String(curPed.tel || '').replace(/\D/g, '').replace(/^55/, '') + '?text=' + encodeURIComponent('Oi, ' + curPed.nome + '! Aqui é da Coralli 💗 Sobre o seu pedido nº ' + curPed.num + ':');
+  $('oSt').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === (curPed.status || 'novo')));
+  $('shPed').classList.add('open');
+}
+$('oSt').onclick = e => { const b = e.target.closest('button'); if (!b) return; curPed.status = b.dataset.v; $('oSt').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); persist('✓ Pedido ' + b.textContent.toLowerCase()); renderPed(); };
+$('oPng').onclick = () => Etiqueta.png($('oCv'), 'pedido-coralli-' + curPed.num);
+$('oPrint').onclick = () => Etiqueta.print($('oCv'));
+$('oDel').onclick = () => confirmDel('Excluir este pedido?', 'Ele sai da lista de pedidos.', () => { DB.pedidos = DB.pedidos.filter(p => p !== curPed); persist('Pedido excluído'); $('shPed').classList.remove('open'); renderPed(); });
 function renderProd() {
   const c = s => DB.produtos.filter(p => p.status === s).length;
   $('segProd').querySelectorAll('button').forEach(b => b.querySelector('i').textContent = c(b.dataset.s));

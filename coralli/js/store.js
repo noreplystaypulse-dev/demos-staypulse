@@ -3,7 +3,7 @@
    O painel /admin e o site leem o mesmo lugar, então o que for
    publicado no painel aparece no site do mesmo celular/computador. */
 (function () {
-  const KEY = 'coralli-demo-v1';
+  const KEY = 'coralli-demo-v2';
 
   const CONFIG = {
     whatsapp: '',               // ← WhatsApp da loja (ex.: 5511915159311). Vazio = número da StayPulse (demo)
@@ -15,28 +15,49 @@
     destaques: ['Clientes', 'Pedidos', 'Entregas', 'Feedbacks', 'Coralli']
   };
 
-  const CATEGORIAS = ['Conjuntos', 'Calças', 'Blusas', 'Croppeds', 'Moletons', 'Vestidos'];
+  const CATEGORIAS = ['Vestidos', 'Conjuntos', 'Saias', 'Corseletes e bodies', 'Macacões', 'Moda praia'];
 
   const P = (id, nome, categoria, preco, extra) => Object.assign({
     id, nome, categoria, preco, precoAntigo: null, tamanhos: ['P', 'M', 'G'], cores: [],
     descricao: '', fotos: [], status: 'publicado', promo: false, destaque: false,
     estoque: null, criado: Date.now() - Math.floor(Math.random() * 1e8)
   }, extra || {});
+  const F = n => ['img/p/' + n + '.jpg'];
 
   const SEED = {
-    aviso: 'SÓ ATACADO · Promoções do dia toda manhã · Box 00237 · Setor Roxo',
+    aviso: 'SÓ ATACADO · Peças novas toda semana · Box 00237 · Setor Roxo',
     produtos: [
-      P('p1', 'Conjunto Canelado Gringa', 'Conjuntos', 69.9, { precoAntigo: 79.9, promo: true, destaque: true, cores: ['Rosa', 'Lilás', 'Preto'], descricao: 'Conjunto canelado com top e calça wide leg. Tecido encorpado e confortável.', estoque: 12 }),
-      P('p2', 'Calça Jogger Moletinho', 'Calças', 42.9, { promo: true, cores: ['Preto', 'Cinza', 'Off-white'], descricao: 'Jogger em moletinho com punho e cordão.' }),
-      P('p3', 'Cropped Manga Longa Básico', 'Croppeds', 24.9, { precoAntigo: 29.9, promo: true, cores: ['Preto', 'Branco', 'Rosa'], tamanhos: ['Único'], descricao: 'Cropped canelado manga longa, veste do P ao G.' }),
-      P('p4', 'Moletom Oversized Gringo', 'Moletons', 89.9, { destaque: true, cores: ['Rosa bebê', 'Lavanda', 'Cinza'], tamanhos: ['M', 'G', 'GG'], descricao: 'Moletom oversized flanelado por dentro. Sucesso da temporada.' }),
-      P('p5', 'Blusa Regata Alfaiataria', 'Blusas', 29.9, { cores: ['Preto', 'Off-white'], descricao: 'Regata com caimento de alfaiataria.' }),
-      P('p6', 'Vestido Midi Canelado', 'Vestidos', 54.9, { destaque: true, cores: ['Preto', 'Marrom', 'Verde'], descricao: 'Vestido midi canelado com fenda lateral.', estoque: 5 }),
-      P('p7', 'Calça Wide Leg Cós Alto', 'Calças', 59.9, { cores: ['Preto', 'Bege'], tamanhos: ['36', '38', '40', '42'], descricao: 'Wide leg com cós alto e bolsos laterais.' }),
-      P('p8', 'Conjunto Moletom Jogger', 'Conjuntos', 119.9, { precoAntigo: 139.9, promo: true, cores: ['Cinza', 'Preto'], descricao: 'Moletom + jogger, flanelado.' }),
-      P('p9', 'Cropped Ombro Só', 'Croppeds', 27.9, { status: 'rascunho', cores: ['Preto', 'Branco'], tamanhos: ['Único'], descricao: 'Cropped um ombro só.' }),
-      P('p10', 'Blusa Segunda Pele', 'Blusas', 22.9, { status: 'esgotado', cores: ['Preto', 'Nude'], tamanhos: ['Único'] })
+      P('p1', 'Vestido Jully', 'Vestidos', 50, { fotos: F('vestido-jully'), destaque: true, descricao: 'Vestido midi ombro só, justinho ao corpo. Caimento perfeito e tecido com elastano.' }),
+      P('p2', 'Saia Drapeada Isis', 'Saias', 40, { fotos: F('saia-isis'), promo: true, descricao: 'Saia curta drapeada com amarração lateral. Combina com corselete e cropped.' }),
+      P('p3', 'Vestido Bia', 'Vestidos', 45, { fotos: F('vestido-bia'), descricao: 'Vestido curto frente única, com decote e costas abertas.' }),
+      P('p4', 'Macacão Cereja', 'Macacões', 40, { fotos: F('macacao-cereja'), promo: true, descricao: 'Macaquinho estampado de cerejas, alcinha e amarração no busto.' }),
+      P('p5', 'Corselete Renata', 'Corseletes e bodies', 45, { fotos: F('corselete-renata'), destaque: true, cores: ['Marrom', 'Preto', 'Azul', 'Verde', 'Rosa'], tamanhos: ['P', 'M', 'G'], descricao: 'Corselete tomara que caia com bojo e barbatanas. Várias cores.' }),
+      P('p6', 'Vestido Mariel', 'Vestidos', 55, { fotos: F('vestido-mariel'), descricao: 'Vestido longo frente única com fenda. Valoriza a silhueta.' }),
+      P('p7', 'Saia Marie', 'Saias', 45, { fotos: F('saia-marie'), cores: ['Preto', 'Branco', 'Vermelho', 'Amarelo', 'Azul'], descricao: 'Saia curta com babado, disponível em várias cores.' }),
+      P('p8', 'Saída de praia', 'Moda praia', 35, { fotos: F('saida-praia'), promo: true, tamanhos: ['Único'], descricao: 'Calça saída de praia em tricô vazado, cós com amarração.' }),
+      P('p9', 'Conjunto Mari', 'Conjuntos', 55, { fotos: F('conjunto-mari'), descricao: 'Cropped de manguinha + saia longa canelada.' }),
+      P('p10', 'Conjunto Bicolor', 'Conjuntos', 50, { fotos: F('conjunto-bicolor'), tamanhos: ['U (34 ao 42)'], descricao: 'Top + calça flare estampados. Tamanho único, veste do 34 ao 42.' }),
+      P('p11', 'Vestido Natasha', 'Vestidos', 50, { fotos: F('vestido-natasha'), destaque: true, descricao: 'Vestido curto frente única com saia rodada.' }),
+      P('p12', 'Biquínis', 'Moda praia', 25, { fotos: F('biquinis'), promo: true, tamanhos: ['P', 'M', 'G'], cores: ['Sortido'], descricao: 'Biquínis em várias estampas e cores. Ótimos para revenda.' }),
+      P('p13', 'Conjunto Agustina', 'Conjuntos', 55, { fotos: F('conjunto-agustina'), destaque: true, descricao: 'Blusa com babados e amarração + short. Leve e romântico.' }),
+      P('p14', 'Conjunto Paty', 'Conjuntos', 45, { fotos: F('conjunto-paty'), descricao: 'Top faixa + saia curta. Peça curinga para a noite.' }),
+      P('p15', 'Conjunto Duda', 'Conjuntos', 55, { fotos: F('conjunto-duda'), descricao: 'Cropped + calça wide leg em malha.' }),
+      P('p16', 'Body Renda', 'Corseletes e bodies', 45, { fotos: F('body-renda'), cores: ['Preto', 'Branco', 'Marrom', 'Azul'], descricao: 'Body manga longa em renda, com gola alta.' }),
+      P('p17', 'Conjunto Eloísa', 'Conjuntos', 45, { fotos: F('conjunto-eloisa'), descricao: 'Cropped de alça + short saia em tricô.' }),
+      P('p18', 'Saia longa com fenda', 'Saias', 35, { fotos: F('saia-longa'), promo: true, descricao: 'Saia longa justa com fenda, em malha canelada.' }),
+      P('p19', 'Conjunto Farm', 'Conjuntos', 65, { fotos: F('conjunto-farm'), destaque: true, descricao: 'Blusa e short estampados, inspirados na estética Farm.' }),
+      P('p20', 'Vestido Gringa', 'Vestidos', 45, { fotos: F('vestido-gringa'), descricao: 'Vestido curto decote V, em malha encorpada.' }),
+      P('p21', 'Corselete Tami', 'Corseletes e bodies', 45, { fotos: F('corselete-tami'), descricao: 'Corselete em tule com bojo e barbatanas.' }),
+      P('p22', 'Vestido Danne', 'Vestidos', 55, { fotos: F('vestido-danne'), descricao: 'Vestido curto ombro a ombro com franzido.' }),
+      P('p23', 'Corselete Tainá', 'Corseletes e bodies', 45, { fotos: F('corselete-taina'), cores: ['Vermelho', 'Azul'], descricao: 'Corselete com renda e bojo, acabamento delicado.' }),
+      P('p24', 'Conjunto Mirella', 'Conjuntos', 50, { fotos: F('conjunto-mirella'), descricao: 'Cropped manga longa + calça jogger. Conforto com estilo.' }),
+      P('p25', 'Conjunto Isa', 'Conjuntos', 55, { fotos: F('conjunto-isa'), descricao: 'Cropped de alça + calça pantalona.' })
     ],
+    pedidos: [
+      { id: 'o1', num: 1001, data: Date.now() - 864e5, entrega: '', nome: 'Naabamba Modas', cpf: '123.456.789-00', tel: '(11) 98888-7777', cep: '01001-000', end: 'Rua das Flores', numero: '120', bairro: 'Centro', cidade: 'São Paulo - SP', forma: 'Transportadora', obs: 'Separar por tamanho, por favor 💗',
+        itens: [{ nome: 'Corselete Renata', cor: 'Rosa', tam: 'M', qtd: 8, preco: 45 }, { nome: 'Conjunto Agustina', cor: '', tam: 'P', qtd: 6, preco: 55 }, { nome: 'Body Renda', cor: 'Preto', tam: 'M', qtd: 7, preco: 45 }, { nome: 'Saia Marie', cor: 'Vermelho', tam: 'G', qtd: 5, preco: 45 }, { nome: 'Biquínis', cor: 'Sortido', tam: 'M', qtd: 10, preco: 25 }], status: 'novo' }
+    ],
+    seq: 1001,
     videos: [
       { id: 'v1', titulo: 'Nunca pare de divulgar seu trabalho', categoria: 'Coralli', capa: 'img/videos/v1.jpg', url: '', views: '', status: 'publicado' },
       { id: 'v2', titulo: 'Fica postando igual blogueira...', categoria: 'Coralli', capa: 'img/videos/v2.jpg', url: '', views: '2,8 mil', status: 'publicado' },
@@ -49,7 +70,7 @@
   };
 
   function load() {
-    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) return s; } catch (e) {}
+    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) { s.pedidos = s.pedidos || []; s.seq = s.seq || 1000; return s; } } catch (e) {}
     return JSON.parse(JSON.stringify(SEED));
   }
   function save(data) {
@@ -59,13 +80,17 @@
   function reset() { try { localStorage.removeItem(KEY); } catch (e) {} }
 
   /* Ilustração de peça quando o produto ainda não tem foto */
-  const CORES = { 'Rosa': '#F6B7C9', 'Rosa bebê': '#F9CFDB', 'Lilás': '#CDB7E9', 'Lavanda': '#D9CCF2', 'Preto': '#2B2B2E', 'Cinza': '#B9BCC2', 'Off-white': '#F1ECE2', 'Branco': '#F7F7F5', 'Bege': '#E4D3B9', 'Marrom': '#8A5A44', 'Verde': '#7FA68E', 'Nude': '#E8C4AE' };
+  const CORES = { 'Rosa': '#F6B7C9', 'Rosa bebê': '#F9CFDB', 'Lilás': '#CDB7E9', 'Lavanda': '#D9CCF2', 'Preto': '#2B2B2E', 'Cinza': '#B9BCC2', 'Off-white': '#F1ECE2', 'Branco': '#F7F7F5', 'Bege': '#E4D3B9', 'Marrom': '#8A5A44', 'Verde': '#7FA68E', 'Nude': '#E8C4AE', 'Vermelho': '#D7263D', 'Amarelo': '#F2C94C', 'Azul': '#4A7FD6', 'Sortido': '#F48FB1' };
   const SHAPES = {
     Conjuntos: '<path d="M70 40 90 30h20l20 10 18 30-16 8-10-14v34H78V64L68 78l-16-8z"/><path d="M78 112h44l4 76h-20l-4-56-4 56H74z" opacity=".85"/>',
     Calças: '<path d="M70 34h60l6 150h-26l-10-110-10 110H64z"/>',
     Blusas: '<path d="M64 46 86 36c4 8 24 8 28 0l22 10 16 34-20 8-8-14v92H76V74l-8 14-20-8z"/>',
     Croppeds: '<path d="M62 60 86 50c4 8 24 8 28 0l24 10 22 50-18 8-14-30v42H78V88l-14 30-18-8z"/>',
     Moletons: '<path d="M60 52 84 40c4 9 28 9 32 0l24 12 22 92-18 5-14-56v95H68V93l-14 56-18-5z"/><path d="M84 40c-2 16 34 16 32 0" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="4"/><path d="M68 176h64" stroke="rgba(0,0,0,.15)" stroke-width="6"/>',
+    'Saias': '<path d="M74 40h52l18 140H56z"/>',
+    'Corseletes e bodies': '<path d="M66 60h68l-6 120H72z"/>',
+    'Macacões': '<path d="M74 34h52v60l8 96h-26l-8-70-8 70H66l8-96z"/>',
+    'Moda praia': '<path d="M66 60c20 14 48 14 68 0l-8 30H74zM70 120h60l-14 30H84z"/>',
     Vestidos: '<path d="M82 34h36l-4 30 26 128H60L86 64z"/>'
   };
   function ilustracao(produto, i) {
