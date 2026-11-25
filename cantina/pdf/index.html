@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cardápio · Cantina da Vila</title>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,600&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:12mm}
+:root{--g:#0F3D22;--red:#C8362B;--gold:#D9A441;--ck:repeating-conic-gradient(#C8362B 0 25%,#FBF5E9 0 50%) 0 0/14px 14px}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:"DM Sans",sans-serif;color:#1F2A22;background:#d9d4c7}
+.bar{position:sticky;top:0;background:var(--g);color:#fff;display:flex;gap:.6rem;justify-content:center;align-items:center;padding:.7rem;flex-wrap:wrap;font-size:.9rem;z-index:2}
+.bar button,.bar a{border:0;border-radius:999px;padding:.6rem 1.1rem;font-weight:700;font-size:.85rem;cursor:pointer;text-decoration:none;font-family:"DM Sans"}
+.bar button{background:var(--red);color:#fff}.bar a{background:rgba(255,255,255,.14);color:#fff}
+.page{width:min(210mm,100%);margin:20px auto;background:#FBF5E9;padding:0 14mm 14mm;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+.ck{height:14px;background:var(--ck);margin:0 -14mm}
+.hd{text-align:center;padding:18px 0 12px;border-bottom:2px solid var(--g)}
+.hd img{width:96px;height:96px;border-radius:50%;margin:0 auto 8px;display:block;object-fit:cover}
+.hd h1{font-family:"Playfair Display",serif;font-size:40px;margin:0;color:var(--g);line-height:1}
+.hd p{margin:6px 0 0;font-size:12px;color:#555;letter-spacing:.06em}
+.cols{columns:2;column-gap:12mm;margin-top:6px}
+.cat{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:24px;color:var(--red);margin:18px 0 4px;break-after:avoid;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.it{padding:6px 0;break-inside:avoid}
+.it .l{display:flex;align-items:baseline;gap:6px}
+.it b{font-weight:700;font-size:14px}
+.it .d{flex:1;border-bottom:1.5px dotted #b9ab8c;transform:translateY(-3px)}
+.it .p{font-weight:700;font-size:14px;color:var(--g);white-space:nowrap}
+.it small{display:block;color:#666;font-size:11px;line-height:1.35;margin-top:1px}
+.it em{font-style:normal;font-size:9px;font-weight:700;background:var(--red);color:#fff;border-radius:8px;padding:1px 6px;margin-left:4px;vertical-align:2px;text-transform:uppercase}
+.ft{margin-top:20px;padding-top:10px;border-top:2px solid var(--g);display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#444;flex-wrap:wrap}
+@media(max-width:640px){.cols{columns:1}.page{padding:0 6vw 8vw}.ck{margin:0 -6vw}}
+@media print{body{background:#fff}.bar{display:none}.page{margin:0;width:auto;box-shadow:none;padding:0}.ck{margin:0}}
+</style>
+</head>
+<body>
+<div class="bar">Cardápio gerado a partir do painel · <button onclick="print()">Salvar em PDF / Imprimir</button><a href="../">Voltar ao site</a></div>
+<div class="page">
+  <div class="ck"></div>
+  <div class="hd"><img id="lg" alt=""><h1>Cantina da Vila</h1><p id="sub"></p></div>
+  <div class="cols" id="list"></div>
+  <div class="ft"><span id="end"></span><span id="hr"></span><span>@<span id="ig"></span></span></div>
+</div>
+<script src="../js/store.js"></script>
+<script>
+const S = window.CantinaStore, DB = S.load(), C = S.cfg(DB);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fix = s => s && !/^(data:|https?:)/.test(s) ? '../' + s : s;
+$('lg').src = fix(C.logo || 'img/logo.svg');
+$('sub').textContent = 'CUCINA ITALIANA · CARDÁPIO ' + new Date().toLocaleDateString('pt-BR');
+$('end').textContent = C.endereco + ' · ' + C.bairro;
+const fc = [0,1,2,3,4,5,6].filter(d => !String(C.horarios[d] || '').trim()).map(d => S.DIAS[d].toLowerCase());
+$('hr').textContent = (fc.length ? 'Fechado: ' + fc.join(', ') + ' · ' : '') + 'Delivery e retirada pelo WhatsApp';
+$('ig').textContent = C.instagram;
+const IT = DB.itens.filter(i => i.ativo);
+$('list').innerHTML = S.CATS.filter(c => IT.some(i => i.cat === c)).map(c => `<div class="cat">${esc(c)}</div>` + IT.filter(i => i.cat === c).map(i => `<div class="it"><div class="l"><b>${esc(i.nome)}${i.badge ? `<em>${esc(i.badge)}</em>` : ''}</b><span class="d"></span><span class="p">${i.preco ? S.brl(i.preco) : ''}</span></div><small>${esc(i.desc)}</small></div>`).join('')).join('');
+if (/print=1/.test(location.search)) addEventListener('load', () => setTimeout(print, 600));
+</script>
+</body>
+</html>

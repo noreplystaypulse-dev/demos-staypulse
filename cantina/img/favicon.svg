@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <path id="t" d="M70 200a130 130 0 0 1 260 0"/>
+    <path id="b" d="M44 200a156 156 0 0 0 312 0"/>
+    <pattern id="ck" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#FBF5E9"/><rect width="10" height="10" fill="#C8362B"/><rect x="10" y="10" width="10" height="10" fill="#C8362B"/></pattern>
+  </defs>
+  <circle cx="200" cy="200" r="196" fill="#14532D"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#D9A441" stroke-width="3"/>
+  <circle cx="200" cy="200" r="118" fill="#FBF5E9"/>
+  <text font-family="Georgia,'Times New Roman',serif" font-size="40" font-weight="700" letter-spacing="9" fill="#FBF5E9"><textPath href="#t" startOffset="50%" text-anchor="middle">CANTINA</textPath></text>
+  <text font-family="Georgia,'Times New Roman',serif" font-size="19" letter-spacing="6" fill="#D9A441"><textPath href="#b" startOffset="50%" text-anchor="middle">• DESDE 1987 •</textPath></text>
+  <rect x="112" y="176" width="176" height="20" fill="url(#ck)" opacity=".95"/>
+  <text x="200" y="168" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="30" fill="#14532D">da</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-weight="700" font-size="62" fill="#14532D">Vila</text>
+  <text x="200" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="14" letter-spacing="5" fill="#C8362B">CUCINA ITALIANA</text>
+</svg>
