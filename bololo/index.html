@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bololô Restaurant & Bar · O novo padrão de São Paulo</title>
+<meta name="description" content="Bololô Restaurant & Bar, o restaurante do MC Ryan SP. Carbonara campeão de vendas, parmegiana de mignon, drinks autorais. Aberto todos os dias na Vila Regente Feijó, São Paulo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bololô Restaurant & Bar · O novo padrão de São Paulo">
+<meta property="og:description" content="Cardápio, pedidos e reservas. Aberto todos os dias. #VEMPROBOLOLÔ">
+<meta property="og:image" content="https://www.staypulse.com.br/demos/bololo/img/share.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090b;--bg2:#141416;--bg3:#1c1c20;--red:#e11d2e;--red2:#b5121f;--gold:#ffd000;--orange:#ff6a00;--grad:linear-gradient(135deg,#ff6a00,#ffd000);--cream:#fff6e0;--txt:#f4f4f5;--muted:#a1a1aa;--line:rgba(255,255,255,.09);--disp:"Anton",Impact,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;font-family:Archivo,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1220px,92vw);margin:0 auto}
+.demo{background:#0F172A;color:#CBD5E1;font-size:.76rem;text-align:center;padding:.45rem 1rem}
+.demo b{color:#22D3EE}
+/* meia-lua */
+.moon{display:inline-flex;gap:.08em;vertical-align:-.06em;margin-right:.28em}
+.moon i{display:block;width:.36em;height:.72em;border-radius:0 1em 1em 0;background:var(--grad)}
+.moon.l i{border-radius:1em 0 0 1em}
+.moon.r i{background:linear-gradient(135deg,#ff2d55,#e11d2e)}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:2rem;height:78px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.badge-logo{width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;flex:none;box-shadow:0 0 0 2px #000,0 0 0 4px #fff}
+.badge-logo img{width:86%;height:86%;object-fit:contain}
+.brand b{font-family:var(--disp);font-weight:400;font-size:1.6rem;letter-spacing:.02em;line-height:1}
+.brand small{display:block;font-size:.62rem;letter-spacing:.28em;color:var(--muted);text-transform:uppercase}
+nav.mn{display:flex;gap:1.8rem;margin-left:auto}
+nav.mn a{text-decoration:none;font-weight:500;font-size:.92rem;color:#d4d4d8}
+nav.mn a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;text-decoration:none;border:0;border-radius:999px;padding:.85rem 1.5rem;font-weight:800;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;transition:.25s;font-family:Archivo}
+.btn.red{background:var(--red);color:#fff;box-shadow:0 10px 30px rgba(225,29,46,.35)}
+.btn.red:hover{background:#f0283a;transform:translateY(-2px)}
+.btn.gd{background:var(--grad);color:#111;box-shadow:0 10px 30px rgba(255,140,0,.3)}
+.btn.gd:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn.ol{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(0,0,0,.25)}
+.btn.ol:hover{background:#fff;color:#000}
+.burger{display:none;border:0;background:none;color:#fff;margin-left:auto}
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 110px);display:flex;align-items:center;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/f/hero-drinks.jpg) center 35%/cover;filter:saturate(1.1)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,rgba(225,29,46,.25),transparent 45%),linear-gradient(90deg,rgba(9,9,11,.97) 0%,rgba(9,9,11,.86) 42%,rgba(9,9,11,.35) 100%),linear-gradient(0deg,var(--bg),transparent 30%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:2rem;align-items:center;padding:70px 0}
+.hero .wrap>*{min-width:0}
+.chip{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(255,208,0,.4);background:rgba(255,208,0,.08);color:var(--gold);border-radius:999px;padding:.4rem .9rem;font-size:.8rem;font-weight:600;letter-spacing:.04em}
+.chip i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(3.2rem,8vw,7rem);line-height:.92;margin:1.1rem 0 1.2rem;text-transform:uppercase;color:var(--cream);letter-spacing:.01em}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.12rem;color:#d4d4d8;max-width:44ch;margin:0 0 2rem}
+.hero .bt{display:flex;gap:.8rem;flex-wrap:wrap}
+.seal{justify-self:center;position:relative;width:min(380px,100%);aspect-ratio:1}
+.seal .c{position:absolute;inset:0;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 6px #000,0 0 0 10px #fff,0 30px 80px rgba(225,29,46,.35);animation:fl 6s ease-in-out infinite}
+.seal .c img{width:80%;height:80%;object-fit:contain;border-radius:50%}
+.seal .ring{position:absolute;inset:-34px;border-radius:50%;border:2px dashed rgba(255,208,0,.35);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fl{50%{transform:translateY(-10px)}}
+/* marquee */
+.mq{background:var(--red);overflow:hidden;white-space:nowrap;border-block:3px solid #000}
+.mq div{display:inline-flex;animation:mq 28s linear infinite}
+.mq span{font-family:var(--disp);font-size:1.5rem;text-transform:uppercase;padding:.7rem 1.4rem;color:#fff;letter-spacing:.03em;display:inline-flex;align-items:center;gap:1.4rem}
+.mq span::after{content:"";width:.55em;height:1.1em;border-radius:0 1em 1em 0;background:var(--grad)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* section */
+section{scroll-margin-top:80px}
+.sec{padding:100px 0}
+.kick{display:inline-flex;align-items:center;gap:.6rem;color:var(--gold);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:.74rem}
+.kick::before{content:"▶▶▶▶▶▶";letter-spacing:.05em;font-size:.6rem;color:var(--red)}
+h2.t{font-family:var(--disp);font-weight:400;font-size:clamp(2.6rem,5.5vw,4.6rem);line-height:.95;text-transform:uppercase;margin:.6rem 0 1rem;color:var(--cream)}
+.sub{color:var(--muted);max-width:56ch;margin:0}
+/* destaques */
+.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2.6rem}
+.hl>*{min-width:0}
+.story{position:relative;aspect-ratio:9/14;border-radius:22px;overflow:hidden;border:0;padding:0;cursor:pointer;background:#000;text-align:left;color:#fff}
+.story img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.story:hover img{transform:scale(1.07)}
+.story::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 35%,transparent 55%,rgba(0,0,0,.85))}
+.story .tp{position:absolute;left:16px;top:16px;z-index:2;font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:var(--red);padding:.3rem .6rem;border-radius:6px}
+.story h3{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;font-family:var(--disp);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:.95;text-transform:uppercase;margin:0;color:var(--cream)}
+.story .deco{position:absolute;top:14px;right:14px;z-index:2;font-size:1.7rem}
+/* cardápio */
+.menu-h{display:flex;justify-content:space-between;align-items:flex-end;gap:1.6rem;flex-wrap:wrap}
+.fl{display:flex;gap:.5rem;overflow-x:auto;padding:1.6rem 0 1.2rem;scrollbar-width:none;position:sticky;top:78px;z-index:10;background:var(--bg)}
+.fl::-webkit-scrollbar{display:none}
+.fl button{flex:none;border:1px solid var(--line);background:var(--bg2);color:#d4d4d8;border-radius:999px;padding:.6rem 1.15rem;font-weight:600;font-size:.88rem}
+.fl button.on{background:var(--grad);color:#111;border-color:transparent}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.mg>*{min-width:0}
+.dish{background:var(--bg2);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.dish:hover{transform:translateY(-4px);border-color:rgba(255,208,0,.35);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.dish .im{position:relative;aspect-ratio:4/3;background:#000;overflow:hidden;cursor:pointer}
+.dish .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.dish:hover .im img{transform:scale(1.06)}
+.dish .im .bdg{position:absolute;left:12px;top:12px;background:var(--red);color:#fff;font-weight:800;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px}
+.noph{width:100%;height:100%;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,rgba(255,106,0,.35),transparent 55%),radial-gradient(circle at 80% 80%,rgba(225,29,46,.4),transparent 50%),#111}
+.noph div{text-align:center}
+.dish .im .noph img,.md .im .noph img{width:84px;height:84px;border-radius:50%;background:#fff;padding:8px;margin:0 auto .6rem;object-fit:contain}
+.noph b{font-family:var(--disp);font-weight:400;font-size:1.6rem;text-transform:uppercase;color:var(--cream);line-height:1}
+.dish .bd{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.dish h3{font-family:var(--disp);font-weight:400;font-size:1.65rem;line-height:1;text-transform:uppercase;margin:0;color:var(--cream)}
+.dish p{margin:0;color:var(--muted);font-size:.9rem;flex:1}
+.dish .ft{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-top:.4rem}
+.dish .pr{font-family:var(--disp);font-size:1.6rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dish .pr.no{font-family:Archivo;font-size:.8rem;font-weight:600;color:var(--muted);-webkit-text-fill-color:var(--muted)}
+.dish .ft a,.dish .ft button{border:0;border-radius:999px;padding:.55rem 1rem;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;background:var(--red);color:#fff;white-space:nowrap}
+.cat-t{grid-column:1/-1;display:flex;align-items:center;gap:.8rem;margin:1.2rem 0 -.2rem;font-family:var(--disp);font-size:1.9rem;text-transform:uppercase;color:var(--cream);letter-spacing:.02em}
+.cat-t::after{content:"";flex:1;height:1px;background:var(--line)}
+/* pdf */
+.pdf{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.pdf-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center}
+.pdf-g>*{min-width:0}
+.viewer{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:4/5;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.viewer iframe{width:100%;height:100%;border:0;background:#fff}
+.viewer .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:2rem;background:radial-gradient(circle at 50% 20%,rgba(225,29,46,.25),transparent 55%),#0e0e10}
+.viewer .ph .pg{width:62%;aspect-ratio:3/4;background:var(--cream);border-radius:10px;padding:18px;color:#111;text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:rotate(-3deg)}
+.viewer .ph .pg b{display:block;font-family:var(--disp);font-size:1.4rem;text-transform:uppercase}
+.viewer .ph .pg i{display:block;height:7px;border-radius:4px;background:#d6cbb5;margin:9px 0}
+.viewer .ph .pg i:nth-child(odd){width:70%}
+.pdf .bt{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+/* reservas */
+.res-g{display:grid;grid-template-columns:1fr 1fr;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.res-g>*{min-width:0}
+.res-ph{position:relative;min-height:520px;background:url(img/f/fachada.jpg) center 30%/cover}
+.res-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--bg2))}
+form.res{padding:2.6rem}
+form.res label{display:block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1rem 0 .4rem}
+form.res input,form.res select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;color:#fff;font:inherit;outline:none;color-scheme:dark}
+form.res input:focus,form.res select:focus{border-color:var(--gold)}
+form.res .two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.amb{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.amb button{border:1px solid var(--line);background:var(--bg);color:#d4d4d8;border-radius:12px;padding:.8rem .4rem;font-weight:600;font-size:.85rem}
+.amb button.on{background:var(--grad);color:#111;border-color:transparent}
+.amb button small{display:block;font-weight:400;font-size:.7rem;opacity:.8}
+/* vídeo */
+.vid{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;border:1px solid var(--line);margin-top:2.4rem;background:#000}
+.vid iframe,.vid button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid button{background:#000 center/cover;display:grid;place-items:center;padding:0}
+.vid button::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.vid button span{position:relative;z-index:2;width:86px;height:86px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(225,29,46,.25)}
+/* local */
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center}
+.loc>*{min-width:0}
+.info{display:grid;gap:1rem;margin:1.6rem 0 2rem}
+.info div{display:flex;gap:1rem;align-items:center}
+.info i{width:48px;height:48px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:1.3rem;flex:none}
+.info b{display:block}
+.info small{color:var(--muted)}
+.map{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) saturate(.6)}
+/* franquia */
+.fr{position:relative;border-radius:26px;overflow:hidden;padding:56px 48px;background:var(--red);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.fr::before,.fr::after{content:"";position:absolute;width:220px;height:440px;border-radius:0 220px 220px 0;background:var(--grad);opacity:.9}
+.fr::before{left:-150px;top:-40px}
+.fr::after{left:-40px;top:-40px;opacity:.5}
+.fr>*{position:relative;z-index:2}
+.fr h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:.95;text-transform:uppercase;margin:0;color:#fff;max-width:16ch;padding-left:clamp(0px,8vw,120px)}
+.fr .btn{background:#000;color:#fff}
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 0;text-align:center}
+footer .badge-logo{width:110px;height:110px;margin:0 auto 1.2rem}
+footer .tag{font-family:var(--disp);font-size:2rem;text-transform:uppercase;color:var(--cream);margin:0 0 1.4rem}
+.soc{display:flex;gap:.7rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.soc a{border:1px solid var(--line);border-radius:999px;padding:.55rem 1.1rem;text-decoration:none;font-weight:600;font-size:.86rem;background:var(--bg2)}
+.soc a:hover{border-color:var(--gold);color:var(--gold)}
+footer .bt2{border-top:1px solid var(--line);padding:18px 0;font-size:.78rem;color:#71717a}
+footer .bt2 a{color:#22D3EE}
+/* modal */
+.ov{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+.ov.open{display:flex}
+.md{background:var(--bg2);border:1px solid var(--line);border-radius:22px;width:min(560px,100%);max-height:92vh;overflow:auto;position:relative}
+.md .im{aspect-ratio:4/3;background:#000}
+.md .im img{width:100%;height:100%;object-fit:cover}
+.md .bd{padding:1.5rem 1.6rem 1.8rem}
+.md h3{font-family:var(--disp);font-weight:400;font-size:2.4rem;line-height:1;text-transform:uppercase;margin:.3rem 0 .7rem;color:var(--cream)}
+.md .x{position:absolute;right:12px;top:12px;z-index:3;width:40px;height:40px;border-radius:50%;border:0;background:#000;color:#fff;font-size:1.3rem}
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
+.fab a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.adm{position:fixed;left:16px;bottom:16px;z-index:60;background:#0F172A;color:#fff;text-decoration:none;font-size:.76rem;padding:.55rem .9rem;border-radius:999px;border:1px solid #22D3EE}
+.adm b{color:#22D3EE}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1080px){.hl{grid-template-columns:repeat(2,1fr)}.mg{grid-template-columns:repeat(2,1fr)}nav.mn{gap:1.1rem}}
+@media(max-width:880px){
+  nav.mn{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+  nav.mn.open{display:flex}nav.mn a{padding:1rem 4vw;border-top:1px solid var(--line)}
+  .burger{display:block}.hd>.btn{display:none}
+  .hero .wrap{grid-template-columns:1fr;text-align:left;padding:40px 0 60px}
+  .seal{width:200px;order:-1;justify-self:start}.seal .ring{inset:-18px}
+  .pdf-g,.loc{grid-template-columns:1fr;gap:2rem}
+  .res-g{grid-template-columns:1fr}.res-ph{min-height:260px}.res-ph::after{background:linear-gradient(0deg,var(--bg2),transparent 50%)}
+  form.res{padding:1.6rem}
+  .sec{padding:72px 0}
+  .fr{padding:40px 26px}.fr::before,.fr::after{display:none}.fr h2{padding:0}
+}
+@media(max-width:560px){
+  .mg{grid-template-columns:1fr}.hl{grid-template-columns:repeat(2,1fr);gap:10px}.story h3{font-size:1.35rem}
+  .fl{top:70px}.hd{height:70px}.badge-logo{width:50px;height:50px}
+  form.res .two{grid-template-columns:1fr}
+  .hero .bt .btn{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<div class="demo">Proposta de site desenvolvida pela <b>StayPulse</b> para o Bololô Restaurant & Bar · versão de demonstração</div>
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="#inicio"><span class="badge-logo"><img class="js-logo" src="img/logo.png" alt="Bololô"></span><span><b>BOLOLÔ</b><small>Restaurant & Bar</small></span></a>
+    <nav class="mn" id="mn"><a href="#cardapio">Cardápio</a><a href="#cardapio-pdf">Cardápio PDF</a><a href="#reservas">Reservas VIP</a><a href="#local">Localização</a></nav>
+    <a class="btn red js-xmenu" target="_blank" rel="noopener">Pedir agora</a>
+    <button class="burger" id="burger" aria-label="Menu"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip"><i></i><span id="hor">Aberto todos os dias</span> · Vila Regente Feijó</span>
+      <h1>O novo<br>padrão de<br><em>São Paulo</em></h1>
+      <p>O restaurante do MC Ryan SP. Carbonara campeão de vendas, parmegiana de mignon, drinks autorais e aquela vibe que faz você querer voltar.</p>
+      <div class="bt">
+        <a class="btn red js-xmenu" target="_blank" rel="noopener">🍽 Ver cardápio & pedidos</a>
+        <button class="btn ol js-pdf">📄 Cardápio PDF</button>
+        <a class="btn gd" href="#reservas">🌹 Reservar mesa / VIP</a>
+      </div>
+    </div>
+    <div class="seal"><div class="ring"></div><div class="c"><img class="js-logo" src="img/logo.png" alt="Bololô Restaurant & Bar"></div></div>
+  </div>
+</section>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="sec" id="destaques">
+  <div class="wrap">
+    <span class="kick">Os queridinhos</span>
+    <h2 class="t"><span class="moon"><i></i><i></i></span>Destaques da casa</h2>
+    <p class="sub">Os pratos e drinks que fazem a fama do Bololô.</p>
+    <div class="hl" id="hl"></div>
+  </div>
+</section>
+
+<section class="sec" id="cardapio" style="padding-top:20px">
+  <div class="wrap">
+    <div class="menu-h">
+      <div><span class="kick">Cardápio</span><h2 class="t" style="margin-bottom:0">Experimente<br>as nossas delícias</h2></div>
+      <a class="btn red js-xmenu" target="_blank" rel="noopener">Fazer pedido online</a>
+    </div>
+    <div class="fl" id="fl"></div>
+    <div class="mg" id="mg"></div>
+  </div>
+</section>
+
+<section class="sec pdf" id="cardapio-pdf">
+  <div class="wrap pdf-g">
+    <div class="rv">
+      <span class="kick">Cardápio completo</span>
+      <h2 class="t"><span class="moon r"><i></i><i></i></span>Cardápio em PDF</h2>
+      <p class="sub" id="pdfTxt">Veja o cardápio completo, baixe no celular ou compartilhe com quem vai com você.</p>
+      <div class="bt"><button class="btn gd js-pdf">Abrir cardápio</button><button class="btn ol" id="pdfDl">⬇ Baixar PDF</button><a class="btn ol js-xmenu" target="_blank" rel="noopener">Pedir pelo XMenu</a></div>
+    </div>
+    <div class="viewer rv" id="viewer"></div>
+  </div>
+</section>
+
+<section class="sec" id="reservas" style="padding-top:40px">
+  <div class="wrap">
+    <span class="kick">Reservas</span>
+    <h2 class="t"><span class="moon"><i></i><i></i></span>Reserve sua mesa</h2>
+    <p class="sub" style="margin-bottom:2.4rem">Aniversário, encontro com a galera ou noite VIP: garanta o seu lugar. A confirmação chega pelo WhatsApp.</p>
+    <div class="res-g rv">
+      <div class="res-ph"></div>
+      <form class="res" id="res">
+        <label>Seu nome</label><input id="rN" placeholder="Nome para a reserva" required>
+        <div class="two"><div><label>Data</label><input type="date" id="rD" required></div><div><label>Horário</label><input type="time" id="rH" value="20:00" required></div></div>
+        <div class="two"><div><label>Pessoas</label><select id="rP"></select></div><div><label>Ocasião</label><select id="rO"><option>Só curtir</option><option>Aniversário</option><option>Encontro</option><option>Confraternização</option><option>Jogo / evento</option></select></div></div>
+        <label>Ambiente</label>
+        <div class="amb" id="amb"><button type="button" data-a="Salão" class="on">Salão<small>clima da casa</small></button><button type="button" data-a="Área externa">Área externa<small>ao ar livre</small></button><button type="button" data-a="Espaço VIP">🌹 VIP<small>experiência premium</small></button></div>
+        <button class="btn red" style="width:100%;margin-top:1.6rem;padding:1rem">Enviar reserva pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:40px">
+  <div class="wrap">
+    <span class="kick">#VemProBololô</span>
+    <h2 class="t">Sinta a vibe</h2>
+    <div class="vid" id="vid"></div>
+  </div>
+</section>
+
+<section class="sec" id="local" style="padding-top:40px">
+  <div class="wrap loc">
+    <div class="rv">
+      <span class="kick">Localização</span>
+      <h2 class="t"><span class="moon"><i></i><i></i></span>Vem pro Bololô</h2>
+      <div class="info" id="info"></div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn gd" id="mapB" target="_blank" rel="noopener">Como chegar</a><a class="btn ol" href="#reservas">Reservar</a></div>
+    </div>
+    <div class="map rv"><iframe id="map" title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap"><div class="fr rv"><h2>Leve o Bololô para a sua cidade</h2><a class="btn" id="frB" target="_blank" rel="noopener">Seja um franqueado →</a></div></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="badge-logo"><img class="js-logo" src="img/logo.png" alt="Bololô"></span>
+    <p class="tag">#VemProBololô</p>
+    <div class="soc" id="soc"></div>
+  </div>
+  <div class="bt2">© <span id="ano"></span> Bololô Restaurant & Bar · <span id="fEnd"></span> · Site por <a href="https://www.staypulse.com.br/demos/" target="_blank" rel="noopener">StayPulse</a></div>
+</footer>
+
+<div class="ov" id="ov"><div class="md" id="md"></div></div>
+<div class="fab"><a id="waF" target="_blank" rel="noopener" style="background:#25D366" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a></div>
+<a class="adm" href="admin/">⚙ Painel / Cardápio <b>demo</b></a>
+
+<script src="js/store.js"></script>
+<script>
+const S = window.BololoStore, DB = S.load(), C = S.cfg(DB);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA = (C.whatsapp || C.whatsappDemo).replace(/\D/g, '');
+const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const LOGO = C.logo || 'img/logo.png';
+const IT = DB.itens.filter(i => i.ativo);
+const moon = (i, cls) => i.lua !== false ? `<span class="moon ${cls || ''}"><i></i><i></i></span>` : '';
+
+document.querySelectorAll('.js-logo').forEach(i => i.src = LOGO);
+document.querySelectorAll('.js-xmenu').forEach(a => a.href = C.xmenu);
+$('waF').href = wa('Olá! Vim pelo site do Bololô.');
+$('hor').textContent = C.horario; $('ano').textContent = new Date().getFullYear(); $('fEnd').textContent = C.endereco + ' · ' + C.bairro.split(' · ')[0];
+$('frB').href = C.franquia; $('mapB').href = C.mapa;
+$('map').src = 'https://www.google.com/maps?q=' + encodeURIComponent('Bololô Restaurant, ' + C.endereco + ', ' + C.bairro.replace(/ · /g, ', ')) + '&output=embed';
+$('info').innerHTML = `<div><i>📍</i><span><b>${esc(C.endereco)}</b><small>${esc(C.bairro)}</small></span></div><div><i>🕘</i><span><b>${esc(C.horario)}</b><small>Almoço, jantar e happy hour</small></span></div><div><i>🛵</i><span><b>Delivery e retirada</b><small>Pedidos online pelo XMenu${C.ifood ? ' e iFood' : ''}</small></span></div>`;
+$('soc').innerHTML = [['Instagram', 'https://instagram.com/' + C.instagram], ['TikTok', 'https://www.tiktok.com/@' + C.tiktok], ['Facebook', C.facebook], ['YouTube', 'https://www.youtube.com/watch?v=' + C.youtube], ['Cardápio online', C.xmenu]].concat(C.ifood ? [['iFood', C.ifood]] : []).map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join('');
+$('mq').innerHTML = ['#VemProBololô', C.horario, 'Carbonara campeão de vendas', 'Drinks autorais', 'Parmegiana de mignon', 'Vila Regente Feijó · SP'].map(t => `<span>${esc(t)}</span>`).join('').repeat(4);
+
+/* destaques */
+const HL = IT.filter(i => i.destaque && i.foto).slice(0, 4);
+$('hl').innerHTML = HL.map(i => `<button class="story rv" data-id="${i.id}"><img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">${i.badge ? `<span class="tp">${esc(i.badge)}</span>` : ''}<h3>${moon(i)}${esc(i.nome)}</h3></button>`).join('');
+$('hl').onclick = e => { const b = e.target.closest('.story'); if (b) openIt(b.dataset.id); };
+
+/* cardápio */
+const cats = S.CATS.filter(c => IT.some(i => i.cat === c)); let cat = 'Todos';
+function rFl() { $('fl').innerHTML = ['Todos'].concat(cats).map(c => `<button data-c="${esc(c)}" class="${c === cat ? 'on' : ''}">${esc(c)}</button>`).join(''); }
+const ph = i => i.foto ? `<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">` : `<div class="noph"><div><img src="${esc(LOGO)}" alt=""><b>${esc(i.nome)}</b></div></div>`;
+const card = i => `<article class="dish"><div class="im" data-id="${i.id}">${ph(i)}${i.badge ? `<span class="bdg">${esc(i.badge)}</span>` : ''}</div><div class="bd"><h3>${moon(i)}${esc(i.nome)}</h3><p>${esc(i.desc)}</p><div class="ft">${i.preco ? `<span class="pr">${S.preco(i)}</span>` : '<span class="pr no">Preço no cardápio online</span>'}<a href="${esc(C.xmenu)}" target="_blank" rel="noopener">Pedir</a></div></div></article>`;
+function rMg() {
+  const g = cat === 'Todos' ? cats.map(c => [c, IT.filter(i => i.cat === c)]) : [[cat, IT.filter(i => i.cat === cat)]];
+  $('mg').innerHTML = g.map(([c, l]) => (cat === 'Todos' ? `<div class="cat-t"><span class="moon"><i></i><i></i></span>${esc(c)}</div>` : '') + l.map(card).join('')).join('');
+}
+rFl(); rMg();
+$('fl').onclick = e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; rFl(); rMg(); b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' }); };
+$('mg').onclick = e => { const b = e.target.closest('.im'); if (b) openIt(b.dataset.id); };
+
+/* modal */
+const openM = h => { $('md').innerHTML = '<button class="x" id="mx" aria-label="Fechar">×</button>' + h; $('ov').classList.add('open'); document.body.style.overflow = 'hidden'; $('mx').onclick = closeM; };
+const closeM = () => { $('ov').classList.remove('open'); document.body.style.overflow = ''; };
+$('ov').onclick = e => { if (e.target === $('ov')) closeM(); }; addEventListener('keydown', e => e.key === 'Escape' && closeM());
+function openIt(id) {
+  const i = IT.find(x => x.id === id); if (!i) return;
+  openM(`<div class="im">${ph(i)}</div><div class="bd"><span class="kick">${esc(i.cat)}</span><h3>${moon(i)}${esc(i.nome)}</h3><p style="color:var(--muted);margin:0 0 1rem">${esc(i.desc)}</p>${i.preco ? `<p class="pr" style="font-family:var(--disp);font-size:2rem;margin:0 0 1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">${S.preco(i)}</p>` : ''}<div style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn red" href="${esc(C.xmenu)}" target="_blank" rel="noopener">Pedir online</a><a class="btn ol" href="#reservas" id="mRes">Reservar mesa</a></div></div>`);
+  $('mRes').onclick = closeM;
+}
+
+/* PDF */
+function pdfBlobUrl() { try { const [h, b] = C.pdf.split(','); const bin = atob(b); const a = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) a[k] = bin.charCodeAt(k); return URL.createObjectURL(new Blob([a], { type: 'application/pdf' })); } catch (e) { return ''; } }
+const PURL = C.pdf ? pdfBlobUrl() : '';
+const openPdf = () => window.open(PURL || 'pdf/', '_blank');
+document.querySelectorAll('.js-pdf').forEach(b => b.onclick = openPdf);
+$('pdfDl').onclick = () => { if (PURL) { const a = document.createElement('a'); a.href = PURL; a.download = C.pdfNome || 'cardapio-bololo.pdf'; a.click(); } else window.open('pdf/?print=1', '_blank'); };
+$('viewer').innerHTML = PURL ? `<iframe src="${PURL}#view=FitH" title="Cardápio em PDF"></iframe>` :
+  `<div class="ph"><div class="pg"><b>Cardápio Bololô</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p style="margin:0;color:var(--muted);max-width:34ch">O cardápio completo, sempre atualizado com os pratos do painel. Abra para ver ou salvar em PDF.</p><button class="btn gd js-pdf2">Ver cardápio completo</button></div>`;
+const p2 = document.querySelector('.js-pdf2'); if (p2) p2.onclick = openPdf;
+if (PURL) $('pdfTxt').textContent = 'Veja o cardápio completo aqui mesmo, baixe no celular ou compartilhe com quem vai com você.';
+
+/* reservas */
+const hoje = new Date(); hoje.setMinutes(hoje.getMinutes() - hoje.getTimezoneOffset()); $('rD').min = $('rD').value = hoje.toISOString().slice(0, 10);
+$('rP').innerHTML = [2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30].map(n => `<option>${n}</option>`).join('');
+let amb = 'Salão';
+$('amb').onclick = e => { const b = e.target.closest('button'); if (!b) return; amb = b.dataset.a; $('amb').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
+$('res').onsubmit = e => { e.preventDefault(); const d = $('rD').value.split('-').reverse().join('/');
+  window.open(wa(`Olá! Quero reservar no Bololô 🌹\n\n👤 Nome: ${$('rN').value.trim()}\n📅 Data: ${d}\n🕗 Horário: ${$('rH').value}\n👥 Pessoas: ${$('rP').value}\n🪑 Ambiente: ${amb}\n🎉 Ocasião: ${$('rO').value}`), '_blank'); };
+
+/* vídeo (carrega só ao clicar) */
+$('vid').innerHTML = `<button aria-label="Assistir vídeo" style="background-image:url(https://i.ytimg.com/vi/${C.youtube}/hqdefault.jpg)"><span><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></button>`;
+$('vid').querySelector('button').onclick = () => $('vid').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${C.youtube}?autoplay=1&rel=0" title="Bololô" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+
+$('burger').onclick = () => $('mn').classList.toggle('open'); $('mn').onclick = e => e.target.tagName === 'A' && $('mn').classList.remove('open');
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
