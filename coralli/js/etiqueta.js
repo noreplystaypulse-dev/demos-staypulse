@@ -54,7 +54,7 @@
     rr(c, 30, 604, 740, 44, 12); c.fillStyle = SAL; c.fill();
     c.fillStyle = '#fff'; c.font = `800 17px ${FONT}`;
     [['QTD', 0], ['DESCRIÇÃO DOS PRODUTOS', 1], ['UNIT.', 2], ['VALOR', 3]].forEach(([t, i]) => { c.textAlign = i === 1 ? 'left' : 'center'; c.fillText(t, i === 1 ? cols[1] + 14 : (cols[i] + cols[i + 1]) / 2, 633); });
-    const its = (p.itens || []).slice(), top = 648, bottom = 1018;
+    const its = (p.itens || []).slice(), top = 648, bottom = p.desconto ? 994 : 1018;
     let rh = 40; const maxRows = Math.max(1, Math.floor((bottom - top) / 28));
     if (its.length * rh > bottom - top) rh = Math.max(28, Math.floor((bottom - top) / its.length));
     const rows = Math.min(its.length, Math.floor((bottom - top) / rh)), extra = its.length - rows;
@@ -74,7 +74,8 @@
       c.textAlign = 'center'; c.fillText(brl(l.preco), (cols[2] + cols[3]) / 2, y); c.font = `700 ${fs}px ${FONT}`; c.fillText(brl(l.qtd * l.preco), (cols[3] + cols[4]) / 2, y);
     }
     // total
-    const tot = its.reduce((a, l) => a + l.qtd * l.preco, 0);
+    const tot = Math.max(0, its.reduce((a, l) => a + l.qtd * l.preco, 0) - (p.desconto || 0));
+    if (p.desconto) { c.textAlign = 'right'; c.fillStyle = SAL; c.font = `700 16px ${FONT}`; c.fillText(`CUPOM ${p.cupom || ''}: −${brl(p.desconto)}`, 770, 1022); }
     rr(c, 440, 1030, 330, 62, 16); c.fillStyle = '#FDE7EF'; c.fill(); c.lineWidth = 3; c.strokeStyle = HOT; c.stroke();
     c.textAlign = 'left'; c.fillStyle = HOT; c.font = `800 20px ${FONT}`; c.fillText('TOTAL R$', 462, 1069); c.textAlign = 'right'; c.font = `800 34px ${FONT}`; c.fillText(brl(tot), 752, 1073);
     if (p.obs) { c.textAlign = 'left'; c.font = `800 15px ${FONT}`; c.fillStyle = SAL; c.fillText('OBS.:', 32, 1052); c.font = `500 17px ${FONT}`; c.fillStyle = INK;

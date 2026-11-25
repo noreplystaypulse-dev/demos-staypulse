@@ -12,7 +12,10 @@
     pedidoMinimoPecas: 0,       // ← pedido mínimo em peças (0 = sem mínimo)
     pedidoMinimoValor: 0,       // ← pedido mínimo em R$ (0 = sem mínimo)
     endereco: 'Feira da Madrugada · Térreo · Setor Roxo · C30 · Box 00237',
-    destaques: ['Clientes', 'Pedidos', 'Entregas', 'Feedbacks', 'Coralli']
+    destaques: ['Clientes', 'Pedidos', 'Entregas', 'Feedbacks', 'Coralli'],
+    parcelas: 3,                // ← "ou 3x de R$ ..." no cartão (0 = não mostra)
+    beneficios: [['card', 'Pague parcelado', 'no cartão de crédito'], ['pix', 'Pix na hora', 'aprovação imediata'], ['truck', 'Enviamos', 'para todo o Brasil'], ['box', 'Atacado', 'direto do nosso box']],
+    sobre: 'Seu estilo, suas regras e aquele look que faz você se sentir INCRÍVEL! 💚✨ Na Coralli, você encontra peças lindas, estilosas e versáteis para montar produções que têm tudo a ver com você e com a sua loja. Chega mais, explore nossas novidades e encontre aquela peça que vai virar sua nova favorita! 🛍️'
   };
 
   const CATEGORIAS = ['Vestidos', 'Conjuntos', 'Saias', 'Corseletes e bodies', 'Macacões', 'Moda praia'];
@@ -58,6 +61,19 @@
         itens: [{ nome: 'Corselete Renata', cor: 'Rosa', tam: 'M', qtd: 8, preco: 45 }, { nome: 'Conjunto Agustina', cor: '', tam: 'P', qtd: 6, preco: 55 }, { nome: 'Body Renda', cor: 'Preto', tam: 'M', qtd: 7, preco: 45 }, { nome: 'Saia Marie', cor: 'Vermelho', tam: 'G', qtd: 5, preco: 45 }, { nome: 'Biquínis', cor: 'Sortido', tam: 'M', qtd: 10, preco: 25 }], status: 'novo' }
     ],
     seq: 1001,
+    /* banners do topo (carrossel). Com "pronta: true" a imagem já é o banner completo (arte do designer) */
+    banners: [
+      { id: 'b1', ativo: true, pronta: false, img: 'img/p/vestido-jully.jpg', l1: 'Seu estilo em', l2: 'evidência', sub: '20% OFF na primeira compra', cupom: 'PRIMEIRA20', botao: 'Aproveitar agora', cat: 'Lançamentos', fundo: 'tif' },
+      { id: 'b2', ativo: true, pronta: false, img: 'img/p/conjunto-farm.jpg', l1: 'Looks que', l2: 'valorizam', sub: 'V O C Ê', cupom: '', botao: 'Compre agora', cat: 'Conjuntos', fundo: 'pink' },
+      { id: 'b3', ativo: true, pronta: false, img: 'img/p/biquinis.jpg', l1: 'Vista-se de', l2: 'Corais e Mar', sub: 'Roupas femininas com a leveza do oceano', cupom: '', botao: 'Ver moda praia', cat: 'Moda praia', fundo: 'mar' }
+    ],
+    /* faixas de categoria (embaixo do carrossel) */
+    faixas: [
+      { id: 'f1', ativo: true, img: 'img/p/vestido-mariel.jpg', l1: 'Moda que', l2: 'realça', sub: 'a sua beleza', cat: 'Vestidos', fundo: 'pink' },
+      { id: 'f2', ativo: true, img: 'img/p/saida-praia.jpg', l1: 'Look', l2: 'Praia', sub: 'Estilo que te acompanha em todos os momentos', cat: 'Moda praia', fundo: 'mar' },
+      { id: 'f3', ativo: true, img: 'img/p/conjunto-mirella.jpg', l1: 'Conjunto', l2: 'Casual', sub: 'Conforto e estilo para o dia a dia', cat: 'Conjuntos', fundo: 'tif' }
+    ],
+    cupons: [{ codigo: 'PRIMEIRA20', pct: 20, ativo: true }],
     videos: [
       { id: 'v1', titulo: 'Nunca pare de divulgar seu trabalho', categoria: 'Coralli', capa: 'img/videos/v1.jpg', url: '', views: '', status: 'publicado' },
       { id: 'v2', titulo: 'Fica postando igual blogueira...', categoria: 'Coralli', capa: 'img/videos/v2.jpg', url: '', views: '2,8 mil', status: 'publicado' },
@@ -70,7 +86,7 @@
   };
 
   function load() {
-    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) { s.pedidos = s.pedidos || []; s.seq = s.seq || 1000; return s; } } catch (e) {}
+    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) { s.pedidos = s.pedidos || []; s.seq = s.seq || 1000; ['banners', 'faixas', 'cupons'].forEach(k => { if (!s[k]) s[k] = JSON.parse(JSON.stringify(SEED[k])); }); return s; } } catch (e) {}
     return JSON.parse(JSON.stringify(SEED));
   }
   function save(data) {
@@ -102,7 +118,8 @@
   function fotosDe(p) { return (p.fotos && p.fotos.length) ? p.fotos : (p.cores && p.cores.length ? p.cores.slice(0, 3) : [null]).map((_, i) => ilustracao(p, i)); }
 
   const brl = v => 'R$ ' + Number(v || 0).toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const totalPed = p => { const v = (p.itens || []).reduce((a, i) => a + i.qtd * i.preco, 0); return Math.max(0, v - (p.desconto || 0)); };
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
-  window.CoralliStore = { KEY, CONFIG, CATEGORIAS, load, save, reset, fotosDe, ilustracao, brl, uid };
+  window.CoralliStore = { KEY, CONFIG, CATEGORIAS, load, save, reset, fotosDe, ilustracao, brl, uid, totalPed };
 })();

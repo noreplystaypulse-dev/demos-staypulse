@@ -120,6 +120,8 @@ h2{font-size:1.15rem;margin:0 0 .3rem}
 .capa img{width:100%;height:100%;object-fit:cover}
 .capa label{position:absolute;inset:auto 8px 8px;background:rgba(255,255,255,.95);border-radius:10px;padding:.4rem;font-size:.78rem;text-align:center;font-weight:600}
 textarea{resize:vertical}
+#shBn .capa{width:100%;aspect-ratio:16/9}
+#vLoja .money span{left:auto;right:.9rem}#vLoja .money input,#cupCod{width:100%;border:1px solid #D9D9D9;border-radius:10px;padding:.75rem .85rem;font:inherit;outline:none}
 </style>
 </head>
 <body>
@@ -178,7 +180,23 @@ textarea{resize:vertical}
 
   <!-- LOJA -->
   <section class="view pad" id="vLoja">
-    <h2>Loja</h2>
+    <h2>Banners do topo</h2>
+    <p class="hint">O carrossel da página inicial. Use uma foto da peça e escreva o texto, ou suba uma <b>arte pronta</b> feita pelo designer.</p>
+    <div class="list" id="listBn"></div>
+    <button class="btn btn-soft" id="addBn" style="width:100%;margin-top:10px">＋ Novo banner</button>
+
+    <h2 style="margin-top:28px">Faixas de categoria</h2>
+    <p class="hint">Os cartões “Look Praia”, “Conjunto Casual”... embaixo do carrossel. Cada um leva para uma categoria.</p>
+    <div class="list" id="listFx"></div>
+    <button class="btn btn-soft" id="addFx" style="width:100%;margin-top:10px">＋ Nova faixa</button>
+
+    <h2 style="margin-top:28px">Cupons de desconto</h2>
+    <p class="hint">A cliente digita no carrinho. O desconto aparece no pedido, no WhatsApp e na etiqueta.</p>
+    <div id="listCup"></div>
+    <div class="two" style="margin-top:8px"><input id="cupCod" placeholder="CÓDIGO" style="text-transform:uppercase;border:1px solid #D9D9D9;border-radius:10px;padding:.75rem .85rem;font:inherit"><div class="money"><input id="cupPct" inputmode="numeric" placeholder="% off"><span>%</span></div></div>
+    <button class="btn btn-teal" id="addCup" style="width:100%;margin-top:8px">＋ Criar cupom</button>
+
+    <h2 style="margin-top:28px">Loja</h2>
     <p class="hint">Atalhos e configurações da demonstração.</p>
     <div class="list">
       <a class="item" href="../" target="_blank" style="text-decoration:none;color:inherit"><span class="t"><b>Abrir o site</b><small>Veja como a cliente enxerga</small></span><span class="chev">›</span></a>
@@ -238,6 +256,25 @@ textarea{resize:vertical}
   <div class="sh-f"><button class="btn btn-soft" id="vHide">Ocultar</button><button class="btn btn-teal" id="vPub">Publicar</button></div>
 </div>
 
+<!-- EDITOR DE BANNER / FAIXA -->
+<div class="sheet" id="shBn">
+  <div class="sh-h"><button data-x>Cancelar</button><h3 id="bTitle">Banner</h3><span style="width:80px"></span></div>
+  <div class="sh-b">
+    <div class="fld"><label>Imagem</label><div class="capa"><img id="bImg" alt=""><label for="bFile">Trocar imagem</label></div><input type="file" id="bFile" accept="image/*" hidden></div>
+    <div class="row" id="bProntaRow"><label>Arte pronta<small>A imagem já tem o texto (arte do designer)</small></label><label class="sw"><input type="checkbox" id="bPronta"><span></span></label></div>
+    <div id="bTexts">
+      <div class="two"><div class="fld"><label>Linha 1</label><input id="bL1" placeholder="Ex.: Seu estilo em"></div><div class="fld"><label>Destaque</label><input id="bL2" placeholder="Ex.: evidência"></div></div>
+      <div class="fld"><label>Frase menor</label><input id="bSub" placeholder="Ex.: 20% OFF na primeira compra"></div>
+      <div class="two" id="bCupRow"><div class="fld"><label>Cupom no banner</label><input id="bCup" placeholder="opcional" style="text-transform:uppercase"></div><div class="fld"><label>Texto do botão</label><input id="bBot" placeholder="Compre agora"></div></div>
+      <div class="fld"><label>Cor de fundo</label><div class="chips" id="bFundo"><button type="button" data-v="tif">Tiffany</button><button type="button" data-v="pink">Rosa</button><button type="button" data-v="mar">Mar</button></div></div>
+    </div>
+    <div class="fld"><label>Ao tocar, abre a categoria</label><select id="bCat"></select></div>
+    <div class="row"><label>No ar<small>Desligue para esconder sem apagar</small></label><label class="sw"><input type="checkbox" id="bAtivo" checked><span></span></label></div>
+    <button class="btn btn-red del" id="bDel">Excluir</button>
+  </div>
+  <div class="sh-f" style="grid-template-columns:1fr"><button class="btn btn-teal" id="bSave">Salvar</button></div>
+</div>
+
 <!-- PEDIDO / ETIQUETA -->
 <div class="sheet" id="shPed">
   <div class="sh-h"><button data-x>Fechar</button><h3 id="oTitle">Pedido</h3><span style="width:80px"></span></div>
@@ -286,7 +323,7 @@ $('fab').onclick = () => $('vVid').classList.contains('on') ? openVid(null) : op
 /* listas */
 let segS = 'publicado';
 $('segProd').onclick = e => { const b = e.target.closest('button'); if (!b) return; segS = b.dataset.s; $('segProd').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderProd(); };
-function renderAll() { renderProd(); renderPromo(); renderVid(); renderPed(); }
+function renderAll() { renderProd(); renderPromo(); renderVid(); renderPed(); renderLoja(); }
 /* pedidos */
 let segP = 'novo', curPed = null; const logoImg = new Image(); logoImg.src = '../img/logo.png';
 $('segPed').onclick = e => { const b = e.target.closest('button'); if (!b) return; segP = b.dataset.s; $('segPed').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderPed(); };
@@ -295,7 +332,7 @@ function renderPed() {
   $('segPed').querySelectorAll('button').forEach(b => b.querySelector('i').textContent = c(b.dataset.s));
   $('pedN').textContent = c('novo') || '';
   const l = P.filter(p => (p.status || 'novo') === segP).sort((a, b) => b.num - a.num);
-  $('listPed').innerHTML = l.length ? l.map(p => { const pcs = p.itens.reduce((a, i) => a + i.qtd, 0), tot = p.itens.reduce((a, i) => a + i.qtd * i.preco, 0);
+  $('listPed').innerHTML = l.length ? l.map(p => { const pcs = p.itens.reduce((a, i) => a + i.qtd, 0), tot = S.totalPed(p);
     return `<button class="item" data-id="${p.id}"><span class="ped-n">#${p.num}</span><span class="t"><b>${esc(p.nome)}</b><small>${new Date(p.data).toLocaleDateString('pt-BR')} · ${pcs} peças · ${S.brl(tot)}</small><span class="tags"><span class="tag pr">${esc(p.forma || '')}</span>${p.id === 'o1' ? '<span class="tag">Exemplo</span>' : ''}</span></span><span class="chev">›</span></button>`; }).join('')
     : '<p class="empty">Nenhum pedido aqui. Os pedidos feitos no carrinho do site aparecem nesta lista.</p>';
 }
@@ -416,6 +453,48 @@ $('vPub').onclick = () => saveVid('publicado');
 $('vHide').onclick = () => saveVid('oculto');
 $('vDel').onclick = () => confirmDel('Excluir este vídeo?', 'Ele sai do site e dos destaques.', () => { DB.videos = DB.videos.filter(v => v !== ev); persist('Vídeo excluído'); closeSheets(); renderVid(); });
 
+/* banners, faixas e cupons */
+const FUNDOS = { tif: 'Tiffany', pink: 'Rosa', mar: 'Mar' };
+function renderLoja() {
+  const it = (b, kind) => `<button class="item" data-k="${kind}" data-id="${b.id}" style="${b.ativo ? '' : 'opacity:.5'}"><img src="${esc(fix(b.img) || '../img/logo.png')}" alt=""><span class="t"><b>${esc(b.pronta ? 'Arte pronta' : (b.l1 + ' ' + b.l2))}</b><small>${esc(b.cat)} · ${b.pronta ? 'imagem' : FUNDOS[b.fundo] || ''}${b.cupom ? ' · cupom ' + esc(b.cupom) : ''}</small><span class="tags">${b.ativo ? '<span class="tag pub">No ar</span>' : '<span class="tag dr">Oculto</span>'}</span></span><span class="chev">›</span></button>`;
+  $('listBn').innerHTML = DB.banners.map(b => it(b, 'banners')).join('') || '<p class="empty">Nenhum banner.</p>';
+  $('listFx').innerHTML = DB.faixas.map(b => it(b, 'faixas')).join('') || '<p class="empty">Nenhuma faixa.</p>';
+  $('listCup').innerHTML = DB.cupons.map((c, i) => `<div class="row"><label for="cu-${i}"><b style="letter-spacing:.06em">${esc(c.codigo)}</b><small>${c.pct}% de desconto</small></label><span style="display:flex;gap:10px;align-items:center"><label class="sw"><input type="checkbox" id="cu-${i}" data-i="${i}" ${c.ativo ? 'checked' : ''}><span></span></label><button data-del="${i}" style="border:0;background:none;color:var(--promo);font-size:1.2rem" aria-label="Excluir">✕</button></span></div>`).join('') || '<p class="hint">Nenhum cupom ainda.</p>';
+}
+let eb = null, ek = 'banners', bimg = '', bfundo = 'tif';
+$('bCat').innerHTML = ['Lançamentos', 'Promoções', ...S.CATEGORIAS].map(c => `<option>${c}</option>`).join('');
+function openBn(kind, id) {
+  ek = kind; eb = id ? DB[kind].find(b => b.id === id) : null;
+  const b = eb || { ativo: true, pronta: false, img: '', l1: '', l2: '', sub: '', cupom: '', botao: '', cat: 'Lançamentos', fundo: 'tif' };
+  bimg = b.img; bfundo = b.fundo || 'tif'; $('bImg').src = fix(bimg) || '../img/logo.png';
+  $('bTitle').textContent = (eb ? 'Editar ' : 'Nova ') + (kind === 'banners' ? 'banner' : 'faixa');
+  $('bProntaRow').style.display = $('bCupRow').style.display = kind === 'banners' ? '' : 'none';
+  $('bPronta').checked = !!b.pronta; $('bTexts').style.display = b.pronta ? 'none' : '';
+  $('bL1').value = b.l1 || ''; $('bL2').value = b.l2 || ''; $('bSub').value = b.sub || ''; $('bCup').value = b.cupom || ''; $('bBot').value = b.botao || ''; $('bCat').value = b.cat; $('bAtivo').checked = b.ativo !== false;
+  $('bFundo').querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.v === bfundo));
+  $('bDel').style.display = eb ? '' : 'none'; $('shBn').classList.add('open');
+}
+$('bPronta').onchange = () => $('bTexts').style.display = $('bPronta').checked ? 'none' : '';
+$('bFundo').onclick = e => { const b = e.target.closest('button'); if (!b) return; bfundo = b.dataset.v; $('bFundo').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
+$('bFile').onchange = async e => { const f = e.target.files[0]; if (f) { toast('Preparando imagem...'); bimg = await compress(f, 1400); $('bImg').src = bimg; } e.target.value = ''; };
+$('listBn').onclick = $('listFx').onclick = e => { const b = e.target.closest('.item'); if (b) openBn(b.dataset.k, b.dataset.id); };
+$('addBn').onclick = () => openBn('banners'); $('addFx').onclick = () => openBn('faixas');
+$('bSave').onclick = () => {
+  if (!bimg) return toast('Escolha uma imagem');
+  const pronta = ek === 'banners' && $('bPronta').checked;
+  if (!pronta && !$('bL2').value.trim()) { $('bL2').focus(); return toast('Escreva o texto de destaque'); }
+  const d = { img: bimg, pronta, l1: $('bL1').value.trim(), l2: $('bL2').value.trim(), sub: $('bSub').value.trim(), cupom: $('bCup').value.trim().toUpperCase(), botao: $('bBot').value.trim(), cat: $('bCat').value, fundo: bfundo, ativo: $('bAtivo').checked };
+  const bk = JSON.stringify(DB); if (eb) Object.assign(eb, d); else DB[ek].push(Object.assign({ id: S.uid() }, d));
+  if (!persist('✓ Salvo! Já aparece no site')) { DB = JSON.parse(bk); return; } closeSheets(); renderLoja();
+};
+$('bDel').onclick = () => confirmDel('Excluir?', 'Sai do site na hora.', () => { DB[ek] = DB[ek].filter(b => b !== eb); persist('Excluído'); closeSheets(); renderLoja(); });
+$('addCup').onclick = () => { const c = $('cupCod').value.trim().toUpperCase().replace(/\s+/g, ''), p = parseInt($('cupPct').value, 10);
+  if (!c) return toast('Escreva o código'); if (!(p > 0 && p < 100)) return toast('Desconto entre 1% e 99%');
+  if (DB.cupons.some(x => x.codigo === c)) return toast('Esse cupom já existe');
+  DB.cupons.push({ codigo: c, pct: p, ativo: true }); persist('✓ Cupom criado'); $('cupCod').value = $('cupPct').value = ''; renderLoja(); };
+$('listCup').onclick = e => { const d = e.target.closest('[data-del]'); if (d) { DB.cupons.splice(+d.dataset.del, 1); persist('Cupom excluído'); renderLoja(); } };
+$('listCup').onchange = e => { const i = e.target.dataset.i; if (i != null) { DB.cupons[+i].ativo = e.target.checked; persist(e.target.checked ? 'Cupom ativado' : 'Cupom pausado'); } };
+
 /* utilidades */
 function closeSheets() { document.querySelectorAll('.sheet').forEach(s => s.classList.remove('open')); }
 document.querySelectorAll('[data-x]').forEach(b => b.onclick = closeSheets);
@@ -423,7 +502,7 @@ let cfFn = null;
 function confirmDel(t, p, fn) { $('cfT').textContent = t; $('cfP').textContent = p; cfFn = fn; $('cf').classList.add('open'); }
 $('cfNo').onclick = () => $('cf').classList.remove('open');
 $('cfYes').onclick = () => { $('cf').classList.remove('open'); cfFn && cfFn(); };
-$('btnReset').onclick = () => confirmDel('Restaurar a demonstração?', 'As peças e vídeos voltam ao exemplo inicial. O que você cadastrou neste aparelho será apagado.', () => { S.reset(); DB = S.load(); renderAll(); toast('Demonstração restaurada'); });
+$('btnReset').onclick = () => confirmDel('Restaurar a demonstração?', 'As peças, vídeos, banners e cupons voltam ao exemplo inicial. O que você cadastrou neste aparelho será apagado.', () => { S.reset(); DB = S.load(); renderAll(); toast('Demonstração restaurada'); });
 function compress(file, max) {
   return new Promise((res, rej) => {
     const img = new Image(), url = URL.createObjectURL(file);

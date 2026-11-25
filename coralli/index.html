@@ -324,6 +324,86 @@ footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
 .ck .ok h3{font-size:1.4rem;color:var(--pink);margin:6px 0}
 .ck .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 @media(max-width:520px){.ck .g2,.ck .g3{grid-template-columns:1fr}.ck .in{padding:18px 16px 22px}.ck .ttl{font-size:1.8rem}}
+
+/* ===== estilo loja (carrossel, benefícios, faixas) ===== */
+.burger{display:none;border:0;background:none;padding:6px;color:var(--teal-d)}
+@media(max-width:820px){.burger{display:block}.hd{justify-content:space-between}.brand{position:absolute;left:50%;transform:translateX(-50%)}.brand>span{display:none}.brand img{width:50px;height:50px}.hd{position:relative}.cats{display:none}.m-search .search input{background:#fff;border-color:#D7EEEB}}
+.side{position:fixed;top:0;left:0;bottom:0;width:min(330px,86vw);background:#fff;z-index:95;transform:translateX(-105%);transition:transform .3s;display:flex;flex-direction:column;box-shadow:20px 0 60px rgba(0,0,0,.18)}
+.side.open{transform:none}
+.side .sh{display:flex;align-items:center;gap:.7rem;padding:16px 18px;background:linear-gradient(90deg,var(--pink-l),var(--teal-l))}
+.side .sh img{width:44px;height:44px;border-radius:50%}
+.side .sh b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.5rem;color:var(--teal-d);flex:1}
+.side .sh button{border:0;background:#fff;width:36px;height:36px;border-radius:50%}
+.side nav{overflow:auto;padding:8px 0}
+.side nav a,.side nav button{display:flex;justify-content:space-between;width:100%;border:0;background:none;text-align:left;padding:.95rem 20px;font-size:.98rem;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid #F3F3F3}
+.side nav .hot{color:var(--promo)}
+.side nav small{color:var(--muted);font-weight:400}
+.slider{position:relative;overflow:hidden;background:var(--soft)}
+.slides{display:flex;transition:transform .6s cubic-bezier(.6,.05,.3,1);touch-action:pan-y}
+.slide{flex:0 0 100%;position:relative;min-height:440px;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;cursor:pointer;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.slide.pronta{display:block;min-height:0}
+.slide.pronta img{width:100%;height:auto;max-height:560px;object-fit:cover}
+.slide .arch{justify-self:center;align-self:end;width:min(360px,80%);aspect-ratio:3/4;border-radius:200px 200px 0 0;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.12);margin-top:40px;position:relative;z-index:2;border:8px solid rgba(255,255,255,.7);border-bottom:0}
+.slide .arch img{width:100%;height:100%;object-fit:cover}
+.slide .tx{padding:40px 6% 40px 4%;position:relative;z-index:2}
+.slide .l1{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:600;color:#5B4F55;line-height:1}
+.slide .l2{display:block;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:clamp(2.8rem,6.6vw,5.4rem);line-height:.95;margin:.1rem 0 .6rem;letter-spacing:-.01em}
+.slide .sb{display:block;font-size:.8rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6268;margin-bottom:1rem}
+.slide .cp{display:inline-flex;align-items:center;gap:.6rem;border:2px dashed currentColor;border-radius:12px;padding:.5rem .9rem;font-weight:700;letter-spacing:.12em;margin-bottom:1rem;background:rgba(255,255,255,.75)}
+.slide .cp small{font-size:.62rem;letter-spacing:.06em;font-weight:500;line-height:1.1;max-width:80px;color:#6E6268}
+.slide .go{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.75rem 1.4rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.f-tif{background:radial-gradient(circle at 75% 30%,rgba(255,255,255,.8),transparent 40%),linear-gradient(120deg,#DDF4F1,#F7EFE6 55%,#F3E3D3)}
+.f-tif .l2,.f-tif .cp{color:#2F9C93}.f-tif .go{background:#2B2B2E}
+.f-pink{background:radial-gradient(circle at 25% 70%,rgba(255,255,255,.7),transparent 40%),linear-gradient(120deg,#FBE1E6,#F6CFD8 60%,#EFB7C4)}
+.f-pink .l2,.f-pink .cp{color:#C2416B}.f-pink .go{background:#C2416B}
+.f-mar{background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.55),transparent 55%),linear-gradient(180deg,#7FD8CF,#2AA79D)}
+.f-mar .l1,.f-mar .sb{color:#F2FFFD}.f-mar .l2{color:#fff}.f-mar .cp{color:#fff;background:rgba(255,255,255,.15)}.f-mar .go{background:#fff;color:#17786F}
+.slide .dec{position:absolute;border-radius:50%;opacity:.5;z-index:1}
+.dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:8px;z-index:3}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(0,0,0,.2);transition:.3s}
+.dots button.on{background:var(--pink);width:24px;border-radius:5px}
+.sl-ar{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);box-shadow:0 6px 20px rgba(0,0,0,.12);font-size:1.1rem}
+.sl-ar.p{left:18px}.sl-ar.n{right:18px}
+@media(max-width:760px){
+  .slide{min-height:0;grid-template-columns:44% 56%;align-items:end;aspect-ratio:4/4.3}
+  .slide .arch{width:100%;border-width:5px;margin-top:22px;align-self:end}
+  .slide .tx{padding:20px 14px 40px 12px;align-self:center}
+  .slide .sb{font-size:.62rem;letter-spacing:.14em}
+  .slide .go{padding:.6rem 1rem;font-size:.64rem}
+  .slide .cp{font-size:.8rem;padding:.4rem .6rem}.slide .cp small{display:none}
+  .sl-ar{display:none}
+}
+.benef{border-bottom:1px solid var(--line);background:#fff}
+.benef .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px 0}
+.bf{display:flex;align-items:center;justify-content:center;gap:.8rem}
+.bf svg{width:34px;height:34px;color:var(--teal-d);flex:none}
+.bf b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:700;line-height:1}
+.bf small{color:var(--muted);font-size:.8rem}
+.bdots{display:none;justify-content:center;gap:6px;padding-bottom:12px}
+.bdots i{width:7px;height:7px;border-radius:50%;background:#D9D9D9}.bdots i.on{background:var(--teal)}
+@media(max-width:760px){.benef .wrap{grid-template-columns:1fr;padding:16px 0 10px}.bf{display:none}.bf.on{display:flex}.bdots{display:flex}}
+.faixas{display:grid;gap:16px;padding-top:34px}
+.fx{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;border-radius:22px;overflow:hidden;min-height:250px;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer;position:relative;transition:transform .3s}
+.fx:hover{transform:translateY(-3px)}
+.fx .im{align-self:stretch;position:relative}
+.fx .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.fx .tx{padding:26px 6%}
+.fx .l1{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1;text-transform:uppercase;letter-spacing:.04em;color:#3E4A48}
+.fx .l2{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:700;font-size:clamp(2.3rem,5vw,3.8rem);line-height:.95}
+.fx .sb{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#6E6268;margin:.5rem 0 1rem}
+.fx .go{display:inline-block;border-radius:999px;padding:.6rem 1.2rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.fx.f-mar .l1{color:#fff}.fx.f-mar .go{color:#17786F}.fx.f-mar .sb{color:#E6FFFB}
+@media(min-width:900px){.faixas{grid-template-columns:repeat(3,1fr)}.fx{grid-template-columns:1fr;grid-template-rows:260px auto;min-height:0}.fx .im{height:260px}}
+@media(max-width:899px){.fx{min-height:190px}.fx .tx{padding:18px 5%}}
+.sobre{text-align:center;max-width:760px;margin:0 auto}
+.sobre h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4.4vw,3rem);font-weight:700}
+.sobre p{color:#55555a;font-size:1.02rem;margin:.9rem 0 0}
+.parc{display:block;font-size:.78rem;color:var(--muted);margin-top:.1rem}
+.cup{display:flex;gap:6px;margin:.2rem 0 .6rem}
+.cup input{flex:1;min-width:0;border:1.5px dashed #F2B8CB;border-radius:10px;padding:.6rem .8rem;font:600 .9rem Lexend,sans-serif;text-transform:uppercase;outline:none}
+.cup button{border:0;border-radius:10px;background:var(--teal);color:#fff;font-weight:600;padding:0 1rem}
+.cup-ok{display:flex;justify-content:space-between;font-size:.88rem;color:var(--teal-d);font-weight:600;margin-bottom:.4rem}
+.cup-ok button{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:.78rem}
 </style>
 </head>
 <body>
@@ -333,43 +413,31 @@ footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
 
 <header>
   <div class="wrap hd">
+    <button class="burger" id="burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <a class="brand" href="#" aria-label="Coralli">
       <img src="img/logo.png" alt="Logo Coralli" width="54" height="54">
       <span><b>Coralli</b><small>Moda gringa · Atacado</small></span>
     </a>
-    <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" class="q" placeholder="O que você está buscando?" aria-label="Buscar"></label>
+    <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" class="q" placeholder="Olá, o que você procura?" aria-label="Buscar"></label>
     <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">
       <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="n" id="cartN"></span></span>
       <span><b>Meu pedido</b><small id="cartT">R$ 0,00</small></span>
     </button>
   </div>
-  <div class="m-search"><label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" class="q" placeholder="O que você está buscando?" aria-label="Buscar"></label></div>
+  <div class="m-search"><label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" class="q" placeholder="Olá, o que você procura?" aria-label="Buscar"></label></div>
   <nav class="cats"><div class="wrap" id="cats"></div></nav>
 </header>
 
-<section class="stories" aria-label="Destaques"><div class="wrap" id="stories"></div></section>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-box">
-      <div>
-        <span class="tag">● Só atacado · Feira da Madrugada</span>
-        <h1>Moda <span class="serif">gringa</span><br>para a sua loja</h1>
-        <p>Peças novas todos os dias, direto do nosso box para você revender. Monte seu pedido aqui, preencha seus dados e finalize pelo WhatsApp.</p>
-        <div class="ctas">
-          <a class="btn btn-dark" href="#promocoes">Promoções do dia</a>
-          <a class="btn btn-line" href="#como-comprar">Como comprar</a>
-        </div>
-        <div class="facts">
-          <span><b>Box 00237</b>Setor Roxo · C30</span>
-          <span><b>Atacado</b>não vendemos varejo</span>
-          <span><b>WhatsApp</b>pedido rápido</span>
-        </div>
-      </div>
-      <div class="reels" id="heroReels"></div>
-    </div>
-  </div>
+<section class="slider" id="slider" aria-label="Destaques da loja">
+  <div class="slides" id="slides"></div>
+  <button class="sl-ar p" id="slP" aria-label="Anterior">‹</button><button class="sl-ar n" id="slN" aria-label="Próximo">›</button>
+  <div class="dots" id="dots"></div>
 </section>
+<section class="benef"><div class="wrap" id="benef"></div><div class="bdots" id="bdots"></div></section>
+
+<section class="stories" aria-label="Vídeos em destaque"><div class="wrap" id="stories"></div></section>
+
+<section aria-label="Categorias em destaque"><div class="wrap faixas" id="faixas"></div></section>
 
 <section class="sec" id="promocoes">
   <div class="wrap">
@@ -397,6 +465,8 @@ footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
     <div class="vids" id="vids"></div>
   </div>
 </section>
+
+<section class="sec" id="sobre" style="padding-bottom:10px"><div class="wrap sobre"><h2>Feito para você 💚</h2><p id="sobreTx"></p></div></section>
 
 <section class="sec" id="como-comprar">
   <div class="wrap how">
@@ -437,6 +507,7 @@ footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
 <a class="badge-sp" href="admin/" title="Painel da loja (demonstração)">⚙ Painel da loja <b>demo</b></a>
 
 <div class="ov" id="ov"></div>
+<aside class="side" id="side" aria-label="Menu"><div class="sh"><img src="img/logo.png" alt=""><b>Coralli</b><button data-close aria-label="Fechar">✕</button></div><nav id="sideNav"></nav></aside>
 
 <!-- produto -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Produto">
@@ -462,6 +533,7 @@ footer{background:linear-gradient(90deg,#FFE3EE,#E4F7F4)}
   <div class="dr-h"><h3>Meu pedido</h3><button data-close aria-label="Fechar">✕</button></div>
   <div class="dr-b" id="lines"></div>
   <div class="dr-f" id="cartFoot">
+    <div id="cupBox"></div>
     <div class="tot"><span id="fPcs">0 peças</span><b id="fTot">R$ 0,00</b></div>
     <div class="min" id="fMin"></div>
     <button class="btn btn-dark" id="send" style="width:100%">Continuar: preencher meus dados ♥</button>
@@ -518,6 +590,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const WA = C.whatsapp || C.whatsappDemo;
 const waLink = msg => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
 
+const parc = v => C.parcelas > 1 ? `<span class="parc">ou ${C.parcelas}x de ${S.brl(v / C.parcelas)} no cartão</span>` : '';
 const visiveis = DB.produtos.filter(p => p.status === 'publicado' || p.status === 'esgotado');
 const videos = DB.videos.filter(v => v.status !== 'oculto');
 
@@ -542,7 +615,7 @@ function card(p) {
     <span class="cat" style="margin-top:.8rem">${esc(p.categoria)}</span>
     <h3 style="margin-top:.2rem">${esc(p.nome)}</h3>
     <div class="price">${off ? `<s>${S.brl(p.precoAntigo)}</s>` : ''}<b>${S.brl(p.preco)}</b>${off ? `<span class="pct">${off}% OFF</span>` : ''}</div>
-    <span class="atac">atacado · por peça</span>
+    ${parc(p.preco)}<span class="atac">atacado · por peça</span>
     ${p.estoque && p.estoque <= 6 && !esg ? `<span class="low">Só restam ${p.estoque} em estoque!</span>` : ''}
   </article>`;
 }
@@ -566,6 +639,7 @@ document.querySelectorAll('.q').forEach(i => i.addEventListener('input', () => {
   q = i.value.trim(); document.querySelectorAll('.q').forEach(o => o !== i && (o.value = i.value)); renderGrid();
   if (q.length === 1) $('produtos').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }));
+function goCat(c) { if (!cats.includes(c)) c = 'Lançamentos'; cat = c; q = ''; document.querySelectorAll('.q').forEach(i => i.value = ''); $('cats').querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x.dataset.c === c)); renderGrid(); closeLayers(); $('produtos').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 function renderGrid() {
   let list = visiveis.slice();
@@ -580,6 +654,43 @@ function renderGrid() {
 }
 renderGrid();
 
+/* carrossel de banners */
+const BN = (DB.banners || []).filter(b => b.ativo);
+let si = 0, st = null;
+const bnHTML = b => b.pronta ? `<button class="slide pronta" data-c="${esc(b.cat)}" data-cup="${esc(b.cupom)}"><img src="${esc(b.img)}" alt="${esc((b.l1 || '') + ' ' + (b.l2 || ''))}"></button>` :
+  `<button class="slide f-${esc(b.fundo || 'tif')}" data-c="${esc(b.cat)}" data-cup="${esc(b.cupom)}"><span class="dec" style="width:300px;height:300px;right:-80px;top:-80px;background:rgba(255,255,255,.35)"></span><span class="dec" style="width:160px;height:160px;left:40%;bottom:-60px;background:rgba(255,255,255,.3)"></span>
+    <span class="arch"><img src="${esc(b.img)}" alt=""></span>
+    <span class="tx"><span class="l1">${esc(b.l1)}</span><span class="l2">${esc(b.l2)}</span>${b.sub ? `<span class="sb">${esc(b.sub)}</span>` : ''}${b.cupom ? `<span class="cp">${esc(b.cupom)} <small>use no carrinho</small></span><br>` : ''}<span class="go">${esc(b.botao || 'Compre agora')} ›</span></span></button>`;
+function slideTo(i) { if (!BN.length) return; si = (i + BN.length) % BN.length; $('slides').style.transform = `translateX(-${si * 100}%)`; $('dots').querySelectorAll('button').forEach((d, k) => d.classList.toggle('on', k === si)); clearTimeout(st); st = setTimeout(() => slideTo(si + 1), 5500); }
+if (BN.length) {
+  $('slides').innerHTML = BN.map(bnHTML).join('');
+  $('dots').innerHTML = BN.length > 1 ? BN.map((_, k) => `<button aria-label="Banner ${k + 1}"></button>`).join('') : '';
+  $('dots').onclick = e => { const b = e.target.closest('button'); if (b) slideTo([...$('dots').children].indexOf(b)); };
+  $('slP').onclick = () => slideTo(si - 1); $('slN').onclick = () => slideTo(si + 1);
+  if (BN.length < 2) { $('slP').hidden = $('slN').hidden = true; }
+  let x0 = null; $('slides').addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+  $('slides').addEventListener('touchend', e => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { slideTo(si + (dx < 0 ? 1 : -1)); moved = true; setTimeout(() => moved = false, 50); } x0 = null; });
+  let moved = false;
+  $('slides').addEventListener('click', e => { const b = e.target.closest('.slide'); if (!b || moved) return; if (b.dataset.cup) aplicarCupom(b.dataset.cup, true); goCat(b.dataset.c); });
+  slideTo(0);
+} else $('slider').style.display = 'none';
+
+/* benefícios */
+const ICO = { card: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/>', pix: '<path d="m12 3 4 4-4 4-4-4zM12 13l4 4-4 4-4-4zM3 12l4-4 4 4-4 4zM13 12l4-4 4 4-4 4z"/>', truck: '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>', box: '<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>' };
+$('benef').innerHTML = (C.beneficios || []).map(([i, t, d], k) => `<div class="bf ${k ? '' : 'on'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICO[i] || ICO.box}</svg><span><b>${esc(t)}</b><small>${esc(d)}</small></span></div>`).join('');
+$('bdots').innerHTML = (C.beneficios || []).map((_, k) => `<i class="${k ? '' : 'on'}"></i>`).join('');
+let bi = 0; setInterval(() => { const a = $('benef').children, d = $('bdots').children; if (!a.length) return; a[bi].classList.remove('on'); d[bi].classList.remove('on'); bi = (bi + 1) % a.length; a[bi].classList.add('on'); d[bi].classList.add('on'); }, 3200);
+
+/* faixas de categoria */
+$('faixas').innerHTML = (DB.faixas || []).filter(f => f.ativo).map(f => `<button class="fx f-${esc(f.fundo || 'tif')}" data-c="${esc(f.cat)}"><span class="im"><img src="${esc(f.img)}" alt="" loading="lazy"></span><span class="tx"><span class="l1">${esc(f.l1)}</span><span class="l2">${esc(f.l2)}</span>${f.sub ? `<span class="sb">${esc(f.sub)}</span>` : ''}<span class="go">Compre agora ›</span></span></button>`).join('');
+$('faixas').onclick = e => { const b = e.target.closest('.fx'); if (b) goCat(b.dataset.c); };
+$('sobreTx').textContent = C.sobre || '';
+
+/* menu lateral */
+$('sideNav').innerHTML = cats.map(c => `<button data-c="${esc(c)}" class="${c === 'Promoções' ? 'hot' : ''}">${esc(c)} <small>›</small></button>`).join('') + '<a href="#videos">Vídeos <small>›</small></a><a href="#como-comprar">Como comprar <small>›</small></a><a href="#box">Nosso box <small>›</small></a><a class="js-wa" target="_blank" rel="noopener" href="' + waLink('Oi! Vim pelo site da Coralli.') + '">Falar no WhatsApp <small>›</small></a>';
+$('sideNav').onclick = e => { const b = e.target.closest('button[data-c]'); if (b) return goCat(b.dataset.c); if (e.target.closest('a')) closeLayers(); };
+$('burger').onclick = () => openLayer('side');
+
 /* rails */
 document.querySelectorAll('[data-rail]').forEach(b => b.addEventListener('click', () => { const r = $(b.dataset.rail); r.scrollBy({ left: +b.dataset.d * r.clientWidth * .8, behavior: 'smooth' }); }));
 
@@ -589,8 +700,6 @@ $('stories').innerHTML = C.destaques.map(c => `<button class="story" data-c="${c
 $('stories').addEventListener('click', e => { const b = e.target.closest('.story'); if (b) { const l = videos.filter(v => v.categoria === b.dataset.c); openStories(l.length ? l : videos, 0, b.dataset.c); } });
 $('vids').innerHTML = videos.map((v, i) => `<button class="vid" data-i="${i}"><img src="${esc(v.capa)}" alt="" loading="lazy"><span class="pl">▶</span><span class="meta"><small>${esc(v.categoria)}${v.views ? ' · ' + esc(v.views) + ' views' : ''}</small><b>${esc(v.titulo)}</b></span></button>`).join('');
 $('vids').addEventListener('click', e => { const b = e.target.closest('.vid'); if (b) openStories(videos, +b.dataset.i); });
-$('heroReels').innerHTML = videos.slice(0, 3).map((v, i) => `<button data-i="${i}" aria-label="Ver vídeo"><img src="${esc(v.capa)}" alt=""><span class="pl">▶</span></button>`).join('');
-$('heroReels').addEventListener('click', e => { const b = e.target.closest('button'); if (b) openStories(videos, +b.dataset.i); });
 
 let sv = { list: [], i: 0, t: null };
 function reelEmbed(url) { const m = (url || '').match(/instagram\.com\/(?:reel|p|tv)\/([\w-]+)/); return m ? `https://www.instagram.com/reel/${m[1]}/embed` : null; }
@@ -622,7 +731,7 @@ function openProduct(id) {
   $('mThumbs').innerHTML = f.length > 1 ? f.map((s, i) => `<button class="${i ? '' : 'on'}" data-s="${i}"><img src="${s}" alt=""></button>`).join('') : '';
   $('mThumbs').onclick = e => { const b = e.target.closest('button'); if (!b) return; $('mImg').src = f[b.dataset.s]; $('mThumbs').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
   $('mCat').textContent = cur.categoria; $('mName').textContent = cur.nome;
-  $('mPrice').innerHTML = `${off ? `<s>${S.brl(cur.precoAntigo)}</s>` : ''}<b>${S.brl(cur.preco)}</b>${off ? `<span class="pct">${off}% OFF</span>` : ''}`;
+  $('mPrice').innerHTML = `${off ? `<s>${S.brl(cur.precoAntigo)}</s>` : ''}<b>${S.brl(cur.preco)}</b>${off ? `<span class="pct">${off}% OFF</span>` : ''}${parc(cur.preco)}`;
   $('mDesc').textContent = cur.descricao || '';
   $('mColorsWrap').style.display = (cur.cores || []).length ? '' : 'none';
   $('mColors').innerHTML = (cur.cores || []).map((c, i) => `<button class="${i ? '' : 'on'}" data-c="${esc(c)}"><i style="background:${CORES_HEX[c] || '#ddd'}"></i>${esc(c)}</button>`).join('');
@@ -651,16 +760,23 @@ $('mAdd').onclick = () => {
 /* carrinho */
 let cart = []; try { cart = JSON.parse(localStorage.getItem('coralli-cart2')) || []; } catch (e) {}
 function saveCart() { try { localStorage.setItem('coralli-cart2', JSON.stringify(cart)); } catch (e) {} renderCart(); }
-function totals() { return { pcs: cart.reduce((a, l) => a + l.qtd, 0), val: cart.reduce((a, l) => a + l.qtd * l.preco, 0) }; }
+let cup = null; try { cup = JSON.parse(localStorage.getItem('coralli-cupom')); } catch (e) {}
+const cupValido = c => (DB.cupons || []).find(x => x.ativo && x.codigo.toUpperCase() === String(c || '').trim().toUpperCase());
+if (cup && !cupValido(cup.codigo)) cup = null;
+function aplicarCupom(cod, auto) { const c = cupValido(cod); if (!c) { if (!auto) toast('Cupom inválido ou expirado'); return false; } cup = { codigo: c.codigo, pct: c.pct }; try { localStorage.setItem('coralli-cupom', JSON.stringify(cup)); } catch (e) {} toast(`🎉 Cupom ${c.codigo} aplicado: ${c.pct}% OFF`); renderCart(); return true; }
+function totals() { const pcs = cart.reduce((a, l) => a + l.qtd, 0), sub = cart.reduce((a, l) => a + l.qtd * l.preco, 0), desc = cup ? Math.round(sub * cup.pct) / 100 : 0; return { pcs, sub, desc, val: sub - desc }; }
 function renderCart() {
   const t = totals();
   $('cartN').textContent = t.pcs || ''; $('cartT').textContent = S.brl(t.val);
   $('lines').innerHTML = cart.length ? cart.map((l, i) => `<div class="line"><img src="${l.foto}" alt=""><div><b>${esc(l.nome)}</b><small>${l.cor ? esc(l.cor) + ' · ' : ''}Tam. ${esc(l.tam)} · ${S.brl(l.preco)}</small><br><button class="rm" data-i="${i}">remover</button></div><span class="qty"><button data-i="${i}" data-d="-1">−</button><span>${l.qtd}</span><button data-i="${i}" data-d="1">+</button></span></div>`).join('') : '<div class="cart-empty"><p style="font-size:2.2rem;margin:0">🛍️</p><p>Seu pedido está vazio.<br>Escolha as peças e os tamanhos.</p></div>';
   $('cartFoot').style.display = cart.length ? '' : 'none';
-  $('fPcs').textContent = t.pcs + (t.pcs === 1 ? ' peça' : ' peças'); $('fTot').textContent = S.brl(t.val);
+  $('fPcs').textContent = t.pcs + (t.pcs === 1 ? ' peça' : ' peças'); $('fTot').innerHTML = (t.desc ? `<s style="font-weight:400;color:var(--muted);font-size:.85em;margin-right:6px">${S.brl(t.sub)}</s>` : '') + S.brl(t.val);
+  $('cupBox').innerHTML = cup ? `<div class="cup-ok"><span>🎟️ ${esc(cup.codigo)} · ${cup.pct}% OFF (−${S.brl(t.desc)})</span><button id="cupX">remover</button></div>` : `<div class="cup"><input id="cupIn" placeholder="Tem cupom de desconto?" aria-label="Cupom"><button id="cupBt">Aplicar</button></div>`;
+  if (cup) $('cupX').onclick = () => { cup = null; try { localStorage.removeItem('coralli-cupom'); } catch (e) {} renderCart(); };
+  else { $('cupBt').onclick = () => aplicarCupom($('cupIn').value); $('cupIn').onkeydown = e => e.key === 'Enter' && aplicarCupom($('cupIn').value); }
   const falta = [];
   if (C.pedidoMinimoPecas && t.pcs < C.pedidoMinimoPecas) falta.push(`mínimo de ${C.pedidoMinimoPecas} peças`);
-  if (C.pedidoMinimoValor && t.val < C.pedidoMinimoValor) falta.push(`mínimo de ${S.brl(C.pedidoMinimoValor)}`);
+  if (C.pedidoMinimoValor && t.sub < C.pedidoMinimoValor) falta.push(`mínimo de ${S.brl(C.pedidoMinimoValor)}`);
   $('fMin').textContent = falta.length ? 'Pedido de atacado: ' + falta.join(' e ') + '.' : '';
   $('send').disabled = !!falta.length;
 }
@@ -672,7 +788,7 @@ $('lines').addEventListener('click', e => {
 });
 $('send').onclick = () => {
   const t = totals();
-  $('ckRes').innerHTML = cart.map(l => `<div><span>${l.qtd}x ${esc(l.nome)}${l.cor ? ' · ' + esc(l.cor) : ''} · ${esc(l.tam)}</span><span>${S.brl(l.qtd * l.preco)}</span></div>`).join('') + `<div style="border-top:1px dashed #F2B8CB;margin-top:4px;padding-top:6px"><b>${t.pcs} peças</b><b>${S.brl(t.val)}</b></div>`;
+  $('ckRes').innerHTML = cart.map(l => `<div><span>${l.qtd}x ${esc(l.nome)}${l.cor ? ' · ' + esc(l.cor) : ''} · ${esc(l.tam)}</span><span>${S.brl(l.qtd * l.preco)}</span></div>`).join('') + (t.desc ? `<div><span>Cupom ${esc(cup.codigo)} (${cup.pct}% OFF)</span><span>−${S.brl(t.desc)}</span></div>` : '') + `<div style="border-top:1px dashed #F2B8CB;margin-top:4px;padding-top:6px"><b>${t.pcs} peças</b><b>${S.brl(t.val)}</b></div>`;
   try { const sv = JSON.parse(localStorage.getItem('coralli-cliente')) || {}; ['Nome', 'Cpf', 'Tel', 'Cep', 'End', 'Num', 'Bairro', 'Cidade'].forEach(k => { if (sv[k] && !$('k' + k).value) $('k' + k).value = sv[k]; }); } catch (e) {}
   $('ckForm').hidden = false; $('ckOk').hidden = true; $('ck').classList.add('open'); closeLayers(); document.body.style.overflow = 'hidden';
 };
@@ -690,18 +806,18 @@ $('kSend').onclick = () => {
   if (v('Tel').replace(/\D/g, '').length < 10) { $('kTel').focus(); return toast('Coloque seu WhatsApp com DDD'); }
   if (!/Retirada/.test(forma) && (!v('End') || !v('Cidade'))) { $('kEnd').focus(); return toast('Preencha o endereço para a entrega'); }
   const D = S.load(); D.seq = (D.seq || 1000) + 1;
-  const ped = { id: S.uid(), num: D.seq, data: Date.now(), entrega: v('Data'), nome: v('Nome'), cpf: v('Cpf'), tel: v('Tel'), cep: v('Cep'), end: v('End'), numero: v('Num'), bairro: v('Bairro'), cidade: v('Cidade'), forma, obs: v('Obs'), status: 'novo', itens: cart.map(l => ({ nome: l.nome, cor: l.cor || '', tam: l.tam, qtd: l.qtd, preco: l.preco })) };
+  const ped = { id: S.uid(), num: D.seq, data: Date.now(), entrega: v('Data'), nome: v('Nome'), cpf: v('Cpf'), tel: v('Tel'), cep: v('Cep'), end: v('End'), numero: v('Num'), bairro: v('Bairro'), cidade: v('Cidade'), forma, obs: v('Obs'), status: 'novo', cupom: cup ? cup.codigo : '', desconto: totals().desc, itens: cart.map(l => ({ nome: l.nome, cor: l.cor || '', tam: l.tam, qtd: l.qtd, preco: l.preco })) };
   D.pedidos = [ped].concat(D.pedidos || []); S.save(D);
   try { localStorage.setItem('coralli-cliente', JSON.stringify({ Nome: ped.nome, Cpf: ped.cpf, Tel: ped.tel, Cep: ped.cep, End: ped.end, Num: ped.numero, Bairro: ped.bairro, Cidade: ped.cidade })); } catch (e) {}
   const t = totals();
   const linhas = cart.map(l => `• ${l.qtd}x ${l.nome}${l.cor ? ' (' + l.cor + ')' : ''}, tam. ${l.tam}: ${S.brl(l.qtd * l.preco)}`).join('\n');
-  const msg = `*♥ PEDIDO Nº ${ped.num} · Coralli ♥*\n\n${linhas}\n\n*Total: ${t.pcs} peças · ${S.brl(t.val)}*\n\n👤 ${ped.nome}${ped.cpf ? '\nCPF/CNPJ: ' + ped.cpf : ''}\n📞 ${ped.tel}\n🚚 ${forma}` +
+  const msg = `*♥ PEDIDO Nº ${ped.num} · Coralli ♥*\n\n${linhas}${t.desc ? `\nSubtotal: ${S.brl(t.sub)}\n🎟️ Cupom ${cup.codigo}: −${S.brl(t.desc)}` : ''}\n\n*Total: ${t.pcs} peças · ${S.brl(t.val)}*\n\n👤 ${ped.nome}${ped.cpf ? '\nCPF/CNPJ: ' + ped.cpf : ''}\n📞 ${ped.tel}\n🚚 ${forma}` +
     (ped.end ? `\n📍 ${ped.end}, ${ped.numero} · ${ped.bairro} · ${ped.cidade}${ped.cep ? ' · CEP ' + ped.cep : ''}` : '') + (ped.entrega ? `\n📅 Entrega: ${ped.entrega.split('-').reverse().join('/')}` : '') + (ped.obs ? `\n📝 ${ped.obs}` : '');
   window.open(waLink(msg), '_blank', 'noopener');
   ultimo = ped; $('okNum').textContent = 'Pedido nº ' + ped.num;
   const go = () => Etiqueta.draw($('okCv'), ped, { logo: logoImg }); if (logoImg.complete) go(); else logoImg.onload = go;
   $('ckForm').hidden = true; $('ckOk').hidden = false; $('ck').querySelector('.pap').scrollTop = 0;
-  cart = []; saveCart();
+  cart = []; cup = null; try { localStorage.removeItem('coralli-cupom'); } catch (e) {} saveCart();
 };
 $('okPng').onclick = () => Etiqueta.png($('okCv'), 'pedido-coralli-' + (ultimo ? ultimo.num : ''));
 $('openCart').onclick = () => openLayer('drawer');
@@ -709,7 +825,7 @@ renderCart();
 
 /* camadas */
 function openLayer(id) { $('ov').classList.add('open'); $(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeLayers() { ['ov', 'modal', 'drawer'].forEach(i => $(i).classList.remove('open')); document.body.style.overflow = ''; }
+function closeLayers() { ['ov', 'modal', 'drawer', 'side'].forEach(i => $(i).classList.remove('open')); document.body.style.overflow = ''; }
 $('ov').onclick = closeLayers;
 document.querySelectorAll('[data-close]').forEach(b => b.onclick = closeLayers);
 addEventListener('keydown', e => { if (e.key === 'Escape') { closeLayers(); closeStories(); closeCk(); } if ($('sv').classList.contains('open')) { if (e.key === 'ArrowRight') $('svNext').click(); if (e.key === 'ArrowLeft') $('svPrev').click(); } });
