@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cardápio · Bololô Restaurant & Bar</title>
+<link rel="icon" href="../img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:14mm}
+:root{--red:#e11d2e;--grad:linear-gradient(135deg,#ff6a00,#ffd000)}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:Archivo,sans-serif;color:#111;background:#e7e5e4}
+.bar{position:sticky;top:0;background:#09090b;color:#fff;display:flex;gap:.6rem;justify-content:center;align-items:center;padding:.7rem;flex-wrap:wrap;font-size:.9rem}
+.bar button,.bar a{border:0;border-radius:999px;padding:.6rem 1.1rem;font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;font-family:Archivo}
+.bar button{background:var(--grad);color:#111}.bar a{background:#27272a;color:#fff}
+.page{width:min(210mm,100%);margin:20px auto;background:#fff8ec;padding:16mm 14mm;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+.hd{display:flex;align-items:center;gap:18px;border-bottom:4px solid #111;padding-bottom:14px;margin-bottom:8px}
+.hd img{width:90px;height:90px;object-fit:contain;background:#fff;border-radius:50%;padding:6px;border:3px solid #111}
+.hd h1{font-family:Anton;font-weight:400;font-size:44px;line-height:.9;margin:0;text-transform:uppercase}
+.hd p{margin:6px 0 0;font-size:12px;color:#444}
+.cat{font-family:Anton;font-size:26px;text-transform:uppercase;margin:22px 0 6px;display:flex;align-items:center;gap:10px;break-after:avoid}
+.moon{display:inline-flex;gap:3px}.moon i{display:block;width:9px;height:18px;border-radius:0 18px 18px 0;background:var(--grad)}
+.it{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed #cbbfa8;break-inside:avoid}
+.it img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.it .np{width:64px;height:64px;border-radius:10px;background:#111}
+.it b{font-weight:800;font-size:15px;text-transform:uppercase}
+.it small{display:block;color:#555;font-size:11.5px;line-height:1.35}
+.it em{font-style:normal;font-size:10px;font-weight:800;background:var(--red);color:#fff;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:2px;text-transform:uppercase}
+.it .p{font-family:Anton;font-size:18px;white-space:nowrap}
+.ft{margin-top:24px;padding-top:12px;border-top:4px solid #111;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#444;flex-wrap:wrap}
+@media print{body{background:#fff}.bar{display:none}.page{margin:0;width:auto;box-shadow:none;padding:0;background:#fff}}
+</style>
+</head>
+<body>
+<div class="bar">Cardápio gerado a partir do painel · <button onclick="print()">Salvar em PDF / Imprimir</button><a href="../">Voltar ao site</a></div>
+<div class="page">
+  <div class="hd"><img id="lg" alt=""><div><h1>Bololô<br>Restaurant & Bar</h1><p id="sub"></p></div></div>
+  <div id="list"></div>
+  <div class="ft"><span id="end"></span><span>#VemProBololô · @<span id="ig"></span></span></div>
+</div>
+<script src="../js/store.js"></script>
+<script>
+const S = window.BololoStore, DB = S.load(), C = S.cfg(DB);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fix = s => s && !/^(data:|https?:)/.test(s) ? '../' + s : s;
+document.getElementById('lg').src = fix(C.logo || 'img/logo.png');
+document.getElementById('sub').textContent = 'Cardápio · ' + C.horario + ' · ' + new Date().toLocaleDateString('pt-BR');
+document.getElementById('end').textContent = C.endereco + ' · ' + C.bairro;
+document.getElementById('ig').textContent = C.instagram;
+const IT = DB.itens.filter(i => i.ativo);
+document.getElementById('list').innerHTML = S.CATS.filter(c => IT.some(i => i.cat === c)).map(c => `<div class="cat"><span class="moon"><i></i><i></i></span>${esc(c)}</div>` + IT.filter(i => i.cat === c).map(i => `<div class="it">${i.foto ? `<img src="${esc(fix(i.foto))}" alt="">` : '<span class="np"></span>'}<div><b>${esc(i.nome)}</b>${i.badge ? `<em>${esc(i.badge)}</em>` : ''}<small>${esc(i.desc)}</small></div><span class="p">${i.preco ? S.brl(i.preco) : ''}</span></div>`).join('')).join('');
+if (/print=1/.test(location.search)) addEventListener('load', () => setTimeout(print, 600));
+</script>
+</body>
+</html>
