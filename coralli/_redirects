@@ -1,0 +1,13 @@
+# Redirecionamentos permanentes (301)
+/index.html            /                 301
+/home                  /                 301
+/inicio                /                 301
+/loja                  /                 301
+/loja/*                /                 301
+/produtos              /#produtos        301
+/produtos/:slug        /produto/:slug/   301
+/termos.html           /termos/          301
+/termos-de-uso         /termos/          301
+/privacidade.html      /privacidade/     301
+/politica-de-privacidade /privacidade/   301
+/admin                 /admin/           301

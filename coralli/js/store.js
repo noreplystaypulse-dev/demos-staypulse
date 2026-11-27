@@ -12,6 +12,8 @@
     pedidoMinimoPecas: 0,       // ← pedido mínimo em peças (0 = sem mínimo)
     pedidoMinimoValor: 0,       // ← pedido mínimo em R$ (0 = sem mínimo)
     endereco: 'Feira da Madrugada · Térreo · Setor Roxo · C30 · Box 00237',
+    /* NAP: deve ser IGUAL ao do Google Meu Negócio (nome, endereço, telefone) */
+    nap: { nome: 'Coralli', rua: 'Feira da Madrugada, Térreo, Setor Roxo, C30, Box 00237', bairro: 'Brás', cidade: 'São Paulo', uf: 'SP', cep: '', telefone: '+55 11 91515-9311', email: 'coralstoreat@gmail.com' },
     destaques: ['Clientes', 'Pedidos', 'Entregas', 'Feedbacks', 'Coralli'],
     parcelas: 3,                // ← "ou 3x de R$ ..." no cartão (0 = não mostra)
     beneficios: [['card', 'Pague parcelado', 'no cartão de crédito'], ['pix', 'Pix na hora', 'aprovação imediata'], ['truck', 'Enviamos', 'para todo o Brasil'], ['box', 'Atacado', 'direto do nosso box']],
@@ -25,7 +27,7 @@
     descricao: '', fotos: [], status: 'publicado', promo: false, destaque: false,
     estoque: null, criado: Date.now() - Math.floor(Math.random() * 1e8)
   }, extra || {});
-  const F = n => ['img/p/' + n + '.jpg'];
+  const F = n => ['img/p/' + n + '.webp'];
 
   const SEED = {
     aviso: 'SÓ ATACADO · Peças novas toda semana · Box 00237 · Setor Roxo',
@@ -63,30 +65,30 @@
     seq: 1001,
     /* banners do topo (carrossel). Com "pronta: true" a imagem já é o banner completo (arte do designer) */
     banners: [
-      { id: 'b1', ativo: true, pronta: false, img: 'img/p/vestido-jully.jpg', l1: 'Seu estilo em', l2: 'evidência', sub: '20% OFF na primeira compra', cupom: 'PRIMEIRA20', botao: 'Aproveitar agora', cat: 'Lançamentos', fundo: 'tif' },
-      { id: 'b2', ativo: true, pronta: false, img: 'img/p/conjunto-farm.jpg', l1: 'Looks que', l2: 'valorizam', sub: 'V O C Ê', cupom: '', botao: 'Compre agora', cat: 'Conjuntos', fundo: 'pink' },
-      { id: 'b3', ativo: true, pronta: false, img: 'img/p/biquinis.jpg', l1: 'Vista-se de', l2: 'Corais e Mar', sub: 'Roupas femininas com a leveza do oceano', cupom: '', botao: 'Ver moda praia', cat: 'Moda praia', fundo: 'mar' }
+      { id: 'b1', ativo: true, pronta: false, img: 'img/p/vestido-jully.webp', l1: 'Seu estilo em', l2: 'evidência', sub: '20% OFF na primeira compra', cupom: 'PRIMEIRA20', botao: 'Aproveitar agora', cat: 'Lançamentos', fundo: 'tif' },
+      { id: 'b2', ativo: true, pronta: false, img: 'img/p/conjunto-farm.webp', l1: 'Looks que', l2: 'valorizam', sub: 'V O C Ê', cupom: '', botao: 'Compre agora', cat: 'Conjuntos', fundo: 'pink' },
+      { id: 'b3', ativo: true, pronta: false, img: 'img/p/biquinis.webp', l1: 'Vista-se de', l2: 'Corais e Mar', sub: 'Roupas femininas com a leveza do oceano', cupom: '', botao: 'Ver moda praia', cat: 'Moda praia', fundo: 'mar' }
     ],
     /* faixas de categoria (embaixo do carrossel) */
     faixas: [
-      { id: 'f1', ativo: true, img: 'img/p/vestido-mariel.jpg', l1: 'Moda que', l2: 'realça', sub: 'a sua beleza', cat: 'Vestidos', fundo: 'pink' },
-      { id: 'f2', ativo: true, img: 'img/p/saida-praia.jpg', l1: 'Look', l2: 'Praia', sub: 'Estilo que te acompanha em todos os momentos', cat: 'Moda praia', fundo: 'mar' },
-      { id: 'f3', ativo: true, img: 'img/p/conjunto-mirella.jpg', l1: 'Conjunto', l2: 'Casual', sub: 'Conforto e estilo para o dia a dia', cat: 'Conjuntos', fundo: 'tif' }
+      { id: 'f1', ativo: true, img: 'img/p/vestido-mariel.webp', l1: 'Moda que', l2: 'realça', sub: 'a sua beleza', cat: 'Vestidos', fundo: 'pink' },
+      { id: 'f2', ativo: true, img: 'img/p/saida-praia.webp', l1: 'Look', l2: 'Praia', sub: 'Estilo que te acompanha em todos os momentos', cat: 'Moda praia', fundo: 'mar' },
+      { id: 'f3', ativo: true, img: 'img/p/conjunto-mirella.webp', l1: 'Conjunto', l2: 'Casual', sub: 'Conforto e estilo para o dia a dia', cat: 'Conjuntos', fundo: 'tif' }
     ],
     cupons: [{ codigo: 'PRIMEIRA20', pct: 20, ativo: true }],
     videos: [
-      { id: 'v1', titulo: 'Nunca pare de divulgar seu trabalho', categoria: 'Coralli', capa: 'img/videos/v1.jpg', url: '', views: '', status: 'publicado' },
-      { id: 'v2', titulo: 'Fica postando igual blogueira...', categoria: 'Coralli', capa: 'img/videos/v2.jpg', url: '', views: '2,8 mil', status: 'publicado' },
-      { id: 'v3', titulo: 'Embalando pedidos', categoria: 'Pedidos', capa: 'img/videos/v3.jpg', url: '', views: '', status: 'publicado' },
-      { id: 'v4', titulo: 'Deus abençoando cada detalhe', categoria: 'Entregas', capa: 'img/videos/v4.jpg', url: '', views: '', status: 'publicado' },
-      { id: 'v5', titulo: 'Tudo o que você fizer dará certo', categoria: 'Clientes', capa: 'img/videos/v5.jpg', url: '', views: '', status: 'publicado' },
-      { id: 'v6', titulo: 'Separando as peças do dia', categoria: 'Pedidos', capa: 'img/videos/v6.jpg', url: '', views: '', status: 'publicado' },
-      { id: 'v7', titulo: 'O mesmo Deus que te deu a ideia', categoria: 'Feedbacks', capa: 'img/videos/v7.jpg', url: '', views: '', status: 'publicado' }
+      { id: 'v1', titulo: 'Nunca pare de divulgar seu trabalho', categoria: 'Coralli', capa: 'img/videos/v1.webp', url: '', views: '', status: 'publicado' },
+      { id: 'v2', titulo: 'Fica postando igual blogueira...', categoria: 'Coralli', capa: 'img/videos/v2.webp', url: '', views: '2,8 mil', status: 'publicado' },
+      { id: 'v3', titulo: 'Embalando pedidos', categoria: 'Pedidos', capa: 'img/videos/v3.webp', url: '', views: '', status: 'publicado' },
+      { id: 'v4', titulo: 'Deus abençoando cada detalhe', categoria: 'Entregas', capa: 'img/videos/v4.webp', url: '', views: '', status: 'publicado' },
+      { id: 'v5', titulo: 'Tudo o que você fizer dará certo', categoria: 'Clientes', capa: 'img/videos/v5.webp', url: '', views: '', status: 'publicado' },
+      { id: 'v6', titulo: 'Separando as peças do dia', categoria: 'Pedidos', capa: 'img/videos/v6.webp', url: '', views: '', status: 'publicado' },
+      { id: 'v7', titulo: 'O mesmo Deus que te deu a ideia', categoria: 'Feedbacks', capa: 'img/videos/v7.webp', url: '', views: '', status: 'publicado' }
     ]
   };
 
   function load() {
-    try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) { s.pedidos = s.pedidos || []; s.seq = s.seq || 1000; ['banners', 'faixas', 'cupons'].forEach(k => { if (!s[k]) s[k] = JSON.parse(JSON.stringify(SEED[k])); }); return s; } } catch (e) {}
+    try { let s = JSON.parse(localStorage.getItem(KEY)); if (s && s.produtos) { s = JSON.parse(JSON.stringify(s).replace(/(img\/(?:p|videos)\/[a-z0-9-]+)\.jpg/g, '$1.webp')); s.pedidos = s.pedidos || []; s.seq = s.seq || 1000; ['banners', 'faixas', 'cupons'].forEach(k => { if (!s[k]) s[k] = JSON.parse(JSON.stringify(SEED[k])); }); return s; } } catch (e) {}
     return JSON.parse(JSON.stringify(SEED));
   }
   function save(data) {

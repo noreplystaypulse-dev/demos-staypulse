@@ -122,6 +122,30 @@ h2{font-size:1.15rem;margin:0 0 .3rem}
 textarea{resize:vertical}
 #shBn .capa{width:100%;aspect-ratio:16/9}
 #vLoja .money span{left:auto;right:.9rem}#vLoja .money input,#cupCod{width:100%;border:1px solid #D9D9D9;border-radius:10px;padding:.75rem .85rem;font:inherit;outline:none}
+
+/* vendas do mês */
+.vd{background:linear-gradient(135deg,#FFF0F5,#E9F8F6);border:1px solid #F3DDE5;border-radius:20px;padding:16px;margin-bottom:22px}
+.vd-h{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.vd-h b{font-size:1rem}
+.vd-h button{border:0;background:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.vd-h button:disabled{opacity:.3}
+.vd-tot{font-size:2.1rem;font-weight:700;letter-spacing:-.02em;margin:10px 0 0;color:var(--ink)}
+.vd-cmp{font-size:.82rem;font-weight:600;margin:2px 0 12px}
+.vd-cmp.up{color:#137A43}.vd-cmp.dn{color:var(--promo)}.vd-cmp.eq{color:var(--muted)}
+.vd-k{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vd-k div{background:#fff;border-radius:12px;padding:8px 10px}
+.vd-k b{display:block;font-size:1.05rem}.vd-k small{color:var(--muted);font-size:.72rem}
+.vd-bars{display:flex;align-items:flex-end;gap:8px;height:110px;margin:16px 0 4px;padding-top:16px}
+.vd-bars button{flex:1;border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.vd-bars i{display:block;width:100%;max-width:38px;border-radius:8px 8px 3px 3px;background:#F7C9D9;min-height:3px;position:relative}
+.vd-bars button.on i{background:linear-gradient(180deg,var(--pink),#E8857A)}
+.vd-bars i span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--muted);white-space:nowrap;margin-bottom:2px}
+.vd-bars small{font-size:.68rem;color:var(--muted);text-transform:capitalize}
+.vd-sub{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.vd-row{display:flex;justify-content:space-between;gap:10px;font-size:.88rem;padding:5px 0;border-bottom:1px dashed #F0D6DF}
+.vd-row:last-child{border-bottom:0}
+.vd-row span:last-child{font-weight:600;white-space:nowrap}
+.vd-empty{font-size:.85rem;color:var(--muted);margin:6px 0 0}
 </style>
 </head>
 <body>
@@ -156,6 +180,7 @@ textarea{resize:vertical}
 
   <!-- PEDIDOS -->
   <section class="view pad" id="vPed">
+    <div class="vd" id="vendas"></div>
     <h2>Pedidos do site</h2>
     <p class="hint">Cada pedido feito no carrinho chega aqui com os dados da cliente. Toque para ver a ficha/etiqueta 10×15, baixar ou imprimir.</p>
     <div class="seg" id="segPed"><button data-s="novo" class="on">Novos <i></i></button><button data-s="separado">Separados <i></i></button><button data-s="enviado">Enviados <i></i></button></div>
@@ -282,6 +307,7 @@ textarea{resize:vertical}
     <canvas id="oCv" style="width:100%;max-width:360px;display:block;margin:0 auto 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)"></canvas>
     <div class="two"><button class="btn btn-teal" id="oPng">⬇ Baixar etiqueta</button><button class="btn btn-soft" id="oPrint">🖨 Imprimir 10×15</button></div>
     <a class="btn btn-soft" id="oWa" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:10px">💬 Falar com a cliente no WhatsApp</a>
+    <div class="fld" style="margin-top:16px"><label>Pagamento</label><div id="oPagInfo"></div><div class="chips" id="oPag"><button type="button" data-v="">A receber</button><button type="button" data-v="pix">Pago no Pix</button><button type="button" data-v="credit_card">Pago no cartão</button><button type="button" data-v="dinheiro">Pago em dinheiro</button></div><p class="hint" style="margin:.4rem 0 0">Pedido pago pelo WhatsApp ou no box? Marque aqui para ele entrar no total de vendas do mês.</p></div>
     <div class="fld" style="margin-top:16px"><label>Status do pedido</label><div class="chips" id="oSt"><button type="button" data-v="novo">Novo</button><button type="button" data-v="separado">Separado</button><button type="button" data-v="enviado">Enviado</button></div></div>
     <p class="hint">A etiqueta sai no tamanho 10×15 cm, o mesmo das etiquetas da Shopee e do Mercado Livre. No celular: Baixar → Compartilhar → app da impressora.</p>
     <button class="btn btn-red del" id="oDel">Excluir pedido</button>
@@ -327,13 +353,49 @@ function renderAll() { renderProd(); renderPromo(); renderVid(); renderPed(); re
 /* pedidos */
 let segP = 'novo', curPed = null; const logoImg = new Image(); logoImg.src = '../img/logo.png';
 $('segPed').onclick = e => { const b = e.target.closest('button'); if (!b) return; segP = b.dataset.s; $('segPed').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); renderPed(); };
+/* ---------- vendas do mês (pedidos pagos) ---------- */
+const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+const PAGN = { pix: 'Pix', bank_transfer: 'Pix', credit_card: 'Cartão de crédito', debit_card: 'Cartão de débito', account_money: 'Saldo Mercado Pago', dinheiro: 'Dinheiro' };
+const mk = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+const mNome = k => { const [a, m] = k.split('-'); return MESES[+m - 1] + ' ' + a; };
+const mAdd = (k, n) => { const [a, m] = k.split('-').map(Number); return mk(new Date(a, m - 1 + n, 1)); };
+function venda(p) { const g = p.pagamento; if (!g || g.status !== 'approved') return null;
+  return { valor: Number(g.valor ?? S.totalPed(p)) || 0, data: new Date(g.data || p.data), metodo: g.metodo || 'pix', online: !g.manual, pcs: (p.itens || []).reduce((a, i) => a + (+i.qtd || 0), 0), p }; }
+let mesSel = mk(new Date());
+function renderVendas() {
+  const V = (DB.pedidos || []).map(venda).filter(Boolean), por = {};
+  V.forEach(v => { const k = mk(v.data); (por[k] = por[k] || []).push(v); });
+  const hoje = mk(new Date()), primeiro = Object.keys(por).sort()[0] || hoje;
+  const soma = k => (por[k] || []).reduce((a, v) => a + v.valor, 0);
+  const lista = por[mesSel] || [], tot = soma(mesSel), ant = soma(mAdd(mesSel, -1)), n = lista.length, pcs = lista.reduce((a, v) => a + v.pcs, 0);
+  const dif = ant ? Math.round((tot - ant) / ant * 100) : null;
+  const cmp = dif === null ? (tot ? '<p class="vd-cmp eq">Primeiro mês com vendas registradas 🎉</p>' : '<p class="vd-cmp eq">Sem vendas no mês anterior para comparar</p>')
+    : `<p class="vd-cmp ${dif > 0 ? 'up' : dif < 0 ? 'dn' : 'eq'}">${dif > 0 ? '▲' : dif < 0 ? '▼' : '='} ${Math.abs(dif)}% em relação a ${mNome(mAdd(mesSel, -1)).split(' ')[0]} (${S.brl(ant)})</p>`;
+  const meses = []; for (let i = 5; i >= 0; i--) meses.push(mAdd(mesSel, -i));
+  const max = Math.max(1, ...meses.map(soma));
+  const mp = {}; lista.forEach(v => { const k = (PAGN[v.metodo] || 'Outro') + (v.online ? ' · pelo site' : ''); mp[k] = (mp[k] || 0) + v.valor; });
+  const top = {}; lista.forEach(v => (v.p.itens || []).forEach(i => { top[i.nome] = (top[i.nome] || 0) + (+i.qtd || 0); }));
+  const topL = Object.entries(top).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  $('vendas').innerHTML = `<div class="vd-h"><button id="vdP" aria-label="Mês anterior">‹</button><b>Vendas de ${mNome(mesSel).replace(/^./, c => c.toUpperCase())}</b><button id="vdN" aria-label="Próximo mês" ${mesSel >= hoje ? 'disabled' : ''}>›</button></div>
+    <p class="vd-tot">${S.brl(tot)}</p>${cmp}
+    <div class="vd-k"><div><b>${n}</b><small>pedidos pagos</small></div><div><b>${pcs}</b><small>peças vendidas</small></div><div><b>${S.brl(n ? tot / n : 0)}</b><small>ticket médio</small></div></div>
+    <div class="vd-bars">${meses.map(k => `<button data-m="${k}" class="${k === mesSel ? 'on' : ''}" aria-label="${mNome(k)}"><i style="height:${Math.round(soma(k) / max * 100)}%">${soma(k) ? `<span>${S.brl(soma(k)).replace('R$ ', '').replace(/,00$/, '')}</span>` : ''}</i><small>${MESES[+k.split('-')[1] - 1].slice(0, 3)}</small></button>`).join('')}</div>
+    ${n ? `<p class="vd-sub">Por forma de pagamento</p>${Object.entries(mp).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<div class="vd-row"><span>${esc(k)}</span><span>${S.brl(v)}</span></div>`).join('')}
+    <p class="vd-sub">Peças mais vendidas</p>${topL.map(([k, q]) => `<div class="vd-row"><span>${esc(k)}</span><span>${q} un.</span></div>`).join('')}`
+    : `<p class="vd-empty">Nenhum pedido pago neste mês ainda. Pagamentos feitos pelo site entram sozinhos; pedidos pagos no WhatsApp ou no box, marque como pagos no pedido.</p>`}`;
+  $('vdP').onclick = () => { mesSel = mAdd(mesSel, -1); renderVendas(); };
+  $('vdN').onclick = () => { if (mesSel < hoje) { mesSel = mAdd(mesSel, 1); renderVendas(); } };
+  $('vendas').querySelectorAll('.vd-bars button').forEach(b => b.onclick = () => { mesSel = b.dataset.m; renderVendas(); });
+}
+
 function renderPed() {
+  renderVendas();
   const P = DB.pedidos || [], c = s => P.filter(p => (p.status || 'novo') === s).length;
   $('segPed').querySelectorAll('button').forEach(b => b.querySelector('i').textContent = c(b.dataset.s));
   $('pedN').textContent = c('novo') || '';
   const l = P.filter(p => (p.status || 'novo') === segP).sort((a, b) => b.num - a.num);
   $('listPed').innerHTML = l.length ? l.map(p => { const pcs = p.itens.reduce((a, i) => a + i.qtd, 0), tot = S.totalPed(p);
-    return `<button class="item" data-id="${p.id}"><span class="ped-n">#${p.num}</span><span class="t"><b>${esc(p.nome)}</b><small>${new Date(p.data).toLocaleDateString('pt-BR')} · ${pcs} peças · ${S.brl(tot)}</small><span class="tags"><span class="tag pr">${esc(p.forma || '')}</span>${p.id === 'o1' ? '<span class="tag">Exemplo</span>' : ''}</span></span><span class="chev">›</span></button>`; }).join('')
+    return `<button class="item" data-id="${p.id}"><span class="ped-n">#${p.num}</span><span class="t"><b>${esc(p.nome)}</b><small>${new Date(p.data).toLocaleDateString('pt-BR')} · ${pcs} peças · ${S.brl(tot)}</small><span class="tags"><span class="tag pr">${esc(p.forma || '')}</span>${p.pagamento && p.pagamento.status === 'approved' ? '<span class="tag pub">✓ Pago</span>' : p.pagamento && p.pagamento.status ? '<span class="tag es">Pagamento pendente</span>' : '<span class="tag">Pagar no WhatsApp</span>'}${p.id === 'o1' ? '<span class="tag">Exemplo</span>' : ''}</span></span><span class="chev">›</span></button>`; }).join('')
     : '<p class="empty">Nenhum pedido aqui. Os pedidos feitos no carrinho do site aparecem nesta lista.</p>';
 }
 $('listPed').onclick = e => { const b = e.target.closest('.item'); if (b) openPed(b.dataset.id); };
@@ -343,8 +405,21 @@ function openPed(id) {
   const go = () => Etiqueta.draw($('oCv'), curPed, { logo: logoImg }); if (logoImg.complete) go(); else logoImg.onload = go; go();
   $('oWa').href = 'https://wa.me/55' + String(curPed.tel || '').replace(/\D/g, '').replace(/^55/, '') + '?text=' + encodeURIComponent('Oi, ' + curPed.nome + '! Aqui é da Coralli 💗 Sobre o seu pedido nº ' + curPed.num + ':');
   $('oSt').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === (curPed.status || 'novo')));
+  pagUI();
   $('shPed').classList.add('open');
 }
+function pagUI() {
+  const g = curPed.pagamento || {}, online = g.status && !g.manual;
+  $('oPagInfo').innerHTML = online ? `<div class="row" style="margin:0"><label>${g.status === 'approved' ? '✅ Pago pelo site' : '⏳ Pagamento ' + (g.status === 'iniciado' ? 'iniciado, não concluído' : 'pendente')}<small>${esc(PAGN[g.metodo] || 'Mercado Pago')}${g.valor ? ' · ' + S.brl(g.valor) : ''}${g.id ? ' · nº ' + esc(g.id) : ''}</small></label></div>` : '';
+  $('oPag').style.display = online && g.status === 'approved' ? 'none' : '';
+  const atual = g.status === 'approved' && g.manual ? g.metodo : '';
+  $('oPag').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === atual));
+}
+$('oPag').onclick = e => { const b = e.target.closest('button'); if (!b) return; const m = b.dataset.v;
+  curPed.pagamento = m ? { status: 'approved', manual: true, metodo: m, valor: S.totalPed(curPed), data: Date.now() } : (curPed.pagamento && !curPed.pagamento.manual ? curPed.pagamento : null);
+  if (!curPed.pagamento) delete curPed.pagamento;
+  persist(m ? '✓ Marcado como pago · entra nas vendas do mês' : 'Marcado como a receber'); pagUI(); renderPed();
+  const go = () => Etiqueta.draw($('oCv'), curPed, { logo: logoImg }); go(); };
 $('oSt').onclick = e => { const b = e.target.closest('button'); if (!b) return; curPed.status = b.dataset.v; $('oSt').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); persist('✓ Pedido ' + b.textContent.toLowerCase()); renderPed(); };
 $('oPng').onclick = () => Etiqueta.png($('oCv'), 'pedido-coralli-' + curPed.num);
 $('oPrint').onclick = () => Etiqueta.print($('oCv'));

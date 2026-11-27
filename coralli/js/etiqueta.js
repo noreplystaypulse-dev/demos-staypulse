@@ -78,8 +78,12 @@
     if (p.desconto) { c.textAlign = 'right'; c.fillStyle = SAL; c.font = `700 16px ${FONT}`; c.fillText(`CUPOM ${p.cupom || ''}: −${brl(p.desconto)}`, 770, 1022); }
     rr(c, 440, 1030, 330, 62, 16); c.fillStyle = '#FDE7EF'; c.fill(); c.lineWidth = 3; c.strokeStyle = HOT; c.stroke();
     c.textAlign = 'left'; c.fillStyle = HOT; c.font = `800 20px ${FONT}`; c.fillText('TOTAL R$', 462, 1069); c.textAlign = 'right'; c.font = `800 34px ${FONT}`; c.fillText(brl(tot), 752, 1073);
+    const pago = p.pagamento && p.pagamento.status === 'approved';
+    if (pago) { rr(c, 300, 1030, 128, 62, 16); c.fillStyle = '#E3F7EC'; c.fill(); c.lineWidth = 3; c.strokeStyle = '#1F9D5B'; c.stroke();
+      c.textAlign = 'center'; c.fillStyle = '#137A43'; c.font = `800 24px ${FONT}`; c.fillText('✓ PAGO', 364, 1060);
+      c.font = `600 13px ${FONT}`; c.fillText({ bank_transfer: 'PIX', pix: 'PIX', credit_card: 'CARTÃO', debit_card: 'DÉBITO', account_money: 'MERCADO PAGO', dinheiro: 'DINHEIRO' }[p.pagamento.metodo] || 'ONLINE', 364, 1081); }
     if (p.obs) { c.textAlign = 'left'; c.font = `800 15px ${FONT}`; c.fillStyle = SAL; c.fillText('OBS.:', 32, 1052); c.font = `500 17px ${FONT}`; c.fillStyle = INK;
-      const words = String(p.obs).split(' '); let line = '', y = 1052, x0 = 84; for (const w of words) { const t = line ? line + ' ' + w : w; if (c.measureText(t).width > 340 - (y > 1052 ? -52 : 0)) { c.fillText(line, x0, y); line = w; y += 22; x0 = 32; if (y > 1096) break; } else line = t; } if (y <= 1096) c.fillText(line, x0, y); }
+      const words = String(p.obs).split(' '); let line = '', y = 1052, x0 = 84; for (const w of words) { const t = line ? line + ' ' + w : w; if (c.measureText(t).width > (pago ? 200 : 340) - (y > 1052 ? -52 : 0)) { c.fillText(line, x0, y); line = w; y += 22; x0 = 32; if (y > 1096) break; } else line = t; } if (y <= 1096) c.fillText(line, x0, y); }
     // rodapé
     g = c.createLinearGradient(30, 0, 770, 0); g.addColorStop(0, PINK); g.addColorStop(1, TIF);
     rr(c, 30, 1110, 740, 66, 33); c.fillStyle = g; c.fill();
