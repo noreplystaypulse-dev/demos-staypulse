@@ -1,7 +1,7 @@
 /* POST /coralli/api/webhook · aviso do Mercado Pago quando um pagamento muda de status.
    Se o secret MP_WEBHOOK_SECRET estiver configurado, a assinatura (x-signature) é conferida.
    Na demo o aviso só é registrado no log; na versão com banco de dados, marca o pedido como pago. */
-import { json, mp, resumo } from './_mp.js';
+import { json, mp, resumo, registrarPagamento } from './_mp.js';
 
 async function assinaturaOk(request, env, dataId) {
   if (!env.MP_WEBHOOK_SECRET) return true;
@@ -24,8 +24,7 @@ export async function onRequestPost({ request, env }) {
   if (!(await assinaturaOk(request, env, dataId))) return json({ erro: 'assinatura inválida' }, 401);
   if (!env.MP_ACCESS_TOKEN) return json({ ok: true });
   const r = await mp(env, '/v1/payments/' + dataId);
-  if (r.ok && r.body) console.log('Coralli pagamento', JSON.stringify(resumo(r.body)));
-  /* TODO produção: salvar resumo(r.body) no banco e marcar o pedido como pago */
+  if (r.ok && r.body) { const pg = resumo(r.body); console.log('Coralli pagamento', JSON.stringify(pg)); await registrarPagamento(env, pg); }
   return json({ ok: true });
 }
 export const onRequestGet = () => json({ ok: true });

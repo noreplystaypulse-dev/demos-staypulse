@@ -89,7 +89,7 @@
     rr(c, 30, 1110, 740, 66, 33); c.fillStyle = g; c.fill();
     c.textAlign = 'center'; c.fillStyle = '#fff'; c.font = `800 30px ${FONT}`; c.fillText('OBRIGADA PELA COMPRA!', 400, 1153);
     const fw = c.measureText('OBRIGADA PELA COMPRA!').width; heart(c, 400 - fw / 2 - 46, 1128, 30, '#fff'); heart(c, 400 + fw / 2 + 16, 1128, 30, '#fff');
-    c.font = `600 15px ${FONT}`; c.fillStyle = '#B79499'; c.fillText(o.rodape || '@use.coralli', 400, 1194);
+    c.font = `600 15px ${FONT}`; c.fillStyle = '#B79499'; c.fillText(o.rodape || '@use.corallii', 400, 1194);
   }
 
   function png(cv, nome) { cv.toBlob(b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = (nome || 'pedido') + '.png'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }, 'image/png'); }

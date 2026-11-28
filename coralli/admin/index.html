@@ -114,6 +114,10 @@ h2{font-size:1.15rem;margin:0 0 .3rem}
 .login input{border:1px solid var(--line);border-radius:14px;padding:.95rem 1rem;background:#fff;outline:none}
 .login input:focus{border-color:var(--teal)}
 .login small{color:var(--muted);margin-top:14px;display:block}
+.login .lnk{border:0;background:none;color:var(--teal-d);font-size:.88rem;text-decoration:underline;padding:.3rem}
+.lmsg{max-width:340px;font-size:.88rem;color:var(--promo);margin:12px 0 0!important}
+.lmsg.ok{color:var(--teal-d)}
+.login form{margin:0 auto}
 .vcard{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:10px;width:100%;background:#fff;text-align:left}
 .vcard img{width:56px;height:96px;object-fit:cover;border-radius:10px;flex:none;background:var(--soft)}
 .capa{width:140px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--soft);position:relative}
@@ -156,11 +160,19 @@ textarea{resize:vertical}
   <h1>Painel Coralli</h1>
   <p>Cadastre peças, promoções e vídeos pelo celular.</p>
   <form id="fLogin">
-    <input type="email" placeholder="E-mail" value="coralli@demo.com" autocomplete="username">
+    <input type="email" id="lEmail" placeholder="Seu e-mail" autocomplete="username" required>
     <input type="password" id="pw" placeholder="Senha" autocomplete="current-password">
-    <button class="btn btn-teal" type="submit">Entrar</button>
+    <button class="btn btn-teal" type="submit" id="lBtn">Entrar</button>
+    <button class="lnk" type="button" id="lEsq">Esqueci minha senha</button>
   </form>
-  <small>Demonstração: senha <b>coralli</b></small>
+  <form id="fSenha" hidden>
+    <p style="margin:0 0 4px;color:var(--ink);font-weight:600">Crie sua senha de acesso ao painel</p>
+    <input type="password" id="ns1" placeholder="Nova senha (mínimo 8 caracteres)" autocomplete="new-password" minlength="8" required>
+    <input type="password" id="ns2" placeholder="Repita a senha" autocomplete="new-password" minlength="8" required>
+    <button class="btn btn-teal" type="submit" id="nsBtn">Salvar senha e entrar</button>
+  </form>
+  <p class="lmsg" id="lMsg"></p>
+  <small id="lDemo">Demonstração: senha <b>coralli</b></small>
 </section>
 
 <!-- APP -->
@@ -318,6 +330,8 @@ textarea{resize:vertical}
 <div class="toast" id="toast"></div>
 
 <script src="../js/store.js"></script>
+<script src="../js/vendor/supabase.js"></script>
+<script src="../js/cloud.js"></script>
 <script src="../js/etiqueta.js"></script>
 <script>
 const S = window.CoralliStore;
@@ -329,10 +343,47 @@ let tt; const toast = m => { $('toast').textContent = m; $('toast').classList.ad
 function persist(msg) { if (S.save(DB)) { msg && toast(msg); return true; } toast('Memória cheia: use menos fotos nesta demonstração'); return false; }
 
 /* login (demonstração) */
-if (sessionStorage.getItem('coralli-ok')) setTimeout(enter);
-$('fLogin').onsubmit = e => { e.preventDefault(); if ($('pw').value.trim().toLowerCase() === 'coralli') { sessionStorage.setItem('coralli-ok', '1'); enter(); } else toast('Senha incorreta'); };
-function enter() { $('login').hidden = true; $('app').hidden = false; renderAll(); }
-$('btnSair').onclick = () => { sessionStorage.removeItem('coralli-ok'); location.reload(); };
+/* ---------- acesso ---------- */
+const lmsg = (t, ok) => { $('lMsg').textContent = t || ''; $('lMsg').className = 'lmsg' + (ok ? ' ok' : ''); };
+if (S.cloud) {
+  $('lDemo').hidden = true; $('btnReset').hidden = true;
+  S.onSync = (st, m) => { if (st === 'erro') toast('⚠️ Não salvou: ' + m); };
+  if (S.auth.erro) lmsg('Esse link expirou ou já foi usado. Digite seu e-mail e toque em "Esqueci minha senha" para receber outro.');
+  S.auth.sessao().then(ses => { if (ses && /invite|recovery/.test(S.auth.tipo)) { $('fLogin').hidden = true; $('fSenha').hidden = false; lmsg('Bem-vinda! Defina a senha que você vai usar para entrar no painel.', true); } else if (ses) enter(); });
+} else { $('lEsq').hidden = true; $('lEmail').value = 'coralli@demo.com'; if (sessionStorage.getItem('coralli-ok')) setTimeout(enter); }
+$('fLogin').onsubmit = async e => {
+  e.preventDefault();
+  if (!S.cloud) { if ($('pw').value.trim().toLowerCase() === 'coralli') { sessionStorage.setItem('coralli-ok', '1'); enter(); } else toast('Senha incorreta'); return; }
+  const b = $('lBtn'); b.disabled = true; b.textContent = 'Entrando...'; lmsg('');
+  try { await S.auth.entrar($('lEmail').value.trim(), $('pw').value); await enter(); } catch (er) { lmsg(er.message); } finally { b.disabled = false; b.textContent = 'Entrar'; }
+};
+$('lEsq').onclick = async () => {
+  const em = $('lEmail').value.trim(); if (!/^\S+@\S+\.\S+$/.test(em)) { $('lEmail').focus(); return lmsg('Digite seu e-mail acima e toque de novo em "Esqueci minha senha".'); }
+  try { await S.auth.esqueci(em); lmsg('Pronto! Enviamos um link para ' + em + '. Abra o e-mail e toque no link para criar uma nova senha.', true); } catch (er) { lmsg(er.message); }
+};
+$('fSenha').onsubmit = async e => {
+  e.preventDefault(); const a = $('ns1').value, b2 = $('ns2').value;
+  if (a.length < 8) return lmsg('A senha precisa ter pelo menos 8 caracteres.');
+  if (a !== b2) return lmsg('As duas senhas não são iguais.');
+  const b = $('nsBtn'); b.disabled = true; b.textContent = 'Salvando...';
+  try { await S.auth.novaSenha(a); history.replaceState(null, '', location.pathname); await enter(); } catch (er) { lmsg(er.message); } finally { b.disabled = false; b.textContent = 'Salvar senha e entrar'; }
+};
+async function enter() {
+  if (S.cloud) {
+    lmsg('Carregando sua loja...', true);
+    const papel = await S.auth.membro();
+    if (!papel) { await S.auth.sair(); $('fSenha').hidden = true; $('fLogin').hidden = false; return lmsg('Este e-mail não tem acesso a esta loja. Fale com a StayPulse.'); }
+    try { DB = await S.boot('admin'); } catch (er) { return lmsg('Não foi possível carregar a loja: ' + er.message); }
+    lmsg('');
+  }
+  $('login').hidden = true; $('app').hidden = false; renderAll();
+}
+$('btnSair').onclick = async () => { if (S.cloud) await S.auth.sair(); sessionStorage.removeItem('coralli-ok'); location.replace(location.pathname); };
+/* pedidos novos: ao voltar para o painel, busca de novo */
+document.addEventListener('visibilitychange', async () => {
+  if (!S.cloud || document.hidden || $('app').hidden) return;
+  try { await S.salvando(); DB.pedidos = await S.recarregarPedidos(); renderPed(); } catch (e) {}
+});
 
 /* abas */
 const TITLES = { vPed: 'Pedidos', vProd: 'Peças', vPromo: 'Promoções', vVid: 'Vídeos', vLoja: 'Loja' };

@@ -1,4 +1,4 @@
-/* Gerado por coralli/tools/seo-build.mjs em 2026-11-26. Não edite à mão. */
+/* Gerado por coralli/tools/seo-build.mjs em 2026-11-27. Não edite à mão. */
 export const CATALOGO = {
  "p1": {
   "nome": "Vestido Jully",

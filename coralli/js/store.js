@@ -8,7 +8,7 @@
   const CONFIG = {
     whatsapp: '',               // ← WhatsApp da loja (ex.: 5511915159311). Vazio = número da StayPulse (demo)
     whatsappDemo: '5511975387719',
-    instagram: 'https://www.instagram.com/use.coralli/',
+    instagram: 'https://www.instagram.com/use.corallii/',
     pedidoMinimoPecas: 0,       // ← pedido mínimo em peças (0 = sem mínimo)
     pedidoMinimoValor: 0,       // ← pedido mínimo em R$ (0 = sem mínimo)
     endereco: 'Feira da Madrugada · Térreo · Setor Roxo · C30 · Box 00237',
